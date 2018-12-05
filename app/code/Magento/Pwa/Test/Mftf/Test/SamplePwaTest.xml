@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="SamplePwaTest">
+        <amOnPage url="/" stepKey="goToApp"/>
+        <click selector="{{MainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <waitForElementVisible selector="{{MainMenuSection.signIn}}" stepKey="wait1"/>
+        <click selector="{{MainMenuSection.signIn}}" stepKey="clickSignIn"/>
+        <waitForElementVisible selector="{{SignInFormSection.username}}" stepKey="wait2"/>
+        <fillField selector="{{SignInFormSection.username}}" userInput="tom@test.com" stepKey="fillUsername"/>
+        <fillField selector="{{SignInFormSection.password}}" userInput="Pasword1" stepKey="fillPassword"/>
+        <click selector="{{SignInFormSection.signIn}}" stepKey="clickSignIn2"/>
+        <waitForElementVisible selector="{{MainMenuSection.userChip}}" stepKey="wait3"/>
+        <see selector="{{MainMenuSection.userChip}}" userInput="tom@test.com" stepKey="seeLoggedInUserEmail"/>
+    </test>
+</tests>

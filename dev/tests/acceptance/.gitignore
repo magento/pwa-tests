@@ -1,0 +1,7 @@
+.htaccess
+codeception.yml
+tests/_output/*
+vendor/*
+mftf.log
+/.credentials.example
+/utils/
