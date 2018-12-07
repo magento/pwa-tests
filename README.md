@@ -5,6 +5,8 @@
 2. `vendor/bin/mftf build:project`
 
 ## Running Tests
+Ensure you have Selenium Standalone Server running.
+
 `vendor/bin/mftf run:test -f SamplePwaTest`
 
 The `-f` flag is required to bypass Magento module resolution.
