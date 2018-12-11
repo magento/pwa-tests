@@ -6,4 +6,6 @@
 
 ## Running Tests
 1. Ensure you have Selenium Standalone Server running.
-2. `vendor/bin/mftf run:test SamplePwaTest`
+2. Run Sample Tests:
+    * `vendor/bin/mftf run:test SamplePwaTest`
+    * `vendor/bin/mftf run:test FlipKartSampleTest`
