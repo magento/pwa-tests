@@ -1,0 +1,8 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <!-- https://app.hiptest.com/projects/103445/test-plan/folders/697930/scenarios/2470601 -->
+    <test name="CreateAccount">
+        <amOnPage url="/" stepKey="goToApp" />
+        <click stepKey="MainMenuSection" />
+        <!-- https://app.hiptest.com/l/sc/2583050 -->
+    </test>
+</tests>

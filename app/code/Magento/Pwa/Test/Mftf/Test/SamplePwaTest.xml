@@ -19,5 +19,10 @@
         <click selector="{{SignInFormSection.signIn}}" stepKey="clickSignIn2"/>
         <waitForElementVisible selector="{{MainMenuSection.userChip}}" stepKey="wait3"/>
         <see selector="{{MainMenuSection.userChip}}" userInput="tom@test.com" stepKey="seeLoggedInUserEmail"/>
+        <amOnPage url="/" stepKey="gotoApp" />
+    </test>
+    <test name="checkout">
+        <amOnPage url="/" stepKey="goToApp" />
+
     </test>
 </tests>
