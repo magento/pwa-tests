@@ -73,4 +73,13 @@
         <element name="save" type="button" selector="[class*='shippingForm-footer-'] button[type='submit']"/>
         <element name="cancel" type="button" selector="[class*='shippingForm-footer-'] button[type='button']"/>
     </section>
+
+    <section name="VeniaShoppingCartThankYou">
+        <element name="title" type="text" selector="[class*='receipt-header-']"/>
+
+        <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>
+
+        <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
+        <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
+    </section>
 </sections>
