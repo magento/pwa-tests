@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+    <entity name="VeniaSampleCustomer1" type="customer">
+        <data key="first">John</data>
+        <data key="last">Smith</data>
+        <data key="address" unique="prefix"> Test Drive</data>
+        <data key="city">Austin</data>
+        <data key="zipCode">78717</data>
+        <data key="state">TX</data>
+        <data key="phone">123-456-7890</data>
+        <data key="email" unique="prefix">test@test.com</data>
+    </entity>
+</entities>

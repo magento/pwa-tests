@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaShoppingCart">
+        <element name="noItemsInShoppingCart" type="text" selector="[class*='emptyMiniCart-emptyTitle-']"/>
+
+        <element name="productImageByIndex" type="button" selector="(//*[contains(@class, 'product-image')])[{{var1}}]" parameterized="true"/>
+        <element name="productNameByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-name-')])[{{var1}}]" parameterized="true"/>
+        <element name="productColorByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-options-')])[{{var1}}]" parameterized="true"/>
+        <element name="productSizeByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-options-')])[{{var1}}]" parameterized="true"/>
+        <element name="productQuantityByIndex" type="select" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-quantitySelect-')])[{{var1}}]" parameterized="true"/>
+        <element name="productPriceByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-price-')])[{{var1}}]" parameterized="true"/>
+        <element name="productMenuByIndex" type="button" selector="(//*[contains(@class, 'kebab-root-')]/button)[{{var1}}]" parameterized="true"/>
+
+        <element name="subTotalItemCount" type="text" selector="[class*='miniCart-subtotalLabel-']"/>
+        <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
+
+        <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
+    </section>
+
+    <section name="VeniaShoppingCartDetails">
+        <element name="orderDetailsMainArea" type="textarea" selector="[class*='form-body-']"/>
+
+        <element name="shipToMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Ship To')]]"/>
+        <element name="payWithMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Pay With')]]"/>
+        <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Get It By')]]"/>
+        <element name="totalMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'TOTAL')]]"/>
+
+        <element name="addShipToInformation" type="button" selector="//*[contains(text(), 'Ship To')]/../..//span[contains(text(), 'Add Shipping Information')]"/>
+        <element name="addBillingInformation" type="button" selector="//*[contains(text(), 'Pay With')]/../..//span[contains(text(), 'Add Billing Information')]"/>
+        <element name="addShippingInformation" type="button" selector="//*[contains(text(), 'Get It By')]/../..//span[contains(text(), 'Add Shipping Information')]"/>
+
+        <element name="placeOrder" type="button" selector="[class*='form-footer-'] button"/>
+    </section>
+
+    <section name="VeniaShoppingCartShippingAddress">
+        <element name="title" type="text" selector="[class*='addressForm-heading-']"/>
+
+        <element name="firstName" type="input" selector="[id*='addressForm-firstname-']"/>
+        <element name="lastName" type="input" selector="[id*='addressForm-lastname-']"/>
+        <element name="streetAddress" type="input" selector="[id*='addressForm-street0-']"/>
+        <element name="city" type="input" selector="[id*='addressForm-city-']"/>
+        <element name="zipCode" type="input" selector="[id*='addressForm-postcode-']"/>
+        <element name="state" type="input" selector="[id*='addressForm-region_code-']"/>
+        <element name="phoneNumber" type="input" selector="[id*='addressForm-telephone-']"/>
+        <element name="email" type="input" selector="[id*='addressForm-email-']"/>
+
+        <element name="save" type="button" selector="[class*='addressForm-footer-'] button[type='submit']"/>
+        <element name="cancel" type="button" selector="[class*='addressForm-footer-'] button[type='button']"/>
+    </section>
+
+    <section name="VeniaShoppingCartPayWith">
+        <element name="title" type="text" selector="[class*='paymentsForm-heading-']"/>
+
+        <element name="paymentMethod" type="select" selector="[class*='paymentsForm-paymentMethod-'] select"/>
+
+        <element name="save" type="button" selector="[class*='paymentsForm-footer-'] button[type='submit']"/>
+        <element name="cancel" type="button" selector="[class*='paymentsForm-footer-'] button[type='button']"/>
+    </section>
+
+    <section name="VeniaShoppingCartGetItBy">
+        <element name="title" type="text" selector="[class*='shippingForm-heading-']"/>
+
+        <element name="shippingMethod" type="select" selector="[class*='shippingForm-shippingMethod-'] select"/>
+
+        <element name="save" type="button" selector="[class*='shippingForm-footer-'] button[type='submit']"/>
+        <element name="cancel" type="button" selector="[class*='shippingForm-footer-'] button[type='button']"/>
+    </section>
+</sections>
