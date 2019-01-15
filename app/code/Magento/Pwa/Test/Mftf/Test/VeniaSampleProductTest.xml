@@ -15,7 +15,8 @@
             <description value="Should be able to see the correct Product details on the Product page."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaProduct"/>
         </annotations>
 
         <before>
@@ -54,7 +55,8 @@
             <description value="Should be able to add a Product to the Shopping Cart on the Product page."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaProduct"/>
         </annotations>
 
         <before>

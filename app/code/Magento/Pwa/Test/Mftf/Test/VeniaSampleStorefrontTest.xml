@@ -15,7 +15,8 @@
             <description value="Should be able to see the 5 Categories on the Venia Storefront."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaStorefront"/>
         </annotations>
 
         <before>
@@ -40,7 +41,8 @@
             <description value="Should be able to access a Category page via the Venia Storefront."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaStorefront"/>
         </annotations>
 
         <before>

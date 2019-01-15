@@ -15,7 +15,8 @@
             <description value="Should be able to see the 6 Products assigned to the 'Shop The Look' Category."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaCategory"/>
         </annotations>
 
         <before>
@@ -49,7 +50,8 @@
             <description value="Should be able to access a Product page via a Venia Category page."/>
             <testCaseId value="#"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaCategory"/>
         </annotations>
 
         <before>
