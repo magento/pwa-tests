@@ -33,9 +33,9 @@
         <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Get It By')]]"/>
         <element name="totalMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'TOTAL')]]"/>
 
-        <element name="addShipToInformation" type="button" selector="//*[contains(text(), 'Ship To')]/../..//span[contains(text(), 'Add Shipping Information')]"/>
-        <element name="addBillingInformation" type="button" selector="//*[contains(text(), 'Pay With')]/../..//span[contains(text(), 'Add Billing Information')]"/>
-        <element name="addShippingInformation" type="button" selector="//*[contains(text(), 'Get It By')]/../..//span[contains(text(), 'Add Shipping Information')]"/>
+        <element name="addShipToInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>
+        <element name="addBillingInformation" type="button" selector="(//*[contains(text(), 'Add Billing Information')])[1]"/>
+        <element name="addShippingInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>
 
         <element name="placeOrder" type="button" selector="[class*='form-footer-'] button"/>
     </section>
@@ -75,6 +75,7 @@
     </section>
 
     <section name="VeniaShoppingCartThankYou">
+        <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
         <element name="title" type="text" selector="[class*='receipt-header-']"/>
 
         <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>

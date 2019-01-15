@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaCategoryTest1">
+        <annotations>
+            <stories value="Venia Category Tests"/>
+            <title value="Venia Category Test 1"/>
+            <description value="Should be able to see the 6 Products assigned to the 'Shop The Look' Category."/>
+            <testCaseId value="#"/>
+            <severity value="CRITICAL"/>
+            <group value="venia"/>
+        </annotations>
+
+        <before>
+            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
+
+            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
+            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementVisible1"/>
+
+            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="waitForPwaElementVisible2"/>
+        </before>
+
+        <see selector="{{VeniaCategory.productName}}" userInput="Valeria Two-Layer Tank" stepKey="seeProductName1"/>
+        <see selector="{{VeniaCategory.productName}}" userInput="Vitalia Top" stepKey="seeProductName2"/>
+        <see selector="{{VeniaCategory.productName}}" userInput="Helena Cardigan" stepKey="seeProductName3"/>
+        <see selector="{{VeniaCategory.productName}}" userInput="Hanna Sweater" stepKey="seeProductName4"/>
+        <see selector="{{VeniaCategory.productName}}" userInput="Tatiana Skirt" stepKey="seeProductName5"/>
+        <see selector="{{VeniaCategory.productName}}" userInput="Honora Wide Leg Pants" stepKey="seeProductName6"/>
+
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$68.00" stepKey="seeProductPrice1"/>
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$98.00" stepKey="seeProductPrice2"/>
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$98.00" stepKey="seeProductPrice3"/>
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$98.00" stepKey="seeProductPrice4"/>
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$98.00" stepKey="seeProductPrice5"/>
+        <see selector="{{VeniaCategory.productPrice}}" userInput="$78.00" stepKey="seeProductPrice6"/>
+    </test>
+
+    <test name="VeniaCategoryTest2">
+        <annotations>
+            <stories value="Venia Category Tests"/>
+            <title value="Venia Category Test 2"/>
+            <description value="Should be able to access a Product page via a Venia Category page."/>
+            <testCaseId value="#"/>
+            <severity value="CRITICAL"/>
+            <group value="venia"/>
+        </annotations>
+
+        <before>
+            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
+
+            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
+            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementVisible1"/>
+
+            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="waitForPwaElementVisible2"/>
+        </before>
+
+        <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible1"/>
+
+        <seeElement selector="{{VeniaProduct.productName}}" stepKey="seeProductName1"/>
+        <seeElement selector="{{VeniaProduct.productPrice}}" stepKey="seeProductPrice1"/>
+        <seeElement selector="{{VeniaProduct.productDescription}}" stepKey="seeProductDescription1"/>
+    </test>
+</tests>

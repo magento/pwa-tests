@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaStorefrontTest1">
+        <annotations>
+            <stories value="Venia Storefront Tests"/>
+            <title value="Venia Storefront Test 1"/>
+            <description value="Should be able to see the 5 Categories on the Venia Storefront."/>
+            <testCaseId value="#"/>
+            <severity value="CRITICAL"/>
+            <group value="venia"/>
+        </annotations>
+
+        <before>
+            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
+
+            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
+            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElement1"/>
+        </before>
+
+        <see userInput="Shop by category" stepKey="seeStorefrontTitle1"/>
+        <see userInput="Shop The Look" stepKey="seeCategoryName1"/>
+        <see userInput="Bottoms" stepKey="seeCategoryName2"/>
+        <see userInput="Tops" stepKey="seeCategoryName3"/>
+        <see userInput="Accessories" stepKey="seeCategoryName4"/>
+        <see userInput="Dresses" stepKey="seeCategoryName5"/>
+    </test>
+
+    <test name="VeniaStorefrontTest2">
+        <annotations>
+            <stories value="Venia Storefront Tests"/>
+            <title value="Venia Storefront Test 2"/>
+            <description value="Should be able to access a Category page via the Venia Storefront."/>
+            <testCaseId value="#"/>
+            <severity value="CRITICAL"/>
+            <group value="venia"/>
+        </annotations>
+
+        <before>
+            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
+
+            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
+            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementVisible1"/>
+        </before>
+
+        <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="waitForPwaElementVisible1"/>
+
+        <seeNumberOfElements selector="{{VeniaCategory.productImage}}" userInput="6" stepKey="seeSixProductImages1"/>
+        <seeNumberOfElements selector="{{VeniaCategory.productName}}" userInput="6" stepKey="seeSixProductNames1"/>
+        <seeNumberOfElements selector="{{VeniaCategory.productPrice}}" userInput="6" stepKey="seeSixProductPrice1"/>
+    </test>
+</tests>
