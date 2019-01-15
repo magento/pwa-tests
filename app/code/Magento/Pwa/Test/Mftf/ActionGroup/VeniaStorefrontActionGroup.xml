@@ -12,7 +12,7 @@
         <resizeWindow width="750" height="1334" stepKey="resizeWindowForMobile1"/>
 
         <amOnUrl url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
     <actionGroup name="OpenStorefrontCategoryByName">
@@ -22,7 +22,7 @@
         </arguments>
 
         <click userInput="{{categoryName}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('categoryName')}}" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('productName')}}" stepKey="waitForPwaElementVisible2"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('categoryName')}}" stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('productName')}}" stepKey="waitForPwaElementVisible01"/>
     </actionGroup>
 </actionGroups>
