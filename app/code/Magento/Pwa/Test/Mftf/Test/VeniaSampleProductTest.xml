@@ -21,9 +21,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -59,9 +60,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>

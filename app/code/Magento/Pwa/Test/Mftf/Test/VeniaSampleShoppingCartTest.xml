@@ -21,9 +21,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -58,9 +59,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -114,9 +116,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="10" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="10" stepKey="waitForPwaElementNotVisible2"/>
@@ -138,14 +141,9 @@
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
         </before>
 
-        <fillField userInput="{{VeniaSampleCustomer1.first}}" selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="fillShipToFirstNameField1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="fillShipToLastNameField1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartShippingAddress.streetAddress}}" stepKey="fillShipToStreetAddress1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.city}}" selector="{{VeniaShoppingCartShippingAddress.city}}" stepKey="fillShipToCity1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.zipCode}}" selector="{{VeniaShoppingCartShippingAddress.zipCode}}" stepKey="fillShipToZipCode1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.state}}" selector="{{VeniaShoppingCartShippingAddress.state}}" stepKey="fillShipToState1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.phone}}" selector="{{VeniaShoppingCartShippingAddress.phoneNumber}}" stepKey="fillShipToPhoneNumber1"/>
-        <fillField userInput="{{VeniaSampleCustomer1.email}}" selector="{{VeniaShoppingCartShippingAddress.email}}" stepKey="fillShipToEmail1"/>
+        <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+            <argument name="customer" value="VeniaSampleCustomer1"/>
+        </actionGroup>
 
         <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
@@ -168,9 +166,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -187,18 +186,15 @@
             <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
 
             <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
 
-            <fillField userInput="{{VeniaSampleCustomer1.first}}" selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="fillShipToFirstNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="fillShipToLastNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartShippingAddress.streetAddress}}" stepKey="fillShipToStreetAddress1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.city}}" selector="{{VeniaShoppingCartShippingAddress.city}}" stepKey="fillShipToCity1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.zipCode}}" selector="{{VeniaShoppingCartShippingAddress.zipCode}}" stepKey="fillShipToZipCode1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.state}}" selector="{{VeniaShoppingCartShippingAddress.state}}" stepKey="fillShipToState1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.phone}}" selector="{{VeniaShoppingCartShippingAddress.phoneNumber}}" stepKey="fillShipToPhoneNumber1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.email}}" selector="{{VeniaShoppingCartShippingAddress.email}}" stepKey="fillShipToEmail1"/>
+            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
 
             <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
@@ -227,9 +223,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -246,19 +243,15 @@
             <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
 
             <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
 
-            <fillField userInput="{{VeniaSampleCustomer1.first}}" selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="fillShipToFirstNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="fillShipToLastNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartShippingAddress.streetAddress}}" stepKey="fillShipToStreetAddress1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.city}}" selector="{{VeniaShoppingCartShippingAddress.city}}" stepKey="fillShipToCity1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.zipCode}}" selector="{{VeniaShoppingCartShippingAddress.zipCode}}" stepKey="fillShipToZipCode1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.state}}" selector="{{VeniaShoppingCartShippingAddress.state}}" stepKey="fillShipToState1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.phone}}" selector="{{VeniaShoppingCartShippingAddress.phoneNumber}}" stepKey="fillShipToPhoneNumber1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.email}}" selector="{{VeniaShoppingCartShippingAddress.email}}" stepKey="fillShipToEmail1"/>
+            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
 
             <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
@@ -296,9 +289,10 @@
         <before>
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
-            <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="10" stepKey="waitForPwaElementVisible2"/>
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
 
             <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
@@ -315,19 +309,15 @@
             <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
 
             <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
             <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
 
-            <fillField userInput="{{VeniaSampleCustomer1.first}}" selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="fillShipToFirstNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="fillShipToLastNameField1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartShippingAddress.streetAddress}}" stepKey="fillShipToStreetAddress1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.city}}" selector="{{VeniaShoppingCartShippingAddress.city}}" stepKey="fillShipToCity1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.zipCode}}" selector="{{VeniaShoppingCartShippingAddress.zipCode}}" stepKey="fillShipToZipCode1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.state}}" selector="{{VeniaShoppingCartShippingAddress.state}}" stepKey="fillShipToState1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.phone}}" selector="{{VeniaShoppingCartShippingAddress.phoneNumber}}" stepKey="fillShipToPhoneNumber1"/>
-            <fillField userInput="{{VeniaSampleCustomer1.email}}" selector="{{VeniaShoppingCartShippingAddress.email}}" stepKey="fillShipToEmail1"/>
+            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
 
             <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
