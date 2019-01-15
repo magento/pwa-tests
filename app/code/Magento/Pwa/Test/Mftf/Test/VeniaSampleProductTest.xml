@@ -19,10 +19,7 @@
         </annotations>
 
         <before>
-            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
-
-            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
-            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementVisible1"/>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
             <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
@@ -60,10 +57,7 @@
         </annotations>
 
         <before>
-            <resizeWindow width="750" height="1334" stepKey="resizeForMobile1"/>
-
-            <amOnUrl url="{{Venia.url}}" stepKey="goToPage1"/>
-            <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementVisible1"/>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
             <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
             <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
