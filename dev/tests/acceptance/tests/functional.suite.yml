@@ -11,14 +11,14 @@ class_name: AcceptanceTester
 namespace: Magento\FunctionalTestingFramework
 modules:
     enabled:
-        - \Magento\FunctionalTestingFramework\Module\MagentoWebDriver
+        - \Magento\FunctionalTestingFramework\Module\MagentoPwaWebDriver
         - \Magento\FunctionalTestingFramework\Helper\Acceptance
         - \Magento\FunctionalTestingFramework\Helper\MagentoFakerData
         - \Magento\FunctionalTestingFramework\Module\MagentoSequence
         - \Magento\FunctionalTestingFramework\Module\MagentoAssert
         - Asserts
     config:
-        \Magento\FunctionalTestingFramework\Module\MagentoWebDriver:
+        \Magento\FunctionalTestingFramework\Module\MagentoPwaWebDriver:
             url: "%MAGENTO_BASE_URL%"
             backend_name: "%MAGENTO_BACKEND_NAME%"
             browser: 'chrome'
@@ -32,5 +32,5 @@ modules:
             protocol: %SELENIUM_PROTOCOL%
             path: %SELENIUM_PATH%
             capabilities:
-              chromeOptions:
-                args: ["--window-size=1280,1024", "--disable-extensions", "--enable-automation", "--disable-gpu", "--enable-Passthrough"]
+                chromeOptions:
+                    args: ["--window-size=1280,1024", "--disable-extensions", "--enable-automation", "--disable-gpu", "--enable-Passthrough"]
