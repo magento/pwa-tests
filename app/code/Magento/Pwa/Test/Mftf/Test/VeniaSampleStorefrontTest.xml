@@ -13,7 +13,7 @@
             <stories value="Venia Storefront Tests"/>
             <title value="Venia Storefront Test 1"/>
             <description value="Should be able to see the 5 Categories on the Venia Storefront."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaStorefront"/>
@@ -39,7 +39,7 @@
             <stories value="Venia Storefront Tests"/>
             <title value="Venia Storefront Test 2"/>
             <description value="Should be able to access a Category page via the Venia Storefront."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaStorefront"/>

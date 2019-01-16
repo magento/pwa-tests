@@ -13,7 +13,7 @@
             <stories value="Venia Category Tests"/>
             <title value="Venia Category Test 1"/>
             <description value="Should be able to see the 6 Products assigned to the 'Shop The Look' Category."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaCategory"/>
@@ -48,7 +48,7 @@
             <stories value="Venia Category Tests"/>
             <title value="Venia Category Test 2"/>
             <description value="Should be able to access a Product page via a Venia Category page."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaCategory"/>

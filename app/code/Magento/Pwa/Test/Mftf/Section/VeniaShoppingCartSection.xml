@@ -33,6 +33,8 @@
         <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Get It By')]]"/>
         <element name="totalMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'TOTAL')]]"/>
 
+        <element name="addressFormMainArea" type="textarea" selector="[class*='addressForm-body-']"/>
+
         <element name="addShipToInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>
         <element name="addBillingInformation" type="button" selector="(//*[contains(text(), 'Add Billing Information')])[1]"/>
         <element name="addShippingInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>

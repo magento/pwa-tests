@@ -13,9 +13,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 1"/>
             <description value="Should be able to see the correct Product details in the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -26,17 +27,20 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
 
             <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForPwaElementNotVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForPwaElementVisible2"/>
         </before>
 
         <seeElement selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="seeProductImage1"/>
@@ -51,9 +55,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 2"/>
             <description value="Should be able to see the 'Ship To' address section in the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -64,13 +69,16 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
 
             <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
             <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
@@ -108,9 +116,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 3"/>
             <description value="Should be able to enter the 'Ship To' address in the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -121,33 +130,23 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="10" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
-
-            <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
         </before>
 
-        <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+        <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
             <argument name="customer" value="VeniaSampleCustomer1"/>
         </actionGroup>
-
-        <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="seeShipToMainArea1"/>
 
         <see userInput="{{VeniaSampleCustomer1.first}} {{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerName1"/>
         <see userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerAddress1"/>
@@ -158,9 +157,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 4"/>
             <description value="Should be able to enter the 'Pay With' details in the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -171,41 +171,27 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
-
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
-
-            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
-
-            <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
-
-            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
-                <argument name="customer" value="VeniaSampleCustomer1"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
             </actionGroup>
 
-            <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
         </before>
 
-        <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartPayWith.paymentMethod}}" time="10" stepKey="waitForPayWithTitleToAppear1"/>
-
-        <selectOption userInput="Check / Money order" selector="{{VeniaShoppingCartPayWith.paymentMethod}}" stepKey="selectPaymentMethod1"/>
-        <click selector="{{VeniaShoppingCartPayWith.save}}" stepKey="clickOnSave1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="15" stepKey="waitForPlaceOrderButtonVisible1"/>
+        <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+            <argument name="paymentMethodName" value="Check / Money order"/>
+        </actionGroup>
 
         <see userInput="Check / Money order" selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="seePayWithPaymentMethod1"/>
     </test>
@@ -215,9 +201,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 5"/>
             <description value="Should be able to enter the 'Git It By' details in the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -228,50 +215,31 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
 
-            <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
-
-            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
                 <argument name="customer" value="VeniaSampleCustomer1"/>
             </actionGroup>
 
-            <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartPayWith.paymentMethod}}" time="10" stepKey="waitForPayWithTitleToAppear1"/>
-
-            <selectOption userInput="Check / Money order" selector="{{VeniaShoppingCartPayWith.paymentMethod}}" stepKey="selectPaymentMethod1"/>
-            <click selector="{{VeniaShoppingCartPayWith.save}}" stepKey="clickOnSave2"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartPayWith.paymentMethod}}" time="15" stepKey="waitForPaymentMethodNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" time="10" stepKey="waitForPlaceOrderButtonVisible1"/>
+            <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+                <argument name="paymentMethodName" value="Check / Money order"/>
+            </actionGroup>
         </before>
 
-        <click selector="{{VeniaShoppingCartDetails.addShippingInformation}}" stepKey="clickOnAddShippingInformation1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" time="10" stepKey="waitForShippingInformationTitle1"/>
-
-        <seeOptionIsSelected userInput="Flat Rate" selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" stepKey="selectShippingMethod1"/>
-        <click selector="{{VeniaShoppingCartGetItBy.save}}" stepKey="clickOnShippingMethodSave1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" time="20" stepKey="waitForDropDownToDisappear1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="20" stepKey="waitForPlaceOrderButtonVisible1"/>
+        <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
+            <argument name="shippingMethodName" value="Flat Rate"/>
+        </actionGroup>
 
         <see userInput="Flat Rate" selector="{{VeniaShoppingCartDetails.getItByMainArea}}" stepKey="seeShippingMethod1"/>
     </test>
@@ -281,9 +249,10 @@
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 6"/>
             <description value="Should be able to place an Order via the Shopping Cart."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
-            <group value="venia"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
         </annotations>
 
         <before>
@@ -294,49 +263,30 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-            <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
 
-            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
 
-            <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="10" stepKey="waitForCheckoutButtonToDisappear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="10" stepKey="waitForAddShipToInfoButton1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="10" stepKey="waitForGetItByInfoButton1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.lastName}}" time="10" stepKey="waitForPlaceOrderButtonToAppear2"/>
-
-            <actionGroup ref="FillShoppingCartShipToAddress" stepKey="fillShoppingCartShipToAddress1">
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
                 <argument name="customer" value="VeniaSampleCustomer1"/>
             </actionGroup>
 
-            <click selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="clickOnSave1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="10" stepKey="waitForPlaceOrderButtonToDisappear1"/>
+            <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+                <argument name="paymentMethodName" value="Check / Money order"/>
+            </actionGroup>
 
-            <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartPayWith.paymentMethod}}" time="10" stepKey="waitForPayWithTitleToAppear1"/>
-
-            <selectOption userInput="Check / Money order" selector="{{VeniaShoppingCartPayWith.paymentMethod}}" stepKey="selectPaymentMethod1"/>
-            <click selector="{{VeniaShoppingCartPayWith.save}}" stepKey="clickOnSave2"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartPayWith.paymentMethod}}" time="15" stepKey="waitForPaymentMethodNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" time="10" stepKey="waitForPlaceOrderButtonVisible1"/>
-
-            <click selector="{{VeniaShoppingCartDetails.addShippingInformation}}" stepKey="clickOnAddShippingInformation1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" time="10" stepKey="waitForShippingInformationTitle1"/>
-
-            <seeOptionIsSelected userInput="Flat Rate" selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" stepKey="selectShippingMethod1"/>
-            <click selector="{{VeniaShoppingCartGetItBy.save}}" stepKey="clickOnShippingMethodSave1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCartGetItBy.shippingMethod}}" time="20" stepKey="waitForDropDownToDisappear1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="20" stepKey="waitForPlaceOrderButtonVisible2"/>
+            <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
+                <argument name="shippingMethodName" value="Flat Rate"/>
+            </actionGroup>
         </before>
 
         <click selector="{{VeniaShoppingCartDetails.placeOrder}}" stepKey="clickOnPlaceOrder1"/>

@@ -22,7 +22,7 @@
         </arguments>
 
         <click userInput="{{categoryName}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('categoryName')}}" stepKey="waitForPwaElementNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('productName')}}" stepKey="waitForPwaElementVisible01"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage(categoryName)}}" time="10" stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt(productName)}}" time="10" stepKey="waitForPwaElementVisible01"/>
     </actionGroup>
 </actionGroups>

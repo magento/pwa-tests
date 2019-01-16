@@ -13,7 +13,7 @@
             <stories value="Venia Product Tests"/>
             <title value="Venia Product Test 1"/>
             <description value="Should be able to see the correct Product details on the Product page."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaProduct"/>
@@ -53,7 +53,7 @@
             <stories value="Venia Product Tests"/>
             <title value="Venia Product Test 2"/>
             <description value="Should be able to add a Product to the Shopping Cart on the Product page."/>
-            <testCaseId value="#"/>
+            <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
             <group value="veniaTheme"/>
             <group value="veniaProduct"/>
