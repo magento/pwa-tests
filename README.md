@@ -9,3 +9,9 @@
 2. Run Sample Tests:
     * `vendor/bin/mftf run:test SamplePwaTest`
     * `vendor/bin/mftf run:test FlipKartSampleTest`
+    * `vendor/bin/mftf run:group veniaTheme`
+        - Other Venia Groups:
+            * `veniaStorefront`
+            * `veniaCategory`
+            * `veniaProduct`
+            * `veniaShoppingCart`
