@@ -27,9 +27,10 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
         </before>
 
         <see selector="{{VeniaProduct.productName}}" userInput="{{ValeriaTwoLayerTank.name}}" stepKey="seeProductName1"/>
@@ -67,14 +68,17 @@
                 <argument name="productName" value="Valeria Two-Layer Tank"/>
             </actionGroup>
 
-            <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible3"/>
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
         </before>
 
-        <click selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="clickOnColorOption1"/>
-        <click selector="{{VeniaProduct.productSizeByValue('L')}}" stepKey="clickOnSizeOption1"/>
-        <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+        <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+            <argument name="color" value="Lilac"/>
+            <argument name="size" value="L"/>
+            <argument name="quantity" value="3"/>
+        </actionGroup>
 
         <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>

@@ -63,9 +63,10 @@
             </actionGroup>
         </before>
 
-        <click selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="clickOnProductImage1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="10" stepKey="waitForPwaElementVisible1"/>
+        <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+            <argument name="productName" value="Valeria Two-Layer Tank"/>
+            <argument name="categoryName" value="Shop The Look"/>
+        </actionGroup>
 
         <seeElement selector="{{VeniaProduct.productName}}" stepKey="seeProductName1"/>
         <seeElement selector="{{VeniaProduct.productPrice}}" stepKey="seeProductPrice1"/>
