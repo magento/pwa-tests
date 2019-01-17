@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaMainMenuTest1">
+        <annotations>
+            <stories value="Venia Main Menu Tests"/>
+            <title value="Venia Main Menu Test 1"/>
+            <description value="Should be able to access the Main Category Menu via the Venia Storefront."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaMainMenu"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+        </before>
+
+        <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+
+        <seeElement selector="{{VeniaMainMenu.categoryByName('Bottoms')}}" stepKey="seeCategory1"/>
+        <seeElement selector="{{VeniaMainMenu.categoryByName('Tops')}}" stepKey="seeCategory2"/>
+        <seeElement selector="{{VeniaMainMenu.categoryByName('Dresses')}}" stepKey="seeCategory3"/>
+        <seeElement selector="{{VeniaMainMenu.categoryByName('Accessories')}}" stepKey="seeCategory4"/>
+        <seeElement selector="{{VeniaMainMenu.categoryByName('Shop The Look')}}" stepKey="seeCategory5"/>
+    </test>
+
+    <test name="VeniaMainMenuTest2">
+        <annotations>
+            <stories value="Venia Main Menu Tests"/>
+            <title value="Venia Main Menu Test 2"/>
+            <description value="Should be able to access the Sign In Menu via the Main Menu."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaMainMenu"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+        </before>
+
+        <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+
+        <seeElement selector="{{VeniaMainMenuSignIn.mainArea}}" stepKey="seeMainArea1"/>
+        <seeElement selector="{{VeniaMainMenuSignIn.username}}" stepKey="seeUsernameField1"/>
+        <seeElement selector="{{VeniaMainMenuSignIn.password}}" stepKey="seePasswordField1"/>
+        <seeElement selector="{{VeniaMainMenuSignIn.signIn}}" stepKey="seeSignInButton1"/>
+        <seeElement selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="seeForgotYourUsernamePasswordLink1"/>
+        <seeElement selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="seeCreateAnAccountButton1"/>
+    </test>
+
+    <test name="VeniaMainMenuTest3">
+        <annotations>
+            <stories value="Venia Main Menu Tests"/>
+            <title value="Venia Main Menu Test 3"/>
+            <description value="Should be able to access the Forgot Username or Password Menu via the Main Menu."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaMainMenu"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+
+            <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="10" stepKey="waitForUsernamePreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="10" stepKey="waitForPasswordPreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.signIn}}" stepKey="waitForSignInLink1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="waitForForgetLink1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="waitForCreateAnAccount1"/>
+        </before>
+
+        <wait time="1" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="clickOnForgotUsernameLink1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.mainArea}}" time="10" stepKey="waitForForgotPasswordMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.email}}" time="10" stepKey="waitForForgotPasswordSubmit1"/>
+
+        <seeElement selector="{{VeniaMainMenuForgotPassword.mainArea}}" stepKey="seeForgotPasswordMainArea1"/>
+        <seeElement selector="{{VeniaMainMenuForgotPassword.message}}" stepKey="seeForgotPasswordMessage1"/>
+        <seeElement selector="{{VeniaMainMenuForgotPassword.email}}" stepKey="seeForgotPasswordEmailInput1"/>
+        <seeElement selector="{{VeniaMainMenuForgotPassword.submit}}" stepKey="seeForgotPasswordSubmitButton1"/>
+    </test>
+
+    <test name="VeniaMainMenuTest4">
+        <annotations>
+            <stories value="Venia Main Menu Tests"/>
+            <title value="Venia Main Menu Test 4"/>
+            <description value="Should be able to access the Create Account Menu via the Main Menu."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaMainMenu"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+
+            <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="10" stepKey="waitForUsernamePreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="10" stepKey="waitForPasswordPreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.signIn}}" stepKey="waitForSignInLink1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="waitForForgetLink1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="waitForCreateAnAccount1"/>
+        </before>
+
+        <wait time="1" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="clickOnCreateAnAccountButton1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.mainArea}}" time="10" stepKey="waitForCreateAccountMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.email}}" time="10" stepKey="waitForCreateAccountEmail1"/>
+
+        <seeElement selector="{{VeniaMainMenuCreateAccount.mainArea}}" stepKey="seeMainArea1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.message}}" stepKey="seeMessage1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.email}}" stepKey="seeEmail1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.firstName}}" stepKey="seeFirstName1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.lastName}}" stepKey="seeLastName1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.password}}" stepKey="seePassword1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.confirmPassword}}" stepKey="seeConfirmPassword1"/>
+        <seeElement selector="{{VeniaMainMenuCreateAccount.submit}}" stepKey="seeSubmit1"/>
+    </test>
+</tests>

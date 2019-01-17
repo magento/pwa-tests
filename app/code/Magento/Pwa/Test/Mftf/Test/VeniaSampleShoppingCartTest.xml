@@ -12,6 +12,28 @@
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
             <title value="Venia Shopping Cart Test 1"/>
+            <description value="Should be able to open the Shopping Cart from the Storefront."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+        </before>
+
+        <click selector="{{VeniaHeader.shoppingCartIcon}}" stepKey="clickOnShoppingCartButton1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.mainArea}}" stepKey="waitForShoppingCartVisible1"/>
+
+        <seeElement selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" stepKey="seeEmptyShoppingCartMessage1"/>
+        <seeElement selector="{{VeniaShoppingCart.continueShopping}}" stepKey="seeContinueShoppingButton1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest2">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 2"/>
             <description value="Should be able to see the correct Product details in the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
@@ -50,10 +72,10 @@
         <seeOptionIsSelected selector="{{VeniaShoppingCart.productQuantityByIndex('1')}}" userInput="3" stepKey="seeProductQuantity1"/>
     </test>
 
-    <test name="VeniaShoppingCartTest2">
+    <test name="VeniaShoppingCartTest3">
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
-            <title value="Venia Shopping Cart Test 2"/>
+            <title value="Venia Shopping Cart Test 3"/>
             <description value="Should be able to see the 'Ship To' address section in the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
@@ -111,10 +133,10 @@
         <seeElement selector="{{VeniaShoppingCartShippingAddress.cancel}}" stepKey="seeShipToCancelButton1"/>
     </test>
 
-    <test name="VeniaShoppingCartTest3">
+    <test name="VeniaShoppingCartTest4">
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
-            <title value="Venia Shopping Cart Test 3"/>
+            <title value="Venia Shopping Cart Test 4"/>
             <description value="Should be able to enter the 'Ship To' address in the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
@@ -152,10 +174,10 @@
         <see userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerAddress1"/>
     </test>
 
-    <test name="VeniaShoppingCartTest4">
+    <test name="VeniaShoppingCartTest5">
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
-            <title value="Venia Shopping Cart Test 4"/>
+            <title value="Venia Shopping Cart Test 5"/>
             <description value="Should be able to enter the 'Pay With' details in the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
@@ -196,10 +218,10 @@
         <see userInput="Check / Money order" selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="seePayWithPaymentMethod1"/>
     </test>
 
-    <test name="VeniaShoppingCartTest5">
+    <test name="VeniaShoppingCartTest6">
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
-            <title value="Venia Shopping Cart Test 5"/>
+            <title value="Venia Shopping Cart Test 6"/>
             <description value="Should be able to enter the 'Git It By' details in the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>
@@ -244,10 +266,10 @@
         <see userInput="Flat Rate" selector="{{VeniaShoppingCartDetails.getItByMainArea}}" stepKey="seeShippingMethod1"/>
     </test>
 
-    <test name="VeniaShoppingCartTest6">
+    <test name="VeniaShoppingCartTest7">
         <annotations>
             <stories value="Venia Shopping Cart Tests"/>
-            <title value="Venia Shopping Cart Test 6"/>
+            <title value="Venia Shopping Cart Test 7"/>
             <description value="Should be able to place an Order via the Shopping Cart."/>
             <testCaseId value="MQE-1407"/>
             <severity value="CRITICAL"/>

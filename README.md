@@ -12,6 +12,7 @@
     * `vendor/bin/mftf run:group veniaTheme`
         - Other Venia Groups:
             * `veniaStorefront`
+            * `veniaMainMenu`
             * `veniaCategory`
             * `veniaProduct`
             * `veniaShoppingCart`

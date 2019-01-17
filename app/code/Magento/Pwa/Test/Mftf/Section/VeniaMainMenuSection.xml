@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaMainMenu">
+        <element name="mainArea" type="textarea" selector="[class*='navigation-root_open-']"/>
+
+        <element name="back" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
+        <element name="close" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[2]"/>
+
+        <element name="categoryByName" type="button" selector="//*[contains(@class, 'categoryLeaf-text-')][contains(text(), '{{var1}}')]" parameterized="true"/>
+
+        <element name="signIn" type="button" selector="[class*='navigation-authBar-'] [class*='highPriority']"/>
+    </section>
+    
+    <section name="VeniaMainMenuSignIn">
+        <element name="mainArea" type="textarea" selector="[class*='navigation-signIn_open-']"/>
+
+        <element name="username" type="input" selector="[class*='navigation-signIn'] input[name='username']"/>
+        <element name="password" type="input" selector="[class*='navigation-signIn'] input[name='password']"/>
+
+        <element name="signIn" type="button" selector="[class*='signIn-signInButton-'] button"/>
+        <element name="forgotUsernamePassword" type="button" selector="[class*='signIn-forgotPassword-']"/>
+        <element name="createAnAccount" type="button" selector="[class*='signIn-showCreateAccountButton-'] button"/>
+    </section>
+
+    <section name="VeniaMainMenuForgotPassword">
+        <element name="mainArea" type="textarea" selector="[class*='forgotPasswordForm-form-']"/>
+        <element name="message" type="text" selector="[class*='forgotPassword-instructions-']"/>
+
+        <element name="email" type="input" selector="input[name='email']"/>
+
+        <element name="submit" type="button" selector="[class*='forgotPasswordForm-buttonContainer-'] button"/>
+    </section>
+
+    <section name="VeniaMainMenuCreateAccount">
+        <element name="mainArea" type="textarea" selector="[class*='createAccount-root-']"/>
+        <element name="message" type="text" selector="[class*='createAccount-lead-']"/>
+
+        <element name="email" type="input" selector="input[name='customer.email']"/>
+        <element name="firstName" type="input" selector="input[name='customer.firstname']"/>
+        <element name="lastName" type="input" selector="input[name='customer.lastname']"/>
+        <element name="password" type="input" selector="input[name='password']"/>
+        <element name="confirmPassword" type="input" selector="input[name='confirm']"/>
+
+        <element name="submit" type="button" selector="[class*='createAccount-actions-'] button"/>
+    </section>
+</sections>
