@@ -38,9 +38,9 @@
 
         <element name="addressFormMainArea" type="textarea" selector="[class*='addressForm-body-']"/>
 
-        <element name="addShipToInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>
+        <element name="addShipToInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>
         <element name="addBillingInformation" type="button" selector="(//*[contains(text(), 'Add Billing Information')])[1]"/>
-        <element name="addShippingInformation" type="button" selector="(//*[contains(text(), 'Add Shipping Information')])[1]"/>
+        <element name="addShippingInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>
 
         <element name="placeOrder" type="button" selector="[class*='form-footer-'] button"/>
     </section>
