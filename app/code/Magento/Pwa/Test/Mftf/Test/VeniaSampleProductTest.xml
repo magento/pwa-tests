@@ -81,8 +81,8 @@
         </actionGroup>
 
         <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="10" stepKey="waitForNoProductMessageNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="10" stepKey="waitForProductName1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForProductName1"/>
 
         <seeElement selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="seeProductImage1"/>
         <seeElement selector="{{VeniaShoppingCart.productNameByIndex('1')}}" stepKey="seeProductName1"/>

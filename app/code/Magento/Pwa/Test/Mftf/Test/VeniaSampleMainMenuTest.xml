@@ -24,8 +24,8 @@
         </before>
 
         <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="30" stepKey="waitForMainAreaVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="30" stepKey="waitForSignInButtonVisible1"/>
 
         <seeElement selector="{{VeniaMainMenu.categoryByName('Bottoms')}}" stepKey="seeCategory1"/>
         <seeElement selector="{{VeniaMainMenu.categoryByName('Tops')}}" stepKey="seeCategory2"/>
@@ -49,12 +49,12 @@
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
             <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="30" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="30" stepKey="waitForSignInButtonVisible1"/>
         </before>
 
         <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="30" stepKey="waitForMainAreaVisible1"/>
 
         <seeElement selector="{{VeniaMainMenuSignIn.mainArea}}" stepKey="seeMainArea1"/>
         <seeElement selector="{{VeniaMainMenuSignIn.username}}" stepKey="seeUsernameField1"/>
@@ -79,13 +79,13 @@
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
             <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="30" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="30" stepKey="waitForSignInButtonVisible1"/>
 
             <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="10" stepKey="waitForUsernamePreset1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="10" stepKey="waitForPasswordPreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="30" stepKey="waitForMainAreaVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="30" stepKey="waitForUsernamePreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="30" stepKey="waitForPasswordPreset1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.signIn}}" stepKey="waitForSignInLink1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="waitForForgetLink1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="waitForCreateAnAccount1"/>
@@ -93,8 +93,8 @@
 
         <wait time="1" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="clickOnForgotUsernameLink1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.mainArea}}" time="10" stepKey="waitForForgotPasswordMainArea1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.email}}" time="10" stepKey="waitForForgotPasswordSubmit1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.mainArea}}" time="30" stepKey="waitForForgotPasswordMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPassword.email}}" time="30" stepKey="waitForForgotPasswordSubmit1"/>
 
         <seeElement selector="{{VeniaMainMenuForgotPassword.mainArea}}" stepKey="seeForgotPasswordMainArea1"/>
         <seeElement selector="{{VeniaMainMenuForgotPassword.message}}" stepKey="seeForgotPasswordMessage1"/>
@@ -117,13 +117,13 @@
             <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
 
             <click selector="{{VeniaHeader.hamburgerMenu}}" stepKey="clickOnHamburgerMenu1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="10" stepKey="waitForMainAreaVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="10" stepKey="waitForSignInButtonVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.mainArea}}" time="30" stepKey="waitForMainAreaVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenu.signIn}}" time="30" stepKey="waitForSignInButtonVisible1"/>
 
             <click selector="{{VeniaMainMenu.signIn}}" stepKey="clickOnSignIn1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="10" stepKey="waitForMainAreaVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="10" stepKey="waitForUsernamePreset1"/>
-            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="10" stepKey="waitForPasswordPreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.mainArea}}" time="30" stepKey="waitForMainAreaVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.username}}" time="30" stepKey="waitForUsernamePreset1"/>
+            <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.password}}" time="30" stepKey="waitForPasswordPreset1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.signIn}}" stepKey="waitForSignInLink1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.forgotUsernamePassword}}" stepKey="waitForForgetLink1"/>
             <waitForPwaElementVisible selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="waitForCreateAnAccount1"/>
@@ -131,8 +131,8 @@
 
         <wait time="1" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSignIn.createAnAccount}}" stepKey="clickOnCreateAnAccountButton1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.mainArea}}" time="10" stepKey="waitForCreateAccountMainArea1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.email}}" time="10" stepKey="waitForCreateAccountEmail1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.mainArea}}" time="30" stepKey="waitForCreateAccountMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccount.email}}" time="30" stepKey="waitForCreateAccountEmail1"/>
 
         <seeElement selector="{{VeniaMainMenuCreateAccount.mainArea}}" stepKey="seeMainArea1"/>
         <seeElement selector="{{VeniaMainMenuCreateAccount.message}}" stepKey="seeMessage1"/>
