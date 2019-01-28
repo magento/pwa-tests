@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaProductTest1">
+        <annotations>
+            <stories value="Venia Product Tests"/>
+            <title value="Venia Product Test 1"/>
+            <description value="Should be able to see the correct Product details on the Product page."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaProduct"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+        </before>
+
+        <see selector="{{VeniaProduct.productName}}" userInput="{{ValeriaTwoLayerTank.name}}" stepKey="seeProductName1"/>
+        <see selector="{{VeniaProduct.productPrice}}" userInput="{{ValeriaTwoLayerTank.price}}" stepKey="seeProductPrice1"/>
+
+        <seeElement selector="{{VeniaProduct.productColorByValue('Lilac')}}" stepKey="seeColor1"/>
+        <seeElement selector="{{VeniaProduct.productColorByValue('Rain')}}" stepKey="seeColor2"/>
+        <seeElement selector="{{VeniaProduct.productColorByValue('Mint')}}" stepKey="seeColor3"/>
+        <seeElement selector="{{VeniaProduct.productColorByValue('Lily')}}" stepKey="seeColor4"/>
+
+        <see selector="{{VeniaProduct.productSize}}" userInput="L" stepKey="seeSize1"/>
+        <see selector="{{VeniaProduct.productSize}}" userInput="M" stepKey="seeSize2"/>
+        <see selector="{{VeniaProduct.productSize}}" userInput="S" stepKey="seeSize3"/>
+        <see selector="{{VeniaProduct.productSize}}" userInput="XS" stepKey="seeSize4"/>
+
+        <see selector="{{VeniaProduct.productDescription}}" userInput="{{ValeriaTwoLayerTank.description}}" stepKey="seeProductDescription1"/>
+    </test>
+
+    <test name="VeniaProductTest2">
+        <annotations>
+            <stories value="Venia Product Tests"/>
+            <title value="Venia Product Test 2"/>
+            <description value="Should be able to add a Product to the Shopping Cart on the Product page."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaProduct"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+        </before>
+
+        <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+            <argument name="color" value="Lilac"/>
+            <argument name="size" value="L"/>
+            <argument name="quantity" value="3"/>
+        </actionGroup>
+
+        <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForProductName1"/>
+
+        <seeElement selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="seeProductImage1"/>
+        <seeElement selector="{{VeniaShoppingCart.productNameByIndex('1')}}" stepKey="seeProductName1"/>
+        <seeElement selector="{{VeniaShoppingCart.productColorByIndex('1')}}" stepKey="seeProductColor1"/>
+        <seeElement selector="{{VeniaShoppingCart.productSizeByIndex('1')}}" stepKey="seeProductSize1"/>
+        <seeElement selector="{{VeniaShoppingCart.productQuantityByIndex('1')}}" stepKey="seeProductQuantity1"/>
+        <seeElement selector="{{VeniaShoppingCart.productPriceByIndex('1')}}" stepKey="seeProductPrice1"/>
+    </test>
+</tests>

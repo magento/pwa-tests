@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaShoppingCartTest1">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 1"/>
+            <description value="Should be able to open the Shopping Cart from the Storefront."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+        </before>
+
+        <click selector="{{VeniaHeader.shoppingCartIcon}}" stepKey="clickOnShoppingCartButton1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.mainArea}}" stepKey="waitForShoppingCartVisible1"/>
+
+        <seeElement selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" stepKey="seeEmptyShoppingCartMessage1"/>
+        <seeElement selector="{{VeniaShoppingCart.continueShopping}}" stepKey="seeContinueShoppingButton1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest2">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 2"/>
+            <description value="Should be able to see the correct Product details in the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForPwaElementNotVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForPwaElementVisible2"/>
+        </before>
+
+        <seeElement selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="seeProductImage1"/>
+        <see selector="{{VeniaShoppingCart.productNameByIndex('1')}}" userInput="{{ValeriaTwoLayerTank.name}}" stepKey="seeProductName1"/>
+        <see selector="{{VeniaShoppingCart.productColorByIndex('1')}}" userInput="Lilac" stepKey="seeProductColor1"/>
+        <see selector="{{VeniaShoppingCart.productSizeByIndex('1')}}" userInput="L" stepKey="seeProductSize1"/>
+        <seeOptionIsSelected selector="{{VeniaShoppingCart.productQuantityByIndex('1')}}" userInput="3" stepKey="seeProductQuantity1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest3">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 3"/>
+            <description value="Should be able to see the 'Ship To' address section in the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForProductName1"/>
+        </before>
+
+        <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="30" stepKey="waitForCheckoutButtonToDisappear1"/>
+
+        <seeElement selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" stepKey="seeOrderDetailsMainArea1"/>
+        <seeElement selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeOrderShipToMainArea1"/>
+        <seeElement selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="seeOrderPayWithMainArea1"/>
+        <seeElement selector="{{VeniaShoppingCartDetails.getItByMainArea}}" stepKey="seeOrderGetItByMainArea1"/>
+        <seeElement selector="{{VeniaShoppingCartDetails.totalMainArea}}" stepKey="seeOrderTotalMainArea1"/>
+        <seeElement selector="{{VeniaShoppingCartDetails.placeOrder}}" stepKey="seeOrderPlaceOrderButton1"/>
+
+        <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="30" stepKey="waitForPlaceOrderButtonToAppear1"/>
+
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="seeShipToFirstNameField1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="seeShipToLastNameField1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.streetAddress}}" stepKey="seeShipToStreetAddress1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.city}}" stepKey="seeShipToCity1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.zipCode}}" stepKey="seeShipToZipCode1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.state}}" stepKey="seeShipToState1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.phoneNumber}}" stepKey="seeShipToPhoneNumber1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.email}}" stepKey="seeShipToEmail1"/>
+
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.save}}" stepKey="seeShipToSaveButton1"/>
+        <seeElement selector="{{VeniaShoppingCartShippingAddress.cancel}}" stepKey="seeShipToCancelButton1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest4">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 4"/>
+            <description value="Should be able to enter the 'Ship To' address in the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+        </before>
+
+        <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+            <argument name="customer" value="VeniaSampleCustomer1"/>
+        </actionGroup>
+
+        <see userInput="{{VeniaSampleCustomer1.first}} {{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerName1"/>
+        <see userInput="{{VeniaSampleCustomer1.address}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerAddress1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest5">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 5"/>
+            <description value="Should be able to enter the 'Pay With' details in the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
+        </before>
+
+        <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+            <argument name="paymentMethodName" value="Check / Money order"/>
+        </actionGroup>
+
+        <see userInput="Check / Money order" selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="seePayWithPaymentMethod1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest6">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 6"/>
+            <description value="Should be able to enter the 'Git It By' details in the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
+
+            <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+                <argument name="paymentMethodName" value="Check / Money order"/>
+            </actionGroup>
+        </before>
+
+        <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
+            <argument name="shippingMethodName" value="Flat Rate"/>
+        </actionGroup>
+
+        <see userInput="Flat Rate" selector="{{VeniaShoppingCartDetails.getItByMainArea}}" stepKey="seeShippingMethod1"/>
+    </test>
+
+    <test name="VeniaShoppingCartTest7">
+        <annotations>
+            <stories value="Venia Shopping Cart Tests"/>
+            <title value="Venia Shopping Cart Test 7"/>
+            <description value="Should be able to place an Order via the Shopping Cart."/>
+            <testCaseId value="MQE-1407"/>
+            <severity value="CRITICAL"/>
+            <group value="veniaTheme"/>
+            <group value="veniaShoppingCart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront1"/>
+
+            <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+                <argument name="categoryName" value="Shop The Look"/>
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+            </actionGroup>
+
+            <actionGroup ref="OpenProductFromCategoryPage" stepKey="openProductFromCategoryPage1">
+                <argument name="productName" value="Valeria Two-Layer Tank"/>
+                <argument name="categoryName" value="Shop The Look"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
+                <argument name="color" value="Lilac"/>
+                <argument name="size" value="L"/>
+                <argument name="quantity" value="3"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+                <argument name="customer" value="VeniaSampleCustomer1"/>
+            </actionGroup>
+
+            <actionGroup ref="AddAndVerifyPayWithBillingInformationViaTheShoppingCart" stepKey="addAndVerifyPayWithBillingInformationViaTheShoppingCart1">
+                <argument name="paymentMethodName" value="Check / Money order"/>
+            </actionGroup>
+
+            <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
+                <argument name="shippingMethodName" value="Flat Rate"/>
+            </actionGroup>
+        </before>
+
+        <click selector="{{VeniaShoppingCartDetails.placeOrder}}" stepKey="clickOnPlaceOrder1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" time="30" stepKey="waitForDetailMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYou.thankYouMainArea}}" time="30" stepKey="waitForThankYouMessagePresent"/>
+
+        <seeElement selector="{{VeniaShoppingCartThankYou.title}}" stepKey="seeThankYouTitle1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYou.orderNumber}}" stepKey="seeThankYouOrderNumber1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYou.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYou.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
+    </test>
+</tests>

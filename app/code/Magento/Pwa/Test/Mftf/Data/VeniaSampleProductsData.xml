@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+    <entity name="ValeriaTwoLayerTank" type="product">
+        <data key="name">Valeria Two-Layer Tank</data>
+        <data key="price">68.00</data>
+        <data key="description">The Valeria Tank features two layers of possibility. The loose fit flatters without impacting comfort and the tiered material hangs beautifully. Wear alone or add a belt for a little more definition.</data>
+        <data key="url">/valeria-two-layer-tank.html</data>
+    </entity>
+</entities>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="OpenProductFromCategoryPage">
+        <arguments>
+            <argument name="productName" type="string"/>
+            <argument name="categoryName" type="string"/>
+        </arguments>
+
+        <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage(categoryName)}}" time="30" stepKey="waitForPwaElementNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
+    </actionGroup>
+</actionGroups>
