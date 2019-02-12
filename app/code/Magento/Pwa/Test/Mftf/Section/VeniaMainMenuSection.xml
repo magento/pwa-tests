@@ -27,28 +27,31 @@
 
         <element name="signIn" type="button" selector="[class*='signIn-signInButton-'] button"/>
         <element name="forgotUsernamePassword" type="button" selector="[class*='signIn-forgotPassword-']"/>
-        <element name="createAnAccount" type="button" selector="[class*='signIn-showCreateAccountButton-'] button"/>
+        <element name="createAnAccount" type="button" selector="div[class^='signIn-showCreateAccountButton'] button"/>
     </section>
 
     <section name="VeniaMainMenuForgotPassword">
         <element name="mainArea" type="textarea" selector="[class*='forgotPasswordForm-form-']"/>
         <element name="message" type="text" selector="[class*='forgotPassword-instructions-']"/>
-
         <element name="email" type="input" selector="input[name='email']"/>
-
         <element name="submit" type="button" selector="[class*='forgotPasswordForm-buttonContainer-'] button"/>
+        <element name="successMessage" type="text" selector="p[class*='formSubmissionSuccessful-text-']" />
     </section>
 
     <section name="VeniaMainMenuCreateAccount">
         <element name="mainArea" type="textarea" selector="[class*='createAccount-root-']"/>
         <element name="message" type="text" selector="[class*='createAccount-lead-']"/>
-
         <element name="email" type="input" selector="input[name='customer.email']"/>
         <element name="firstName" type="input" selector="input[name='customer.firstname']"/>
         <element name="lastName" type="input" selector="input[name='customer.lastname']"/>
-        <element name="password" type="input" selector="input[name='password']"/>
+        <element name="password" type="input" selector="input[name='password'][class*='textInput-input-']"/>
         <element name="confirmPassword" type="input" selector="input[name='confirm']"/>
-
         <element name="submit" type="button" selector="[class*='createAccount-actions-'] button"/>
     </section>
+
+
+    <section name="VeniaMainMenuUserAccount">
+        <element name="userInfoRoot" type="label" selector="div[class*='userInformation-userInformationContainer']"/>
+    </section>
+
 </sections>

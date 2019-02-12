@@ -15,6 +15,11 @@
         <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="30" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
+    <actionGroup name="GoToVeniaDesktopStorefront">
+        <amOnUrl url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="30" stepKey="waitForPwaCategoryVisible01"/>
+    </actionGroup>
+
     <actionGroup name="OpenStorefrontCategoryByName">
         <arguments>
             <argument name="categoryName" type="string"/>
