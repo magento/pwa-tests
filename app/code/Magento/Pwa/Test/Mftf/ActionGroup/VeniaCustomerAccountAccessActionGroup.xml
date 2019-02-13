@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+
+    <actionGroup name="NavigateToSignInForm">
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
+        <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignIn"/>
+    </actionGroup>
+
+    <actionGroup name="CreateAccount">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+        </arguments>
+        <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
+        <wait time="3" stepKey="test1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="wait3"/>
+        <click selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="clickCreateAccountButton"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" time="30" stepKey="waitForPwaElementVisible1"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.firstName}}" time="30" stepKey="waitForPwaElementVisible2"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.firstName}}" userInput="{{Customer.first}}" stepKey="fillFirstName"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.lastName}}" time="30" stepKey="waitForPwaElementVisible3"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.lastName}}" userInput="{{Customer.last}}" stepKey="fillLastName"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.password}}" time="30" stepKey="waitForPwaElementVisible4"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.confirmPassword}}" time="30" stepKey="waitForPwaElementVisible5"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.confirmPassword}}" userInput="{{Customer.password}}" stepKey="fillConfirmPassword"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.submit}}" time="30" stepKey="waitForPwaElementVisible6"/>
+        <click  selector="{{VeniaMainMenuCreateAccountSection.submit}}" stepKey="clickSubmitButton"/>
+    </actionGroup>
+
+    <actionGroup name="SignIn">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait21"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>
+        <click selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="clickSignIn2"/>
+    </actionGroup>
+
+    <actionGroup name="AssertSuccessfulSignIn">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" time="30" stepKey="waitForPwaElementVisible7"/>
+        <see stepKey="assertName" userInput="{{Customer.first}}"/>
+        <see stepKey="assertLastName" userInput="{{Customer.last}}"/>
+        <see stepKey="assertEmail1" userInput="{{Customer.email}}"/>
+    </actionGroup>
+
+    <actionGroup name="UpdatePassword">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+        </arguments>
+        <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
+        <wait time="3" stepKey="test1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.forgotUsernamePassword}}" stepKey="wait11"/>
+        <click selector="{{VeniaMainMenuSignInSection.forgotUsernamePassword}}" stepKey="clickForgotUserNamePasswordLink"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPasswordSection.email}}" time="30" stepKey="waitForEmailField"/>
+        <fillField  selector="{{VeniaMainMenuForgotPasswordSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPasswordSection.submit}}" time="30" stepKey="waitForSubmitButton"/>
+        <click  selector="{{VeniaMainMenuForgotPasswordSection.submit}}" stepKey="clickSubmitButton"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuForgotPasswordSection.successMessage}}" time="30" stepKey="waitForSuccessMessage"/>
+        <see stepKey="assertSuccessMessage" userInput="if there is an account associated with {{Customer.email}} you will receive an email with a link to change your password"/>
+    </actionGroup>
+
+
+</actionGroups>

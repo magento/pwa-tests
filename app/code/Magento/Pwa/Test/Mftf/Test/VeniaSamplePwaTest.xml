@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="SamplePwaTest">
+        <amOnPage url="/" stepKey="goToApp"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <waitForElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignIn"/>
+        <waitForElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait2"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="tom@test.com" stepKey="fillUsername"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="Pasword1" stepKey="fillPassword"/>
+        <click selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="clickSignIn2"/>
+        <waitForElementVisible selector="{{VeniaMainMenuSection.userChip}}" stepKey="wait3"/>
+        <see selector="{{VeniaMainMenuSection.userChip}}" userInput="tom@test.com" stepKey="seeLoggedInUserEmail"/>
+        <amOnPage url="/" stepKey="gotoApp" />
+    </test>
+    <test name="checkout">
+        <amOnPage url="/" stepKey="goToApp" />
+
+    </test>
+</tests>
