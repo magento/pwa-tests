@@ -40,9 +40,9 @@
 
         <element name="addShipToInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>
         <element name="addBillingInformation" type="button" selector="(//*[contains(text(), 'Add Billing Information')])[1]"/>
-        <element name="addShippingInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>
+        <element name="addShippingInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Specify Shipping Method')])[1]"/>
 
-        <element name="placeOrder" type="button" selector="[class*='form-footer-'] button"/>
+        <element name="placeOrder" type="button" selector="//span[contains(text(), 'Confirm Order')]"/>
     </section>
 
     <section name="VeniaShoppingCartShippingAddress">
@@ -63,18 +63,24 @@
 
     <section name="VeniaShoppingCartPayWith">
         <element name="title" type="text" selector="[class*='paymentsForm-heading-']"/>
-
         <element name="paymentMethod" type="select" selector="[class*='paymentsForm-paymentMethod-'] select"/>
-
         <element name="save" type="button" selector="[class*='paymentsForm-footer-'] button[type='submit']"/>
         <element name="cancel" type="button" selector="[class*='paymentsForm-footer-'] button[type='button']"/>
     </section>
 
+    <section name="VeniaShoppingCartCardDetailsSection">
+        <element name="textPayWithCard" type="text" selector="//div[@class='braintree-sheet__text']"/>
+        <element name="cartFrame" type="iframe" selector="braintree-hosted-field-number"/>
+        <element name="expirationFrame" type="iframe" selector="braintree-hosted-field-expirationDate"/>
+        <element name="codeFrame" type="iframe" selector="braintree-hosted-field-cvv"/>
+        <element name="cardNumber" type="input" selector="#credit-card-number"/>
+        <element name="expirationDate" type="input" selector="#expiration"/>
+        <element name="cvvCode" type="input" selector="#cvv"/>
+    </section>
+
     <section name="VeniaShoppingCartGetItBy">
         <element name="title" type="text" selector="[class*='shippingForm-heading-']"/>
-
         <element name="shippingMethod" type="select" selector="[class*='shippingForm-shippingMethod-'] select"/>
-
         <element name="save" type="button" selector="[class*='shippingForm-footer-'] button[type='submit']"/>
         <element name="cancel" type="button" selector="[class*='shippingForm-footer-'] button[type='button']"/>
     </section>
@@ -82,9 +88,7 @@
     <section name="VeniaShoppingCartThankYou">
         <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
         <element name="title" type="text" selector="[class*='receipt-header-']"/>
-
         <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>
-
         <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
     </section>

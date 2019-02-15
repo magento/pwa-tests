@@ -14,7 +14,8 @@
             <argument name="size" type="string"/>
             <argument name="quantity" type="string"/>
         </arguments>
-
+        <wait time="5" stepKey="wait123"/>
+        <waitForPwaElementVisible sselector="{{VeniaProduct.productColorByValue(color)}}" time="30" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaProduct.productColorByValue(color)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaProduct.productSizeByValue(size)}}" stepKey="clickOnSizeOption01"/>
         <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="{{quantity}}" stepKey="selectProductQuantity01"/>
@@ -25,7 +26,7 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCart.productImageByIndex('1')}}" time="30" stepKey="waitForSubTotalTitle01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForCheckoutButton01"/>
-
+        <wait time="5" stepKey="wait1134" />
         <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout01"/>
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="30" stepKey="waitForCheckoutButtonToDisappear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" time="30" stepKey="waitForAddShipToInfoButton01"/>
@@ -34,4 +35,13 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="30" stepKey="waitForMainArea3"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.totalMainArea}}" time="30" stepKey="waitForMainArea4"/>
     </actionGroup>
+
+    <actionGroup name="GoToProductDetailsPage">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <amOnUrl url="{{product.url}}" stepKey="goToVeniaProductDetailsPage"/>
+        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
+    </actionGroup>
+
 </actionGroups>

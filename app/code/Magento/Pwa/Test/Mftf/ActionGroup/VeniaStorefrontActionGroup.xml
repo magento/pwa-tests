@@ -8,6 +8,14 @@
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="TemporaryWait3">
+        <wait time="3" stepKey="waitForElementToLoad"/>
+    </actionGroup>
+
+    <actionGroup name="TemporaryWait5">
+        <wait time="3" stepKey="waitForElementToLoad"/>
+    </actionGroup>
+
     <actionGroup name="GoToVeniaMobileStorefront">
         <resizeWindow width="750" height="1334" stepKey="resizeWindowForMobile1"/>
 
