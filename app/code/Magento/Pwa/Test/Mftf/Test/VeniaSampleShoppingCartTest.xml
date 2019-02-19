@@ -163,7 +163,8 @@
                 <argument name="quantity" value="3"/>
             </actionGroup>
 
-            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
         </before>
 
         <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
@@ -204,7 +205,8 @@
                 <argument name="quantity" value="3"/>
             </actionGroup>
 
-            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
             <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
                 <argument name="customer" value="VeniaSampleCustomer1"/>
@@ -248,7 +250,8 @@
                 <argument name="quantity" value="3"/>
             </actionGroup>
 
-            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
             <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
                 <argument name="customer" value="VeniaSampleCustomer1"/>
@@ -296,7 +299,8 @@
                 <argument name="quantity" value="3"/>
             </actionGroup>
 
-            <actionGroup ref="AddToCartAndProceedToCheckout" stepKey="addToCartAndProceedToCheckout1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
             <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
                 <argument name="customer" value="VeniaSampleCustomer1"/>

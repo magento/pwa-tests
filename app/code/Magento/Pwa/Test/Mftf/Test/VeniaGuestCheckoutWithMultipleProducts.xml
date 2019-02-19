@@ -8,14 +8,14 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestCheckout">
+    <test name="GuestCheckoutWithMultipleProducts">
         <annotations>
             <features value="PWA"/>
             <stories value="Guest Checkout"/>
-            <title value="Guest user should be able to checkout on Venia storefront with single product"/>
-            <description value="Guest user should be able to checkout on Venia storefront with single product"/>
+            <title value="Verify guest user should be able to checkout with Multiple products."/>
+            <description value="Verify guest user should be able to checkout with Multiple products."/>
             <severity value="MAJOR"/>
-            <testCaseId value="PWA-2"/>
+            <testCaseId value="PWA-11"/>
             <group value="PWA"/>
         </annotations>
 
@@ -28,12 +28,28 @@
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
                 <argument name="color" value="Lilac"/>
                 <argument name="size" value="L"/>
-                <argument name="quantity" value="2"/>
+                <argument name="quantity" value="4"/>
             </actionGroup>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+
+            <actionGroup ref="AddToCart" stepKey="addToCart2"/>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
+                <argument name="product" value="AugustaEarrings"/>
+            </actionGroup>
+
+            <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
+
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
+
+            <actionGroup ref="AddToCart" stepKey="addToCart3"/>
 
             <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
 
@@ -59,7 +75,6 @@
                 <argument name="shippingMethodName" value="Flat Rate"/>
             </actionGroup>
         </before>
-
         <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
     </test>
 </tests>

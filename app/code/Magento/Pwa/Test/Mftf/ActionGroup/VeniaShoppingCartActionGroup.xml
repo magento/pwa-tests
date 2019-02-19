@@ -8,6 +8,17 @@
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+
+    <actionGroup name="ProceedToCheckout">
+        <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout01"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="30" stepKey="waitForCheckoutButtonToDisappear01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" time="30" stepKey="waitForAddShipToInfoButton01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.shipToMainArea}}" time="30" stepKey="waitForMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" time="30" stepKey="waitForMainArea2"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.getItByMainArea}}" time="30" stepKey="waitForMainArea3"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.totalMainArea}}" time="30" stepKey="waitForMainArea4"/>
+    </actionGroup>
+
     <actionGroup name="FillShoppingCartShipToAddress">
         <arguments>
             <argument name="customer"/>

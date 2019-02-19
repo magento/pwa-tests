@@ -14,4 +14,17 @@
         <data key="description">The Valeria Tank features two layers of possibility. The loose fit flatters without impacting comfort and the tiered material hangs beautifully. Wear alone or add a belt for a little more definition.</data>
         <data key="url">https://magento-venia.now.sh/valeria-two-layer-tank.html</data>
     </entity>
+
+    <entity name="CarminaEarrings" type="product">
+        <data key="name">Carmina Earrings</data>
+        <data key="price">58.00</data>
+        <data key="url">https://magento-venia.now.sh/carmina-earrings.html</data>
+    </entity>
+
+    <entity name="AugustaEarrings" type="product">
+        <data key="name">Augusta Earrings</data>
+        <data key="price">78.00</data>
+        <data key="url">https://magento-venia.now.sh/augusta-earrings.html</data>
+    </entity>
+
 </entities>
