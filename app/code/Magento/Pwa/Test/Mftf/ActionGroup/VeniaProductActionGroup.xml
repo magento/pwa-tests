@@ -32,7 +32,7 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <amOnUrl url="{{product.url}}" stepKey="goToVeniaProductDetailsPage"/>
+        <amOnPage url="{{product.url}}" stepKey="goToVeniaProductDetailsPage"/>
         <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
     </actionGroup>
 

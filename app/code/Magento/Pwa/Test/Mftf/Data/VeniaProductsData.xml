@@ -18,31 +18,31 @@
         <data key="color1">Rain</data>
         <data key="size1">M</data>
         <data key="qty1">3</data>
-        <data key="url">https://magento-venia.now.sh/valeria-two-layer-tank.html</data>
+        <data key="url">/valeria-two-layer-tank.html</data>
     </entity>
 
     <entity name="CarminaEarrings" type="product">
         <data key="name">Carmina Earrings</data>
         <data key="price">58.00</data>
-        <data key="url">https://magento-venia.now.sh/carmina-earrings.html</data>
+        <data key="url">/carmina-earrings.html</data>
     </entity>
 
     <entity name="AugustaEarrings" type="product">
         <data key="name">Augusta Earrings</data>
         <data key="price">78.00</data>
-        <data key="url">https://magento-venia.now.sh/augusta-earrings.html</data>
+        <data key="url">/augusta-earrings.html</data>
     </entity>
 
     <entity name="IsadoraSkirt" type="product">
         <data key="name">Isadora Skirt</data>
         <data key="price">118.00</data>
-        <data key="url">https://magento-venia.now.sh/isadora-skirt.html</data>
+        <data key="url">/isadora-skirt.html</data>
     </entity>
 
     <entity name="PetraSundress" type="product">
         <data key="name">Petra Sundress</data>
         <data key="price">108.00</data>
-        <data key="url">https://magento-venia.now.sh/petra-sundress.html</data>
+        <data key="url">/petra-sundress.html</data>
     </entity>
 
 </entities>
