@@ -19,12 +19,17 @@
             <group value="PWA"/>
         </annotations>
         <before>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
         </before>
+
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
+
         <actionGroup ref="SignIn" stepKey="enterEmailForAccount">
             <argument name="Customer" value="VeniaRegisteredCustomer"/>
         </actionGroup>
+
         <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
             <argument name="Customer" value="VeniaRegisteredCustomer"/>
         </actionGroup>

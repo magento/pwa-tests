@@ -92,4 +92,11 @@
         <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
     </section>
+
+    <section name="VeniaShoppingCartKebabSection">
+        <element name="kebabMenu" type="button" selector="//li[./div[contains(text(), '{{product_name}}')]]//button[contains(@class, 'kebab-kebab-')]" parameterized="true"/>
+        <element name="editItem" type="button" selector="//span[contains(text(), 'Edit item')]"/>
+        <element name="removeItem" type="button" selector="//span[contains(text(), 'Remove item')]"/>
+    </section>
+
 </sections>

@@ -127,6 +127,19 @@
         <seeElement selector="{{VeniaShoppingCartThankYou.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
     </actionGroup>
 
-
+    <actionGroup name="RemoveItemFromTheCart">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <click selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
+        <wait time="3" stepKey="wait123"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.removeItem}}" time="30" stepKey="waitForKebabMenuToExpand"/>
+        <click selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="clickOnRemoveItem"/>
+        <wait time="8" stepKey="wait1234"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYou.continueShopping}}" time="30" stepKey="waitForContinueShoppingButtonToAppear"/>
+        <seeElement selector="{{VeniaShoppingCartThankYou.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
+        <see userInput="There are no items in your shopping cart" stepKey="seeEmptyCartText"/>
+        <dontSee selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="dontSeeProductInCart" />
+    </actionGroup>
 
 </actionGroups>

@@ -21,6 +21,7 @@
 
         <before>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
@@ -58,8 +59,10 @@
             <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
                 <argument name="shippingMethodName" value="Flat Rate"/>
             </actionGroup>
+
         </before>
 
         <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+
     </test>
 </tests>
