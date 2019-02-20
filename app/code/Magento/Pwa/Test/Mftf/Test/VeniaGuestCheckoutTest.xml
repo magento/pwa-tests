@@ -14,7 +14,7 @@
             <stories value="Guest Checkout"/>
             <title value="Guest user should be able to checkout on Venia storefront with single product"/>
             <description value="Guest user should be able to checkout on Venia storefront with single product"/>
-            <severity value="MAJOR"/>
+            <severity value="CRITICAL"/>
             <testCaseId value="PWA-2"/>
             <group value="PWA"/>
         </annotations>
@@ -26,11 +26,7 @@
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
-                <argument name="color" value="Lilac"/>
-                <argument name="size" value="L"/>
-                <argument name="quantity" value="2"/>
-            </actionGroup>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 

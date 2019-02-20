@@ -12,6 +12,12 @@
         <data key="name">Valeria Two-Layer Tank</data>
         <data key="price">68.00</data>
         <data key="description">The Valeria Tank features two layers of possibility. The loose fit flatters without impacting comfort and the tiered material hangs beautifully. Wear alone or add a belt for a little more definition.</data>
+        <data key="color">Lilac</data>
+        <data key="size">L</data>
+        <data key="qty">2</data>
+        <data key="color1">Rain</data>
+        <data key="size1">M</data>
+        <data key="qty1">3</data>
         <data key="url">https://magento-venia.now.sh/valeria-two-layer-tank.html</data>
     </entity>
 

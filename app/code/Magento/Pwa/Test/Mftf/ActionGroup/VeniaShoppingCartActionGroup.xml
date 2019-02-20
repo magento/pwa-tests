@@ -142,4 +142,27 @@
         <dontSee selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="dontSeeProductInCart" />
     </actionGroup>
 
+    <actionGroup name="GoToEditItemCartPanel">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <click selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
+        <wait time="3" stepKey="wait123"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.editItem}}" time="30" stepKey="waitForKebabMenuToExpand"/>
+        <click selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="clickOnEditItem"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.updateCart}}" time="30" stepKey="waitForEditPanelToDisplay"/>
+    </actionGroup>
+
+    <actionGroup name="UpdateProductColorAndSizeAndQuantityOptions">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <wait time="5" stepKey="wait123"/>
+        <waitForPwaElementVisible sselector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" time="30" stepKey="waitFOrProducttoDisplay"/>
+        <click selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
+        <click selector="{{VeniaShoppingCartEditSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
+        <selectOption selector="{{VeniaShoppingCartEditSection.quantity}}" userInput="{{product.qty1}}" stepKey="selectProductQuantity01"/>
+        <click selector="{{VeniaShoppingCartEditSection.updateCart}}" stepKey="clickOnUpdateCartButton"/>
+    </actionGroup>
+
 </actionGroups>

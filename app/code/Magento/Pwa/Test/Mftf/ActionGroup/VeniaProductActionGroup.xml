@@ -10,15 +10,13 @@
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="SetProductColorAndSizeAndQuantityOptions">
         <arguments>
-            <argument name="color" type="string"/>
-            <argument name="size" type="string"/>
-            <argument name="quantity" type="string"/>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <wait time="5" stepKey="wait123"/>
-        <waitForPwaElementVisible sselector="{{VeniaProduct.productColorByValue(color)}}" time="30" stepKey="waitFOrProducttoDisplay"/>
-        <click selector="{{VeniaProduct.productColorByValue(color)}}" stepKey="clickOnColorOption01"/>
-        <click selector="{{VeniaProduct.productSizeByValue(size)}}" stepKey="clickOnSizeOption01"/>
-        <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="{{quantity}}" stepKey="selectProductQuantity01"/>
+        <waitForPwaElementVisible sselector="{{VeniaProduct.productColorByValue(product.color)}}" time="30" stepKey="waitFOrProducttoDisplay"/>
+        <click selector="{{VeniaProduct.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
+        <click selector="{{VeniaProduct.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
+        <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
     </actionGroup>
 
     <actionGroup name="AddToCart">

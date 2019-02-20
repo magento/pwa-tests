@@ -14,7 +14,7 @@
             <stories value="Kebab Features"/>
             <title value="Verify user should be able to Remove an item from the cart"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
-            <severity value="MAJOR"/>
+            <severity value="CRITICAL"/>
             <testCaseId value="PWA-12"/>
             <group value="PWA"/>
         </annotations>
@@ -25,11 +25,7 @@
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1">
-                <argument name="color" value="Lilac"/>
-                <argument name="size" value="L"/>
-                <argument name="quantity" value="2"/>
-            </actionGroup>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 

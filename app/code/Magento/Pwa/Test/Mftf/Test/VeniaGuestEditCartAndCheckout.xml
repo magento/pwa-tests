@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="EditCartAndCheckout">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Kebab Features"/>
+            <title value="Verify user should be able to edit the cart and complete checkout flow"/>
+            <description value="Verify user should be able to edit the cart and complete checkout flow"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="PWA-13"/>
+            <group value="PWA"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
+                <argument name="product" value="ValeriaTwoLayerTank"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+
+            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
+
+        </before>
+
+        <actionGroup ref="GoToEditItemCartPanel" stepKey="goEditItemPanelInTheCart"/>
+
+        <actionGroup ref="UpdateProductColorAndSizeAndQuantityOptions" stepKey="updateProductOptions"/>
+
+        <wait time="8" stepKey="wait12" />
+
+        <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
+
+        <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+            <argument name="customer" value="VeniaSampleCustomer1"/>
+        </actionGroup>
+
+        <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
+
+        <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>
+
+        <actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>
+
+        <actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>
+
+        <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
+
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" time="30" stepKey="waitForPayWithAreaVisible01"/>
+
+        <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
+            <argument name="shippingMethodName" value="Flat Rate"/>
+        </actionGroup>
+
+        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+
+    </test>
+</tests>
