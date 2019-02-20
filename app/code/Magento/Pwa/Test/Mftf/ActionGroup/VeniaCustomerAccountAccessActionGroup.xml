@@ -18,7 +18,7 @@
 
     <actionGroup name="CreateAccount">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
         <wait time="3" stepKey="test1"/>
@@ -40,7 +40,7 @@
 
     <actionGroup name="SignIn">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait21"/>
         <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
@@ -52,7 +52,7 @@
 
     <actionGroup name="AssertSuccessfulSignIn">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" time="30" stepKey="waitForPwaElementVisible7"/>
         <see stepKey="assertName" userInput="{{Customer.first}}"/>
@@ -62,7 +62,7 @@
 
     <actionGroup name="UpdatePassword">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaSampleCustomer1"/>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
         <wait time="3" stepKey="test1"/>

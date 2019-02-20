@@ -8,7 +8,7 @@
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
-    <entity name="VeniaSampleCustomer1" type="customer">
+    <entity name="VeniaCustomer1" type="customer">
         <data key="first">John</data>
         <data key="last">Smith</data>
         <data key="address">123 Test Drive</data>

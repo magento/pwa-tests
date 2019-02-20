@@ -168,7 +168,7 @@
         </before>
 
         <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-            <argument name="customer" value="VeniaSampleCustomer1"/>
+            <argument name="customer" value="VeniaCustomer1"/>
         </actionGroup>
 
         <see userInput="{{VeniaSampleCustomer1.first}} {{VeniaSampleCustomer1.last}}" selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeFullCustomerName1"/>

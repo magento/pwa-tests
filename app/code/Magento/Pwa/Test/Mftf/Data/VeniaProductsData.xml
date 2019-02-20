@@ -33,4 +33,16 @@
         <data key="url">https://magento-venia.now.sh/augusta-earrings.html</data>
     </entity>
 
+    <entity name="IsadoraSkirt" type="product">
+        <data key="name">Isadora Skirt</data>
+        <data key="price">118.00</data>
+        <data key="url">https://magento-venia.now.sh/isadora-skirt.html</data>
+    </entity>
+
+    <entity name="PetraSundress" type="product">
+        <data key="name">Petra Sundress</data>
+        <data key="price">108.00</data>
+        <data key="url">https://magento-venia.now.sh/petra-sundress.html</data>
+    </entity>
+
 </entities>

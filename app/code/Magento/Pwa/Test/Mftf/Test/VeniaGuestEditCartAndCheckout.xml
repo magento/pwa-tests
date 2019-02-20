@@ -44,7 +44,7 @@
         <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
         <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-            <argument name="customer" value="VeniaSampleCustomer1"/>
+            <argument name="customer" value="VeniaCustomer1"/>
         </actionGroup>
 
         <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
