@@ -47,8 +47,8 @@
         </before>
 
         <click userInput="Shop The Look" stepKey="clickOnCategory1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="30" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" time="30" stepKey="waitForPwaElementVisible1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaElementNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaCategory.productImageAlt('Valeria Two-Layer Tank')}}" stepKey="waitForPwaElementVisible1"/>
 
         <seeNumberOfElements selector="{{VeniaCategory.productImage}}" userInput="6" stepKey="seeSixProductImages1"/>
         <seeNumberOfElements selector="{{VeniaCategory.productName}}" userInput="6" stepKey="seeSixProductNames1"/>

@@ -61,8 +61,8 @@
             </actionGroup>
 
             <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForPwaElementNotVisible2"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForPwaElementVisible2"/>
+            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" stepKey="waitForPwaElementNotVisible2"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" stepKey="waitForPwaElementVisible2"/>
         </before>
 
         <seeElement selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="seeProductImage1"/>
@@ -103,12 +103,12 @@
             </actionGroup>
 
             <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
-            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible1"/>
-            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForProductName1"/>
+            <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible1"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" stepKey="waitForProductName1"/>
         </before>
 
         <click selector="{{VeniaShoppingCart.checkout}}" stepKey="clickOnCheckout1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" time="30" stepKey="waitForCheckoutButtonToDisappear1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.checkout}}" stepKey="waitForCheckoutButtonToDisappear1"/>
 
         <seeElement selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" stepKey="seeOrderDetailsMainArea1"/>
         <seeElement selector="{{VeniaShoppingCartDetails.shipToMainArea}}" stepKey="seeOrderShipToMainArea1"/>
@@ -118,7 +118,7 @@
         <seeElement selector="{{VeniaShoppingCartDetails.placeOrder}}" stepKey="seeOrderPlaceOrderButton1"/>
 
         <click selector="{{VeniaShoppingCartDetails.addShipToInformation}}" stepKey="clickOnAddShipToLink1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" time="30" stepKey="waitForPlaceOrderButtonToAppear1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="waitForPlaceOrderButtonToAppear1"/>
 
         <seeElement selector="{{VeniaShoppingCartShippingAddress.firstName}}" stepKey="seeShipToFirstNameField1"/>
         <seeElement selector="{{VeniaShoppingCartShippingAddress.lastName}}" stepKey="seeShipToLastNameField1"/>
@@ -316,8 +316,8 @@
         </before>
 
         <click selector="{{VeniaShoppingCartDetails.placeOrder}}" stepKey="clickOnPlaceOrder1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" time="30" stepKey="waitForDetailMainArea1"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYou.thankYouMainArea}}" time="30" stepKey="waitForThankYouMessagePresent"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetails.orderDetailsMainArea}}" stepKey="waitForDetailMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYou.thankYouMainArea}}" stepKey="waitForThankYouMessagePresent"/>
 
         <seeElement selector="{{VeniaShoppingCartThankYou.title}}" stepKey="seeThankYouTitle1"/>
         <seeElement selector="{{VeniaShoppingCartThankYou.orderNumber}}" stepKey="seeThankYouOrderNumber1"/>

@@ -17,15 +17,15 @@
     </actionGroup>
 
     <actionGroup name="GoToVeniaMobileStorefront">
-        <resizeWindow width="750" height="1334" stepKey="resizeWindowForMobile1"/>
+        <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
 
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="30" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" time="30" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
 

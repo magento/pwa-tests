@@ -20,6 +20,7 @@
         </annotations>
 
         <before>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
@@ -67,7 +68,7 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
 
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" time="30" stepKey="waitForPayWithAreaVisible01"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
 
             <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
                 <argument name="shippingMethodName" value="Flat Rate"/>

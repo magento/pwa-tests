@@ -15,8 +15,8 @@
         </arguments>
 
         <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage(categoryName)}}" time="30" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefront.productImage(categoryName)}}" stepKey="waitForPwaElementNotVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" stepKey="waitForPwaElementVisible1"/>
     </actionGroup>
 
     <actionGroup name="OpenStorefrontCategoryByName">

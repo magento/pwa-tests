@@ -13,19 +13,19 @@
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <wait time="5" stepKey="wait123"/>
-        <waitForPwaElementVisible sselector="{{VeniaProduct.productColorByValue(product.color)}}" time="30" stepKey="waitFOrProducttoDisplay"/>
+        <waitForPwaElementVisible sselector="{{VeniaProduct.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaProduct.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaProduct.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
         <selectOption selector="{{VeniaProduct.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
     </actionGroup>
 
     <actionGroup name="AddToCart">
-        <waitForPwaElementVisible sselector="{{VeniaProduct.addToCart)}}" time="30" stepKey="waitForAddToCartButtonToBeReady"/>
+        <waitForPwaElementVisible sselector="{{VeniaProduct.addToCart)}}" stepKey="waitForAddToCartButtonToBeReady"/>
         <click selector="{{VeniaProduct.addToCart}}" stepKey="clickAddToCart1"/>
         <wait time="5" stepKey="wait1134" />
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" time="30" stepKey="waitForNoProductMessageNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productImageByIndex('1')}}" time="30" stepKey="waitForSubTotalTitle01"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" time="30" stepKey="waitForCheckoutButton01"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCart.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productImageByIndex('1')}}" stepKey="waitForSubTotalTitle01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCart.productNameByIndex('1')}}" stepKey="waitForCheckoutButton01"/>
     </actionGroup>
 
     <actionGroup name="GoToProductDetailsPage">
@@ -33,7 +33,7 @@
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <amOnPage url="{{product.url}}" stepKey="goToVeniaProductDetailsPage"/>
-        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaProduct.productName}}" stepKey="waitForPwaElementVisible1"/>
     </actionGroup>
 
 </actionGroups>
