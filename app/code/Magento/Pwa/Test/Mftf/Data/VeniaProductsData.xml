@@ -45,4 +45,13 @@
         <data key="url">/petra-sundress.html</data>
     </entity>
 
+    <entity name="SearchInputData" type="product">
+        <data key="valid_sku">VT10</data>
+        <data key="valid_sku1">VT11</data>
+        <data key="invalid_sku">VT11234X</data>
+        <data key="valid_product_name">Vitalia Top</data>
+        <data key="valid_product_name1">Valeria Two-Layer Tank</data>
+        <data key="invalid_product_name">Valeriaxyz</data>
+    </entity>
+
 </entities>

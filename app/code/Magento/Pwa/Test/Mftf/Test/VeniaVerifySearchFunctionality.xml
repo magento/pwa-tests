@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VerifySearchFunctionality">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Search"/>
+            <title value="Search functionality should work for different inputs"/>
+            <description value="Search functionality should work for different inputs"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="PWA-7"/>
+            <group value="PWA"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        </before>
+
+        <click selector="{{VeniaHeader.searchIcon}}" stepKey="clickOnSearchIcon"/>
+
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct">
+            <argument name="searchData" value="{{SearchInputData.valid_sku}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertSearchedResults" stepKey="assertSearchedResults">
+            <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
+        </actionGroup>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
+
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct1">
+            <argument name="searchData" value="{{SearchInputData.valid_sku1}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertSearchedResults" stepKey="assertSearchedResults1">
+            <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
+        </actionGroup>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
+
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct2">
+            <argument name="searchData" value="{{SearchInputData.invalid_sku}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults"/>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText2"/>
+
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct3">
+            <argument name="searchData" value="{{SearchInputData.invalid_product_name}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults1"/>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText3"/>
+
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
+            <argument name="searchData" value="{{SearchInputData.valid_product_name}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertSearchedResults" stepKey="assertSearchedResults4">
+            <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
+        </actionGroup>
+
+
+    </test>
+</tests>
