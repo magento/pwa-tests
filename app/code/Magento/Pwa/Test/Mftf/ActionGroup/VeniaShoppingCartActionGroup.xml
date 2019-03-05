@@ -95,12 +95,12 @@
 
     <actionGroup name="EnterCardDetails">
         <arguments>
-            <argument name="creditCard" defaultValue="VisaCard"/>
+            <argument name="creditCard" defaultValue="FakeVisaCard"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartCardDetailsSection.textPayWithCard}}" stepKey="waitFOrPaymentSectionToLoad"/>
         <switchToIFrame selector="{{VeniaShoppingCartCardDetailsSection.cartFrame}}" stepKey="switchToIframe4"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartCardDetailsSection.cardNumber}}"  stepKey="waitForCardSectionToLoad"/>
-        <fillField userInput="{{creditCard.cardNumber}}" selector="{{VeniaShoppingCartCardDetailsSection.cardNumber}}" stepKey="enterCardNumber"/>
+        <fillField userInput="{{creditCard.fakeCardNumber}}" selector="{{VeniaShoppingCartCardDetailsSection.cardNumber}}" stepKey="enterCardNumber"/>
         <switchToIFrame stepKey="switchBack"/>
         <switchToIFrame selector="{{VeniaShoppingCartCardDetailsSection.expirationFrame}}" stepKey="switchToIframe1"/>
         <fillField userInput="{{creditCard.expirationDate}}" selector="{{VeniaShoppingCartCardDetailsSection.expirationDate}}" stepKey="enterCardExpirationDate"/>
