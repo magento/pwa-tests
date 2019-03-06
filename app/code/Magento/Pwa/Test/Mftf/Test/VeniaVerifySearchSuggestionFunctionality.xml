@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VerifySearchSuggestionFunctionality">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Search"/>
+            <title value="Verify venia search suggetion box shows results based on input search string"/>
+            <description value="Verify venia search suggetion box shows results based on input search string"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="PWA-10"/>
+            <group value="PWA"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        </before>
+
+        <click selector="{{VeniaHeader.searchIcon}}" stepKey="clickOnSearchIcon"/>
+
+        <actionGroup ref="InputSearchString" stepKey="inputSearchString">
+            <argument name="searchData" value="{{SearchInputData.valid_sku}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox">
+            <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
+        </actionGroup>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
+
+        <actionGroup ref="InputSearchString" stepKey="inputSearchString1">
+            <argument name="searchData" value="{{SearchInputData.valid_sku1}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox1">
+            <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
+        </actionGroup>
+
+        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
+
+        <actionGroup ref="InputSearchString" stepKey="inputSearchString2">
+            <argument name="searchData" value="{{SearchInputData.invalid_sku}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertNoResultsInSuggestionBox" stepKey="assertNoSearchedResultsInSuggestionBox"/>
+
+    </test>
+</tests>
