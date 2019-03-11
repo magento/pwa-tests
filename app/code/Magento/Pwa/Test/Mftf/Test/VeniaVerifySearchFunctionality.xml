@@ -23,7 +23,7 @@
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
 
-        <click selector="{{VeniaHeader.searchIcon}}" stepKey="clickOnSearchIcon"/>
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
 
         <actionGroup ref="SearchProduct" stepKey="searchForProduct">
             <argument name="searchData" value="{{SearchInputData.valid_sku}}"/>
@@ -32,7 +32,7 @@
             <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
         </actionGroup>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
 
         <actionGroup ref="SearchProduct" stepKey="searchForProduct1">
             <argument name="searchData" value="{{SearchInputData.valid_sku1}}"/>
@@ -41,21 +41,21 @@
             <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
         </actionGroup>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
 
         <actionGroup ref="SearchProduct" stepKey="searchForProduct2">
             <argument name="searchData" value="{{SearchInputData.invalid_sku}}"/>
         </actionGroup>
         <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults"/>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText2"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText2"/>
 
         <actionGroup ref="SearchProduct" stepKey="searchForProduct3">
             <argument name="searchData" value="{{SearchInputData.invalid_product_name}}"/>
         </actionGroup>
         <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults1"/>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText3"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText3"/>
 
         <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
             <argument name="searchData" value="{{SearchInputData.valid_product_name}}"/>

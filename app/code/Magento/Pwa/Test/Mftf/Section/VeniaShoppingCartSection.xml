@@ -8,7 +8,7 @@
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaShoppingCart">
+    <section name="VeniaShoppingCartSection">
         <element name="mainArea" type="textarea" selector="[class*='emptyMiniCart-root-']"/>
 
         <element name="noItemsInShoppingCart" type="text" selector="[class*='emptyMiniCart-emptyTitle-']"/>
@@ -28,7 +28,7 @@
         <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
     </section>
 
-    <section name="VeniaShoppingCartDetails">
+    <section name="VeniaShoppingCartDetailsSection">
         <element name="orderDetailsMainArea" type="textarea" selector="[class*='form-body-']"/>
 
         <element name="shipToMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Ship To')]]"/>
@@ -45,7 +45,7 @@
         <element name="placeOrder" type="button" selector="//span[contains(text(), 'Confirm Order')]"/>
     </section>
 
-    <section name="VeniaShoppingCartShippingAddress">
+    <section name="VeniaShoppingCartShippingAddressSection">
         <element name="title" type="text" selector="[class*='addressForm-heading-']"/>
 
         <element name="firstName" type="input" selector="[id*='addressForm-firstname-']"/>
@@ -61,7 +61,7 @@
         <element name="cancel" type="button" selector="[class*='addressForm-footer-'] button[type='button']"/>
     </section>
 
-    <section name="VeniaShoppingCartPayWith">
+    <section name="VeniaShoppingCartPayWithSection">
         <element name="title" type="text" selector="[class*='paymentsForm-heading-']"/>
         <element name="paymentMethod" type="select" selector="[class*='paymentsForm-paymentMethod-'] select"/>
         <element name="save" type="button" selector="[class*='paymentsForm-footer-'] button[type='submit']"/>
@@ -78,14 +78,14 @@
         <element name="cvvCode" type="input" selector="#cvv"/>
     </section>
 
-    <section name="VeniaShoppingCartGetItBy">
+    <section name="VeniaShoppingCartGetItBySection">
         <element name="title" type="text" selector="[class*='shippingForm-heading-']"/>
         <element name="shippingMethod" type="select" selector="[class*='shippingForm-shippingMethod-'] select"/>
         <element name="save" type="button" selector="[class*='shippingForm-footer-'] button[type='submit']"/>
         <element name="cancel" type="button" selector="[class*='shippingForm-footer-'] button[type='button']"/>
     </section>
 
-    <section name="VeniaShoppingCartThankYou">
+    <section name="VeniaShoppingCartThankYouSection">
         <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
         <element name="title" type="text" selector="[class*='receipt-header-']"/>
         <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>

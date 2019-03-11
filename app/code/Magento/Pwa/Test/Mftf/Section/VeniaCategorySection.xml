@@ -8,7 +8,7 @@
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaCategory">
+    <section name="VeniaCategorySection">
         <element name="productImage" type="button" selector="[class*='item-imagePlaceholder-']"/>
         <element name="productImageAlt" type="button" selector="[class*='item-image-'][alt*='{{var1}}']" parameterized="true"/>
         <element name="productName" type="text" selector="[class*='item-name-'] span"/>

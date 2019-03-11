@@ -40,7 +40,7 @@
                 <argument name="customer" value="VeniaCustomer1"/>
             </actionGroup>
 
-            <click selector="{{VeniaShoppingCartDetails.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
+            <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>
 
@@ -50,7 +50,7 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
 
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetails.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
 
             <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
                 <argument name="shippingMethodName" value="Flat Rate"/>

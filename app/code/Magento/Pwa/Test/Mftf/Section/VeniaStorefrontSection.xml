@@ -8,12 +8,12 @@
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaStorefront">
+    <section name="VeniaStorefrontSection">
         <element name="title" type="text" selector="[class*='categoryList-title-'] span"/>
         <element name="productImage" type="button" selector="[class*='categoryTile-image'][alt*='{{var1}}']" parameterized="true"/>
     </section>
 
-    <section name="VeniaSearchResult">
+    <section name="VeniaSearchResultSection">
         <element name="resultSection" type="textarea" selector="div[class^='main-page-']"/>
         <element name="productImage" type="button" selector="img[alt='{{product_name}}']" parameterized="true"/>
         <element name="productName" type="text" selector="//span[contains(text(), '{{productName}}')]" parameterized="true"/>

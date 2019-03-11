@@ -23,7 +23,7 @@
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
 
-        <click selector="{{VeniaHeader.searchIcon}}" stepKey="clickOnSearchIcon"/>
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
 
         <actionGroup ref="InputSearchString" stepKey="inputSearchString">
             <argument name="searchData" value="{{SearchInputData.valid_sku}}"/>
@@ -32,7 +32,7 @@
             <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
         </actionGroup>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
 
         <actionGroup ref="InputSearchString" stepKey="inputSearchString1">
             <argument name="searchData" value="{{SearchInputData.valid_sku1}}"/>
@@ -41,7 +41,7 @@
             <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
         </actionGroup>
 
-        <click selector="{{VeniaHeader.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
+        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
 
         <actionGroup ref="InputSearchString" stepKey="inputSearchString2">
             <argument name="searchData" value="{{SearchInputData.invalid_sku}}"/>

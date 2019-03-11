@@ -8,7 +8,7 @@
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaHeader">
+    <section name="VeniaHeaderSection">
         <element name="hamburgerMenu" type="button" selector="[class*='navTrigger-root-']"/>
         <element name="logo" type="button" selector="[class*='header-toolbar-'] a"/>
         <element name="searchIcon" type="button" selector="[class*='searchTrigger-root-']"/>

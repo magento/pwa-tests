@@ -8,7 +8,7 @@
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaProduct">
+    <section name="VeniaProductSection">
         <element name="productName" type="text" selector="[class*='productFullDetail-productName-']"/>
         <element name="productPrice" type="text" selector="[class*='productFullDetail-productPrice-']"/>
         <element name="productDescription" type="text" selector="[class*='productFullDetail-description-']"/>

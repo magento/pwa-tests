@@ -20,12 +20,12 @@
         <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
 
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefront.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
 
     <actionGroup name="SearchProduct">
@@ -35,8 +35,8 @@
         </arguments>
 
         <wait time="3" stepKey="waitForElementToLoad1"/>
-        <waitForPwaElementVisible selector="{{VeniaHeader.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
-        <pressKey selector="{{VeniaHeader.searchInput}}" parameterArray="['{{searchData}}',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
+        <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
+        <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="['{{searchData}}',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
     </actionGroup>
 
 
@@ -46,14 +46,14 @@
             <argument name="productDetails" type="string"/>
         </arguments>
 
-        <waitForPwaElementVisible selector="{{VeniaSearchResult.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
+        <waitForPwaElementVisible selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
         <wait time="5" stepKey="waitForElementToLoad"/>
-        <seeElement selector="{{VeniaSearchResult.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
+        <seeElement selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>
 
     <actionGroup name="AssertNoSearchResults">
-        <waitForPwaElementVisible selector="{{VeniaSearchResult.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
+        <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
         <wait time="3" stepKey="waitForElementToLoad1"/>
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
@@ -66,8 +66,8 @@
         </arguments>
 
         <wait time="3" stepKey="waitForElementToLoad1"/>
-        <waitForPwaElementVisible selector="{{VeniaHeader.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
-        <fillField userInput="{{searchData}}" selector="{{VeniaHeader.searchInput}}" stepKey="inputSearchString"/>
+        <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
+        <fillField userInput="{{searchData}}" selector="{{VeniaHeaderSection.searchInput}}" stepKey="inputSearchString"/>
     </actionGroup>
 
     <actionGroup name="AssertResultsInSuggestionBox">
