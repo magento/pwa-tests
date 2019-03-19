@@ -18,20 +18,25 @@
             <testCaseId value="PWA-4"/>
             <group value="PWA"/>
         </annotations>
+
         <before>
-
+            <createData entity="Simple_US_Customer" stepKey="createCustomer"/>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
-
         </before>
+
+        <after>
+            <deleteData createDataKey="createCustomer" stepKey="deleteCustomer"/>
+        </after>
 
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
 
         <actionGroup ref="SignIn" stepKey="enterEmailForAccount">
-            <argument name="Customer" value="VeniaRegisteredCustomer"/>
+            <argument name="email" value="$$createCustomer.email$$"/>
+            <argument name="pwd" value="$$createCustomer.password$$"/>
         </actionGroup>
 
         <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
-            <argument name="Customer" value="VeniaRegisteredCustomer"/>
+            <argument name="Customer" value="Simple_US_Customer"/>
         </actionGroup>
 
     </test>

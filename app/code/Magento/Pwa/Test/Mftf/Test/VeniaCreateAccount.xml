@@ -26,13 +26,9 @@
 
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
 
-        <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
-            <argument name="Customer" value="VeniaCustomer1"/>
-        </actionGroup>
+        <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount"/>
 
-        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
-            <argument name="Customer" value="VeniaCustomer1"/>
-        </actionGroup>
+        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
 
     </test>
 </tests>

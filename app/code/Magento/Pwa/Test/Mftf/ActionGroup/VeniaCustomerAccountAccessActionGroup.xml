@@ -18,7 +18,7 @@
 
     <actionGroup name="CreateAccount">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="Customer" defaultValue="Simple_US_Customer"/>
         </arguments>
         <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
         <wait time="3" stepKey="test1"/>
@@ -27,9 +27,9 @@
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
         <fillField  selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.firstName}}" stepKey="waitForPwaElementVisible2"/>
-        <fillField  selector="{{VeniaMainMenuCreateAccountSection.firstName}}" userInput="{{Customer.first}}" stepKey="fillFirstName"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.firstName}}" userInput="{{Customer.firstname}}" stepKey="fillFirstName"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.lastName}}" stepKey="waitForPwaElementVisible3"/>
-        <fillField  selector="{{VeniaMainMenuCreateAccountSection.lastName}}" userInput="{{Customer.last}}" stepKey="fillLastName"/>
+        <fillField  selector="{{VeniaMainMenuCreateAccountSection.lastName}}" userInput="{{Customer.lastname}}" stepKey="fillLastName"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.password}}" stepKey="waitForPwaElementVisible4"/>
         <fillField  selector="{{VeniaMainMenuCreateAccountSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword1"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.confirmPassword}}" stepKey="waitForPwaElementVisible5"/>
@@ -40,29 +40,28 @@
 
     <actionGroup name="SignIn">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="email" type="string"/>
+            <argument name="pwd" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait21"/>
-        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{email}}" stepKey="fillUsername"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
-        <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{pwd}}" stepKey="fillPassword"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>
         <click selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="clickSignIn2"/>
     </actionGroup>
 
     <actionGroup name="AssertSuccessfulSignIn">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="Customer" defaultValue="Simple_US_Customer"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" stepKey="waitForPwaElementVisible7"/>
-        <see stepKey="assertName" userInput="{{Customer.first}}"/>
-        <see stepKey="assertLastName" userInput="{{Customer.last}}"/>
-        <see stepKey="assertEmail1" userInput="{{Customer.email}}"/>
+        <see stepKey="assertCustomerName" userInput="{{Customer.firstname}} {{Customer.lastname}}"/>
     </actionGroup>
 
     <actionGroup name="UpdatePassword">
         <arguments>
-            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="Customer" defaultValue="Simple_US_Customer"/>
         </arguments>
         <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
         <wait time="3" stepKey="test1"/>
