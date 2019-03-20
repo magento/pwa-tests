@@ -16,49 +16,55 @@
             <description value="Guest user should be able to checkout on Venia storefront with single product"/>
             <severity value="CRITICAL"/>
             <testCaseId value="PWA-2"/>
-            <group value="PWA"/>
+            <group value="PWA1"/>
         </annotations>
 
         <before>
+            <createData entity="SimpleSubCategory" stepKey="createCategory"/>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ValeriaTwoLayerTank"/>
-            </actionGroup>
+            <!--<actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">-->
+                <!--<argument name="product" value="ValeriaTwoLayerTank"/>-->
+            <!--</actionGroup>-->
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <!--<actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>-->
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>-->
 
-            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <!--<actionGroup ref="AddToCart" stepKey="addToCart1"/>-->
 
-            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
+            <!--<actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>-->
 
-            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
+            <!--<actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>-->
 
-            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
+            <!--<actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">-->
+                <!--<argument name="customer" value="VeniaCustomer1"/>-->
+            <!--</actionGroup>-->
 
-            <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
+            <!--<click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>-->
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>-->
 
-            <actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>
+            <!--<actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>-->
 
-            <actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>
+            <!--<actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>-->
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>-->
 
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
+            <!--<waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>-->
 
-            <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
-                <argument name="shippingMethodName" value="Flat Rate"/>
-            </actionGroup>
+            <!--<actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">-->
+                <!--<argument name="shippingMethodName" value="Flat Rate"/>-->
+            <!--</actionGroup>-->
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <after>
+            <!--<deleteData stepKey="deleteCategory" createDataKey="createCategory"/>-->
+        </after>
+
+        <!--<actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>-->
 
     </test>
 </tests>
