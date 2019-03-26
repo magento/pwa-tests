@@ -33,7 +33,7 @@
             <argument name="product" defaultValue="ApiConfigurableProduct"/>
         </arguments>
         <amOnPage url="/{{product.urlKey}}2.html" stepKey="goToVeniaProductDetailsPage"/>
-        <!--<waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>-->
+        <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>
     </actionGroup>
 
     <actionGroup name="SetProductConfigOptions">

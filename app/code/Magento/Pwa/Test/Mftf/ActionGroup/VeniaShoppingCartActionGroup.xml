@@ -131,7 +131,7 @@
 
     <actionGroup name="RemoveItemFromTheCart">
         <arguments>
-            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="product" defaultValue="ApiConfigurableProduct"/>
         </arguments>
         <click selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
         <wait time="3" stepKey="wait123"/>
@@ -160,7 +160,7 @@
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <wait time="5" stepKey="wait123"/>
-        <waitForPwaElementVisible sselector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="waitFOrProducttoDisplay"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaShoppingCartEditSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
         <selectOption selector="{{VeniaShoppingCartEditSection.quantity}}" userInput="{{product.qty1}}" stepKey="selectProductQuantity01"/>
