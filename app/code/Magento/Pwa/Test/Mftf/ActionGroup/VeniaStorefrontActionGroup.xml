@@ -31,12 +31,12 @@
     <actionGroup name="SearchProduct">
 
         <arguments>
-            <argument name="searchData" type="string"/>
+            <argument name="SearchData" type="string"/>
         </arguments>
 
         <wait time="3" stepKey="waitForElementToLoad1"/>
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
-        <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="['{{searchData}}',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
+        <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="[{{SearchData}},\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
     </actionGroup>
 
 
@@ -47,14 +47,14 @@
         </arguments>
 
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="5" stepKey="waitForElementToLoad"/>
+        <wait time="10" stepKey="waitForElementToLoad"/>
         <seeElement selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>
 
     <actionGroup name="AssertNoSearchResults">
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="3" stepKey="waitForElementToLoad1"/>
+        <wait time="5" stepKey="waitForElementToLoad1"/>
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
 
