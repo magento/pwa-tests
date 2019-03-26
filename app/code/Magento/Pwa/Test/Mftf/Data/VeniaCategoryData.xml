@@ -8,34 +8,34 @@
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
-    <entity name="ShopTheLook" type="category">
-        <data key="name">Shop The Look</data>
-        <data key="is_active">true</data>
-        <data key="include_in_menu">true</data>
-    </entity>
+    <!--<entity name="ShopTheLook" type="category">-->
+        <!--<data key="name">Shop The Look</data>-->
+        <!--<data key="is_active">true</data>-->
+        <!--<data key="include_in_menu">true</data>-->
+    <!--</entity>-->
 
-    <entity name="Bottoms" type="category">
-        <data key="name">Bottoms</data>
-        <data key="is_active">true</data>
-        <data key="include_in_menu">true</data>
-    </entity>
+    <!--<entity name="Bottoms" type="category">-->
+        <!--<data key="name">Bottoms</data>-->
+        <!--<data key="is_active">true</data>-->
+        <!--<data key="include_in_menu">true</data>-->
+    <!--</entity>-->
 
-    <entity name="Tops" type="category">
-        <data key="name">Tops</data>
-        <data key="is_active">true</data>
-        <data key="include_in_menu">true</data>
-    </entity>
+    <!--<entity name="Tops" type="category">-->
+        <!--<data key="name">Tops</data>-->
+        <!--<data key="is_active">true</data>-->
+        <!--<data key="include_in_menu">true</data>-->
+    <!--</entity>-->
 
-    <entity name="Accessories" type="category">
-        <data key="name">Accessories</data>
-        <data key="is_active">true</data>
-        <data key="include_in_menu">true</data>
-    </entity>
+    <!--<entity name="Accessories" type="category">-->
+        <!--<data key="name">Accessories</data>-->
+        <!--<data key="is_active">true</data>-->
+        <!--<data key="include_in_menu">true</data>-->
+    <!--</entity>-->
 
-    <entity name="Dresses" type="category">
-        <data key="name">Dresses</data>
-        <data key="is_active">true</data>
-        <data key="include_in_menu">true</data>
-    </entity>
+    <!--<entity name="Dresses" type="category">-->
+        <!--<data key="name">Dresses</data>-->
+        <!--<data key="is_active">true</data>-->
+        <!--<data key="include_in_menu">true</data>-->
+    <!--</entity>-->
 
 </entities>

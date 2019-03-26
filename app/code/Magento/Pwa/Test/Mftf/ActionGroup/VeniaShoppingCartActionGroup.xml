@@ -36,7 +36,9 @@
 
     <actionGroup name="AddAndVerifyShipToShippingInformationViaTheShoppingCart">
         <arguments>
-            <argument name="customer"/>
+            <argument name="customer" defaultValue = "Simple_US_Customer" />
+            <argument name="address" defaultValue = "US_Address_TX" />
+            <argument name="region" defaultValue = "RegionTX" />
         </arguments>
 
         <click selector="{{VeniaShoppingCartDetailsSection.addShipToInformation}}" stepKey="clickOnAddShipToLink01"/>
@@ -44,12 +46,12 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="waitForPlaceOrderButtonToAppear02"/>
 
         <!-- START OF "FillShoppingCartShipToAddress" ACTION GROUP -->
-        <fillField userInput="{{customer.first}}" selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="fillShipToFirstNameField01"/>
-        <fillField userInput="{{customer.last}}" selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="fillShipToLastNameField01"/>
-        <fillField userInput="{{customer.address}}" selector="{{VeniaShoppingCartShippingAddressSection.streetAddress}}" stepKey="fillShipToStreetAddress01"/>
-        <fillField userInput="{{customer.city}}" selector="{{VeniaShoppingCartShippingAddressSection.city}}" stepKey="fillShipToCity01"/>
-        <fillField userInput="{{customer.zipCode}}" selector="{{VeniaShoppingCartShippingAddressSection.zipCode}}" stepKey="fillShipToZipCode01"/>
-        <fillField userInput="{{customer.state}}" selector="{{VeniaShoppingCartShippingAddressSection.state}}" stepKey="fillShipToState01"/>
+        <fillField userInput="{{customer.firstname}}" selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="fillShipToFirstNameField01"/>
+        <fillField userInput="{{customer.lastname}}" selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="fillShipToLastNameField01"/>
+        <fillField userInput="{{address.street[0]}}" selector="{{VeniaShoppingCartShippingAddressSection.streetAddress}}" stepKey="fillShipToStreetAddress01"/>
+        <fillField userInput="{{address.city}}" selector="{{VeniaShoppingCartShippingAddressSection.city}}" stepKey="fillShipToCity01"/>
+        <fillField userInput="{{address.postcode}}" selector="{{VeniaShoppingCartShippingAddressSection.zipCode}}" stepKey="fillShipToZipCode01"/>
+        <fillField userInput="{{region.region_code}}" selector="{{VeniaShoppingCartShippingAddressSection.state}}" stepKey="fillShipToState01"/>
         <fillField userInput="{{customer.phone}}" selector="{{VeniaShoppingCartShippingAddressSection.phoneNumber}}" stepKey="fillShipToPhoneNumber01"/>
         <fillField userInput="{{customer.email}}" selector="{{VeniaShoppingCartShippingAddressSection.email}}" stepKey="fillShipToEmail01"/>
         <!-- END OF "FillShoppingCartShipToAddress" ACTION GROUP -->
@@ -62,8 +64,8 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForMainArea3"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.totalMainArea}}" stepKey="waitForMainArea4"/>
 
-        <see userInput="{{customer.first}} {{customer.last}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerName01"/>
-        <see userInput="{{customer.address}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerAddress01"/>
+        <see userInput="{{customer.firstname}} {{customer.lastname}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerName01"/>
+        <see userInput="{{address.street[0]}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerAddress01"/>
     </actionGroup>
 
     <actionGroup name="AddAndVerifyPayWithBillingInformationViaTheShoppingCart">

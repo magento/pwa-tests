@@ -8,19 +8,6 @@
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
-    <entity name="ApiSimpleProduct" type="product">
-        <data key="sku" unique="suffix">api-simple-product</data>
-        <data key="type_id">simple</data>
-        <data key="attribute_set_id">4</data>
-        <data key="visibility">4</data>
-        <data key="name" unique="suffix">Api Simple Product</data>
-        <data key="price">123.00</data>
-        <data key="urlKey" unique="suffix">api-simple-product</data>
-        <data key="status">1</data>
-        <data key="quantity">100</data>
-        <requiredEntity type="product_extension_attribute">EavStockItem</requiredEntity>
-        <requiredEntity type="custom_attribute_array">CustomAttributeCategoryIds</requiredEntity>
-    </entity>
 
     <entity name="ApiSimpleOne" type="product2">
         <data key="sku" unique="suffix">api-simple-product</data>
@@ -50,45 +37,4 @@
         <requiredEntity type="custom_attribute">CustomAttributeProductAttribute</requiredEntity>
     </entity>
 
-    <entity name="GetProduct" type="product">
-        <var key="sku" entityKey="sku" entityType="product"/>
-    </entity>
-    <entity name="GetProduct2" type="product2">
-        <var key="sku" entityKey="sku" entityType="product2"/>
-    </entity>
-    <entity name="GetProduct3" type="product3">
-        <var key="sku" entityKey="sku" entityType="product3"/>
-    </entity>
-    <entity name="ApiSimplePrice1" type="product">
-        <data key="sku" unique="suffix">api-simple-product</data>
-        <data key="type_id">simple</data>
-        <data key="attribute_set_id">4</data>
-        <data key="visibility">4</data>
-        <data key="name" unique="suffix">Api Simple Product</data>
-        <data key="price">1.00</data>
-    </entity>
-
-    <entity name="defaultSimpleProduct" type="product">
-        <data key="name" unique="suffix">Testp</data>
-        <data key="sku" unique="suffix">testsku</data>
-        <data key="type_id">simple</data>
-        <data key="attribute_set_id">4</data>
-        <data key="visibility">4</data>
-        <data key="price">560.00</data>
-        <data key="urlKey" unique="suffix">testurl-</data>
-        <data key="status">1</data>
-        <data key="quantity">25</data>
-        <data key="weight">1</data>
-        <requiredEntity type="product_extension_attribute">EavStock100</requiredEntity>
-    </entity>
-
-    <entity name="ProductShortDescription" type="ProductAttribute">
-        <data key="attribute_code">short_description</data>
-    </entity>
-    <entity name="AddToDefaultSetTopOfContentSection" type="ProductAttributeSet">
-        <var key="attributeCode" entityKey="attribute_code" entityType="ProductAttribute"/>
-        <data key="attributeSetId">4</data>
-        <data key="attributeGroupId">13</data>
-        <data key="sortOrder">0</data>
-    </entity>
 </entities>

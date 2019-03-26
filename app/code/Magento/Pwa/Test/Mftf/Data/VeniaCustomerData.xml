@@ -8,23 +8,24 @@
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
-    <entity name="VeniaCustomer1" type="customer">
-        <data key="first">John</data>
-        <data key="last">Smith</data>
-        <data key="address">123 Test Drive</data>
-        <data key="city">Austin</data>
-        <data key="zipCode">78717</data>
-        <data key="state">TX</data>
-        <data key="phone">1234567890</data>
-        <data key="email" unique="prefix">test@example.com</data>
-        <data key="password">pwdTest123!</data>
-    </entity>
+    <!--<entity name="VeniaCustomer1" type="customer">-->
+        <!--<data key="first">John</data>-->
+        <!--<data key="last">Smith</data>-->
+        <!--<data key="address">123 Test Drive</data>-->
+        <!--<data key="city">Austin</data>-->
+        <!--<data key="zipCode">78717</data>-->
+        <!--<data key="state">TX</data>-->
+        <!--<data key="phone">1234567890</data>-->
+        <!--<data key="email" unique="prefix">test@example.com</data>-->
+        <!--<data key="password">pwdTest123!</data>-->
+    <!--</entity>-->
 
     <entity name="Simple_US_Customer" type="customer">
         <data key="group_id">1</data>
         <data key="default_billing">true</data>
         <data key="default_shipping">true</data>
         <data key="email" unique="prefix">John.Doe@example.com</data>
+        <data key="phone">1234567890</data>
         <data key="firstname">John</data>
         <data key="lastname">Doe</data>
         <data key="fullname">John Doe</data>
