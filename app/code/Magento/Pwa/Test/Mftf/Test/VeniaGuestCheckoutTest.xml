@@ -73,12 +73,9 @@
                 <requiredEntity createDataKey="createConfigChildProduct2"/>
             </createData>
 
-
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ApiConfigurableProduct"/>
-            </actionGroup>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
 
             <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 

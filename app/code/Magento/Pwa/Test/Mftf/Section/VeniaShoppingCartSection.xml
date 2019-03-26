@@ -104,6 +104,8 @@
         <element name="colorByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//button[contains(@title,'{{var1}}')]" parameterized="true"/>
         <element name="sizeByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="quantity" type="select" selector="//aside[contains(@class, 'miniCart-root_open-')]//select[contains(@class,'select-input-')]"/>
+        <element name="productOptionByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
+
     </section>
 
 </sections>

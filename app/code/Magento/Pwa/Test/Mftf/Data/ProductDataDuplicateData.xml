@@ -11,5 +11,7 @@
     <entity name="ConfigData" type="product">
         <data key="label">option1</data>
         <data key="qty">2</data>
+        <data key="label1">option2</data>
+        <data key="qty1">3</data>
     </entity>
 </entities>
