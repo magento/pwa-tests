@@ -53,6 +53,18 @@
         <see userInput="{{address.street[0]}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerAddress01"/>
     </actionGroup>
 
+    <actionGroup name="AddGetItByShippingInformationViaTheShoppingCart">
+        <arguments>
+            <argument name="shippingMethodName" defaultValue="Flat Rate" type="string"/>
+        </arguments>
+        <click selector="{{VeniaShoppingCartDetailsSection.addShippingInformation}}" stepKey="clickOnAddShippingInformation01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="waitForShippingInformationTitle01"/>
+        <seeOptionIsSelected userInput="{{shippingMethodName}}" selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="selectShippingMethod01"/>
+        <click selector="{{VeniaShoppingCartGetItBySection.save}}" stepKey="clickOnShippingMethodSave01"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="waitForDropDownToDisappear01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForPlaceOrderButtonVisible02"/>
+    </actionGroup>
+
     <actionGroup name="EnterCardDetails">
         <arguments>
             <argument name="creditCard" defaultValue="FakeVisaCard"/>
