@@ -8,16 +8,6 @@
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="OpenProductFromCategoryPage">
-        <arguments>
-            <argument name="productName" type="string"/>
-            <argument name="categoryName" type="string"/>
-        </arguments>
-
-        <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
-    </actionGroup>
 
     <actionGroup name="OpenStorefrontCategoryByName">
         <arguments>
