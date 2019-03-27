@@ -8,7 +8,7 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="VerifySearchFunctionality">
+    <test name="VerifySearchFunctionality" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Search"/>
@@ -16,7 +16,7 @@
             <description value="Search functionality should work for different inputs"/>
             <severity value="CRITICAL"/>
             <testCaseId value="PWA-7"/>
-            <group value="PWA1"/>
+            <group value="PWA"/>
         </annotations>
 
         <before>
@@ -26,71 +26,14 @@
                 <requiredEntity createDataKey="createCategory1"/>
             </createData>
 
-            <!-- Create the category to put the product in -->
-            <createData entity="ApiCategory" stepKey="createCategory"/>
-
-            <!-- Create the configurable product based on the data in the /data folder -->
-            <createData entity="ApiConfigurableProduct" stepKey="createConfigProduct">
-                <requiredEntity createDataKey="createCategory"/>
-            </createData>
-
-            <!-- Make the configurable product have two options, that are children of the default attribute set -->
-            <createData entity="productAttributeWithTwoOptions" stepKey="createConfigProductAttribute"/>
-            <createData entity="productAttributeOption1" stepKey="createConfigProductAttributeOption1">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-            </createData>
-            <createData entity="productAttributeOption2" stepKey="createConfigProductAttributeOption2">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-            </createData>
-            <createData entity="AddToDefaultSet" stepKey="createConfigAddToAttributeSet">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-            </createData>
-            <getData entity="ProductAttributeOptionGetter" index="1" stepKey="getConfigAttributeOption1">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-            </getData>
-            <getData entity="ProductAttributeOptionGetter" index="2" stepKey="getConfigAttributeOption2">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-            </getData>
-
-            <!-- Create the 2 children that will be a part of the configurable product -->
-            <createData entity="ApiSimpleOne" stepKey="createConfigChildProduct1">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-                <requiredEntity createDataKey="getConfigAttributeOption1"/>
-            </createData>
-            <createData entity="ApiSimpleTwo" stepKey="createConfigChildProduct2">
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-                <requiredEntity createDataKey="getConfigAttributeOption2"/>
-            </createData>
-
-            <!-- Assign the two products to the configurable product -->
-            <createData entity="ConfigurableProductTwoOptions" stepKey="createConfigProductOption">
-                <requiredEntity createDataKey="createConfigProduct"/>
-                <requiredEntity createDataKey="createConfigProductAttribute"/>
-                <requiredEntity createDataKey="getConfigAttributeOption1"/>
-                <requiredEntity createDataKey="getConfigAttributeOption2"/>
-            </createData>
-            <createData entity="ConfigurableProductAddChild" stepKey="createConfigProductAddChild1">
-                <requiredEntity createDataKey="createConfigProduct"/>
-                <requiredEntity createDataKey="createConfigChildProduct1"/>
-            </createData>
-            <createData entity="ConfigurableProductAddChild" stepKey="createConfigProductAddChild2">
-                <requiredEntity createDataKey="createConfigProduct"/>
-                <requiredEntity createDataKey="createConfigChildProduct2"/>
-            </createData>
-
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
 
         <after>
-             <!--Delete created entity -->
-            <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
-            <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
-            <deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
-            <deleteData createDataKey="createConfigProduct" stepKey="deleteConfigProduct"/>
-            <deleteData createDataKey="createConfigChildProduct1" stepKey="deleteConfigChildProduct1"/>
-            <deleteData createDataKey="createConfigChildProduct2" stepKey="deleteConfigChildProduct2"/>
-            <deleteData createDataKey="createConfigProductAttribute" stepKey="deleteConfigProductAttribute"/>
-        </after>
+        <!--Delete created entity -->
+        <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
+        <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+       </after>
 
         <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
 
@@ -116,13 +59,6 @@
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad14"/>
         <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="['xyz123c',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
         <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults"/>
-
-        <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText2"/>
-
-        <wait time="3" stepKey="waitForElementToLoad1"/>
-        <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
-        <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="['12xydsacgw34',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter1"/>
-        <actionGroup ref="AssertNoSearchResults" stepKey="assertNoSearchedResults1"/>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText3"/>
 
