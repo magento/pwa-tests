@@ -8,7 +8,7 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestIsAbleToAccessCategories">
+    <test name="GuestIsAbleToAccessCategories" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Categories"/>
@@ -20,22 +20,36 @@
         </annotations>
 
         <before>
+            <createData entity="SimpleSubCategory" stepKey="createCategory1"/>
+            <!--Create Simple Product-->
+            <createData entity="SimpleProduct" stepKey="createSimpleProduct">
+                <requiredEntity createDataKey="createCategory1"/>
+            </createData>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
 
+        <after>
+            <!--Delete created entity -->
+            <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
+            <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+        </after>
+
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu">
-            <argument name="categoryName" value="Bottoms"/>
-            <argument name="productName" value="IsadoraSkirt"/>
+            <argument name="categoryName" value="$$createCategory1.name$$"/>
+            <argument name="productName" value="$$createSimpleProduct.name$$"/>
         </actionGroup>
 
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1">
-            <argument name="categoryName" value="Dresses"/>
-            <argument name="productName" value="PetraSundress"/>
+            <argument name="categoryName" value="$$createCategory.name$$"/>
+            <argument name="productName" value="$$createConfigProduct.name$$"/>
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
 
-        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
-
+        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+            <argument name="categoryName" value="$$createCategory.name$$"/>
+            <argument name="productName" value="$$createConfigProduct.name$$"/>
+        </actionGroup>
     </test>
 </tests>

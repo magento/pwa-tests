@@ -16,30 +16,33 @@
 
         <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
         <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" time="30" stepKey="waitForPwaElementVisible1"/>
     </actionGroup>
 
     <actionGroup name="OpenStorefrontCategoryByName">
         <arguments>
-            <argument name="categoryName" defaultValue="ShopTheLook"/>
-            <argument name="productName" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="categoryName" type="string"/>
+            <argument name="productName" type="string"/>
         </arguments>
-        <click userInput="{{categoryName.name}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.name)}}"  stepKey="waitForPwaElementNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName.name)}}" stepKey="waitForPwaElementVisible01"/>
+        <click userInput="{{categoryName}}" stepKey="clickOnCategoryName1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30" stepKey="waitForPwaElementVisible01"/>
+        <see selector="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
     <actionGroup name="OpenMainMenuCategoryByName">
         <arguments>
-            <argument name="categoryName" defaultValue="ShopTheLook"/>
-            <argument name="productName" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="categoryName" type="string"/>
+            <argument name="productName" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="wait2"/>
-        <click selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.name)}}"  stepKey="waitForPwaElementNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName.name)}}" stepKey="waitForPwaElementVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" stepKey="wait2"/>
+        <wait time="5" stepKey="wait11345" />
+        <click selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" stepKey="clickOnCategoryName1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30"  stepKey="waitForPwaElementVisible01"/>
+        <see userInput="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
 
