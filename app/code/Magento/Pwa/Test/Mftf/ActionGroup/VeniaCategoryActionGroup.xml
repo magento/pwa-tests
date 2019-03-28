@@ -9,6 +9,7 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
 
+    <!--Opens Category from home page-->
     <actionGroup name="OpenStorefrontCategoryByName">
         <arguments>
             <argument name="categoryName" type="string"/>
@@ -20,15 +21,16 @@
         <see selector="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
+    <!--Opens Category from left drawer menu page-->
     <actionGroup name="OpenMainMenuCategoryByName">
         <arguments>
             <argument name="categoryName" type="string"/>
             <argument name="productName" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" time="30" stepKey="waitforNavigationMenuToLoad"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" stepKey="wait2"/>
-        <wait time="5" stepKey="wait11345" />
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" time="30" stepKey="waitForCategoriesToLoad"/>
+        <wait time="5" stepKey="temporaryStaticWait" />
         <click selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" stepKey="clickOnCategoryName1"/>
         <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30"  stepKey="waitForPwaElementVisible01"/>

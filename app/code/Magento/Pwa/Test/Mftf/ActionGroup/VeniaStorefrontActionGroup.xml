@@ -16,6 +16,7 @@
         <wait time="3" stepKey="waitForElementToLoad"/>
     </actionGroup>
 
+    <!--It does not work as expected, there is a open MQE ticket for the same-->
     <actionGroup name="GoToVeniaMobileStorefront">
         <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
 
@@ -34,7 +35,7 @@
             <argument name="SearchData" type="string"/>
         </arguments>
 
-        <wait time="3" stepKey="waitForElementToLoad1"/>
+        <wait time="3" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
         <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="[{{SearchData}},\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
     </actionGroup>
@@ -47,25 +48,25 @@
         </arguments>
 
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="10" stepKey="waitForElementToLoad"/>
+        <wait time="10" stepKey="temporaryStaticWait"/>
         <seeElement selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>
 
     <actionGroup name="AssertNoSearchResults">
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="5" stepKey="waitForElementToLoad1"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
 
-
+    <!--Enters search string but does not submit-->
     <actionGroup name="InputSearchString">
 
         <arguments>
             <argument name="searchData" type="string"/>
         </arguments>
 
-        <wait time="3" stepKey="waitForElementToLoad1"/>
+        <wait time="3" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
         <fillField userInput="{{searchData}}" selector="{{VeniaHeaderSection.searchInput}}" stepKey="inputSearchString"/>
     </actionGroup>
@@ -84,7 +85,7 @@
     </actionGroup>
 
     <actionGroup name="AssertNoResultsInSuggestionBox">
-        <wait time="3" stepKey="waitForElementToLoad1"/>
+        <wait time="3" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestionBox}}" stepKey="waitForSuggestionBoxToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.noResults}}" stepKey="waitForSuggestionBoxResultsToLoad"/>
         <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="categoriesSuggestionShouldNotBeDisplayed"/>

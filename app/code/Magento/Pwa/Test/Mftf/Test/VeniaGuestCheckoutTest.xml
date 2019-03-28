@@ -58,7 +58,7 @@
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>

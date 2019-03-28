@@ -12,12 +12,13 @@
     <actionGroup name="AddToCart">
         <waitForPwaElementVisible selector="{{VeniaProductSection.addToCart}}" stepKey="waitForAddToCartButtonToBeReady"/>
         <click selector="{{VeniaProductSection.addToCart}}" stepKey="clickAddToCart1"/>
-        <wait time="5" stepKey="wait1134" />
+        <wait time="5" stepKey="temporaryStaticWait" />
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productImageByIndex('1')}}" stepKey="waitForSubTotalTitle01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productNameByIndex('1')}}" stepKey="waitForCheckoutButton01"/>
     </actionGroup>
 
+    <!--Navigate directly to product details page by appending product URL key to storefront base URL-->
     <actionGroup name="GoToProductDetailsPage">
         <arguments>
             <argument name="product" defaultValue="ApiConfigurableProduct"/>
@@ -30,7 +31,7 @@
         <arguments>
             <argument name="product" defaultValue="ConfigData"/>
         </arguments>
-        <wait time="5" stepKey="wait123"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaProductSection.productOptionByValue(product.label)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaProductSection.productOptionByValue(product.label)}}" stepKey="clickOnConfigOption01"/>
         <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>

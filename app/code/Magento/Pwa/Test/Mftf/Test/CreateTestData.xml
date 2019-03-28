@@ -8,10 +8,11 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <!--This test just creates configurable product data. This has been extended in actual tests-->
     <test name="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
-            <stories value="Customer Data"/>
+            <stories value="Test Data"/>
             <title value="Create Data for test"/>
             <description value="Create data for test"/>
             <severity value="CRITICAL"/>

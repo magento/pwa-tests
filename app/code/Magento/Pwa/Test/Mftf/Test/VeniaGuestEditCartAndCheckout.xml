@@ -42,7 +42,7 @@
 
         <actionGroup ref="UpdateProductConfigOptions" stepKey="updateProductOptions"/>
 
-        <wait time="8" stepKey="wait12" />
+        <wait time="8" stepKey="temporaryStaticWait" />
 
         <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
@@ -64,7 +64,7 @@
             <argument name="shippingMethodName" value="Flat Rate"/>
         </actionGroup>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>

@@ -94,7 +94,7 @@
             <deleteData createDataKey="createSimpleProduct1" stepKey="deleteSimpleProduct1"/>
         </after>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>
