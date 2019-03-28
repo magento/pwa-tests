@@ -4,7 +4,7 @@
 1. Download latest stable Chrome driver http://chromedriver.chromium.org/  and unzip.
 2. Download latest selenium standalone server https://www.seleniumhq.org/download/
 3. Install Java
-4. Put Chrome driver and Selenium server in one directory and run selenium server ex : 'java -jar selenium-server-standalone-3.14.0.jar'
+4. Put Chrome driver and Selenium server in one directory and run selenium server ex : `java -jar selenium-server-standalone-3.14.0.jar`
 
 ## MFTF Setup
 1. Clone pwa-tests repository
