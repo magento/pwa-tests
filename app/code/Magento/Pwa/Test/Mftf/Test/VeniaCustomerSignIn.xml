@@ -15,7 +15,7 @@
             <title value="User should be able to Sign In to the account on Venia storefront."/>
             <description value="User should be able to Sign In to the account on Venia storefront."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-4"/>
+            <testCaseId value="MC-15642"/>
             <group value="PWA"/>
         </annotations>
 

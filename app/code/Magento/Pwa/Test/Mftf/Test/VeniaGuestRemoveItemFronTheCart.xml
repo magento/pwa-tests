@@ -15,7 +15,7 @@
             <title value="Verify user should be able to Remove an item from the cart"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-12"/>
+            <testCaseId value="MC-15639"/>
             <group value="PWA"/>
             <skip>
                 <issueId value="1064"/>

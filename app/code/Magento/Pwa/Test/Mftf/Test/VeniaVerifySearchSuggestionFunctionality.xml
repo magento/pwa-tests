@@ -15,7 +15,7 @@
             <title value="Verify venia search suggetion box shows results based on input search string"/>
             <description value="Verify venia search suggetion box shows results based on input search string"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-10"/>
+            <testCaseId value="MC-15644"/>
             <group value="PWA"/>
         </annotations>
 

@@ -15,7 +15,7 @@
             <title value="Verify guest user should be able to checkout with Multiple products."/>
             <description value="Verify guest user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-11"/>
+            <testCaseId value="MC-15638"/>
             <group value="PWA"/>
             <skip>
                 <issueId value="1064"/>
