@@ -13,9 +13,8 @@
 
 ## Running Tests
 1. Run Sample Tests:
-    * `vendor/bin/mftf run:test SamplePwaTest`
-    * `vendor/bin/mftf run:test FlipKartSampleTest`
-    * `vendor/bin/mftf run:group veniaTheme`
+    * `vendor/bin/mftf run:test CreateAccount`
+    * `vendor/bin/mftf run:group PWA`
         - Other Venia Groups:
             * `veniaStorefront`
             * `veniaMainMenu`
