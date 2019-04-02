@@ -9,15 +9,11 @@
 ## MFTF Setup
 1. Clone pwa-tests repository
 2. Run `composer install`
+3. Copy .env file and update the variables. To copy `cp dev/tests/acceptance/.env.dist dev/tests/acceptance/.env`
 3. Run `vendor/bin/mftf build:project`
 
 ## Running Tests
-1. Run Sample Tests:
+1. Running Tests Ex:
     * `vendor/bin/mftf run:test CreateAccount`
     * `vendor/bin/mftf run:group PWA`
-        - Other Venia Groups:
-            * `veniaStorefront`
-            * `veniaMainMenu`
-            * `veniaCategory`
-            * `veniaProduct`
-            * `veniaShoppingCart`
+      

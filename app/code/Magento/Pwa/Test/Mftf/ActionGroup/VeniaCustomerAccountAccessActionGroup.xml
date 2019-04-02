@@ -75,5 +75,4 @@
         <see stepKey="assertSuccessMessage" userInput="if there is an account associated with {{Customer.email}} you will receive an email with a link to change your password"/>
     </actionGroup>
 
-
 </actionGroups>
