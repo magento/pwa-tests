@@ -13,7 +13,7 @@
 3. Run `vendor/bin/mftf build:project`
 
 ## Running Tests
-1. Running Tests Ex:
+1. Running Tests: Examples-
     * `vendor/bin/mftf run:test CreateAccount`
     * `vendor/bin/mftf run:group PWA`
       
