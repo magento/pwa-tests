@@ -8,44 +8,56 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="VerifySearchSuggestionFunctionality">
+    <test name="VerifySearchSuggestionFunctionality" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Search"/>
             <title value="Verify venia search suggetion box shows results based on input search string"/>
             <description value="Verify venia search suggetion box shows results based on input search string"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-10"/>
+            <testCaseId value="MC-15644"/>
             <group value="PWA"/>
         </annotations>
 
         <before>
+            <createData entity="SimpleSubCategory" stepKey="createCategory1"/>
+            <!--Create Simple Product-->
+            <createData entity="SimpleProduct" stepKey="createSimpleProduct">
+                <requiredEntity createDataKey="createCategory1"/>
+            </createData>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
+
+        <after>
+            <!--Delete created entity -->
+            <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
+            <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+        </after>
 
         <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
 
         <actionGroup ref="InputSearchString" stepKey="inputSearchString">
-            <argument name="searchData" value="{{SearchInputData.valid_sku}}"/>
+            <argument name="searchData" value="$$createConfigProduct.sku$$"/>
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox">
-            <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
+            <argument name="productDetails" value="$$createConfigProduct.name$$"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
 
         <actionGroup ref="InputSearchString" stepKey="inputSearchString1">
-            <argument name="searchData" value="{{SearchInputData.valid_sku1}}"/>
+            <argument name="searchData" value="$$createSimpleProduct.sku$$"/>
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox1">
-            <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
+            <argument name="productDetails" value="$$createSimpleProduct.name$$"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
 
-        <actionGroup ref="InputSearchString" stepKey="inputSearchString2">
-            <argument name="searchData" value="{{SearchInputData.invalid_sku}}"/>
-        </actionGroup>
+        <wait time="3" stepKey="waitForElementToLoad1"/>
+        <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
+        <fillField userInput="ssjfgdkfefg" selector="{{VeniaHeaderSection.searchInput}}" stepKey="inputSearchString2"/>
         <actionGroup ref="AssertNoResultsInSuggestionBox" stepKey="assertNoSearchedResultsInSuggestionBox"/>
 
     </test>

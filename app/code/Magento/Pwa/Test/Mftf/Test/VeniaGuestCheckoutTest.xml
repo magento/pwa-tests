@@ -8,25 +8,27 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestCheckout">
+    <test name="GuestCheckout" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Guest Checkout"/>
             <title value="Guest user should be able to checkout on Venia storefront with single product"/>
             <description value="Guest user should be able to checkout on Venia storefront with single product"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-2"/>
+            <testCaseId value="MC-15647"/>
             <group value="PWA"/>
+            <skip>
+                <issueId value="1064"/>
+            </skip>
         </annotations>
 
         <before>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ValeriaTwoLayerTank"/>
-            </actionGroup>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
@@ -36,9 +38,7 @@
 
             <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
-            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1"/>
 
             <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
 
@@ -58,7 +58,7 @@
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>

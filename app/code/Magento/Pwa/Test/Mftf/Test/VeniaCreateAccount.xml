@@ -15,7 +15,7 @@
             <title value="User should be able to create account on Venia storefront."/>
             <description value="User should be able to create account on Venia storefront."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-3"/>
+            <testCaseId value="MC-15636"/>
             <group value="PWA"/>
         </annotations>
         <before>
@@ -26,13 +26,9 @@
 
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
 
-        <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
-            <argument name="Customer" value="VeniaCustomer1"/>
-        </actionGroup>
+        <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount"/>
 
-        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
-            <argument name="Customer" value="VeniaCustomer1"/>
-        </actionGroup>
+        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
 
     </test>
 </tests>

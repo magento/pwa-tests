@@ -8,24 +8,27 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="EditCartAndCheckout">
+    <test name="EditCartAndCheckout" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Kebab Features"/>
             <title value="Verify user should be able to edit the cart and complete checkout flow"/>
             <description value="Verify user should be able to edit the cart and complete checkout flow"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-13"/>
+            <testCaseId value="MC-15645"/>
             <group value="PWA"/>
+            <skip>
+                <issueId value="1064"/>
+            </skip>
         </annotations>
 
         <before>
-            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ValeriaTwoLayerTank"/>
-            </actionGroup>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
+
+            <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
@@ -37,15 +40,13 @@
 
         <actionGroup ref="GoToEditItemCartPanel" stepKey="goEditItemPanelInTheCart"/>
 
-        <actionGroup ref="UpdateProductColorAndSizeAndQuantityOptions" stepKey="updateProductOptions"/>
+        <actionGroup ref="UpdateProductConfigOptions" stepKey="updateProductOptions"/>
 
-        <wait time="8" stepKey="wait12" />
+        <wait time="8" stepKey="temporaryStaticWait" />
 
         <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
-        <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-            <argument name="customer" value="VeniaCustomer1"/>
-        </actionGroup>
+        <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1"/>
 
         <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
 
@@ -63,7 +64,7 @@
             <argument name="shippingMethodName" value="Flat Rate"/>
         </actionGroup>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>

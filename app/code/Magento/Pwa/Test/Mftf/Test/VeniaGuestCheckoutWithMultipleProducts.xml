@@ -8,40 +8,53 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestCheckoutWithMultipleProducts">
+    <test name="GuestCheckoutWithMultipleProducts" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Guest Checkout"/>
             <title value="Verify guest user should be able to checkout with Multiple products."/>
             <description value="Verify guest user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-11"/>
+            <testCaseId value="MC-15638"/>
             <group value="PWA"/>
+            <skip>
+                <issueId value="1064"/>
+            </skip>
         </annotations>
 
         <before>
 
+            <createData entity="SimpleSubCategory" stepKey="createCategory1"/>
+            <!--Create Simple Product-->
+            <createData entity="SimpleProduct" stepKey="createSimpleProduct">
+                <requiredEntity createDataKey="createCategory1"/>
+            </createData>
+
+            <createData entity="SimpleProduct3" stepKey="createSimpleProduct1">
+                <requiredEntity createDataKey="createCategory1"/>
+            </createData>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ValeriaTwoLayerTank"/>
-            </actionGroup>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
 
+            <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
-                <argument name="product" value="CarminaEarrings"/>
+                <argument name="product" value="SimpleProduct"/>
             </actionGroup>
+
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad11"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart2"/>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
-                <argument name="product" value="AugustaEarrings"/>
+                <argument name="product" value="SimpleProduct3"/>
             </actionGroup>
 
             <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
@@ -54,9 +67,7 @@
 
             <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
-            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
+            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1"/>
 
             <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
 
@@ -76,7 +87,14 @@
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <after>
+            <!-- Delete created entity -->
+            <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
+            <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+            <deleteData createDataKey="createSimpleProduct1" stepKey="deleteSimpleProduct1"/>
+        </after>
+
+        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
 
     </test>
 </tests>

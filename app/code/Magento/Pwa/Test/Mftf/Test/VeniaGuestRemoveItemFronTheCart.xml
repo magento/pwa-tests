@@ -8,24 +8,29 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="RemoveItemFromTheCart">
+    <test name="RemoveItemFromTheCart" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
             <stories value="Kebab Features"/>
             <title value="Verify user should be able to Remove an item from the cart"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-12"/>
+            <testCaseId value="MC-15639"/>
             <group value="PWA"/>
+            <skip>
+                <issueId value="1064"/>
+            </skip>
         </annotations>
 
         <before>
+
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ValeriaTwoLayerTank"/>
+                <argument name="product" value="ApiConfigurableProduct"/>
             </actionGroup>
 
-            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 

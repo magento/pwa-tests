@@ -12,14 +12,12 @@
         <element name="productName" type="text" selector="[class*='productFullDetail-productName-']"/>
         <element name="productPrice" type="text" selector="[class*='productFullDetail-productPrice-']"/>
         <element name="productDescription" type="text" selector="[class*='productFullDetail-description-']"/>
-
         <element name="productColor" type="button" selector="[class*='swatch-root-']"/>
         <element name="productColorByValue" type="button" selector="[class*='swatch-root-'][title='{{var1}}']" parameterized="true"/>
         <element name="productSize" type="button" selector="//*[contains(@class, 'tileList-root-')]//span"/>
         <element name="productSizeByValue" type="button" selector="//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
-
+        <element name="productOptionByValue" type="button" selector="//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="productQuantity" type="select" selector="[class*='quantity-root-'] [name*='quantity']"/>
-
         <element name="addToCart" type="button" selector="[class*='productFullDetail-cartActions-'] button"/>
     </section>
 </sections>

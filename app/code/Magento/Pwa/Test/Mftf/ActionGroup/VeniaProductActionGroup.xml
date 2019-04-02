@@ -8,32 +8,33 @@
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="SetProductColorAndSizeAndQuantityOptions">
-        <arguments>
-            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
-        </arguments>
-        <wait time="5" stepKey="wait123"/>
-        <waitForPwaElementVisible sselector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
-        <click selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
-        <click selector="{{VeniaProductSection.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
-        <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
-    </actionGroup>
 
     <actionGroup name="AddToCart">
-        <waitForPwaElementVisible sselector="{{VeniaProductSection.addToCart)}}" stepKey="waitForAddToCartButtonToBeReady"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.addToCart}}" stepKey="waitForAddToCartButtonToBeReady"/>
         <click selector="{{VeniaProductSection.addToCart}}" stepKey="clickAddToCart1"/>
-        <wait time="5" stepKey="wait1134" />
+        <wait time="5" stepKey="temporaryStaticWait" />
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productImageByIndex('1')}}" stepKey="waitForSubTotalTitle01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productNameByIndex('1')}}" stepKey="waitForCheckoutButton01"/>
     </actionGroup>
 
+    <!--Navigate directly to product details page by appending product URL key to storefront base URL-->
     <actionGroup name="GoToProductDetailsPage">
         <arguments>
-            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="product" defaultValue="ApiConfigurableProduct"/>
         </arguments>
-        <amOnPage url="{{product.url}}" stepKey="goToVeniaProductDetailsPage"/>
+        <amOnPage url="/{{product.urlKey}}2.html" stepKey="goToVeniaProductDetailsPage"/>
         <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>
+    </actionGroup>
+
+    <actionGroup name="SetProductConfigOptions">
+        <arguments>
+            <argument name="product" defaultValue="ConfigData"/>
+        </arguments>
+        <wait time="5" stepKey="temporaryStaticWait"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.productOptionByValue(product.label)}}" stepKey="waitFOrProducttoDisplay"/>
+        <click selector="{{VeniaProductSection.productOptionByValue(product.label)}}" stepKey="clickOnConfigOption01"/>
+        <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
     </actionGroup>
 
 </actionGroups>

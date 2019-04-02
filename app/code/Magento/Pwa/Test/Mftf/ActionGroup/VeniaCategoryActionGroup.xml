@@ -8,39 +8,33 @@
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="OpenProductFromCategoryPage">
-        <arguments>
-            <argument name="productName" type="string"/>
-            <argument name="categoryName" type="string"/>
-        </arguments>
 
-        <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}" stepKey="waitForPwaElementNotVisible1"/>
-        <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>
-    </actionGroup>
-
+    <!--Opens Category from home page-->
     <actionGroup name="OpenStorefrontCategoryByName">
         <arguments>
-            <argument name="categoryName" defaultValue="ShopTheLook"/>
-            <argument name="productName" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="categoryName" type="string"/>
+            <argument name="productName" type="string"/>
         </arguments>
-        <click userInput="{{categoryName.name}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.name)}}"  stepKey="waitForPwaElementNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName.name)}}" stepKey="waitForPwaElementVisible01"/>
+        <click userInput="{{categoryName}}" stepKey="clickOnCategoryName1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30" stepKey="waitForPwaElementVisible01"/>
+        <see selector="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
+    <!--Opens Category from left drawer menu page-->
     <actionGroup name="OpenMainMenuCategoryByName">
         <arguments>
-            <argument name="categoryName" defaultValue="ShopTheLook"/>
-            <argument name="productName" defaultValue="ValeriaTwoLayerTank"/>
+            <argument name="categoryName" type="string"/>
+            <argument name="productName" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" time="30" stepKey="waitforNavigationMenuToLoad"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="wait2"/>
-        <click selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="clickOnCategoryName1"/>
-        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.name)}}"  stepKey="waitForPwaElementNotVisible01"/>
-        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName.name)}}" stepKey="waitForPwaElementVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" time="30" stepKey="waitForCategoriesToLoad"/>
+        <wait time="5" stepKey="temporaryStaticWait" />
+        <click selector="{{VeniaMainMenuSection.categoryByName(categoryName)}}" stepKey="clickOnCategoryName1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30"  stepKey="waitForPwaElementVisible01"/>
+        <see userInput="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
-
 
 </actionGroups>
