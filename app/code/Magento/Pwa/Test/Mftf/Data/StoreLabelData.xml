@@ -8,17 +8,9 @@
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
-    <entity name="Option1Store0" type="StoreLabel">
-        <data key="store_id">0</data>
-        <data key="label">option1</data>
-    </entity>
     <entity name="Option1Store1" type="StoreLabel">
         <data key="store_id">1</data>
         <data key="label">option1</data>
-    </entity>
-    <entity name="Option2Store0" type="StoreLabel">
-        <data key="store_id">0</data>
-        <data key="label">option2</data>
     </entity>
     <entity name="Option2Store1" type="StoreLabel">
         <data key="store_id">1</data>
