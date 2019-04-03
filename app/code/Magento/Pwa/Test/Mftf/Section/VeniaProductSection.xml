@@ -20,6 +20,6 @@
 
         <element name="productQuantity" type="select" selector="[class*='quantity-root-'] [name*='quantity']"/>
 
-        <element name="addToCart" type="button" selector="[class*='productFullDetail-cartActions-'] button"/>
+        <element name="addToCart" type="button" selector="[class^='productFullDetail-cartActions-'] button"/>
     </section>
 </sections>

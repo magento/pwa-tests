@@ -12,12 +12,14 @@
         <data key="name">Shop The Look</data>
         <data key="is_active">true</data>
         <data key="include_in_menu">true</data>
+        <data key="subCatName">Minimalist Sensibility</data>
     </entity>
 
     <entity name="Bottoms" type="category">
         <data key="name">Bottoms</data>
         <data key="is_active">true</data>
         <data key="include_in_menu">true</data>
+        <data key="subCatName">Skirts</data>
     </entity>
 
     <entity name="Tops" type="category">

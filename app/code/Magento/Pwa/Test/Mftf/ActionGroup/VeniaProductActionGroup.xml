@@ -13,14 +13,14 @@
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <wait time="5" stepKey="wait123"/>
-        <waitForPwaElementVisible sselector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaProductSection.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
         <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
     </actionGroup>
 
     <actionGroup name="AddToCart">
-        <waitForPwaElementVisible sselector="{{VeniaProductSection.addToCart)}}" stepKey="waitForAddToCartButtonToBeReady"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.addToCart}}" stepKey="waitForAddToCartButtonToBeReady"/>
         <click selector="{{VeniaProductSection.addToCart}}" stepKey="clickAddToCart1"/>
         <wait time="5" stepKey="wait1134" />
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible01"/>

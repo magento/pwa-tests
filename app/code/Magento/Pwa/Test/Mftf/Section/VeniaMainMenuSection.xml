@@ -49,7 +49,7 @@
 
 
     <section name="VeniaMainMenuUserAccountSection">
-        <element name="userInfoRoot" type="label" selector="div[class*='userInformation-userInformationContainer']"/>
+        <element name="userInfoRoot" type="text" selector="div[class*='userInformation-userInformationContainer']"/>
     </section>
 
 </sections>

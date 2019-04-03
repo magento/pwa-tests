@@ -25,15 +25,21 @@
 
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu">
             <argument name="categoryName" value="Bottoms"/>
+        </actionGroup>
+        <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu">
+            <argument name="categoryName" value="Bottoms"/>
+        </actionGroup>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay">
             <argument name="productName" value="IsadoraSkirt"/>
         </actionGroup>
 
-        <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1">
-            <argument name="categoryName" value="Dresses"/>
-            <argument name="productName" value="PetraSundress"/>
-        </actionGroup>
-
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
+
+        <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1"/>
+        <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu1"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay1"/>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
 
         <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
 
