@@ -8,12 +8,12 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestCheckoutWithMultipleProducts" extends="CreateConfigurableProduct">
+    <test name="RegisteredUserCheckoutWithMultipleProducts" extends="CreateConfigurableProduct">
         <annotations>
             <features value="PWA"/>
-            <stories value="Guest Checkout"/>
-            <title value="Verify guest user should be able to checkout with Multiple products."/>
-            <description value="Verify guest user should be able to checkout with Multiple products."/>
+            <stories value="Checkout"/>
+            <title value="Verify registered user should be able to checkout with Multiple products."/>
+            <description value="Verify registered user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
             <testCaseId value="MC-15638"/>
             <group value="PWA"/>
@@ -23,9 +23,11 @@
         </annotations>
 
         <before>
+            <!--Create Customer-->
+            <createData entity="Simple_US_Customer" stepKey="createCustomer"/>
 
+            <!--Create Simple Product and category-->
             <createData entity="SimpleSubCategory" stepKey="createCategory1"/>
-            <!--Create Simple Product-->
             <createData entity="SimpleProduct" stepKey="createSimpleProduct">
                 <requiredEntity createDataKey="createCategory1"/>
             </createData>
@@ -36,6 +38,12 @@
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
+            <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
+
+            <actionGroup ref="SignIn" stepKey="enterEmailForAccount">
+                <argument name="email" value="$$createCustomer.email$$"/>
+                <argument name="pwd" value="$$createCustomer.password$$"/>
+            </actionGroup>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
 
@@ -89,12 +97,17 @@
 
         <after>
             <!-- Delete created entity -->
+            <deleteData createDataKey="createCustomer" stepKey="deleteCustomer"/>
             <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
             <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
             <deleteData createDataKey="createSimpleProduct1" stepKey="deleteSimpleProduct1"/>
         </after>
 
         <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
+
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
 
     </test>
 </tests>

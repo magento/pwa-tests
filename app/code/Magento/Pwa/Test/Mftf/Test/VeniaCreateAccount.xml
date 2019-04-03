@@ -30,5 +30,7 @@
 
         <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
 
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
+
     </test>
 </tests>

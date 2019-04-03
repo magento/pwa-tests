@@ -25,6 +25,7 @@
         </before>
 
         <after>
+            <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
             <deleteData createDataKey="createCustomer" stepKey="deleteCustomer"/>
         </after>
 
