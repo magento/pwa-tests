@@ -9,7 +9,8 @@
 ## MFTF Setup
 1. Clone pwa-tests repository
 2. Run `composer install`
-3. Copy .env file and update the variables. To copy `cp dev/tests/acceptance/.env.dist dev/tests/acceptance/.env`
+3. Run `vendor/bin/mftf setup:env` to generate .env file under dev/tests/acceptance and update variable values
+4. Add new variable STOREFRONT_URL with value, Example: STOREFRONT_URL=https://venia.pwa.com
 3. Run `vendor/bin/mftf build:project`
 
 ## Running Tests
