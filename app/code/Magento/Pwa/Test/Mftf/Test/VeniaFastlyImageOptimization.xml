@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="FastlyImageOptimization" extends="CreateSimpleProductWithImage">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Product Image"/>
+            <title value="Verify Fastly image optimization works with upward_php"/>
+            <description value="Verify Fastly image optimization works with upward_php"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-15730"/>
+            <group value="Fastly"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        </before>
+
+        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1">
+            <argument name="categoryName" value="$$createCategory1.name$$"/>
+            <argument name="productName" value="$$createSimpleProduct.name$$"/>
+        </actionGroup>
+
+        <executeJS function='return document.querySelector("{{VeniaCategorySection.productImageAlt($$createSimpleProduct.sku$$)}}").naturalHeight;' stepKey="getImageNaturalHeight"/>
+        <assertEquals stepKey="assertNaturalHeight">
+            <expectedResult type="string">{{FastlyImageResize.height}}</expectedResult>
+            <actualResult type="variable">getImageNaturalHeight</actualResult>
+        </assertEquals>
+
+        <executeJS function='return document.querySelector("{{VeniaCategorySection.productImageAlt($$createSimpleProduct.sku$$)}}").naturalWidth;' stepKey="getImageNaturalWidth"/>
+        <assertEquals stepKey="assertNaturalWidth">
+            <expectedResult type="string">{{FastlyImageResize.width}}</expectedResult>
+            <actualResult type="variable">getImageNaturalWidth</actualResult>
+        </assertEquals>
+
+    </test>
+</tests>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+    <entity name="AddImage" type="ProductAttributeMediaGalleryEntry">
+        <requiredEntity type="custom_attribute">CustomAttributeSku</requiredEntity>
+        <data key="media_type">image</data>
+        <data key="label">fastly test image</data>
+        <data key="position">1</data>
+        <data key="disabled">false</data>
+        <array key="types">
+            <item>image</item>
+            <item>small_image</item>
+            <item>thumbnail</item>
+        </array>
+        <requiredEntity type="ImageContent">TestImageContent</requiredEntity>
+    </entity>
+
+</entities>
