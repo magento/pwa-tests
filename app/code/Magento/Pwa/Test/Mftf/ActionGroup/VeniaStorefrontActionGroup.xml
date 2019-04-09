@@ -27,6 +27,8 @@
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
         <waitForPwaElementVisible selector="{{VeniaStorefrontSection.title}}" stepKey="waitForPwaCategoryVisible01"/>
+        <!--This static wait needed until MQE-1457 gets fixed. Reason - sometimes categories load takes time and in some cases category load but actual category image load takes some extra milliseconds-->
+        <wait time="5" stepKey="temporaryStaticWait1" />
     </actionGroup>
 
     <actionGroup name="SearchProduct">

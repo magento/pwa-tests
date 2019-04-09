@@ -9,7 +9,7 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
 
-    <entity name="FastlyImageResize" type="customer">
+    <entity name="ImageOptimization" type="customer">
         <data key="height">372</data>
         <data key="width">300</data>
     </entity>
