@@ -1,0 +1,36 @@
+version: 0.2
+env:
+  parameter-store:
+    MAGENTO_BACKEND_URL: "/pwa/MAGENTO_BACKEND_URL"
+    MAGENTO_ADMIN_USERNAME: "/pwa/MAGENTO_ADMIN_USERNAME"
+    MAGENTO_ADMIN_PASSWORD: "/pwa/MAGENTO_ADMIN_PASSWORD"
+    STOREFRONT_URL: "/pwa/STOREFRONT_URL"
+
+phases:
+  pre_build:
+    commands:
+
+    - echo logging in to AWS ECR...
+    - $(aws ecr get-login --no-include-email --region us-east-1)
+    - echo copying env vars to env file
+    - touch .env
+    - echo MAGENTO_BACKEND_URL=$MAGENTO_BACKEND_URL >> .env
+    - echo MAGENTO_ADMIN_USERNAME=$MAGENTO_ADMIN_USERNAME >> .env
+    - echo MAGENTO_ADMIN_PASSWORD=$MAGENTO_ADMIN_PASSWORD >> .env
+    - echo MODULE_WHITELIST=Pwa >> .env
+    - echo STOREFRONT_URL=$STOREFRONT_URL >> .env
+    - echo SELENIUM_HOST=selenium >> .env
+    - mv .env dev/tests/acceptance
+    - VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION
+    - echo VERSION=$VERSION
+
+  build:
+    commands:
+    - echo build Docker image on `date`
+    - docker-compose build
+
+  post_build:
+    commands:
+    - echo build Docker image complete `date`
+    - echo push latest Docker images to ECR...
+    - docker-compose push
