@@ -10,4 +10,6 @@ RUN composer install
 
 RUN vendor/bin/mftf build:project
 
+RUN cat dev/tests/acceptance/.env
+
 
