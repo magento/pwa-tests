@@ -1,5 +1,3 @@
-# wait to start the script until both containers have started
-sleep 15;
 how_many () {
   RUNNING_CONTAINERS=$(docker ps -q | wc -l)
 }
