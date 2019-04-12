@@ -24,7 +24,7 @@ phases:
     commands:
     - echo build Docker image on `date`
     - docker-compose build
-    - docker-compose up -d && sh kill-selenium.sh
+    - sh kill-selenium.sh & && docker-compose up
 
   post_build:
     commands:
