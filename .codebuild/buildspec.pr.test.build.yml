@@ -12,7 +12,7 @@ phases:
 
     - echo copying env vars to env file
     - touch .env
-    - echo MAGENTO_BACKEND_URL=$MAGENTO_BACKEND_URL >> .env
+    - echo MAGENTO_BASE_URL=$MAGENTO_BACKEND_URL >> .env
     - echo MAGENTO_ADMIN_USERNAME=$MAGENTO_ADMIN_USERNAME >> .env
     - echo MAGENTO_ADMIN_PASSWORD=$MAGENTO_ADMIN_PASSWORD >> .env
     - echo MODULE_WHITELIST=Pwa >> .env
