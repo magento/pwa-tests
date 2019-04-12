@@ -2,6 +2,7 @@ version: '3'
 services:
   selenium:
     image: selenium/standalone-chrome
+    restart: always
     ports:
     - '4444:4444'
   mftf:
