@@ -10,8 +10,6 @@ phases:
   pre_build:
     commands:
 
-    - echo logging in to AWS ECR...
-    - $(aws ecr get-login --no-include-email --region us-east-1)
     - echo copying env vars to env file
     - touch .env
     - echo MAGENTO_BACKEND_URL=$MAGENTO_BACKEND_URL >> .env
@@ -21,16 +19,12 @@ phases:
     - echo STOREFRONT_URL=$STOREFRONT_URL >> .env
     - echo SELENIUM_HOST=selenium >> .env
     - mv .env dev/tests/acceptance
-    - VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION
-    - echo VERSION=$VERSION
 
   build:
     commands:
     - echo build Docker image on `date`
-    - docker-compose build
+    - docker-compose up -d && sh kill-selenium.sh
 
   post_build:
     commands:
     - echo build Docker image complete `date`
-    - echo push latest Docker images to ECR...
-    - docker-compose push
