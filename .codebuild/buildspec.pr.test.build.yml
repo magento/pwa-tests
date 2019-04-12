@@ -33,5 +33,4 @@ phases:
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
-  discard-paths: yes
-  name: $(date +"%m-%d-%Y-%T")_test_results
+  name: $(date +%m-%d-%Y-%T)_test_results
