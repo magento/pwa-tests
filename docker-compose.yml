@@ -8,7 +8,7 @@ services:
   mftf:
     build:
       context: .
-    entrypoint: vendor/bin/mftf run:group PWA
+    entrypoint: vendor/bin/mftf run:group PWA1
     volumes:
       - ./dev/tests/acceptance/tests:/usr/src/app/dev/tests/acceptance/tests
     links:
