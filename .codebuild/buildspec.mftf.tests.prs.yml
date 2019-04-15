@@ -4,7 +4,7 @@ env:
     MAGENTO_BACKEND_URL: "/pwa/MAGENTO_BACKEND_URL"
     MAGENTO_ADMIN_USERNAME: "/pwa/MAGENTO_ADMIN_USERNAME"
     MAGENTO_ADMIN_PASSWORD: "/pwa/MAGENTO_ADMIN_PASSWORD"
-    STOREFRONT_URL: "/pwa/STOREFRONT_URL"
+    STOREFRONT_URL: "/pwa/STOREFRONT_URL_STAGING"
 
 phases:
   pre_build:
@@ -24,7 +24,7 @@ phases:
     commands:
     - echo build Docker image on `date`
     - docker-compose build
-    - docker-compose up -d && sh kill-selenium.sh
+    - ./.bin/kill-selenium & docker-compose up
 
   post_build:
     commands:
@@ -33,4 +33,4 @@ phases:
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
-  name: $(date +%m-%d-%Y-%T)_test_results
+  name: $(date + %m-%d-%Y-%T)_test_results
