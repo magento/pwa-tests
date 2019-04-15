@@ -4,7 +4,7 @@ services:
     image: selenium/standalone-chrome
     restart: always
     ports:
-    - '4444:4444'
+      - '4444:4444'
   mftf:
     build:
       context: .
@@ -12,5 +12,5 @@ services:
     volumes:
       - ./dev/tests/acceptance/tests:/usr/src/app/dev/tests/acceptance/tests
     links:
-    - selenium
+      - selenium
 

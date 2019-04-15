@@ -1,18 +1,29 @@
-# wait to start the script until both containers have started
-sleep 15;
+###########################################################################################
+# This script waits for 2 containers to start, selenium and MFTF, when running 
+# docker-compose up. After the two containers are running the script waits for the MFTF
+# test container to exit after the test run completes. The last container running is selenium, 
+# which needs to be stopped and, finally, the test results are checked for failures to exit 
+# the script with the correct exit status.
+###########################################################################################
 
-# there are two containers that start, selenium and MFTF
-# kill selenium after the test container has finished running tests
-how_many () {
-  RUNNING_CONTAINERS=$(docker ps -q | wc -l)  # count starts at 2
+count_containers () {
+  CONTAINER_COUNT=$(docker ps -q | wc -l)
 }
-how_many
-# if the count drops to 1 then the tests finished
-while [ $RUNNING_CONTAINERS -gt 1 ]; do
+count_containers
+
+# first wait for both containers to start
+while [ $CONTAINER_COUNT -lt 2 ]; do
+  echo "waiting for containers to start: $CONTAINER_COUNT containers running..."
   sleep 10;
-  how_many
+  count_containers
 done
-echo -e "Containers running: $RUNNING_CONTAINERS\ntests have finished! stopping selenium..."
+echo "both containers are up: $CONTAINER_COUNT containers running..."
+# after both containers start, when the count drops to 1 then the tests finished
+while [ $CONTAINER_COUNT -gt 1 ]; do
+  sleep 10;
+  count_containers
+done
+echo -e "Containers running: $CONTAINER_COUNT\ntests have finished! stopping selenium..."
 docker stop $(docker ps -q)
 
 # determine if there were failures 
