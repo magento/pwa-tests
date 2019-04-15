@@ -81,4 +81,33 @@
             <deleteData createDataKey="createConfigProductAttribute" stepKey="deleteConfigProductAttribute"/>
         </after>
     </test>
+
+    <!--This test just creates simple product with image. This has been extended in actual tests-->
+    <test name="CreateSimpleProductWithImage">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Test Data"/>
+            <title value="Create data - simple product with image"/>
+            <description value="Create data - simple product with image"/>
+            <severity value="CRITICAL"/>
+            <group value="Data"/>
+        </annotations>
+
+        <before>
+            <createData entity="SimpleSubCategory" stepKey="createCategory1"/>
+            <createData entity="SimpleProduct" stepKey="createSimpleProduct">
+                <requiredEntity createDataKey="createCategory1"/>
+            </createData>
+            <createData entity="AddImage" stepKey="addImageToProduct">
+                <requiredEntity createDataKey="createSimpleProduct"/>
+            </createData>
+        </before>
+
+        <after>
+            <!--Delete created entity -->
+            <deleteData createDataKey="createCategory1" stepKey="deleteCategory1"/>
+            <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+        </after>
+    </test>
+
 </tests>
