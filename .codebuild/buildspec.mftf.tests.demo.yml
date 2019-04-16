@@ -32,5 +32,4 @@ phases:
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
-    - ./nohup.out/**/*
   name: $(date +%m-%d-%Y-%T)_test_results
