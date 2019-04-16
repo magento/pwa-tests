@@ -25,7 +25,8 @@ phases:
       - docker-compose build
       - nohup ./.bin/kill-selenium &
       - docker-compose up &
-      - wait ./.bin/test
+      - wait 150
+      - ./.bin/test
 
   post_build:
     commands:
