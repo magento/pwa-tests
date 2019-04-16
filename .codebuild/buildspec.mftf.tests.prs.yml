@@ -23,12 +23,12 @@ phases:
     commands:
       - echo build Docker image on `date`
       - docker-compose build
-      - nohup ./.bin/kill-selenium &
-      - docker-compose up
+      - nohup docker-compose up & ./.bin/kill-selenium
 
   post_build:
     commands:
       - echo build Docker image complete `date`
+      - mv consolidated_test_report ./dev/tests/acceptance/tests/_output
 
 artifacts:
   files:
