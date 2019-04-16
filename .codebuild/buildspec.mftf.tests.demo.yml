@@ -23,7 +23,7 @@ phases:
     commands:
       - echo build Docker image on `date`
       - docker-compose build
-      - docker-compose up -d && sh ./.bin/kill-selenium
+      - nohup docker-compose up & sh ./.bin/kill-selenium
 
   post_build:
     commands:
@@ -32,4 +32,5 @@ phases:
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
+    - ./nohup.out/**/*
   name: $(date +%m-%d-%Y-%T)_test_results
