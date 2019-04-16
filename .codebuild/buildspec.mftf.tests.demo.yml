@@ -28,9 +28,9 @@ phases:
   post_build:
     commands:
       - echo build Docker image complete `date`
+      - mv consolidated_test_report ./dev/tests/acceptance/tests/_output
 
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
-    - ./consolidatedreults
   name: $(date +%m-%d-%Y-%T)_test_results
