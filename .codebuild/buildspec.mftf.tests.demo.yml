@@ -32,4 +32,5 @@ phases:
 artifacts:
   files:
     - ./dev/tests/acceptance/tests/_output/**/*
+    - ./consolidatedreults
   name: $(date +%m-%d-%Y-%T)_test_results
