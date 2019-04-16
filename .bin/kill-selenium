@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 ###########################################################################################
 # This script waits for 2 containers to start, selenium and MFTF, when running 
 # docker-compose up. After the two containers are running the script waits for the MFTF
