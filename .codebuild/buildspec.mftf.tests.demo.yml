@@ -24,7 +24,8 @@ phases:
       - echo build Docker image on `date`
       - docker-compose build
       - nohup ./.bin/kill-selenium &
-      - docker-compose up
+      - docker-compose up &
+      - wait ./.bin/test
 
   post_build:
     commands:
