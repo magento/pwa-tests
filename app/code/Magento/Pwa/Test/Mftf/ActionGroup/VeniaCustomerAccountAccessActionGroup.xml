@@ -57,7 +57,7 @@
             <argument name="Customer" defaultValue="Simple_US_Customer"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" stepKey="waitForPwaElementVisible7"/>
-        <dontsee stepKey="assertCustomerName" userInput="{{Customer.firstname}} {{Customer.lastname}}"/>
+        <see stepKey="assertCustomerName" userInput="{{Customer.firstname}} {{Customer.lastname}}"/>
     </actionGroup>
 
     <actionGroup name="UpdatePassword">
