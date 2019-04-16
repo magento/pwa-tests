@@ -23,8 +23,6 @@ while [ $CONTAINER_COUNT -gt 1 ]; do
   sleep 10;
   count_containers
 done
-echo -e "Containers running: $CONTAINER_COUNT\ntests have finished! stopping selenium..."
-docker stop $(docker ps -q)
 
 # determine if there were failures
 FAIL_FILE="./dev/tests/acceptance/tests/_output/failed"
@@ -34,5 +32,8 @@ if [ -f $FAIL_FILE ]; then
     sh ./.bin/kill.sh
     exit 1
 fi
+
+echo -e "Containers running: $CONTAINER_COUNT\ntests have finished! stopping selenium..."
+docker stop $(docker ps -q)
 
 exit 0
