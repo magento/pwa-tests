@@ -1,0 +1,36 @@
+version: 0.2
+env:
+  parameter-store:
+    MAGENTO_BACKEND_URL: "/pwa/MAGENTO_BACKEND_URL"
+    MAGENTO_ADMIN_USERNAME: "/pwa/MAGENTO_ADMIN_USERNAME"
+    MAGENTO_ADMIN_PASSWORD: "/pwa/MAGENTO_ADMIN_PASSWORD"
+    STOREFRONT_URL: "/pwa/STOREFRONT_URL_STAGING"
+
+phases:
+  pre_build:
+    commands:
+      - echo copying env vars to env file
+      - touch .env
+      - echo MAGENTO_BASE_URL=$MAGENTO_BACKEND_URL >> .env
+      - echo MAGENTO_ADMIN_USERNAME=$MAGENTO_ADMIN_USERNAME >> .env
+      - echo MAGENTO_ADMIN_PASSWORD=$MAGENTO_ADMIN_PASSWORD >> .env
+      - echo MODULE_WHITELIST=Pwa >> .env
+      - echo STOREFRONT_URL=$STOREFRONT_URL >> .env
+      - echo SELENIUM_HOST=selenium >> .env
+      - mv .env dev/tests/acceptance
+
+  build:
+    commands:
+      - echo build Docker image on `date`
+      - docker-compose build
+      - nohup docker-compose up & ./.bin/kill-selenium
+
+  post_build:
+    commands:
+      - echo build Docker image complete `date`
+      - mv ./.bin/consolidate_test_report ./dev/tests/acceptance/tests/_output
+
+artifacts:
+  files:
+    - ./dev/tests/acceptance/tests/_output/**/*
+  name: $(date +%m-%d-%Y-%T)_test_results

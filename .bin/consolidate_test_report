@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+###########################################################################################
+# This script is moved to test results zip as part post build activity.
+# When user downloads the results zip and run this script (right click and open with terminal)
+# allure local server outputs consolidated results in browser
+###########################################################################################
+cd "${0%/*}"
+allure serve allure-results/
