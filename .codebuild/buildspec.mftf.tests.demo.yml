@@ -28,7 +28,7 @@ phases:
   post_build:
     commands:
       - echo build Docker image complete `date`
-      - mv consolidated_test_report ./dev/tests/acceptance/tests/_output
+      - mv ./.bin/consolidate_test_report ./dev/tests/acceptance/tests/_output
 
 artifacts:
   files:
