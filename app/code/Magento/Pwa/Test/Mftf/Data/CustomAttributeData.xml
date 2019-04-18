@@ -23,4 +23,8 @@
         <var key="attribute_code" entityKey="attribute_code" entityType="ProductAttribute"/>
         <var key="value" entityKey="value" entityType="ProductAttributeOption"/>
     </entity>
+    <entity name="CustomAttributeSku" type="custom_attribute">
+        <data key="attribute_code">sku</data>
+        <var key="value" entityType="product" entityKey="sku"/>
+    </entity>
 </entities>
