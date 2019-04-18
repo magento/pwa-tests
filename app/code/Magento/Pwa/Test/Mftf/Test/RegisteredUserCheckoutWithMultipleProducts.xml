@@ -15,7 +15,7 @@
             <title value="Verify registered user should be able to checkout with Multiple products."/>
             <description value="Verify registered user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-15638"/>
+            <testCaseId value="MC-15720"/>
             <group value="PWA"/>
             <skip>
                 <issueId value="1064"/>
