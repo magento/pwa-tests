@@ -17,9 +17,6 @@
             <severity value="CRITICAL"/>
             <testCaseId value="MC-15918"/>
             <group value="PWA"/>
-            <skip>
-                <issueId value="1064"/>
-            </skip>
         </annotations>
 
         <before>
