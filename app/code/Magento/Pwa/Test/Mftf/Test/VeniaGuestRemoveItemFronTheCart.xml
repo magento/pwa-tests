@@ -23,8 +23,9 @@
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ApiConfigurableProduct"/>
+            <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfConfigurableProduct">
+                <argument name="categoryName" value="$$createCategory.name$$"/>
+                <argument name="productName" value="$$createConfigProduct.name$$"/>
             </actionGroup>
 
             <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>

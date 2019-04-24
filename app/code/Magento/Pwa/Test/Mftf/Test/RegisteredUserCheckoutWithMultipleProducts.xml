@@ -41,8 +41,13 @@
                 <argument name="email" value="$$createCustomer.email$$"/>
                 <argument name="pwd" value="$$createCustomer.password$$"/>
             </actionGroup>
+            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage"/>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
+            <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfConfigurableProduct">
+                <argument name="categoryName" value="$$createCategory.name$$"/>
+                <argument name="productName" value="$$createConfigProduct.name$$"/>
+            </actionGroup>
 
             <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>
 
@@ -50,16 +55,20 @@
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
-                <argument name="product" value="SimpleProduct"/>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
+            <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfSimpleProduct">
+                <argument name="categoryName" value="$$createCategory1.name$$"/>
+                <argument name="productName" value="$$createSimpleProduct.name$$"/>
             </actionGroup>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad11"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart2"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
-                <argument name="product" value="SimpleProduct3"/>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront4"/>
+            <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfSimpleProduct1">
+                <argument name="categoryName" value="$$createCategory1.name$$"/>
+                <argument name="productName" value="$$createSimpleProduct1.name$$"/>
             </actionGroup>
 
             <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
