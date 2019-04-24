@@ -100,8 +100,11 @@
             <deleteData createDataKey="createSimpleProduct1" stepKey="deleteSimpleProduct1"/>
         </after>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickConfirmOrderButton"/>
-
+        <actionGroup ref="ConfirmOrderRegisteredUser" stepKey="clickConfirmOrderButtonForRegisteredUser"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.close}}" stepKey="wait10"/>
+        <wait time="2" stepKey="temporarywait11"/>
+        <click selector="{{VeniaShoppingCartSection.close}}" stepKey="clickOnCloseIconOfCart"/>
+        <wait time="2" stepKey="temporarywait12"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
