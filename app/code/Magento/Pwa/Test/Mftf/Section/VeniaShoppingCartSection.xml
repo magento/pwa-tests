@@ -22,6 +22,7 @@
         <element name="subTotalItemCount" type="text" selector="[class*='miniCart-subtotalLabel-']"/>
         <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
         <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
+        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
     </section>
 
     <section name="VeniaShoppingCartDetailsSection">

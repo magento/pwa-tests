@@ -15,19 +15,17 @@
             <title value="Verify user should be able to Remove an item from the cart"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-15639"/>
+            <testCaseId value="MC-15799"/>
             <group value="PWA"/>
-            <skip>
-                <issueId value="1064"/>
-            </skip>
         </annotations>
 
         <before>
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
 
-            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
-                <argument name="product" value="ApiConfigurableProduct"/>
+            <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfConfigurableProduct">
+                <argument name="categoryName" value="$$createCategory.name$$"/>
+                <argument name="productName" value="$$createConfigProduct.name$$"/>
             </actionGroup>
 
             <actionGroup ref="SetProductConfigOptions" stepKey="selectProductOptionAndQty"/>

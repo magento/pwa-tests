@@ -50,6 +50,8 @@
 
     <section name="VeniaMainMenuUserAccountSection">
         <element name="userInfoRoot" type="text" selector="div[class*='userInformation-userInformationContainer']"/>
+        <element name="userInfoMore" type="button" selector="[class*='myAccountMenuTrigger-userMore-']"/>
+        <element name="signOut" type="button" selector="[class*='myAccountMenu-signOutTitle-']" />
     </section>
 
 </sections>

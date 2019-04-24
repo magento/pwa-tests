@@ -75,4 +75,20 @@
         <see stepKey="assertSuccessMessage" userInput="if there is an account associated with {{Customer.email}} you will receive an email with a link to change your password"/>
     </actionGroup>
 
+    <actionGroup name="SignOut">
+        <wait time="3" stepKey="temporaryStaticWait11"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoMore}}" stepKey="waitForMoreInfoButtonToLoad"/>
+        <click selector="{{VeniaMainMenuUserAccountSection.userInfoMore}}" stepKey="clickOnMoreUserInfoButton"/>
+        <wait time="3" stepKey="temporaryStaticWait1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="waitForSignOutButtonToLoad"/>
+        <click selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="clickOnSignOut"/>
+        <wait time="3" stepKey="temporaryStaticWait2"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
+        <wait time="2" stepKey="waitForElementToLoad"/>
+        <see userInput="Sign In" stepKey="seeSignInButtonPresent"/>
+        <dontSee userInput="Sign Out" stepKey="dontSeeSignOutButton"/>
+    </actionGroup>
+
 </actionGroups>
