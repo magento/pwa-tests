@@ -17,6 +17,7 @@ phases:
       - echo MODULE_WHITELIST=Pwa >> .env
       - echo STOREFRONT_URL=$STOREFRONT_URL >> .env
       - echo SELENIUM_HOST=selenium >> .env
+      - echo WAIT_TIMEOUT=30 >> .env
       - mv .env dev/tests/acceptance
 
   build:
