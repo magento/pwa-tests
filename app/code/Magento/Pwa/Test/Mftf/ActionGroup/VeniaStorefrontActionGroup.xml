@@ -57,7 +57,7 @@
 
     <actionGroup name="AssertNoSearchResults">
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="5" stepKey="temporaryStaticWait"/>
+        <wait time="10" stepKey="temporaryStaticWait"/>
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
 
