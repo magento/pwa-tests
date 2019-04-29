@@ -139,7 +139,7 @@
             <argument name="product" defaultValue="ApiConfigurableProduct"/>
         </arguments>
         <click selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
-        <wait time="3" stepKey="temporaryStaticWait"/>
+        <wait time="6" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="clickOnEditItem"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.updateCart}}" stepKey="waitForEditPanelToDisplay"/>
