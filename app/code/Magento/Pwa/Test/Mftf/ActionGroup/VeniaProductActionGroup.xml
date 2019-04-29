@@ -34,7 +34,7 @@
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}" time="30" stepKey="waitForCategoryToLoad"/>
         <wait time="5" stepKey="temporaryStaticWait"/>
-        <click selector="{{VeniaStorefrontSection.productImage(categoryName)}}" stepKey="clickOnCategoryName1"/>
+        <click selector="{{VeniaStorefrontSection.categoryName(categoryName)}}" stepKey="clickOnCategoryName1"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30" stepKey="waitForProductToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.productNameLink(productName)}}" time="30" stepKey="waitForProductNameToLoad"/>
         <click selector="{{VeniaCategorySection.productNameLink(productName)}}" stepKey="clickOnProduct"/>
