@@ -11,6 +11,7 @@
     <section name="VeniaStorefrontSection">
         <element name="title" type="text" selector="[class*='categoryList-title-'] span"/>
         <element name="productImage" type="button" selector="[class*='categoryTile-image'][alt*='{{var1}}']" parameterized="true"/>
+        <element name="categoryName" type="text" selector="//span[contains(text(), '{{categoryName}}')]" parameterized="true"/>
     </section>
 
     <section name="VeniaSearchResultSection">
