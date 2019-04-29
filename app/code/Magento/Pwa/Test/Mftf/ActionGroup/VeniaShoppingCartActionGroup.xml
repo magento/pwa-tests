@@ -127,7 +127,7 @@
         <wait time="3" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="clickOnRemoveItem"/>
-        <wait time="8" stepKey="temporaryStaticWait1"/>
+        <wait time="15" stepKey="temporaryStaticWait1"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="waitForContinueShoppingButtonToAppear"/>
         <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
         <see userInput="There are no items in your shopping cart" stepKey="seeEmptyCartText"/>
