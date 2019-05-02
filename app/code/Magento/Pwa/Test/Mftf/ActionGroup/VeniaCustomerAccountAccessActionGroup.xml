@@ -44,8 +44,8 @@
             <argument name="email" type="string"/>
             <argument name="pwd" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait21"/>
-        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{email}}" stepKey="fillUsername"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.email}}" stepKey="wait21"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.email}}" userInput="{{email}}" stepKey="fillUsername"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
         <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{pwd}}" stepKey="fillPassword"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>
@@ -57,6 +57,7 @@
             <argument name="Customer" defaultValue="Simple_US_Customer"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" stepKey="waitForPwaElementVisible7"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <see stepKey="assertCustomerName" userInput="{{Customer.firstname}} {{Customer.lastname}}"/>
     </actionGroup>
 
