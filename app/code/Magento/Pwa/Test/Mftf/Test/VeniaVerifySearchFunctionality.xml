@@ -25,8 +25,7 @@
             <createData entity="SimpleProduct" stepKey="createSimpleProduct">
                 <requiredEntity createDataKey="createCategory1"/>
             </createData>
-            <!--This wait time is complete reindexing-->
-            <wait time="240" stepKey="temporaryStaticWait11" />
+           
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
 
