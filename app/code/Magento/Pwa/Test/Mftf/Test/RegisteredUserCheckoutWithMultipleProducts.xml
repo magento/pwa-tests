@@ -8,20 +8,27 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="GuestCheckoutWithMultipleProducts">
+    <test name="RegisteredUserCheckoutWithMultipleProducts">
         <annotations>
             <features value="PWA"/>
             <stories value="Guest Checkout"/>
             <title value="Verify guest user should be able to checkout with Multiple products."/>
             <description value="Verify guest user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-11"/>
+            <testCaseId value="MC-15720"/>
             <group value="PWA"/>
         </annotations>
 
         <before>
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+            <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInFOrm" />
+            <actionGroup ref="SignIn" stepKey="enterEmailForAccount">
+                <argument name="Customer" value="VeniaRegisteredCustomer"/>
+            </actionGroup>
+            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
+                <argument name="Customer" value="VeniaRegisteredCustomer"/>
+            </actionGroup>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
@@ -76,7 +83,14 @@
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <actionGroup ref="ConfirmOrderRegisteredUser" stepKey="clickCOnfirmOrderButton"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.close}}" stepKey="wait10"/>
+        <wait time="2" stepKey="temporarywait11"/>
+        <click selector="{{VeniaShoppingCartSection.close}}" stepKey="clickOnCloseIconOfCart"/>
+        <wait time="2" stepKey="temporarywait12"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
 
     </test>
 </tests>

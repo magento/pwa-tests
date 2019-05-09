@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="ImageOptimization">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Product Image"/>
+            <title value="Verify image optimization work on Product category images"/>
+            <description value="Verify image optimization work on Product category images"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-15730"/>
+            <group value="PWA"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        </before>
+
+        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
+
+        <executeJS function='return document.querySelector("{{VeniaCategorySection.productImageAlt(ValeriaTwoLayerTank.name)}}").naturalHeight;' stepKey="getImageNaturalHeight"/>
+        <assertEquals stepKey="assertNaturalHeight">
+            <expectedResult type="string">{{ImageOptimization.height}}</expectedResult>
+            <actualResult type="variable">getImageNaturalHeight</actualResult>
+        </assertEquals>
+
+        <executeJS function='return document.querySelector("{{VeniaCategorySection.productImageAlt(ValeriaTwoLayerTank.name)}}").naturalWidth;' stepKey="getImageNaturalWidth"/>
+        <assertEquals stepKey="assertNaturalWidth">
+            <expectedResult type="string">{{ImageOptimization.width}}</expectedResult>
+            <actualResult type="variable">getImageNaturalWidth</actualResult>
+        </assertEquals>
+
+    </test>
+</tests>

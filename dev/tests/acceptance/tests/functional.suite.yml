@@ -19,7 +19,7 @@ modules:
         - Asserts
     config:
         \Magento\FunctionalTestingFramework\Module\MagentoPwaWebDriver:
-            url: "%MAGENTO_BASE_URL%"
+            url: "%STOREFRONT_URL%"
             backend_name: "%MAGENTO_BACKEND_NAME%"
             browser: 'chrome'
             restart: true

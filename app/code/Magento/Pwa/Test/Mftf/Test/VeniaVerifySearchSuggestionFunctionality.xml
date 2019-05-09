@@ -15,7 +15,7 @@
             <title value="Verify venia search suggetion box shows results based on input search string"/>
             <description value="Verify venia search suggetion box shows results based on input search string"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="PWA-10"/>
+            <testCaseId value="MC-15801"/>
             <group value="PWA"/>
         </annotations>
 
@@ -30,6 +30,7 @@
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox">
             <argument name="productDetails" value="{{SearchInputData.valid_product_name}}"/>
+            <argument name="productHref" value="{{SearchInputData.valid_product_href}}"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
@@ -39,6 +40,7 @@
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox1">
             <argument name="productDetails" value="{{SearchInputData.valid_product_name1}}"/>
+            <argument name="productHref" value="{{SearchInputData.valid_product_href1}}"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>

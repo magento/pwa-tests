@@ -11,6 +11,7 @@
     <section name="VeniaStorefrontSection">
         <element name="title" type="text" selector="[class*='categoryList-title-'] span"/>
         <element name="productImage" type="button" selector="[class*='categoryTile-image'][alt*='{{var1}}']" parameterized="true"/>
+        <element name="categoryName" type="text" selector="//span[contains(text(), '{{categoryName}}')]" parameterized="true"/>
     </section>
 
     <section name="VeniaSearchResultSection">
@@ -20,10 +21,12 @@
     </section>
 
     <section name="VeniaSearchSuggestionResultsSection">
-        <element name="suggestionBox" type="textarea" selector="div[class^='searchBar-SearchAutocompleteWrapper']"/>
+        <element name="suggestionBox" type="textarea" selector="div[class^='autocomplete-root_visible']"/>
         <element name="suggestedCategories" type="textarea" selector="ul[class^='suggestedCategories-root-']"/>
-        <element name="suggestedProducts" type="textarea" selector="ul[class^='suggestedProducts-items-']"/>
+        <element name="suggestedProducts" type="button" selector="a[class^='suggestedProduct-root-']"/>
+        <element name="suggestedProduct" type="button" selector="a[class^='suggestedProduct-root-'][href*='{{productName}}']" parameterized="true"/>
         <element name="noResults" type="text" selector="//div[contains(text(), 'No results found, try a different search')]"/>
+        <element name="searchInProgress" type="text" selector="//div[contains(text(), 'Fetching results...')]" />
     </section>
 
 </sections>

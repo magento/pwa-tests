@@ -27,6 +27,8 @@
         <click userInput="{{categoryName.name}}" stepKey="clickOnCategoryName1"/>
         <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.name)}}"  stepKey="waitForPwaElementNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName.name)}}" stepKey="waitForPwaElementVisible01"/>
+        <wait time="5" stepKey="temporaryStaticWait1" />
+        <see selector="{{productName.name}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
     <actionGroup name="OpenMainMenuCategoryByName">

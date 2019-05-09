@@ -38,7 +38,8 @@
         <arguments>
             <argument name="customer"/>
         </arguments>
-
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.addShipToInformation}}" stepKey="waitForShippingInfoLinkToVisible"/>
+        <wait time="2" stepKey="temporaryStaticWait12"/>
         <click selector="{{VeniaShoppingCartDetailsSection.addShipToInformation}}" stepKey="clickOnAddShipToLink01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="waitForPlaceOrderButtonToAppear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="waitForPlaceOrderButtonToAppear02"/>
@@ -85,6 +86,8 @@
         <arguments>
             <argument name="shippingMethodName" defaultValue="Flat Rate" type="string"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.addShippingInformation}}" stepKey="waitForShippingInformationLinkVisible"/>
+        <wait time="2" stepKey="temporaryWait"/>
         <click selector="{{VeniaShoppingCartDetailsSection.addShippingInformation}}" stepKey="clickOnAddShippingInformation01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="waitForShippingInformationTitle01"/>
         <seeOptionIsSelected userInput="{{shippingMethodName}}" selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="selectShippingMethod01"/>
@@ -127,6 +130,16 @@
         <seeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
     </actionGroup>
 
+    <actionGroup name="ConfirmOrderRegisteredUser">
+        <click selector="{{VeniaShoppingCartDetailsSection.placeOrder}}" stepKey="clickOnPlaceOrder1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForDetailMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.thankYouMainArea}}" stepKey="waitForThankYouMessagePresent"/>
+        <seeElement selector="{{VeniaShoppingCartThankYouSection.title}}" stepKey="seeThankYouTitle1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYouSection.orderNumber}}" stepKey="seeThankYouOrderNumber1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
+        <dontSeeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
+    </actionGroup>
+
     <actionGroup name="RemoveItemFromTheCart">
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
@@ -135,7 +148,7 @@
         <wait time="3" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="clickOnRemoveItem"/>
-        <wait time="8" stepKey="wait1234"/>
+        <wait time="15" stepKey="wait1234"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="waitForContinueShoppingButtonToAppear"/>
         <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
         <see userInput="There are no items in your shopping cart" stepKey="seeEmptyCartText"/>
@@ -147,7 +160,7 @@
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
         <click selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
-        <wait time="3" stepKey="wait123"/>
+        <wait time="6" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="clickOnEditItem"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.updateCart}}" stepKey="waitForEditPanelToDisplay"/>

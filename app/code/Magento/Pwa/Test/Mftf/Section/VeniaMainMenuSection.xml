@@ -21,7 +21,7 @@
     
     <section name="VeniaMainMenuSignInSection">
         <element name="mainArea" type="textarea" selector="[class*='navigation-signIn_open-']"/>
-        <element name="username" type="input" selector="[class*='navigation-signIn'] input[name='username']"/>
+        <element name="email" type="input" selector="[class*='navigation-signIn'] input[name='email']"/>
         <element name="password" type="input" selector="[class*='navigation-signIn'] input[name='password']"/>
         <element name="signIn" type="button" selector="[class*='signIn-signInButton-'] button"/>
         <element name="forgotUsernamePassword" type="button" selector="[class*='signIn-forgotPassword-']"/>
@@ -31,7 +31,7 @@
     <section name="VeniaMainMenuForgotPasswordSection">
         <element name="mainArea" type="textarea" selector="[class*='forgotPasswordForm-form-']"/>
         <element name="message" type="text" selector="[class*='forgotPassword-instructions-']"/>
-        <element name="email" type="input" selector="input[name='email']"/>
+        <element name="email" type="input" selector="[class*='forgotPasswordForm-root-'] input[name='email']"/>
         <element name="submit" type="button" selector="[class*='forgotPasswordForm-buttonContainer-'] button"/>
         <element name="successMessage" type="text" selector="p[class*='formSubmissionSuccessful-text-']" />
     </section>
@@ -42,7 +42,7 @@
         <element name="email" type="input" selector="input[name='customer.email']"/>
         <element name="firstName" type="input" selector="input[name='customer.firstname']"/>
         <element name="lastName" type="input" selector="input[name='customer.lastname']"/>
-        <element name="password" type="input" selector="input[name='password'][class*='textInput-input-']"/>
+        <element name="password" type="input" selector="input[autocomplete='new-password']"/>
         <element name="confirmPassword" type="input" selector="input[name='confirm']"/>
         <element name="submit" type="button" selector="[class*='createAccount-actions-'] button"/>
     </section>
@@ -50,6 +50,8 @@
 
     <section name="VeniaMainMenuUserAccountSection">
         <element name="userInfoRoot" type="text" selector="div[class*='userInformation-userInformationContainer']"/>
+        <element name="userInfoMore" type="button" selector="[class*='myAccountMenuTrigger-userMore-']"/>
+        <element name="signOut" type="button" selector="[class*='myAccountMenu-signOutTitle-']" />
     </section>
 
 </sections>

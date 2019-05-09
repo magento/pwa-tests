@@ -42,8 +42,8 @@
         <arguments>
             <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.username}}" stepKey="wait21"/>
-        <fillField selector="{{VeniaMainMenuSignInSection.username}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.email}}" stepKey="wait21"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.email}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
         <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>
@@ -55,6 +55,7 @@
             <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" stepKey="waitForPwaElementVisible7"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <see stepKey="assertName" userInput="{{Customer.first}}"/>
         <see stepKey="assertLastName" userInput="{{Customer.last}}"/>
         <see stepKey="assertEmail1" userInput="{{Customer.email}}"/>
@@ -76,5 +77,20 @@
         <see stepKey="assertSuccessMessage" userInput="if there is an account associated with {{Customer.email}} you will receive an email with a link to change your password"/>
     </actionGroup>
 
+    <actionGroup name="SignOut">
+        <wait time="3" stepKey="temporaryStaticWait11"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoMore}}" stepKey="waitForMoreInfoButtonToLoad"/>
+        <click selector="{{VeniaMainMenuUserAccountSection.userInfoMore}}" stepKey="clickOnMoreUserInfoButton"/>
+        <wait time="3" stepKey="temporaryStaticWait1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="waitForSignOutButtonToLoad"/>
+        <click selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="clickOnSignOut"/>
+        <wait time="3" stepKey="temporaryStaticWait2"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
+        <wait time="2" stepKey="waitForElementToLoad"/>
+        <see userInput="Sign In" stepKey="seeSignInButtonPresent"/>
+        <dontSee userInput="Sign Out" stepKey="dontSeeSignOutButton"/>
+    </actionGroup>
 
 </actionGroups>

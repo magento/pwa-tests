@@ -50,7 +50,9 @@
         <data key="valid_sku1">VT11</data>
         <data key="invalid_sku">VT11234X</data>
         <data key="valid_product_name">Vitalia Top</data>
+        <data key="valid_product_href">/vitalia-top.html</data>
         <data key="valid_product_name1">Valeria Two-Layer Tank</data>
+        <data key="valid_product_href1">/valeria-two-layer-tank.html</data>
         <data key="invalid_product_name">Valeriaxyz</data>
     </entity>
 

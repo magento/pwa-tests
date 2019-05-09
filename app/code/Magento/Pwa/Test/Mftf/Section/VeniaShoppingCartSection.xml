@@ -10,10 +10,8 @@
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaShoppingCartSection">
         <element name="mainArea" type="textarea" selector="[class*='emptyMiniCart-root-']"/>
-
         <element name="noItemsInShoppingCart" type="text" selector="[class*='emptyMiniCart-emptyTitle-']"/>
         <element name="continueShopping" type="button" selector="[class*='emptyMiniCart-root-'] button"/>
-
         <element name="productImageByIndex" type="button" selector="(//*[contains(@class, 'product-image')])[{{var1}}]" parameterized="true"/>
         <element name="productNameByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-name-')])[{{var1}}]" parameterized="true"/>
         <element name="productColorByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-options-')])[{{var1}}]" parameterized="true"/>
@@ -21,33 +19,27 @@
         <element name="productQuantityByIndex" type="select" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-quantitySelect-')])[{{var1}}]" parameterized="true"/>
         <element name="productPriceByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-price-')])[{{var1}}]" parameterized="true"/>
         <element name="productMenuByIndex" type="button" selector="(//*[contains(@class, 'kebab-root-')]/button)[{{var1}}]" parameterized="true"/>
-
         <element name="subTotalItemCount" type="text" selector="[class*='miniCart-subtotalLabel-']"/>
         <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
-
         <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
+        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
     </section>
 
     <section name="VeniaShoppingCartDetailsSection">
         <element name="orderDetailsMainArea" type="textarea" selector="[class*='form-body-']"/>
-
         <element name="shipToMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Ship To')]]"/>
         <element name="payWithMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Pay With')]]"/>
         <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Get It By')]]"/>
         <element name="totalMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'TOTAL')]]"/>
-
         <element name="addressFormMainArea" type="textarea" selector="[class*='addressForm-body-']"/>
-
         <element name="addShipToInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>
         <element name="addBillingInformation" type="button" selector="(//*[contains(text(), 'Add Billing Information')])[1]"/>
         <element name="addShippingInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Specify Shipping Method')])[1]"/>
-
         <element name="placeOrder" type="button" selector="//span[contains(text(), 'Confirm Order')]"/>
     </section>
 
     <section name="VeniaShoppingCartShippingAddressSection">
         <element name="title" type="text" selector="[class*='addressForm-heading-']"/>
-
         <element name="firstName" type="input" selector="[id*='addressForm-firstname-']"/>
         <element name="lastName" type="input" selector="[id*='addressForm-lastname-']"/>
         <element name="streetAddress" type="input" selector="[id*='addressForm-street0-']"/>
@@ -56,7 +48,6 @@
         <element name="state" type="input" selector="[id*='addressForm-region_code-']"/>
         <element name="phoneNumber" type="input" selector="[id*='addressForm-telephone-']"/>
         <element name="email" type="input" selector="[id*='addressForm-email-']"/>
-
         <element name="save" type="button" selector="[class*='addressForm-footer-'] button[type='submit']"/>
         <element name="cancel" type="button" selector="[class*='addressForm-footer-'] button[type='button']"/>
     </section>
@@ -104,6 +95,8 @@
         <element name="colorByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//button[contains(@title,'{{var1}}')]" parameterized="true"/>
         <element name="sizeByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="quantity" type="select" selector="//aside[contains(@class, 'miniCart-root_open-')]//select[contains(@class,'select-input-')]"/>
+        <element name="productOptionByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
+
     </section>
 
 </sections>
