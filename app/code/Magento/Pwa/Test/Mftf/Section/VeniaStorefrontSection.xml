@@ -27,7 +27,6 @@
         <element name="suggestedProducts" type="button" selector="a[class^='suggestedProduct-root-']"/>
         <element name="suggestedProduct" type="button" selector="a[class^='suggestedProduct-root-'][href*='{{productName}}']" parameterized="true"/>
         <element name="noResults" type="text" selector="//div[contains(text(), 'No results found, try a different search')]"/>
-        <element name="searchInProgress" type="text" selector="//div[contains(text(), 'Fetching results...')]" />
     </section>
 
 </sections>
