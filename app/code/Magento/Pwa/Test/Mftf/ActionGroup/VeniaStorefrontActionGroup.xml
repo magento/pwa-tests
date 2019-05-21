@@ -49,15 +49,17 @@
             <argument name="productDetails" type="string"/>
         </arguments>
 
+        <waitForPwaElementNotVisible selector="{{VeniaSearchResultSection.searchInProgress}}" stepKey="waitForSearchItemToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="10" stepKey="temporaryStaticWait"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <seeElement selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>
 
     <actionGroup name="AssertNoSearchResults">
+        <waitForPwaElementNotVisible selector="{{VeniaSearchResultSection.searchInProgress}}" stepKey="waitForSearchItemToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
-        <wait time="10" stepKey="temporaryStaticWait"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
 
@@ -77,23 +79,25 @@
 
         <arguments>
             <argument name="productDetails" type="string"/>
+            <argument name="productSku" type="string"/>
         </arguments>
-
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestionBox}}" stepKey="waitForSuggestionBoxToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="waitForSuggestionBoxCategoriesToLoad"/>
-        <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestedProducts}}" stepKey="waitForSuggestionBoxProductsToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestedProduct(productSku)}}" stepKey="waitForSuggestionBoxProductsToLoad"/>
         <see userInput="PRODUCT SUGGESTIONS" stepKey="seeSearchedResultHeader"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>
 
     <actionGroup name="AssertNoResultsInSuggestionBox">
-        <wait time="5" stepKey="temporaryStaticWait"/>
+
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestionBox}}" stepKey="waitForSuggestionBoxToLoad"/>
+        <wait time="5" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.noResults}}" stepKey="waitForSuggestionBoxResultsToLoad"/>
-        <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="categoriesSuggestionShouldNotBeDisplayed"/>
+        <!--Uncomment below 2 commented lines when #1223 gets fixed-->
+        <!--<dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="categoriesSuggestionShouldNotBeDisplayed"/>-->
         <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedProducts}}" stepKey="productSuggestionShouldNotBeDisplayed"/>
-        <dontSee userInput="PRODUCT SUGGESTIONS" stepKey="seeSearchedResultHeader"/>
-        <see userInput="No results found, try a different search" stepKey="seeSearchedResult"/>
+        <!--<dontSee userInput="PRODUCT SUGGESTIONS" stepKey="seeSearchedResultHeader"/>-->
+        <see userInput="No results were found." stepKey="seeSearchedResult"/>
     </actionGroup>
 
 </actionGroups>

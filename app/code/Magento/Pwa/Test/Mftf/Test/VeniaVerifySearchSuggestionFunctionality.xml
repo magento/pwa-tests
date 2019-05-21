@@ -42,6 +42,7 @@
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox">
             <argument name="productDetails" value="$$createConfigProduct.name$$"/>
+            <argument name="productSku" value="$$createConfigProduct.sku$$"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText"/>
@@ -51,6 +52,7 @@
         </actionGroup>
         <actionGroup ref="AssertResultsInSuggestionBox" stepKey="assertSearchedResultsInSuggestionBox1">
             <argument name="productDetails" value="$$createSimpleProduct.name$$"/>
+            <argument name="productSku" value="$$createConfigProduct.sku$$"/>
         </actionGroup>
 
         <click selector="{{VeniaHeaderSection.searchFieldClearData}}" stepKey="clearSearchFieldText1"/>
