@@ -11,7 +11,7 @@
     <section name="VeniaShoppingCartSection">
         <element name="mainArea" type="textarea" selector="[class*='emptyMiniCart-root-']"/>
         <element name="noItemsInShoppingCart" type="text" selector="[class*='emptyMiniCart-emptyTitle-']"/>
-        <element name="continueShopping" type="button" selector="[class*='emptyMiniCart-root-'] button"/>
+        <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="productImageByIndex" type="button" selector="(//*[contains(@class, 'product-image')])[{{var1}}]" parameterized="true"/>
         <element name="productNameByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-name-')])[{{var1}}]" parameterized="true"/>
         <element name="productColorByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-options-')])[{{var1}}]" parameterized="true"/>
@@ -79,9 +79,8 @@
     <section name="VeniaShoppingCartThankYouSection">
         <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
         <element name="title" type="text" selector="[class*='receipt-header-']"/>
-        <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>
-        <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
+        <element name="viewOrderDetails" type="button" selector="//*[contains(text(), 'View Order Details')]"/>
     </section>
 
     <section name="VeniaShoppingCartKebabSection">
