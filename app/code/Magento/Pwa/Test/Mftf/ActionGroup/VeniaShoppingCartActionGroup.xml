@@ -125,9 +125,9 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForDetailMainArea1"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.thankYouMainArea}}" stepKey="waitForThankYouMessagePresent"/>
         <seeElement selector="{{VeniaShoppingCartThankYouSection.title}}" stepKey="seeThankYouTitle1"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.orderNumber}}" stepKey="seeThankYouOrderNumber1"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
+        <see userInput="Thank you for your purchase!" stepKey="seeOrderConfirmationMessage"/>
+        <dontSeeElement selector="{{VeniaShoppingCartThankYouSection.viewOrderDetails}}" stepKey="dontSeeViewOrderDetailsButton"/>
+        <seeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="seeCreateAccountButton1"/>
     </actionGroup>
 
     <actionGroup name="ConfirmOrderRegisteredUser">
@@ -135,9 +135,9 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForDetailMainArea1"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.thankYouMainArea}}" stepKey="waitForThankYouMessagePresent"/>
         <seeElement selector="{{VeniaShoppingCartThankYouSection.title}}" stepKey="seeThankYouTitle1"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.orderNumber}}" stepKey="seeThankYouOrderNumber1"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
-        <dontSeeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="seeThankYouCreateAccountButton1"/>
+        <seeElement selector="{{VeniaShoppingCartThankYouSection.viewOrderDetails}}" stepKey="seeViewOrderDetailsButton"/>
+        <see userInput="Thank you for your purchase!" stepKey="seeOrderConfirmationMessage"/>
+        <dontSeeElement selector="{{VeniaShoppingCartThankYouSection.createAnAccount}}" stepKey="dontSeeCreateAnAccountButton"/>
     </actionGroup>
 
     <actionGroup name="RemoveItemFromTheCart">
@@ -149,8 +149,8 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.removeItem}}" stepKey="clickOnRemoveItem"/>
         <wait time="15" stepKey="wait1234"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="waitForContinueShoppingButtonToAppear"/>
-        <seeElement selector="{{VeniaShoppingCartThankYouSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.continueShopping}}" stepKey="waitForContinueShoppingButtonToAppear"/>
+        <seeElement selector="{{VeniaShoppingCartSection.continueShopping}}" stepKey="seeThankYouContinueShoppingButton1"/>
         <see userInput="There are no items in your shopping cart" stepKey="seeEmptyCartText"/>
         <dontSee selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="dontSeeProductInCart" />
     </actionGroup>
