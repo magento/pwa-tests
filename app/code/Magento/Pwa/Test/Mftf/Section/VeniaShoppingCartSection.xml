@@ -22,7 +22,7 @@
         <element name="subTotalItemCount" type="text" selector="[class*='miniCart-subtotalLabel-']"/>
         <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
         <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
-        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
+        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-root_open')]//*[contains(@class, 'trigger-root-')])[1]"/>
     </section>
 
     <section name="VeniaShoppingCartDetailsSection">
@@ -85,8 +85,8 @@
 
     <section name="VeniaShoppingCartKebabSection">
         <element name="kebabMenu" type="button" selector="//li[./div[contains(text(), '{{product_name}}')]]//button[contains(@class, 'kebab-kebab-')]" parameterized="true"/>
-        <element name="editItem" type="button" selector="//span[contains(text(), 'Edit item')]"/>
-        <element name="removeItem" type="button" selector="//span[contains(text(), 'Remove item')]"/>
+        <element name="editItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[2]"/>
+        <element name="removeItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[3]"/>
     </section>
 
     <section name="VeniaShoppingCartEditSection">

@@ -10,7 +10,7 @@
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
 
     <entity name="ImageOptimization" type="customer">
-        <data key="height">372</data>
+        <data key="height">375</data>
         <data key="width">300</data>
     </entity>
 

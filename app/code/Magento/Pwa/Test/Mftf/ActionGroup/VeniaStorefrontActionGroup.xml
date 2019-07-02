@@ -90,9 +90,8 @@
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestionBox}}" stepKey="waitForSuggestionBoxToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.noResults}}" stepKey="waitForSuggestionBoxResultsToLoad"/>
         <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedProducts}}" stepKey="productSuggestionShouldNotBeDisplayed"/>
-        <!--these should be uncommented once #1223 gets fixed-->
-        <!--<dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="categoriesSuggestionShouldNotBeDisplayed"/>-->
-        <!--<dontSee userInput="PRODUCT SUGGESTIONS" stepKey="seeSearchedResultHeader"/>-->
+        <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedCategories}}" stepKey="categoriesSuggestionShouldNotBeDisplayed"/>
+        <dontSee userInput="PRODUCT SUGGESTIONS" stepKey="seeSearchedResultHeader"/>
         <see userInput="No results were found" stepKey="seeSearchedResult"/>
     </actionGroup>
 
