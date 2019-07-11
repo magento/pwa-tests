@@ -15,7 +15,7 @@
             <title value="Verify image optimization work on Product category images"/>
             <description value="Verify image optimization work on Product category images"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-15730"/>
+            <testCaseId value="MC-18085"/>
             <group value="PWA"/>
         </annotations>
 
