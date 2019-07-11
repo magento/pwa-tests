@@ -11,7 +11,7 @@
     <section name="VeniaShoppingCartSection">
         <element name="mainArea" type="textarea" selector="[class*='emptyMiniCart-root-']"/>
         <element name="noItemsInShoppingCart" type="text" selector="[class*='emptyMiniCart-emptyTitle-']"/>
-        <element name="continueShopping" type="button" selector="[class*='emptyMiniCart-root-'] button"/>
+        <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="productImageByIndex" type="button" selector="(//*[contains(@class, 'product-image')])[{{var1}}]" parameterized="true"/>
         <element name="productNameByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-name-')])[{{var1}}]" parameterized="true"/>
         <element name="productColorByIndex" type="text" selector="(//*[contains(@class, 'miniCart-body-')]//*[contains(@class, 'product-options-')])[{{var1}}]" parameterized="true"/>
@@ -22,7 +22,7 @@
         <element name="subTotalItemCount" type="text" selector="[class*='miniCart-subtotalLabel-']"/>
         <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
         <element name="checkout" type="button" selector="[class*='cart-root-'] button"/>
-        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
+        <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-root_open')]//*[contains(@class, 'trigger-root-')])[1]"/>
     </section>
 
     <section name="VeniaShoppingCartDetailsSection">
@@ -79,15 +79,14 @@
     <section name="VeniaShoppingCartThankYouSection">
         <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
         <element name="title" type="text" selector="[class*='receipt-header-']"/>
-        <element name="orderNumber" type="text" selector="[class*='receipt-orderId-']"/>
-        <element name="continueShopping" type="button" selector="//*[contains(text(), 'Continue Shopping')]"/>
         <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
+        <element name="viewOrderDetails" type="button" selector="//*[contains(text(), 'View Order Details')]"/>
     </section>
 
     <section name="VeniaShoppingCartKebabSection">
         <element name="kebabMenu" type="button" selector="//li[./div[contains(text(), '{{product_name}}')]]//button[contains(@class, 'kebab-kebab-')]" parameterized="true"/>
-        <element name="editItem" type="button" selector="//span[contains(text(), 'Edit item')]"/>
-        <element name="removeItem" type="button" selector="//span[contains(text(), 'Remove item')]"/>
+        <element name="editItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[2]"/>
+        <element name="removeItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[3]"/>
     </section>
 
     <section name="VeniaShoppingCartEditSection">
