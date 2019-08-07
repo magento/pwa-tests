@@ -26,7 +26,6 @@
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
         <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
-        <wait time="10" stepKey="waitForElementToLoad1"/>
     </actionGroup>
 
     <actionGroup name="SearchProduct">
