@@ -90,6 +90,7 @@
         <wait time="2" stepKey="temporarywait12"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <actionGroup ref="GoToSignOutForm" stepKey="goToSignOutForm"/>
         <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
 
     </test>
