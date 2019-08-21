@@ -13,7 +13,7 @@
     </actionGroup>
 
     <actionGroup name="TemporaryWait5">
-        <wait time="3" stepKey="waitForElementToLoad"/>
+        <wait time="5" stepKey="waitForElementToLoad"/>
     </actionGroup>
 
     <actionGroup name="GoToVeniaMobileStorefront">
