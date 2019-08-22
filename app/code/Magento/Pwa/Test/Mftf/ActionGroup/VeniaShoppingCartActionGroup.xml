@@ -170,7 +170,7 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <wait time="5" stepKey="wait123"/>
+        <wait time="8" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaShoppingCartEditSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
