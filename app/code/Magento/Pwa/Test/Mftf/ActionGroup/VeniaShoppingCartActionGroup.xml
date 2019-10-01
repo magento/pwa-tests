@@ -11,7 +11,6 @@
 
     <actionGroup name="ProceedToCheckout">
         <click selector="{{VeniaShoppingCartSection.checkout}}" stepKey="clickOnCheckout01"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.checkout}}" stepKey="waitForCheckoutButtonToDisappear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForAddShipToInfoButton01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="waitForMainArea1"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForMainArea2"/>
