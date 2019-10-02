@@ -13,7 +13,6 @@
     <actionGroup name="ProceedToCheckout">
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.checkout}}" stepKey="waitForCheckoutButton"/>
         <click selector="{{VeniaShoppingCartSection.checkout}}" stepKey="clickOnCheckout01"/>
-        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.checkout}}" stepKey="waitForCheckoutButtonToDisappear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForAddShipToInfoButton01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="waitForMainArea1"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForMainArea2"/>
@@ -150,7 +149,7 @@
         <arguments>
             <argument name="product" defaultValue="ConfigData"/>
         </arguments>
-        <wait time="5" stepKey="temporaryStaticWait"/>
+        <wait time="8" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.productOptionByValue(product.label1)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaShoppingCartEditSection.productOptionByValue(product.label1)}}" stepKey="clickOnSizeOption01"/>
         <selectOption selector="{{VeniaShoppingCartEditSection.quantity}}" userInput="{{product.qty1}}" stepKey="selectProductQuantity01"/>

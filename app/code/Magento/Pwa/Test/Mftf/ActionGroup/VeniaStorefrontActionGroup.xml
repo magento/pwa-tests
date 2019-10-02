@@ -13,13 +13,12 @@
     </actionGroup>
 
     <actionGroup name="TemporaryWait5">
-        <wait time="3" stepKey="waitForElementToLoad"/>
+        <wait time="5" stepKey="waitForElementToLoad"/>
     </actionGroup>
 
     <!--It does not work as expected, there is a open MQE ticket for the same-->
     <actionGroup name="GoToVeniaMobileStorefront">
         <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
-
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
         <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
     </actionGroup>
@@ -27,8 +26,6 @@
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
         <waitForPwaElementVisible selector="{{VeniaStorefrontSection.title}}" stepKey="waitForPwaCategoryVisible01"/>
-        <!--This static wait needed until MQE-1457 gets fixed. Reason - sometimes categories load takes time and in some cases category load but actual category image load takes some extra milliseconds-->
-        <wait time="5" stepKey="temporaryStaticWait1" />
     </actionGroup>
 
     <actionGroup name="SearchProduct">

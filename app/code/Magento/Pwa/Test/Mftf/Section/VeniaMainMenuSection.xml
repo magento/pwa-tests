@@ -14,18 +14,18 @@
         <element name="back" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
         <element name="close" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[2]"/>
         <element name="categoryByName" type="button" selector="//*[contains(@class, 'categoryLeaf-text-')][contains(text(), '{{var1}}')]" parameterized="true"/>
-        <element name="signIn" type="button" selector="[class*='navigation-authBar-'] [class*='highPriority']"/>
+        <element name="signIn" type="button" selector="[class*='authBar-'] [class*='highPriority']"/>
         <element name="navTrigger" type="button" selector="button[class^=navTrigger-root]"/>
         <element name="userChip" type="block" selector="div[class^=navigation-userChip]"/>
     </section>
     
     <section name="VeniaMainMenuSignInSection">
         <element name="mainArea" type="textarea" selector="[class*='navigation-signIn_open-']"/>
-        <element name="email" type="input" selector="[class*='navigation-signIn'] input[name='email']"/>
-        <element name="password" type="input" selector="[class*='navigation-signIn'] input[name='password']"/>
+        <element name="email" type="input" selector="[class*='signIn-root'] input[name='email']"/>
+        <element name="password" type="input" selector="[class*='signIn-root'] input[name='password']"/>
         <element name="signIn" type="button" selector="[class*='signIn-signInButton-'] button"/>
-        <element name="forgotUsernamePassword" type="button" selector="[class*='signIn-forgotPassword-']"/>
-        <element name="createAnAccount" type="button" selector="div[class^='signIn-showCreateAccountButton'] button"/>
+        <element name="forgotUsernamePassword" type="button" selector="//*[contains(text(), 'Forgot Password?')]"/>
+        <element name="createAnAccount" type="button" selector="div[class^='signIn-createAccountButton'] button"/>
     </section>
 
     <section name="VeniaMainMenuForgotPasswordSection">
@@ -49,9 +49,9 @@
 
 
     <section name="VeniaMainMenuUserAccountSection">
-        <element name="userInfoRoot" type="text" selector="div[class*='userInformation-userInformationContainer']"/>
-        <element name="userInfoMore" type="button" selector="[class*='myAccountMenuTrigger-userMore-']"/>
-        <element name="signOut" type="button" selector="[class*='myAccountMenu-signOutTitle-']" />
+        <element name="userInfoRoot" type="text" selector="div[class*='myAccount-user-']"/>
+        <element name="userInfoMore" type="button" selector="[class*='userChip-root-']"/>
+        <element name="signOut" type="button" selector="//*[contains(@class, 'accountLink-text-')][contains(text(), 'Sign Out')]"/>
     </section>
 
 </sections>
