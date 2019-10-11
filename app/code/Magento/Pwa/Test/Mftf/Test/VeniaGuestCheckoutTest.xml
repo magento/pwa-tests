@@ -15,7 +15,7 @@
             <title value="Guest user should be able to checkout on Venia storefront with single product"/>
             <description value="Guest user should be able to checkout on Venia storefront with single product"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-18072"/>
+            <testCaseId value="MC-21752"/>
             <group value="PWA"/>
         </annotations>
 
