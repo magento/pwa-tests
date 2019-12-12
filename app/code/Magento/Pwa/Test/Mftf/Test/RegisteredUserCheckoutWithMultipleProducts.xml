@@ -45,7 +45,9 @@
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart2"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart2">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
                 <argument name="product" value="AugustaEarrings"/>
@@ -55,7 +57,9 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart3"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart3">
+                <argument name="product" value="AugustaEarrings"/>
+            </actionGroup>
 
             <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
 
@@ -72,10 +76,6 @@
             <actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>
 
             <actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>
-
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
-
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
 
             <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
                 <argument name="shippingMethodName" value="Flat Rate"/>
