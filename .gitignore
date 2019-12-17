@@ -1,3 +1,4 @@
 .idea
 vendor/*
 dev/tests/acceptance/.env
+.DS_Store

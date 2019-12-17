@@ -78,6 +78,8 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartPayWithSection.paymentMethod}}" stepKey="waitForPaymentMethodNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForGetItByAreaVisible01"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <seeElement selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="checkForPayWithAreaVisible01"/>
     </actionGroup>
 
 
@@ -93,6 +95,8 @@
         <click selector="{{VeniaShoppingCartGetItBySection.save}}" stepKey="clickOnShippingMethodSave01"/>
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartGetItBySection.shippingMethod}}" stepKey="waitForDropDownToDisappear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForPlaceOrderButtonVisible02"/>
+        <wait time="5" stepKey="temporaryWait1"/>
+        <seeElement selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="checkForPlaceOrderButtonVisible02"/>
     </actionGroup>
 
     <actionGroup name="EnterCardDetails">
@@ -117,6 +121,8 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartPayWithSection.paymentMethod}}" stepKey="waitForPaymentMethodNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForGetItByAreaVisible01"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <seeElement selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="checkForPayWithAreaVisible01"/>
     </actionGroup>
 
     <actionGroup name="ConfirmOrder">
@@ -163,13 +169,14 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{VeniaShoppingCartKebabSection.editItem}}" stepKey="clickOnEditItem"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.updateCart}}" stepKey="waitForEditPanelToDisplay"/>
+        <wait time="8" stepKey="temporaryWait"/>
+        <seeElement selector="{{VeniaShoppingCartEditSection.updateCart}}" stepKey="checkForEditPanelToDisplay"/>
     </actionGroup>
 
     <actionGroup name="UpdateProductColorAndSizeAndQuantityOptions">
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <wait time="8" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaShoppingCartEditSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaShoppingCartEditSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
