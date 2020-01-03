@@ -33,7 +33,7 @@
         <fillField userInput="{{customer.email}}" selector="{{VeniaShoppingCartShippingAddressSection.email}}" stepKey="fillShipToEmail01"/>
     </actionGroup>
 
-    <actionGroup name="AddAndVerifyShipToShippingInformationViaTheShoppingCart">
+    <actionGroup name="AddShippingDetails">
         <arguments>
             <argument name="customer"/>
         </arguments>
@@ -43,7 +43,6 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="waitForPlaceOrderButtonToAppear01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="waitForPlaceOrderButtonToAppear02"/>
 
-        <!-- START OF "FillShoppingCartShipToAddress" ACTION GROUP -->
         <fillField userInput="{{customer.first}}" selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="fillShipToFirstNameField01"/>
         <fillField userInput="{{customer.last}}" selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="fillShipToLastNameField01"/>
         <fillField userInput="{{customer.address}}" selector="{{VeniaShoppingCartShippingAddressSection.streetAddress}}" stepKey="fillShipToStreetAddress01"/>
@@ -51,8 +50,20 @@
         <fillField userInput="{{customer.zipCode}}" selector="{{VeniaShoppingCartShippingAddressSection.zipCode}}" stepKey="fillShipToZipCode01"/>
         <fillField userInput="{{customer.state}}" selector="{{VeniaShoppingCartShippingAddressSection.state}}" stepKey="fillShipToState01"/>
         <fillField userInput="{{customer.phone}}" selector="{{VeniaShoppingCartShippingAddressSection.phoneNumber}}" stepKey="fillShipToPhoneNumber01"/>
+    </actionGroup>
+    
+    <actionGroup name="AddEmailInfo">
+        <arguments>
+            <argument name="customer"/>
+        </arguments>
+
         <fillField userInput="{{customer.email}}" selector="{{VeniaShoppingCartShippingAddressSection.email}}" stepKey="fillShipToEmail01"/>
-        <!-- END OF "FillShoppingCartShipToAddress" ACTION GROUP -->
+    </actionGroup>
+
+    <actionGroup name="SaveAndVerifyShippingDetails">
+        <arguments>
+            <argument name="customer"/>
+        </arguments>
 
         <click selector="{{VeniaShoppingCartShippingAddressSection.save}}" stepKey="clickOnSave01"/>
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetailsSection.addressFormMainArea}}" stepKey="waitForPlaceOrderButtonToDisappear01"/>
@@ -61,10 +72,10 @@
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForMainArea2"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForMainArea3"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.totalMainArea}}" stepKey="waitForMainArea4"/>
-
         <see userInput="{{customer.first}} {{customer.last}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerName01"/>
         <see userInput="{{customer.address}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerAddress01"/>
     </actionGroup>
+
 
     <actionGroup name="AddAndVerifyPayWithBillingInformationViaTheShoppingCart">
         <arguments>

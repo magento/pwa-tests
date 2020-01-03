@@ -65,7 +65,10 @@
 
             <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
-            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1">
+            <actionGroup ref="AddShippingDetails" stepKey="addshippingdetails">
+                <argument name="customer" value="VeniaCustomer1"/>
+            </actionGroup>
+            <actionGroup ref="SaveAndVerifyShippingDetails" stepKey="saveandverifyshippingdetails">
                 <argument name="customer" value="VeniaCustomer1"/>
             </actionGroup>
 
