@@ -8,6 +8,7 @@ paths:
     support: ../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework
     envs: ../../../vendor/magento/magento2-functional-testing-framework/etc/_envs
 settings:
+    silent: false
     colors: true
     memory_limit: 1024M
 extensions:
