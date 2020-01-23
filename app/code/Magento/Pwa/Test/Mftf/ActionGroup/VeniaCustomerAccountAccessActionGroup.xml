@@ -12,6 +12,7 @@
     <actionGroup name="NavigateToSignInForm">
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
+        <wait time="3" stepKey="temporaryStaticWait"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
         <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignIn"/>
     </actionGroup>

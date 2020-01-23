@@ -19,8 +19,8 @@
         <waitForPwaElementNotVisible selector="{{VeniaShoppingCartSection.noItemsInShoppingCart}}" stepKey="waitForNoProductMessageNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productImageByIndex('1')}}" stepKey="waitForSubTotalTitle01"/>
         <waitForPwaElementVisible selector="{{VeniaShoppingCartSection.productNameByIndex('1')}}" stepKey="waitForCheckoutButton01"/>
-        <seeElement selector="{{VeniaShoppingCartKebabSection.kebabMenu(product.name)}}" stepKey="assertProductOptionsIsVisible"/>
-        <seeElement selector="{{VeniaShoppingCartSection.miniCartProductName(product.name)}}" stepKey="assertProductIsVisible"/>
+        <seeElement selector="{{VeniaShoppingCartKebabSection.kebabMenu(productName)}}" stepKey="assertProductOptionsIsVisible"/>
+        <seeElement selector="{{VeniaShoppingCartSection.miniCartProductName(productName)}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
 
     <!--Navigate directly to product details page by appending product URL key to storefront base URL-->

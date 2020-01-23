@@ -21,7 +21,6 @@
     </actionGroup>
 
     <!--Fills shipping address during checkout -->
-    <actionGroup name="AddAndVerifyShipToShippingInformationViaTheShoppingCart">
     <actionGroup name="AddShippingDetails">
         <arguments>
             <argument name="customer" defaultValue = "Simple_US_Customer" />
@@ -46,14 +45,15 @@
 
     <actionGroup name="AddEmailInfo">
         <arguments>
-            <argument name="customer"/>
+            <argument name="customer" defaultValue = "Simple_US_Customer" />
         </arguments>
         <fillField userInput="{{customer.email}}" selector="{{VeniaShoppingCartShippingAddressSection.email}}" stepKey="fillShipToEmail01"/>
     </actionGroup>
 
     <actionGroup name="SaveAndVerifyShippingDetails">
         <arguments>
-            <argument name="customer"/>
+            <argument name="customer" defaultValue = "Simple_US_Customer" />
+            <argument name="address" defaultValue = "US_Address_TX" />
         </arguments>
         <wait time="2" stepKey="temporaryWait"/>
         <click selector="{{VeniaShoppingCartShippingAddressSection.save}}" stepKey="clickOnSave01"/>
