@@ -40,7 +40,11 @@
 
             <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
 
-            <actionGroup ref="AddAndVerifyShipToShippingInformationViaTheShoppingCart" stepKey="addAndVerifyShipToInfo1"/>
+            <actionGroup ref="AddShippingDetails" stepKey="addshippingdetails"/>
+
+            <actionGroup ref="AddEmailInfo" stepKey="addemailinformation"/>
+
+            <actionGroup ref="SaveAndVerifyShippingDetails" stepKey="saveandverifyshippingdetails"/>
 
             <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
 
