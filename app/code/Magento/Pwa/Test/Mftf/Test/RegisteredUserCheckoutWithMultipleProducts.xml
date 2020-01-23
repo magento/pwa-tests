@@ -53,7 +53,9 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1">
+                <argument name="productName" value="$$createConfigProduct.name$$"/>
+            </actionGroup>
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
             <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfSimpleProduct">
@@ -63,7 +65,9 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad11"/>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart2"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart2">
+                <argument name="productName" value="$$createSimpleProduct.name$$"/>
+            </actionGroup>
 
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront4"/>
             <actionGroup ref="GoToProductDetailsPageViaCategory" stepKey="goToProductDetailsPageOfSimpleProduct1">
@@ -75,7 +79,9 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart3"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart3">
+                <argument name="productName" value="$$createSimpleProduct1.name$$"/>
+            </actionGroup>
 
             <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
 
@@ -90,10 +96,6 @@
             <actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>
 
             <actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>
-
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad3"/>
-
-            <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForPayWithAreaVisible01"/>
 
             <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
                 <argument name="shippingMethodName" value="Flat Rate"/>

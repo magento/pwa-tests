@@ -23,13 +23,14 @@
         <element name="subTotalCost" type="text" selector="[class*='miniCart-subtotalValue-']"/>
         <element name="checkout" type="button" selector="//span[contains(text(), 'Checkout')]"/>
         <element name="close" type="button" selector="(//*[contains(@class, 'miniCart-root_open')]//*[contains(@class, 'trigger-root-')])[1]"/>
+        <element name="miniCartProductName" type="button" selector="//div[contains(text(), '{{var_product_name}}')]" parameterized="true"/>
     </section>
 
     <section name="VeniaShoppingCartDetailsSection">
         <element name="orderDetailsMainArea" type="textarea" selector="[class*='form-body-']"/>
         <element name="shipToMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Ship To')]]"/>
         <element name="payWithMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Pay With')]]"/>
-        <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Get It By')]]"/>
+        <element name="getItByMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'Use')]]"/>
         <element name="totalMainArea" type="textarea" selector="//button[descendant::span[contains(text(), 'TOTAL')]]"/>
         <element name="addressFormMainArea" type="textarea" selector="[class*='addressForm-body-']"/>
         <element name="addShipToInformation" type="button" selector="(//span[contains(@class, 'section-content-')]//*[contains(text(), 'Add Shipping Information')])[1]"/>

@@ -32,7 +32,9 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
-            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1">
+                <argument name="productName" value="$$createConfigProduct.name$$"/>
+            </actionGroup>
 
             <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
 

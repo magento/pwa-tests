@@ -19,7 +19,6 @@
         <click userInput="{{categoryName}}" stepKey="clickOnCategoryName1"/>
         <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}"  stepKey="waitForPwaElementNotVisible01"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.productImageAlt(productName)}}" time="30" stepKey="waitForPwaElementVisible01"/>
-        <!--until MQE-1457 is fixed, we need this static wait to make sure assert happening after image load-->
         <wait time="5" stepKey="temporaryStaticWait1" />
         <see selector="{{productName}}" stepKey="assertProductIsVisible"/>
     </actionGroup>
