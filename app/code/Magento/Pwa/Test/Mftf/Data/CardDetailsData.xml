@@ -12,7 +12,7 @@
     <!--This CC number is not real and just used for testing payment integrations. Some more such cards are available for public testing PayPals integration: https://www.paypalobjects.com/en_AU/vhelp/paypalmanager_help/credit_card_numbers.htm-->
     <entity name="FakeVisaCard" type="data">
         <data key="fakeCardNumber">4111 1111 1111 1111</data>
-        <data key="expirationDate">0120</data>
+        <data key="expirationDate">0121</data>
         <data key="cvvCode">123</data>
     </entity>
 </entities>
