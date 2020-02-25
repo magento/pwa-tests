@@ -18,4 +18,7 @@
         <section name="VeniaShoppingCartPayWithSection"/>
         <section name="VeniaShoppingCartGetItBySection"/>
     </page>
+    <page name="Cart" url="/cart" area="storefront" module="storefront">
+        <section name="VeniaStorefrontSection"/>
+    </page>
 </pages>

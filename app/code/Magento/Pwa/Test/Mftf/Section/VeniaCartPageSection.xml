@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="EmptyCartPage">
+        <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
+        <element name="productImageAlt" type="button" selector="[class*='item-image-'][alt*='{{var1}}']" parameterized="true"/>
+        <element name="productName" type="text" selector="[class*='item-name-'] span"/>
+        <element name="productNameLink" type="button" selector="//*[contains(@class, 'item-name-')]/span[contains(text(), '{{var1}}')]" parameterized="true"/>
+        <element name="productPrice" type="text" selector="[class*='item-price-']"/>
+    </section>
+</sections>
