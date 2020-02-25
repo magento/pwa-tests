@@ -9,10 +9,45 @@
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="EmptyCartPage">
+        <element name="cartHeader" type="text" selector="//h1[contains(text(), 'Cart')]"/>
         <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
-        <element name="productImageAlt" type="button" selector="[class*='item-image-'][alt*='{{var1}}']" parameterized="true"/>
-        <element name="productName" type="text" selector="[class*='item-name-'] span"/>
-        <element name="productNameLink" type="button" selector="//*[contains(@class, 'item-name-')]/span[contains(text(), '{{var1}}')]" parameterized="true"/>
-        <element name="productPrice" type="text" selector="[class*='item-price-']"/>
+        <element name="signIn" type="button" selector="[class*='button-content-']"/>
+    </section>
+
+    <section name="CartPage">
+        <element name="checkout" type="button" selector="//button[contains(@class, 'button-root_highPriority-')]/span[contains(text(), 'Proceed to Checkout')]"/>
+    </section>
+
+    <section name="CartPageShipping">
+        <element name="shippingAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Estimate your Shipping')]"/>
+    </section>
+
+    <section name="CartPageCouponCode">
+        <element name="couponCodeAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Enter Coupon Code')]"/>
+    </section>
+
+    <section name="CartPageGiftCard">
+        <element name="giftCardAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Apply Gift Card')]"/>
+    </section>
+
+    <section name="CartPageGiftOptions">
+        <element name="giftOptionsAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'See Gift Options')]"/>
+    </section>
+
+    <section name="CartPageProductDetails">
+        <element name="cartProductName" type="text" selector="//span[contains(text(), '{{var_product_name}}')]" parameterized="true"/>
+    </section>
+
+    <section name="CartPageQty">
+
+    </section>
+
+    <section name="CartPageKebab">
+        <element name="kebabMenu" type="button" selector="//li[./div[contains(text(), '{{product_name}}')]]//button[contains(@class, 'kebab-kebab-')]" parameterized="true"/>
+        <element name="editItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[2]"/>
+        <element name="removeItem" type="button" selector="(//*[contains(@class, 'kebab-dropdown_active-')]/*[contains(@class, 'section-menuItem-')])[3]"/>
+    </section>
+
+    <section name="CartPagePriceSummary">
     </section>
 </sections>
