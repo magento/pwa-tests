@@ -19,6 +19,6 @@
         <section name="VeniaShoppingCartGetItBySection"/>
     </page>
     <page name="Cart" url="/cart" area="storefront" module="storefront">
-        <section name="VeniaStorefrontSection"/>
+        <section name="VeniaCartPageSection"/>
     </page>
 </pages>

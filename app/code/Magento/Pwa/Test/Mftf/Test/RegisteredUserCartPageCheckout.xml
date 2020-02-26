@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+
 <!--Check Empty Cart-->
 <!--Sign In-->
 <!--Add Products-->
@@ -6,3 +15,38 @@
 <!--Apply Gift Message-->
 <!--Place holder for checkout-->
 <!--Sign-out-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <!--<test name="RemoveItemFromTheCartPage">-->
+        <!--<annotations>-->
+            <!--<features value="PWA"/>-->
+            <!--<stories value="Kebab Features"/>-->
+            <!--<title value="Verify user should be able to Remove an item from the cart"/>-->
+            <!--<description value="Verify user should be able to Remove an item from the cart"/>-->
+            <!--<severity value="CRITICAL"/>-->
+            <!--<testCaseId value="MC-21749"/>-->
+            <!--<group value="PWA"/>-->
+        <!--</annotations>-->
+
+        <!--<before>-->
+            <!--<actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>-->
+            <!--<actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">-->
+                <!--<argument name="product" value="ValeriaTwoLayerTank"/>-->
+            <!--</actionGroup>-->
+
+            <!--<actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>-->
+
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>-->
+
+            <!--<actionGroup ref="AddToCart" stepKey="addToCart1"/>-->
+
+            <!--<actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>-->
+
+        <!--</before>-->
+
+        <!--<actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCart"/>-->
+        <!--<actionGroup ref="RemoveItemFromTheCart" stepKey="removeItemFromTheCart"/>-->
+
+    <!--</test>-->
+</tests>
