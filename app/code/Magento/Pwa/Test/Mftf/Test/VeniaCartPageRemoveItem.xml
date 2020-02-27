@@ -11,12 +11,13 @@
     <test name="RemoveItemFromTheCartPage">
         <annotations>
             <features value="PWA"/>
-            <stories value="Kebab Features on Cart Page"/>
+            <stories value="Cart Page"/>
             <title value="Verify user should be able to Remove an item on Cart Page"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-21749"/>
+            <testCaseId value="MC-31954"/>
             <group value="PWA"/>
+            <group value="Cart"/>
         </annotations>
 
         <before>
@@ -30,8 +31,6 @@
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
-
-            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
 
         </before>
 
