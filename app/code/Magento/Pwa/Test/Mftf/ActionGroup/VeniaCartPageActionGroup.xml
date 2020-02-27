@@ -50,13 +50,13 @@
         <wait time="2" stepKey="wait1"/>
         <click selector="{{CartPageShippingSection.estimateShippingLink}}" stepKey="clickEstimateShippingLink"/>
         <wait time="2" stepKey="wait2"/>
-        <!--<selectOption selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>-->
-        <!--<wait time="2" stepKey="wait3"/>-->
-        <!--<fillField  selector="{{CartPageShippingSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>-->
-        <!--<wait time="1" stepKey="wait4"/>-->
-        <!--<click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>-->
-        <!--<wait time="5" stepKey="wait5"/>-->
-        <!--<seeElement selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="verifyFlatRateShipping"/>-->
+        <selectOption selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <wait time="2" stepKey="wait3"/>
+        <fillField  selector="{{CartPageShippingSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="verifyFlatRateShipping"/>
         <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
     </actionGroup>
 
