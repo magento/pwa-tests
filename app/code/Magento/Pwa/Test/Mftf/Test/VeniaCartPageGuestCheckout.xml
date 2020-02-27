@@ -55,7 +55,7 @@
         <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration2">
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
-        <!--<actionGroup ref="ApplyShippingMethods" stepKey="verifyShippingMethodGetsAdded"/>-->
+        <actionGroup ref="addShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
         <!--<actionGroup ref="ApplyCouponCode" stepKey="verifyCouponCodeGetsAdded"/>-->
 
        <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->

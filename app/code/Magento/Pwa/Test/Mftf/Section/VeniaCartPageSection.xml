@@ -17,6 +17,11 @@
 
     <section name="CartPageShippingSection">
         <element name="shippingAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Estimate your Shipping')]"/>
+        <element name="estimateShippingLink" type="button" selector="//span[contains(text(), 'I want to estimate my shipping')]"/>
+        <element name="getShippingOptions" type="button" selector="//span[contains(text(), 'Get Shipping Options')]"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='zip']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='state']"/>
+        <element name="shippingMethodFixed" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, 'flatrate')]"/>
     </section>
 
     <section name="CartPageCouponCodeSection">
