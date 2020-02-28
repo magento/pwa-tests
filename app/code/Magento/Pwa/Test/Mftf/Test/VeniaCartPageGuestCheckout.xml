@@ -25,6 +25,7 @@
             <severity value="CRITICAL"/>
             <testCaseId value="MC-31971"/>
             <group value="PWA"/>
+            <group value="Cart"/>
         </annotations>
 
         <before>
@@ -56,7 +57,7 @@
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
         <actionGroup ref="addShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
-        <!--<actionGroup ref="ApplyCouponCode" stepKey="verifyCouponCodeGetsAdded"/>-->
+        <actionGroup ref="addCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
 
        <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
 

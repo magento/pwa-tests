@@ -60,4 +60,19 @@
         <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
     </actionGroup>
 
+    <actionGroup name="addCouponCode">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageCouponCodeSection.couponCodeAccordion}}" stepKey="expandCouponAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <fillField  selector="{{CartPageCouponCodeSection.couponCode}}" userInput="{{discount.CouponCode}}" stepKey="enterZipCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="applyCouponCode"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="verifyRemoveCodeLink"/>
+        <see userInput="{{discount.CouponCode}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
+    </actionGroup>
+
 </actionGroups>

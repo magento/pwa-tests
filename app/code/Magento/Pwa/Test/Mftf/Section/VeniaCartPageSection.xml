@@ -26,6 +26,9 @@
 
     <section name="CartPageCouponCodeSection">
         <element name="couponCodeAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Enter Coupon Code')]"/>
+        <element name="couponCode" type="input" selector="[id='couponCode']"/>
+        <element name="applyCoupon" type="button" selector="//button[contains(@class, 'couponCode-applyButton-')]/span[contains(text(), 'Apply')]"/>
+        <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')][contains(text(), 'Remove')]"/>
     </section>
 
     <section name="CartPageGiftCardSection">
