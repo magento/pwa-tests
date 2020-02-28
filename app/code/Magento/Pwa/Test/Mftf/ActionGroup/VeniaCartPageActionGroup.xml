@@ -93,4 +93,21 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
+    <actionGroup name="addGiftCard">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageGiftCardSection.giftCardAccordion}}" stepKey="expandGiftCardAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <fillField  selector="{{CartPageGiftCardSection.giftCardCode}}" userInput="{{discount.GiftCard}}" stepKey="enterGiftCardCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="applyCouponCode"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="verifyRemoveGiftCardLink"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardBalance}}" stepKey="assertGiftCardBalanceLabel"/>
+        <seeElement selector="{{CartPageGiftCardSection.addAnotherGiftCard}}" stepKey="assertAddAnotherGiftCardLink"/>
+        <see userInput="{{discount.GiftCard}}" stepKey="seeAppliedGiftCard"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
+    </actionGroup>
+
 </actionGroups>

@@ -33,6 +33,11 @@
 
     <section name="CartPageGiftCardSection">
         <element name="giftCardAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Apply Gift Card')]"/>
+        <element name="giftCardCode" type="input" selector="[id*='giftCards-card-']"/>
+        <element name="applyGiftCard" type="button" selector="//button[contains(@class, 'giftCards-apply_button-')]/span[contains(text(), 'Apply')]"/>
+        <element name="removeGiftCard" type="button" selector="//button[contains(@class, 'giftCard-remove-')][contains(text(), 'Remove')]"/>
+        <element name="giftCardBalance" type="text" selector="//span[contains(@class, 'giftCard-balance-')]" />
+        <element name="addAnotherGiftCard" type="button" selector="//button[contains(@class, 'giftCards-show_entry-')][contains(text(), '+ Add another gift card')]"/>
     </section>
 
     <section name="CartPageGiftOptionsSection">
