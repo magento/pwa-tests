@@ -24,6 +24,7 @@
     <entity name="CarminaEarrings" type="product">
         <data key="name">Carmina Earrings</data>
         <data key="price">58</data>
+        <data key="qty">2</data>
         <data key="url">/carmina-earrings.html</data>
     </entity>
 
