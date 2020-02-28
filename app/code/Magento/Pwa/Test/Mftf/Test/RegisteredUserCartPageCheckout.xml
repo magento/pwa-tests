@@ -55,6 +55,7 @@
         <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration"/>
         <actionGroup ref="VerifySimpleProductExists" stepKey="verifySimpleProductsExists"/>
         <actionGroup ref="addGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="addGiftOptions" stepKey="addGiftOptions"/>
 
         <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
 

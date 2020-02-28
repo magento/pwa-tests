@@ -110,4 +110,16 @@
         <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
     </actionGroup>
 
+
+    <actionGroup name="addGiftOptions">
+        <click selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="expandGiftOptionsAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <click selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="checkGiftReceiptCheckBox"/>
+        <click selector="{{CartPageGiftOptionsSection.includePrintedCard}}" stepKey="checkPrintCardCheckBox"/>
+        <wait time="1" stepKey="wait4"/>
+        <fillField  selector="{{CartPageGiftOptionsSection.addGiftMessage}}" userInput="Test message for gift options" stepKey="enterTestGiftMessage"/>
+        <see userInput="Include gift receipt" stepKey="seeGiftLabelExists"/>
+        <see userInput="Include printed card" stepKey="seePrintCardLabelExists"/>
+        <!--Might add assert about the message on Review page-->
+    </actionGroup>
 </actionGroups>
