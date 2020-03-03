@@ -29,4 +29,50 @@
         <dontSee userInput="Estimate your Shipping" stepKey="dontSeeShippingAccordion" />
     </actionGroup>
 
+    <actionGroup name="VerifyConfigurableProductExists">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <seeElement selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="assertKebabMenuExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.colorOption(product.name, product.color)}}" stepKey="assertProductColorExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.sizeOption(product.name, product.color, product.size)}}" stepKey="assertProductSizeExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQty"/>
+        <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
+    </actionGroup>
+
+
+    <actionGroup name="addShippingMethod">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <click selector="{{CartPageShippingSection.shippingAccordion}}" stepKey="expandShippingAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <click selector="{{CartPageShippingSection.estimateShippingLink}}" stepKey="clickEstimateShippingLink"/>
+        <wait time="2" stepKey="wait2"/>
+        <selectOption selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <wait time="2" stepKey="wait3"/>
+        <fillField  selector="{{CartPageShippingSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="verifyFlatRateShipping"/>
+        <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
+    </actionGroup>
+
+    <actionGroup name="addCouponCode">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageCouponCodeSection.couponCodeAccordion}}" stepKey="expandCouponAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <fillField  selector="{{CartPageCouponCodeSection.couponCode}}" userInput="{{discount.CouponCode}}" stepKey="enterCouponCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="applyCouponCode"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="verifyRemoveCodeLink"/>
+        <see userInput="{{discount.CouponCode}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
+    </actionGroup>
+
 </actionGroups>

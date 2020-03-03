@@ -18,6 +18,7 @@
         <data key="phone">1234567890</data>
         <data key="email" unique="prefix">test@example.com</data>
         <data key="password">pwdTest123!</data>
+        <data key="stateName">Texas</data>
     </entity>
 
     <entity name="VeniaRegisteredCustomer" type="customer">

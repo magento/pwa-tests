@@ -17,10 +17,18 @@
 
     <section name="CartPageShippingSection">
         <element name="shippingAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Estimate your Shipping')]"/>
+        <element name="estimateShippingLink" type="button" selector="//span[contains(text(), 'I want to estimate my shipping')]"/>
+        <element name="getShippingOptions" type="button" selector="//span[contains(text(), 'Get Shipping Options')]"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='zip']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='state']"/>
+        <element name="shippingMethodFixed" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, 'flatrate')]"/>
     </section>
 
     <section name="CartPageCouponCodeSection">
         <element name="couponCodeAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]/div[contains(text(), 'Enter Coupon Code')]"/>
+        <element name="couponCode" type="input" selector="[id='couponCode']"/>
+        <element name="applyCoupon" type="button" selector="//button[contains(@class, 'couponCode-applyButton-')]/span[contains(text(), 'Apply')]"/>
+        <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')][contains(text(), 'Remove')]"/>
     </section>
 
     <section name="CartPageGiftCardSection">
@@ -33,11 +41,12 @@
 
     <section name="CartPageProductDetailsSection">
         <element name="cartProductName" type="text" selector="//span[contains(text(), '{{var_product_name}}')]" parameterized="true"/>
+        <element name="colorOption" type="button" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="button" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]/following-sibling::dt[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="productQty" type="input" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//input[@name='quantity'][@value='{{product_qty}}']" parameterized="true"/>
+        <element name="productPrice" type="input" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//span[contains(text(), '{{product_price}}')]" parameterized="true"/>
     </section>
 
-    <!--<section name="CartPageQtySection">-->
-
-    <!--</section>-->
 
     <section name="CartPageKebabSection">
         <element name="kebabMenu" type="button" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//button[contains(@class, 'kebab-kebab-')]" parameterized="true"/>
