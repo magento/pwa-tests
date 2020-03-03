@@ -75,4 +75,51 @@
         <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
     </actionGroup>
 
+    <actionGroup name="NavigateToSignInFormFromCart">
+        <waitForPwaElementVisible selector="{{VeniaCartPageSection.signIn}}" stepKey="wait1"/>
+        <click selector="{{VeniaCartPageSection.signIn}}" stepKey="clickSignInOnCartPage"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
+        <wait time="3" stepKey="wait3"/>
+        <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignInOnLeftPanel"/>
+    </actionGroup>
+
+    <actionGroup name="VerifySimpleProductExists">
+        <arguments>
+            <argument name="product" defaultValue="CarminaEarrings"/>
+        </arguments>
+        <seeElement selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="assertKebabMenuExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQty"/>
+        <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
+    </actionGroup>
+
+    <actionGroup name="addGiftCard">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageGiftCardSection.giftCardAccordion}}" stepKey="expandGiftCardAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <fillField  selector="{{CartPageGiftCardSection.giftCardCode}}" userInput="{{discount.GiftCard}}" stepKey="enterGiftCardCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="applyCouponCode"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="verifyRemoveGiftCardLink"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardBalance}}" stepKey="assertGiftCardBalanceLabel"/>
+        <seeElement selector="{{CartPageGiftCardSection.addAnotherGiftCard}}" stepKey="assertAddAnotherGiftCardLink"/>
+        <see userInput="{{discount.GiftCard}}" stepKey="seeAppliedGiftCard"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
+    </actionGroup>
+
+
+    <actionGroup name="addGiftOptions">
+        <click selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="expandGiftOptionsAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <click selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="checkGiftReceiptCheckBox"/>
+        <click selector="{{CartPageGiftOptionsSection.includePrintedCard}}" stepKey="checkPrintCardCheckBox"/>
+        <wait time="1" stepKey="wait4"/>
+        <fillField  selector="{{CartPageGiftOptionsSection.addGiftMessage}}" userInput="Test message for gift options" stepKey="enterTestGiftMessage"/>
+        <see userInput="Include gift receipt" stepKey="seeGiftLabelExists"/>
+        <see userInput="Include printed card" stepKey="seePrintCardLabelExists"/>
+        <!--Might add assert about the message on Review page-->
+    </actionGroup>
 </actionGroups>

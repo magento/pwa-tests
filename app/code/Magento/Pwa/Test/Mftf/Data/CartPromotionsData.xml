@@ -10,6 +10,7 @@
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
     <entity name="CartPromotion" type="data">
         <data key="CouponCode">PWA1423</data>
+        <!--This GiftCard data is something which will keep on changing if we change backend env, as we cant get/set same code as CouponCode-->
         <data key="GiftCard">02Y0LCHUNDRZ</data>
     </entity>
 

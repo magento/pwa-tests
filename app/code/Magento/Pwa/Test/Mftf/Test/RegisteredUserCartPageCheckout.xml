@@ -6,47 +6,58 @@
   */
 -->
 
-
-<!--Check Empty Cart-->
-<!--Sign In-->
-<!--Add Products-->
-<!--Check Products Exists-->
-<!--Apply Gift Card-->
-<!--Apply Gift Message-->
-<!--Place holder for checkout-->
-<!--Sign-out-->
-
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <!--<test name="RemoveItemFromTheCartPage">-->
-        <!--<annotations>-->
-            <!--<features value="PWA"/>-->
-            <!--<stories value="Kebab Features"/>-->
-            <!--<title value="Verify user should be able to Remove an item from the cart"/>-->
-            <!--<description value="Verify user should be able to Remove an item from the cart"/>-->
-            <!--<severity value="CRITICAL"/>-->
-            <!--<testCaseId value="MC-21749"/>-->
-            <!--<group value="PWA"/>-->
-        <!--</annotations>-->
+    <test name="CartPageRegisteredUserCheckout">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Cart Page"/>
+            <title value="Verify Registered user should be able to checkout via Cart Page"/>
+            <description value="Verify Registered user should be able to checkout via Cart Page"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-32012"/>
+            <group value="PWA"/>
+            <group value="Cart"/>
+        </annotations>
 
-        <!--<before>-->
-            <!--<actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>-->
-            <!--<actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">-->
-                <!--<argument name="product" value="ValeriaTwoLayerTank"/>-->
-            <!--</actionGroup>-->
+        <before>
+            <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
 
-            <!--<actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>-->
+            <actionGroup ref="NavigateToSignInFormFromCart" stepKey="navigateToSignInForm" />
 
-            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>-->
+            <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
 
-            <!--<actionGroup ref="AddToCart" stepKey="addToCart1"/>-->
+            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
 
-            <!--<actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>-->
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
+                <argument name="product" value="ValeriaTwoLayerTank"/>
+            </actionGroup>
 
-        <!--</before>-->
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
-        <!--<actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCart"/>-->
-        <!--<actionGroup ref="RemoveItemFromTheCart" stepKey="removeItemFromTheCart"/>-->
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{CarminaEarrings.qty}}" stepKey="selectProductQuantity01"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart2">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+        </before>
 
-    <!--</test>-->
+        <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+        <dontSee userInput="Sign In" stepKey="dontSeeSignInLink" />
+        <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration"/>
+        <actionGroup ref="VerifySimpleProductExists" stepKey="verifySimpleProductsExists"/>
+        <actionGroup ref="addGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="addGiftOptions" stepKey="addGiftOptions"/>
+
+        <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
+
+    </test>
 </tests>
