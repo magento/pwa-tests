@@ -30,18 +30,22 @@
             <argument name="categoryName" value="Bottoms"/>
         </actionGroup>
         <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay">
-            <argument name="productName" value="IsadoraSkirt"/>
+            <argument name="categoryDisplayName" value="Skirts"/>
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
 
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1"/>
         <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu1"/>
-        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay1"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay2">
+            <argument name="categoryDisplayName" value="Minimalist Sensibility"/>
+        </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
 
         <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
-
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay3">
+            <argument name="categoryDisplayName" value="Shop The Look"/>
+        </actionGroup>
     </test>
 </tests>
