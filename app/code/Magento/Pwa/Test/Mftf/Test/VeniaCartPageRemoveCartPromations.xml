@@ -14,7 +14,7 @@
             <stories value="Cart Page"/>
             <title value="Verify Add/Remove Cart promotions"/>
             <description value="Verify Add/Remove Cart promotions"/>
-            <severity value="CRITICAL"/>
+            <severity value="MAJOR"/>
             <testCaseId value="MC-32192"/>
             <group value="PWA"/>
             <group value="Cart"/>
