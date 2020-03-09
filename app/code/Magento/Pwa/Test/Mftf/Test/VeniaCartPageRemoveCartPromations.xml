@@ -36,7 +36,7 @@
 
         </before>
 
-        <actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCart"/>
+        <actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCartPage"/>
         <actionGroup ref="addCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
         <actionGroup ref="addGiftCard" stepKey="addGiftCard"/>
         <actionGroup ref="removeCouponCode" stepKey="removeCouponCode"/>
