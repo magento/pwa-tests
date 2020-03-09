@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="RemoveCartPromotions">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Cart Page"/>
+            <title value="Verify Add/Remove Cart promotions"/>
+            <description value="Verify Add/Remove Cart promotions"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="MC-32192"/>
+            <group value="PWA"/>
+            <group value="Cart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
+                <argument name="product" value="ValeriaTwoLayerTank"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+
+            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
+
+        </before>
+
+        <actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCartPage"/>
+        <actionGroup ref="addCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
+        <actionGroup ref="addGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="removeCouponCode" stepKey="removeCouponCode"/>
+        <actionGroup ref="removeGiftCard" stepKey="removeGiftCard"/>
+
+    </test>
+</tests>

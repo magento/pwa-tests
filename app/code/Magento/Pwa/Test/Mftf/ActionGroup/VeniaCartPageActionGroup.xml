@@ -75,6 +75,18 @@
         <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
     </actionGroup>
 
+    <actionGroup name="removeCouponCode">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="removeCouponCode"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageCouponCodeSection.couponCode}}" stepKey="seeCouponCodeTextField"/>
+        <seeElement selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="seeApplyButton"/>
+        <dontSee userInput="{{discount.CouponCode}}" stepKey="doNotAppliedCouponCode"/>
+        <dontSee userInput="Discounts applied" stepKey="doNotSeeAppliedDiscountLabel"/>
+    </actionGroup>
+
     <actionGroup name="NavigateToSignInFormFromCart">
         <waitForPwaElementVisible selector="{{VeniaCartPageSection.signIn}}" stepKey="wait1"/>
         <click selector="{{VeniaCartPageSection.signIn}}" stepKey="clickSignInOnCartPage"/>
@@ -108,6 +120,19 @@
         <seeElement selector="{{CartPageGiftCardSection.addAnotherGiftCard}}" stepKey="assertAddAnotherGiftCardLink"/>
         <see userInput="{{discount.GiftCard}}" stepKey="seeAppliedGiftCard"/>
         <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
+    </actionGroup>
+
+    <actionGroup name="removeGiftCard">
+        <arguments>
+            <argument name="discount" defaultValue="CartPromotion"/>
+        </arguments>
+        <click selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="removeGiftCard"/>
+        <wait time="5" stepKey="wait5"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardCode}}" stepKey="seeGiftCardTextField"/>
+        <seeElement selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="seeApplyGiftCardButton"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardBalanceLink}}" stepKey="seeCheckGiftCardBalanceLink"/>
+        <dontSee userInput="{{discount.GiftCard}}" stepKey="doNotSeeAppliedGiftCard"/>
+        <dontSee userInput="Gift Card(s) applied" stepKey="doNotSeeAppliedGiftCardLabel"/>
     </actionGroup>
 
 
