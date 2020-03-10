@@ -15,7 +15,7 @@
             <title value="Verify user should be able to edit the cart and complete checkout flow"/>
             <description value="Verify user should be able to edit the cart and complete checkout flow"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-21745"/>
+            <testCaseId value="MC-32249"/>
             <group value="PWA"/>
         </annotations>
 
