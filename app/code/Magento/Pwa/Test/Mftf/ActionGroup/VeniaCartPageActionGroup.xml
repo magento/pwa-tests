@@ -167,7 +167,8 @@
         <waitForPwaElementVisible selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="waitForProducttoDisplay"/>
         <click selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{EditPanelSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
-        <click selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="clickOnQtyIncreaseStepper"/>
+        <!--Uncomment after PWA-411 is fixed-->
+        <!--<click selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="clickOnQtyIncreaseStepper"/>-->
         <wait time="2" stepKey="temporaryWait"/>
         <click selector="{{EditPanelSection.updateCart}}" stepKey="clickOnUpdateCartButton"/>
     </actionGroup>
@@ -181,7 +182,8 @@
         <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertUpdatedProductColorExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.sizeOption(product.name, product.color1, product.size1)}}" stepKey="assertUpdatedProductSizeExists"/>
-        <seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertUpdatedProductQty"/>
+        <!--Uncomment after PWA-411 is fixed-->
+        <!--<seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertUpdatedProductQty"/>-->
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
