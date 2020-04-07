@@ -43,8 +43,8 @@
 
     <section name="CartPageGiftOptionsSection">
         <element name="giftOptionsAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'See Gift Options')]"/>
-        <element name="includeGiftReceipt" type="checkbox" selector="[id='includeGiftReceipt']"/>
-        <element name="includePrintedCard" type="checkbox" selector="[id='includePrintedCard']"/>
+        <element name="includeGiftReceipt" type="input" selector="//span[contains(text(), 'Include gift receipt')]"/>
+        <element name="includePrintedCard" type="input" selector="//span[contains(text(), 'Include printed card')]"/>
         <element name="addGiftMessage" type="textarea" selector="[id='cardMessage']"/>
     </section>
 
