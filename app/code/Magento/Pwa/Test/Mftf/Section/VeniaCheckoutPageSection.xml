@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaCheckoutPageSection">
+        <element name="GuestCheckoutHeader" type="text" selector="//h1[contains(text(), 'Guest Checkout')]"/>
+        <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
+        <element name="signIn" type="button" selector="//button[contains(@class, 'checkoutPage-sign_in')]/span[contains(text(), 'Login and Checkout Faster')]"/>
+        <element name="reviewOrder" type="button" selector="//button[contains(@class, 'paymentInformation-review_order_button')]/span[contains(text(), 'Review Order')]"/>
+        <element name="placeOrder" type="button" selector="//button[contains(@class, 'checkoutPage-place_order_button-')]/span[contains(text(), 'Place Order')]"/>
+    </section>
+
+    <section name="CheckoutPageEnterShippingDetailsSection">
+        <element name="guestEmail" type="input" selector="[class*='textInput-input-'][name*='email']"/>
+        <element name="firstName" type="input" selector="[class*='textInput-input-'][name*='firstname']"/>
+        <element name="lastName" type="input" selector="[class*='textInput-input-'][name*='lastname']"/>
+        <element name="selectCountry" type="select" selector="[class*='select-input-'][name*='country']"/>
+        <element name="street" type="input" selector="[class*='textInput-input-'][name*='street[0]']"/>
+        <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street[1]']"/>
+        <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postcode']"/>
+        <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='telephone']"/>
+        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'editForm-submit-')]/span[contains(text(), 'Continue to Shipping Method')]"/>
+    </section>
+
+    <section name="CheckoutPageShippingInfoSection">
+        <element name="shippingInfoRoot" type="textarea" selector="//div[contains(@class, 'shippingInformation-root-')]"/>
+        <element name="shippingInfoHeader" type="text" selector="//h5[contains(text(), 'Shipping Information')]"/>
+        <element name="shippingInfoEditLink" type="button" selector="//span[contains(@class, 'shippingInformation-editText-')][contains(text(), 'Edit')]"/>
+    </section>
+
+    <section name="CheckoutPageOverlaySection">
+        <element name="shippingEditOverlay" type="textarea" selector="//span[contains(@class, 'editModal-headerText-')][contains(text(), 'Edit Shipping Information')]"/>
+        <element name="shippingMethodEditOverlay" type="textarea" selector="//span[contains(@class, 'updateModal-headerText-')][contains(text(), 'Edit Shipping Method')]"/>
+        <element name="updateShippingInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
+        <element name="cancelShippingInfoUpdate" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Cancel')]"/>
+    </section>
+
+    <section name="CheckoutPageShippingMethodInfoSection">
+        <element name="shippingMethodRoot" type="textarea" selector="//div[contains(@class, 'completedView-root-')]"/>
+        <element name="shippingMethodHeader" type="text" selector="//h5[contains(text(), 'completedView-heading-')]"/>
+        <element name="shippingMethodEditLink" type="button" selector="//span[contains(@class, 'completedView-editButtonText-')][contains(text(), 'Edit')]"/>
+    </section>
+
+    <section name="CheckoutPageProductDetailsSection">
+        <element name="productName" type="text" selector="//div[contains(@class, 'item-root-')]//span[contains(text(), '{{product_name}}')]" parameterized="true"/>
+        <element name="colorOption" type="text" selector="//div[./span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="text" selector="//div[./span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]/following-sibling::dt[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="productQty" type="input" selector="//div[contains(@class, 'item-root-')]//span[contains(text(), 'Qty : {{product_qty}}')]" parameterized="true"/>
+    </section>
+</sections>
