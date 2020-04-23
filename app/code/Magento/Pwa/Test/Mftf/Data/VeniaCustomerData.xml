@@ -9,19 +9,17 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
     <entity name="VeniaCustomer1" type="customer">
-        <data key="first">John</data>
-        <data key="last">Smith</data>
+        <data key="first">JohnTest</data>
+        <data key="last">SmithTest</data>
         <data key="address">123 Test Drive</data>
         <data key="address2">Apt 123</data>
-        <data key="city">Austin</data>
-        <data key="zipCode">78717</data>
-        <data key="state">TX</data>
+        <data key="city">Culver City</data>
+        <data key="zipCode">90230</data>
+        <data key="state">CA</data>
         <data key="phone">1234567890</data>
         <data key="email" unique="prefix">test@example.com</data>
         <data key="password">pwdTest123!</data>
-        <data key="stateName">Texas</data>
-        <data key="defaultCountry">United States</data>
-        <data key="newCountry">United Kingdom</data>
+        <data key="stateName">California</data>
     </entity>
 
     <entity name="VeniaRegisteredCustomer" type="customer">

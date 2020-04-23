@@ -35,11 +35,13 @@
     </actionGroup>
 
     <actionGroup name="SubmitShippingInfo">
+        <click selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnContinueToShippingMethod"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+    <actionGroup name="AssertShippingInfoDetails">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
-        <click selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnContinueToShippingMethod"/>
-        <wait time="5" stepKey="temporaryWait"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
@@ -55,19 +57,42 @@
     <actionGroup name="SubmitShippingMethod">
         <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
         <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+    <actionGroup name="AssertShippingMethodDetails">
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod}}" stepKey="assertSelectedShippingMethodExists"/>
     </actionGroup>
 
-    <actionGroup name="ProceedToCheckout">
-        <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
-        <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
+    <actionGroup name="ReviewOrder">
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="waitForReviewOrderButtonToBeReady"/>
+        <click selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="clickOnReviewOrderButton"/>
         <wait time="5" stepKey="temporaryWait"/>
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
         <seeElement selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
+        <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
+        <see userInput="Tax" stepKey="seeTaxExists"/>
+        <see userInput="Shipping" stepKey="seeShippingExists"/>
+        <see userInput="Total" stepKey="seeTotalExists"/>
+    </actionGroup>
+
+    <actionGroup name="AssertProductDetails">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color)}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color, product.size)}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertGuestCheckoutHeadingExists"/>
+    </actionGroup>
+
+    <actionGroup name="PlaceOrder">
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
+        <click selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="clickOnPlaceOrderButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
 </actionGroups>
