@@ -187,7 +187,7 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
-    <actionGroup name="ProceedToCheckout">
+    <actionGroup name="CartPageProceedToCheckout">
         <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
         <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
         <wait time="5" stepKey="temporaryWait"/>

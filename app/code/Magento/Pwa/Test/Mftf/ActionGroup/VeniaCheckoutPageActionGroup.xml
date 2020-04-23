@@ -26,6 +26,7 @@
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
     </actionGroup>
+
     <actionGroup name="UpdateStateZip">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
@@ -43,15 +44,15 @@
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
-        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
-        <see userInput="test@example.com" stepKey="seeAppliedGiftCard"/>
-        <see userInput="{{customer.first}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="{{customer.last}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="{{customer.address}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="{{customer.address2}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="{{customer.city}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="{{customer.phone}}" stepKey="seeAppliedCouponCode"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>
+        <see userInput="test@example.com" stepKey="seeEmailExists"/>
+        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
+        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
+        <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 
     <actionGroup name="SubmitShippingMethod">
@@ -83,10 +84,10 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color)}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color, product.size)}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color)}}" stepKey="assertProductColorExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color, product.size)}}" stepKey="assertProductSizeExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
     </actionGroup>
 
     <actionGroup name="PlaceOrder">
