@@ -43,10 +43,16 @@
         <element name="cancelShippingInfoUpdate" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Cancel')]"/>
     </section>
 
+    <section name="CheckoutPageSelectShippingMethodSection">
+        <element name="shippingMethodHeader" type="text" selector="//h3[contains(text(), 'Shipping Method')]"/>
+        <element name="submitShippingMethod" type="button" selector="//button[contains(@class, 'button-root_normalPriority-')]/span[contains(text(), 'Continue to Payment Information')]"/>
+    </section>
+
     <section name="CheckoutPageShippingMethodInfoSection">
         <element name="shippingMethodRoot" type="textarea" selector="//div[contains(@class, 'completedView-root-')]"/>
-        <element name="shippingMethodHeader" type="text" selector="//h5[contains(text(), 'completedView-heading-')]"/>
+        <element name="shippingMethodHeader" type="text" selector="//h5[contains(text(), 'Shipping Method')]"/>
         <element name="shippingMethodEditLink" type="button" selector="//span[contains(@class, 'completedView-editButtonText-')][contains(text(), 'Edit')]"/>
+        <element name="selectedShippingMethod" type="text" selector="//div[contains(@class, 'completedView-contents-')]/span[contains(text(), 'Fixed')]"/>
     </section>
 
     <section name="CheckoutPageProductDetailsSection">

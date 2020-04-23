@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="GoToCheckoutPage">
+        <amOnPage url="{{Checkout.url}}" stepKey="goToCheckoutPage"/>
+        <wait time="5" stepKey="temporaryStaticWait1" />
+    </actionGroup>
+
+
+    <actionGroup name="EnterShippingInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" userInput="{{customer.email}}" stepKey="enterEmail"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
+    </actionGroup>
+    <actionGroup name="UpdateStateZip">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterLastName"/>
+    </actionGroup>
+
+    <actionGroup name="SubmitShippingInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <click selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnContinueToShippingMethod"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <see userInput="test@example.com" stepKey="seeAppliedGiftCard"/>
+        <see userInput="{{customer.first}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="{{customer.last}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="{{customer.address}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="{{customer.city}}" stepKey="seeAppliedCouponCode"/>
+        <see userInput="{{customer.phone}}" stepKey="seeAppliedCouponCode"/>
+    </actionGroup>
+
+    <actionGroup name="SubmitShippingMethod">
+        <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod}}" stepKey="assertSelectedShippingMethodExists"/>
+    </actionGroup>
+
+    <actionGroup name="ProceedToCheckout">
+        <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
+        <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+    </actionGroup>
+
+</actionGroups>

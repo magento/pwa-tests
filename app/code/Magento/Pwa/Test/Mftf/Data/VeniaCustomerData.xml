@@ -12,6 +12,7 @@
         <data key="first">John</data>
         <data key="last">Smith</data>
         <data key="address">123 Test Drive</data>
+        <data key="address2">Apt 123</data>
         <data key="city">Austin</data>
         <data key="zipCode">78717</data>
         <data key="state">TX</data>
@@ -19,6 +20,8 @@
         <data key="email" unique="prefix">test@example.com</data>
         <data key="password">pwdTest123!</data>
         <data key="stateName">Texas</data>
+        <data key="defaultCountry">United States</data>
+        <data key="newCountry">United Kingdom</data>
     </entity>
 
     <entity name="VeniaRegisteredCustomer" type="customer">

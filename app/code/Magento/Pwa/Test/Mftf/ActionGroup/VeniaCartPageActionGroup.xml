@@ -187,4 +187,13 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
+    <actionGroup name="ProceedToCheckout">
+        <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
+        <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+    </actionGroup>
+
 </actionGroups>
