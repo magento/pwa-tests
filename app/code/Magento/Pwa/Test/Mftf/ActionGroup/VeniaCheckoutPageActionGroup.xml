@@ -64,15 +64,15 @@
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod}}" stepKey="assertSelectedShippingMethodExists"/>
+        <wait time="15" stepKey="temporaryWait1"/>
     </actionGroup>
 
     <actionGroup name="ReviewOrder">
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="waitForReviewOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="clickOnReviewOrderButton"/>
-        <wait time="5" stepKey="temporaryWait"/>
-        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
-        <seeElement selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <wait time="10" stepKey="temporaryWait"/>
+        <!--<seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>-->
+        <!--<seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>-->
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
         <see userInput="Tax" stepKey="seeTaxExists"/>
@@ -101,9 +101,9 @@
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.orderConfirmationRoot}}" stepKey="waitForCheckoutPageToLoad"/>
-        <see userInput="Thank you for your order!" stepKey="seeEmailExists"/>
-        <!--<see userInput="Order Number: " stepKey="seeOrderNumber"/>-->
-        <see regex="~/Order Number: /(\d+)/~" stepKey="seeOrderNumber"/>
+        <see userInput="Thank you for your order!" stepKey="seeOrderConfirmationMessage"/>
+        <see userInput="Order Number: " stepKey="seeOrderNumber"/>
+        <!--<see regex="~/Order Number: /(\d+)/~" stepKey="seeOrderNumber"/>-->
         <see userInput="test@example.com" stepKey="seeEmailExists"/>
         <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
         <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
@@ -121,6 +121,16 @@
         <fillField  selector="{{CheckoutPageOrderConfirmation.passwordField}}" userInput="{{customer.password}}" stepKey="enterPassword"/>
         <click selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="clickOnCreateAccount"/>
         <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="CheckoutPageEnterPaymentInfo">
+        <arguments>
+            <argument name="creditCard" defaultValue="FakeVisaCard"/>
+        </arguments>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{creditCard.cardHolderName}}" stepKey="enterCardHolderName"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardNumber}}" userInput="{{creditCard.fakeCardNumber}}" stepKey="enterCardNumber"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardExpiration}}" userInput="{{creditCard.expirationDate}}" stepKey="enterCardExpiration"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardCVV}}" userInput="{{creditCard.cvvCode}}" stepKey="enterCardCVV"/>
     </actionGroup>
 
 </actionGroups>

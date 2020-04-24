@@ -191,8 +191,8 @@
         <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
         <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
         <wait time="5" stepKey="temporaryWait"/>
-        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
-        <seeElement selector="{{VeniaCheckoutPageSection.GuestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
     </actionGroup>
 
