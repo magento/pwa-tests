@@ -56,8 +56,8 @@
         <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration2">
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
-        <actionGroup ref="addShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
-        <actionGroup ref="addCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
+        <actionGroup ref="AddShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
+        <actionGroup ref="AddCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
         <actionGroup ref="CartPageProceedToCheckout" stepKey="clickProceedToCheckoutButton"/>
         <actionGroup ref="EnterShippingInfo" stepKey="enterShippingInformation"/>
         <actionGroup ref="SubmitShippingInfo" stepKey="submitShippingInfo"/>
@@ -66,12 +66,22 @@
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2"/>
-        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails">
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails2">
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
         <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails2">
+            <argument name="product" value="IsadoraSkirt"/>
+        </actionGroup>
+        <actionGroup ref="CheckoutPageCreateAccount" stepKey="createAccountViaCheckoutPage"/>
+        <!--Need to add Customer Account page verification, once the feature is developed-->
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        <actionGroup ref="GoToSignOutForm" stepKey="goToSignOutForm"/>
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
 
-       <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
 
     </test>
 </tests>

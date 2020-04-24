@@ -41,7 +41,7 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
-    <actionGroup name="addShippingMethod">
+    <actionGroup name="AddShippingMethod">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
@@ -59,7 +59,7 @@
         <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
     </actionGroup>
 
-    <actionGroup name="addCouponCode">
+    <actionGroup name="AddCouponCode">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -74,7 +74,7 @@
         <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
     </actionGroup>
 
-    <actionGroup name="removeCouponCode">
+    <actionGroup name="RemoveCouponCode">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -104,7 +104,7 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
-    <actionGroup name="addGiftCard">
+    <actionGroup name="AddGiftCard">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -121,7 +121,7 @@
         <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
     </actionGroup>
 
-    <actionGroup name="removeGiftCard">
+    <actionGroup name="RemoveGiftCard">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -135,7 +135,7 @@
     </actionGroup>
 
 
-    <actionGroup name="addGiftOptions">
+    <actionGroup name="AddGiftOptions">
         <click selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="expandGiftOptionsAccordion"/>
         <wait time="2" stepKey="wait1"/>
         <click selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="checkGiftReceiptCheckBox"/>

@@ -96,4 +96,31 @@
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
+    <actionGroup name="AssertOrderConfirmation">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.orderConfirmationRoot}}" stepKey="waitForCheckoutPageToLoad"/>
+        <see userInput="Thank you for your order!" stepKey="seeEmailExists"/>
+        <!--<see userInput="Order Number: " stepKey="seeOrderNumber"/>-->
+        <see regex="~/Order Number: /(\d+)/~" stepKey="seeOrderNumber"/>
+        <see userInput="test@example.com" stepKey="seeEmailExists"/>
+        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
+        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
+        <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
+        <see userInput="Flat Rate - Fixed" stepKey="seeShippingMethod"/>
+    </actionGroup>
+
+    <actionGroup name="CheckoutPageCreateAccount">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <fillField  selector="{{CheckoutPageOrderConfirmation.passwordField}}" userInput="{{customer.password}}" stepKey="enterPassword"/>
+        <click selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="clickOnCreateAccount"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
 </actionGroups>

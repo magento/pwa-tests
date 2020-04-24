@@ -62,4 +62,11 @@
         <element name="productQty" type="input" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//span[contains(text(), 'Qty : {{product_qty}}')]" parameterized="true"/>
     </section>
 
+    <section name="CheckoutPageOrderConfirmation">
+        <element name="orderConfirmationRoot" type="textarea" selector="//div[contains(@class, 'orderConfirmationPage-root-')]"/>
+        <element name="createAccount" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Create Account')]"/>
+        <element name="passwordField" type="input" selector="[class*='textInput-input-'][name*='password']"/>
+    </section>
+
+
 </sections>
