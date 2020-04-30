@@ -5,15 +5,6 @@
   * See COPYING.txt for license details.
   */
 -->
-
-<!--Add 2 Products to Cart-->
-<!--Go To Cart Page-->
-<!--check products exists with same configuration-->
-<!--Apply Shiiping-->
-<!--Apply Coupon Code-->
-<!--Place holder for checkout-->
-
-
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
     <test name="CartPageGuestCheckout">
@@ -79,11 +70,11 @@
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
         <actionGroup ref="CheckoutPageCreateAccount" stepKey="createAccountViaCheckoutPage"/>
-        <!--Need to add Customer Account page verification, once the feature is developed-->
+        <!--Next steps are temporary, might remove once customer account info page is developed-->
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <actionGroup ref="GoToSignOutForm" stepKey="goToSignOutForm"/>
-        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
-
 
     </test>
 </tests>
