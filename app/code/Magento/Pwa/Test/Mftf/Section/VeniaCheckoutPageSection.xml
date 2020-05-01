@@ -70,9 +70,6 @@
 
     <section name="CheckoutPagePaymentCardInfo">
         <element name="cardHolderName" type="input" selector="[id*='braintree__card-view-input__cardholder-name']"/>
-        <!--<element name="cardNumber" type="input" selector="[id*='credit-card-number']"/>-->
-        <!--<element name="cardExpiration" type="input" selector="[id*='expiration']"/>-->
-        <!--<element name="cardCVV" type="input" selector="[id*='cvv']"/>-->
     </section>
 
 </sections>

@@ -70,11 +70,7 @@
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
         <actionGroup ref="CheckoutPageCreateAccount" stepKey="createAccountViaCheckoutPage"/>
-        <!--Next steps are temporary, might remove once customer account info page is developed-->
-        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
-        <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
-        <actionGroup ref="GoToSignOutForm" stepKey="goToSignOutForm"/>
+        <!--Test will continue once customer account info page is developed-->
 
     </test>
 </tests>

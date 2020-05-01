@@ -53,8 +53,6 @@
                 <argument name="product" value="AugustaEarrings"/>
             </actionGroup>
 
-            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
-
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart3">
