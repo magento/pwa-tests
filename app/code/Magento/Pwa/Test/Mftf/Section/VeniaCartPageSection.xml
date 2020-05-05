@@ -73,7 +73,4 @@
         <element name="decreaseQtyStepper" type="button" selector="//aside[contains(@class, 'editModal-root_open-')]//button[contains(@aria-label,'Decrease Quantity')]"/>
     </section>
 
-
-    <!--<section name="CartPagePriceSummarySection">-->
-    <!--</section>-->
 </sections>
