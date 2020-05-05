@@ -6,19 +6,19 @@
 
 `composer install`
 
-1. Install and open docker. Once open, log in.
+2. Install and open docker. Once open, log in.
 
 `brew cask install docker` and `open /Applications/Docker.app`
 
-2. Run/download selenium+chrome. 
+3. Run/download selenium+chrome. 
 
 `docker run -d -p 4444:4444 selenium/standalone-chrome`
 
-3. Build the project to generate scaffold.
+4. Build the project to generate scaffold.
 
 `vendor/bin/mftf build:project`
 
-4. Set your `.env` file as desired.
+5. Set your `.env` file as desired.
 
 ```
 MAGENTO_BASE_URL=<backend url>
