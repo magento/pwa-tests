@@ -59,11 +59,15 @@
         <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
+
     <actionGroup name="AssertShippingMethodDetails">
+        <arguments>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShipping}}" type="string"/>
+        </arguments>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
-        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod}}" stepKey="assertSelectedShippingMethodExists"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod(shippingMethod)}}" stepKey="assertSelectedShippingMethodExists"/>
     </actionGroup>
 
     <actionGroup name="ReviewOrder">
@@ -108,6 +112,7 @@
     <actionGroup name="AssertOrderConfirmation">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingDisplay}}" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.orderConfirmationRoot}}" stepKey="waitForCheckoutPageToLoad"/>
         <see userInput="Thank you for your order!" stepKey="seeOrderConfirmationMessage"/>
@@ -119,7 +124,7 @@
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
         <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
-        <see userInput="Flat Rate - Fixed" stepKey="seeShippingMethod"/>
+        <see userInput="{{shippingMethod}}" stepKey="seeShippingMethod"/>
     </actionGroup>
 
     <actionGroup name="CheckoutPageCreateAccount">

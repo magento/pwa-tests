@@ -44,15 +44,21 @@
         <actionGroup ref="SubmitShippingInfo" stepKey="submitShippingInfo"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation"/>
         <actionGroup ref="SubmitShippingMethod" stepKey="submitShippingMethod"/>
-        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails"/>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails">
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
+        </actionGroup>
         <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName"/>
         <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails"/>
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2"/>
-        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2"/>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2">
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
+        </actionGroup>
         <actionGroup ref="AssertUpdatedProductDetails" stepKey="verifyProductDetails2"/>
         <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
-        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShippingDisplay}}"/>
+        </actionGroup>
         <actionGroup ref="AssertUpdatedProductDetails" stepKey="verifyProductDetails3"/>
 
     </test>

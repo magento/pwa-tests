@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+
+    <!--This CC number is not real and just used for testing payment integrations. Some more such cards are available for public testing PayPals integration: https://www.paypalobjects.com/en_AU/vhelp/paypalmanager_help/credit_card_numbers.htm-->
+    <entity name="ShippingMethods" type="data">
+        <data key="freeShipping">Free</data>
+        <data key="freeShippingDisplay">Free Shipping - Free</data>
+        <data key="fixedShipping">Fixed</data>
+        <data key="fixedShippingDisplay">Flat Rate - Fixed</data>
+    </entity>
+</entities>
