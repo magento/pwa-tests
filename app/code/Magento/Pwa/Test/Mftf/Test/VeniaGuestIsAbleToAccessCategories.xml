@@ -15,7 +15,7 @@
             <title value="user should be able to access the Categories via Home page and from Main Menu left drawer."/>
             <description value="user should be able to access the Categories via Home page and from Main Menu left drawer."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-32245"/>
+            <testCaseId value="MC-34051"/>
             <group value="PWA"/>
         </annotations>
 
