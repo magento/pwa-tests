@@ -36,15 +36,15 @@
         <element name="shippingInfoEditLink" type="button" selector="//span[contains(@class, 'shippingInformation-editText-')][contains(text(), 'Edit')]"/>
     </section>
 
-    <section name="CheckoutPageOverlaySection">
+    <section name="CheckoutPageShippingOverlaySection">
         <element name="shippingEditOverlay" type="textarea" selector="//span[contains(@class, 'editModal-headerText-')][contains(text(), 'Edit Shipping Information')]"/>
-        <element name="shippingMethodEditOverlay" type="textarea" selector="//span[contains(@class, 'updateModal-headerText-')][contains(text(), 'Edit Shipping Method')]"/>
         <element name="updateShippingInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
         <element name="cancelShippingInfoUpdate" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Cancel')]"/>
     </section>
 
     <section name="CheckoutPageSelectShippingMethodSection">
         <element name="shippingMethodHeader" type="text" selector="//h3[contains(text(), 'Shipping Method')]"/>
+        <element name="shippingMethodSelect" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, '{{shipping_method}}')]" parameterized="true"/>
         <element name="submitShippingMethod" type="button" selector="//button[contains(@class, 'button-root_normalPriority-')]/span[contains(text(), 'Continue to Payment Information')]"/>
     </section>
 
@@ -53,6 +53,12 @@
         <element name="shippingMethodHeader" type="text" selector="//h5[contains(text(), 'Shipping Method')]"/>
         <element name="shippingMethodEditLink" type="button" selector="//span[contains(@class, 'completedView-editButtonText-')][contains(text(), 'Edit')]"/>
         <element name="selectedShippingMethod" type="text" selector="//div[contains(@class, 'completedView-contents-')]/span[contains(text(), '{{shipping_method}}')]" parameterized="true"/>
+    </section>
+
+    <section name="CheckoutPageShippingMethodOverlaySection">
+        <element name="shippingMethodEditOverlay" type="textarea" selector="//span[contains(@class, 'dialog-headerText-')][contains(text(), 'Edit Shipping Method')]"/>
+        <element name="updateShippingInfo" type="button" selector="//span[contains(@class, 'dialog-button-')][contains(text(), 'Update')]"/>
+        <element name="cancelShippingInfoUpdate" type="button" selector="//span[contains(@class, 'dialog-button-')][contains(text(), 'Cancel')]"/>
     </section>
 
     <section name="CheckoutPageProductDetailsSection">
@@ -70,6 +76,8 @@
 
     <section name="CheckoutPagePaymentCardInfo">
         <element name="cardHolderName" type="input" selector="[id*='braintree__card-view-input__cardholder-name']"/>
+        <element name="paymentHeader" type="text" selector="//h5[contains(text(), 'Payment Information')]"/>
+        <element name="paymentEditLink" type="button" selector="//span[contains(@class, 'summary-edit_text-')][contains(text(), 'Edit')]"/>
     </section>
 
 </sections>
