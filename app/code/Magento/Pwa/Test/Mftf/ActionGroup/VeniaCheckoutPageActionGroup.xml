@@ -18,12 +18,19 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" stepKey="clearFieldInputIfAny"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" userInput="{{customer.email}}" stepKey="enterEmail"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" stepKey="clearFieldInputIfAny1"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" stepKey="clearFieldInputIfAny2"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.city}}" stepKey="clearFieldInputIfAny5"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
     </actionGroup>
 
@@ -32,12 +39,13 @@
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterLastName"/>
     </actionGroup>
 
     <actionGroup name="SubmitShippingInfo">
         <click selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnContinueToShippingMethod"/>
-        <wait time="5" stepKey="temporaryWait"/>
+        <wait time="10" stepKey="temporaryWait"/>
     </actionGroup>
     <actionGroup name="AssertShippingInfoDetails">
         <arguments>
@@ -55,9 +63,26 @@
         <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 
+    <actionGroup name="EditShippingInfo">
+        <click selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="clickOnShippingInfoEdit"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="UpdateShippingInfo">
+        <click selector="{{CheckoutPageShippingOverlaySection.updateShippingInfo}}" stepKey="clickOnShippingInfoOverlayUpdateButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="SelectShippingMethod">
+        <arguments>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingCode}}" type="string"/>
+        </arguments>
+        <click selector="{{CheckoutPageSelectShippingMethodSection.shippingMethodSelect(shippingMethod)}}" stepKey="selectShippingMethod"/>
+    </actionGroup>
+
     <actionGroup name="SubmitShippingMethod">
         <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
-        <wait time="5" stepKey="temporaryWait"/>
+        <wait time="10" stepKey="temporaryWait"/>
     </actionGroup>
 
     <actionGroup name="AssertShippingMethodDetails">
@@ -68,6 +93,16 @@
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod(shippingMethod)}}" stepKey="assertSelectedShippingMethodExists"/>
+    </actionGroup>
+
+    <actionGroup name="EditShippingMethod">
+        <click selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="clickOnShippingMethodEdit"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="UpdateShippingMethod">
+        <click selector="{{CheckoutPageShippingMethodOverlaySection.updateShippingInfo}}" stepKey="clickOnShippingMethodOverlayUpdateButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
     <actionGroup name="ReviewOrder">

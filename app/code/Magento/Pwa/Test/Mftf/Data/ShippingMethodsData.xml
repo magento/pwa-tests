@@ -15,5 +15,6 @@
         <data key="freeShippingDisplay">Free Shipping - Free</data>
         <data key="fixedShipping">Fixed</data>
         <data key="fixedShippingDisplay">Flat Rate - Fixed</data>
+        <data key="fixedShippingCode">flatrate</data>
     </entity>
 </entities>
