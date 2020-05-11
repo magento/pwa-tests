@@ -15,5 +15,6 @@
         <data key="expirationDate">0125</data>
         <data key="cvvCode">123</data>
         <data key="cardHolderName">JohnTest SmithTest</data>
+        <data key="updatedCardHolderName">Peterxyz Doe</data>
     </entity>
 </entities>

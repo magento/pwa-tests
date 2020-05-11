@@ -30,6 +30,18 @@
         <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'editForm-submit-')]/span[contains(text(), 'Continue to Shipping Method')]"/>
     </section>
 
+    <section name="CheckoutPageEnterBillingDetailsSection">
+        <element name="firstName" type="input" selector="[class*='textInput-input-'][name*='firstName']"/>
+        <element name="lastName" type="input" selector="[class*='textInput-input-'][name*='lastName']"/>
+        <element name="selectCountry" type="select" selector="[class*='select-input-'][name*='country']"/>
+        <element name="street" type="input" selector="[class*='textInput-input-'][name*='street1']"/>
+        <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street2']"/>
+        <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='state']"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postalCode']"/>
+        <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='phoneNumber']"/>
+    </section>
+
     <section name="CheckoutPageShippingInfoSection">
         <element name="shippingInfoRoot" type="textarea" selector="//div[contains(@class, 'shippingInformation-root-')]"/>
         <element name="shippingInfoHeader" type="text" selector="//h5[contains(text(), 'Shipping Information')]"/>
@@ -78,6 +90,11 @@
         <element name="cardHolderName" type="input" selector="[id*='braintree__card-view-input__cardholder-name']"/>
         <element name="paymentHeader" type="text" selector="//h5[contains(text(), 'Payment Information')]"/>
         <element name="paymentEditLink" type="button" selector="//span[contains(@class, 'summary-edit_text-')][contains(text(), 'Edit')]"/>
+    </section>
+
+    <section name="CheckoutPagePaymentOverlaySection">
+        <element name="billingAddressCheckBox" type="text" selector="//span[contains(text(), 'Billing address same as shipping address')]"/>
+        <element name="updatePaymentInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
     </section>
 
 </sections>

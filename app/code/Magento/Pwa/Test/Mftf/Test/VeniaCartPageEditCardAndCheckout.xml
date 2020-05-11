@@ -54,6 +54,7 @@
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2">
             <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
         </actionGroup>
+        <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails"/>
         <actionGroup ref="AssertUpdatedProductDetails" stepKey="verifyProductDetails2"/>
 
         <scrollToTopOfPage stepKey="scrollOnTopOfPage"/>
@@ -74,8 +75,19 @@
         <actionGroup ref="UpdateShippingMethod" stepKey="updateShippingMethod"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyUpdatedShippingMethodDetails"/>
 
+        <actionGroup ref="EditPaymentInfo" stepKey="clickOnEditPaymentMethodLink"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.updatedCardHolderName}}" stepKey="enterCardHolderName2"/>
+        <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails2"/>
+        <actionGroup ref="EnableBillingForm" stepKey="enableBillingInfo"/>
+        <actionGroup ref="EnterBillingInfo" stepKey="updateBillingInfo"/>
+        <actionGroup ref="UpdatePaymentInfo" stepKey="updatePaymentMethod"/>
+        <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails2"/>
+        <actionGroup ref="AssertBillingInfoDetails" stepKey="assertBillingInfo"/>
+
         <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
-        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
         <actionGroup ref="AssertUpdatedProductDetails" stepKey="verifyProductDetails3"/>
 
     </test>
