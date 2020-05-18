@@ -13,17 +13,23 @@
         <wait time="5" stepKey="temporaryStaticWait1" />
     </actionGroup>
 
-
     <actionGroup name="EnterShippingInfo">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" stepKey="clearFieldInputIfAny"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" userInput="{{customer.email}}" stepKey="enterEmail"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" stepKey="clearFieldInputIfAny1"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" stepKey="clearFieldInputIfAny2"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.city}}" stepKey="clearFieldInputIfAny5"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
     </actionGroup>
 
@@ -32,12 +38,13 @@
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
-        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterLastName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
     </actionGroup>
 
     <actionGroup name="SubmitShippingInfo">
         <click selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnContinueToShippingMethod"/>
-        <wait time="5" stepKey="temporaryWait"/>
+        <wait time="10" stepKey="temporaryWait"/>
     </actionGroup>
     <actionGroup name="AssertShippingInfoDetails">
         <arguments>
@@ -46,7 +53,7 @@
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>
-        <see userInput="test@example.com" stepKey="seeEmailExists"/>
+        <see userInput="{{customer.emailCheck}}" stepKey="seeEmailExists"/>
         <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
         <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
@@ -55,15 +62,101 @@
         <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 
-    <actionGroup name="SubmitShippingMethod">
-        <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
+    <actionGroup name="EditShippingInfo">
+        <click selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="clickOnShippingInfoEdit"/>
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
+
+    <actionGroup name="UpdateShippingInfo">
+        <click selector="{{CheckoutPageShippingOverlaySection.updateShippingInfo}}" stepKey="clickOnShippingInfoOverlayUpdateButton"/>
+        <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="SelectShippingMethod">
+        <arguments>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingCode}}" type="string"/>
+        </arguments>
+        <click selector="{{CheckoutPageSelectShippingMethodSection.shippingMethodSelect(shippingMethod)}}" stepKey="selectShippingMethod"/>
+    </actionGroup>
+
+    <actionGroup name="SubmitShippingMethod">
+        <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
+        <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
     <actionGroup name="AssertShippingMethodDetails">
+        <arguments>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShipping}}" type="string"/>
+        </arguments>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
-        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod}}" stepKey="assertSelectedShippingMethodExists"/>
+        <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod(shippingMethod)}}" stepKey="assertSelectedShippingMethodExists"/>
+    </actionGroup>
+
+    <actionGroup name="EditShippingMethod">
+        <click selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="clickOnShippingMethodEdit"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="UpdateShippingMethod">
+        <click selector="{{CheckoutPageShippingMethodOverlaySection.updateShippingMethod}}" stepKey="clickOnShippingMethodOverlayUpdateButton"/>
+        <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AssertPaymentInfo">
+        <seeElement selector="{{CheckoutPagePaymentCardInfo.paymentHeader}}" stepKey="assertPaymentHeader"/>
+        <see userInput="Credit Card" stepKey="seeEmailExists"/>
+        <see userInput="Visa ending in 1111" stepKey="seeFirstNameExists"/>
+    </actionGroup>
+
+    <actionGroup name="EditPaymentInfo">
+        <click selector="{{CheckoutPagePaymentCardInfo.paymentEditLink}}" stepKey="clickOnShippingMethodEdit"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="EnableBillingForm">
+        <click selector="{{CheckoutPagePaymentOverlaySection.billingAddressCheckBox}}" stepKey="clickOnBillingCheckBox"/>
+        <wait time="2" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="UpdatePaymentInfo">
+        <click selector="{{CheckoutPagePaymentOverlaySection.updatePaymentInfo}}" stepKey="clickOnPaymentOverlayUpdateButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="EnterBillingInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer3"/>
+        </arguments>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.firstName}}" stepKey="clearFieldInputIfAny1"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.lastName}}" stepKey="clearFieldInputIfAny2"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.city}}" stepKey="clearFieldInputIfAny5"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <selectOption selector="{{CheckoutPageEnterBillingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
+        <clearField selector="{{CheckoutPageEnterBillingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
+        <fillField  selector="{{CheckoutPageEnterBillingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
+    </actionGroup>
+
+    <actionGroup name="AssertBillingInfoDetails">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer3"/>
+        </arguments>
+        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
+        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
+        <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.state}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
     </actionGroup>
 
     <actionGroup name="ReviewOrder">
@@ -89,6 +182,16 @@
         <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
     </actionGroup>
 
+    <actionGroup name="AssertUpdatedProductDetails">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertProductColorExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color1, product.size1)}}" stepKey="assertProductSizeExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertProductQtyExists"/>
+    </actionGroup>
+
     <actionGroup name="PlaceOrder">
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="clickOnPlaceOrderButton"/>
@@ -98,18 +201,19 @@
     <actionGroup name="AssertOrderConfirmation">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingDisplay}}" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.orderConfirmationRoot}}" stepKey="waitForCheckoutPageToLoad"/>
         <see userInput="Thank you for your order!" stepKey="seeOrderConfirmationMessage"/>
         <see userInput="Order Number: " stepKey="seeOrderNumber"/>
-        <see userInput="test@example.com" stepKey="seeEmailExists"/>
+        <see userInput="{{customer.emailCheck}}" stepKey="seeEmailExists"/>
         <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
         <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
         <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
-        <see userInput="Flat Rate - Fixed" stepKey="seeShippingMethod"/>
+        <see userInput="{{shippingMethod}}" stepKey="seeShippingMethod"/>
     </actionGroup>
 
     <actionGroup name="CheckoutPageCreateAccount">
@@ -121,14 +225,5 @@
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
-    <actionGroup name="CheckoutPageEnterPaymentInfo">
-        <arguments>
-            <argument name="creditCard" defaultValue="FakeVisaCard"/>
-        </arguments>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{creditCard.cardHolderName}}" stepKey="enterCardHolderName"/>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardNumber}}" userInput="{{creditCard.fakeCardNumber}}" stepKey="enterCardNumber"/>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardExpiration}}" userInput="{{creditCard.expirationDate}}" stepKey="enterCardExpiration"/>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardCVV}}" userInput="{{creditCard.cvvCode}}" stepKey="enterCardCVV"/>
-    </actionGroup>
 
 </actionGroups>

@@ -15,7 +15,7 @@
             <title value="Search functionality should work for different inputs"/>
             <description value="Search functionality should work for different inputs"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-32240"/>
+            <testCaseId value="MC-34046"/>
             <group value="PWA"/>
         </annotations>
 

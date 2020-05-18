@@ -10,11 +10,11 @@
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
 
     <!--This CC number is not real and just used for testing payment integrations. Some more such cards are available for public testing PayPals integration: https://www.paypalobjects.com/en_AU/vhelp/paypalmanager_help/credit_card_numbers.htm-->
-    <entity name="FakeVisaCard" type="data">
-        <data key="fakeCardNumber">4111 1111 1111 1111</data>
-        <data key="expirationDate">0125</data>
-        <data key="cvvCode">123</data>
-        <data key="cardHolderName">JohnTest SmithTest</data>
-        <data key="updatedCardHolderName">Peterxyz Doe</data>
+    <entity name="ShippingMethods" type="data">
+        <data key="freeShipping">Free</data>
+        <data key="freeShippingDisplay">Free Shipping - Free</data>
+        <data key="fixedShipping">Fixed</data>
+        <data key="fixedShippingDisplay">Flat Rate - Fixed</data>
+        <data key="fixedShippingCode">flatrate</data>
     </entity>
 </entities>
