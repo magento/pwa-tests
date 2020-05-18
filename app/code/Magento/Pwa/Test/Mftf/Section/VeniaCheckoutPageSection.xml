@@ -69,8 +69,8 @@
 
     <section name="CheckoutPageShippingMethodOverlaySection">
         <element name="shippingMethodEditOverlay" type="textarea" selector="//span[contains(@class, 'dialog-headerText-')][contains(text(), 'Edit Shipping Method')]"/>
-        <element name="updateShippingInfo" type="button" selector="//span[contains(@class, 'dialog-button-')][contains(text(), 'Update')]"/>
-        <element name="cancelShippingInfoUpdate" type="button" selector="//span[contains(@class, 'dialog-button-')][contains(text(), 'Cancel')]"/>
+        <element name="updateShippingMethod" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
+        <element name="cancelShippingMethodUpdate" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Cancel')]"/>
     </section>
 
     <section name="CheckoutPageProductDetailsSection">
@@ -94,7 +94,7 @@
 
     <section name="CheckoutPagePaymentOverlaySection">
         <element name="billingAddressCheckBox" type="text" selector="//span[contains(text(), 'Billing address same as shipping address')]"/>
-        <element name="updatePaymentInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
+        <element name="updatePaymentInfo" type="button" selector="//button[contains(@class, 'editModal-update_button-')]/span[contains(text(), 'Update')]"/>
     </section>
 
 </sections>
