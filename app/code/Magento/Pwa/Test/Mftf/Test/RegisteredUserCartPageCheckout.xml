@@ -57,6 +57,43 @@
         <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
         <actionGroup ref="AddGiftOptions" stepKey="addGiftOptions"/>
 
+        <actionGroup ref="CartPageProceedToCheckout" stepKey="clickProceedToCheckoutButton"/>
+        <actionGroup ref="EnterAuthUserShippingInfo2" stepKey="enterShippingInformation"/>
+        <actionGroup ref="UpdateStateZip" stepKey="enterShippingInformationZipAndState"/>
+        <actionGroup ref="SubmitAuthUserShippingInfo" stepKey="submitShippingInfo"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation"/>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails"/>
+        <actionGroup ref="EditShippingInfo" stepKey="clickOnEditShippingLink"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBook"/>
+        <actionGroup ref="AddNewAddressInAddressBook" stepKey="clickONAddNewAddressLink"/>
+        <actionGroup ref="EnterAuthUserShippingInfo1" stepKey="updateShippingInformationName">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="EnterAuthUserShippingInfo2" stepKey="updateShippingInformationStreet">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="UpdateStateZip" stepKey="enterShippingInformationZipAndState2">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="SaveAddressBookShippingInfo" stepKey="clickOnAddButton"/>
+        <actionGroup ref="SubmitAuthUserShippingChanges" stepKey="clickOnApplyButton"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2"/>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails2">
+            <argument name="product" value="IsadoraSkirt"/>
+        </actionGroup>
+        <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails3"/>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails4">
+            <argument name="product" value="IsadoraSkirt"/>
+        </actionGroup>
+
         <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
 
     </test>
