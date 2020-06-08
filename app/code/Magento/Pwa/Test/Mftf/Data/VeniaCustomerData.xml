@@ -38,6 +38,21 @@
         <data key="stateName">Texas</data>
     </entity>
 
+    <entity name="AuthUserUpdatedData" type="customer">
+        <data key="first">John1</data>
+        <data key="last">Smith2</data>
+        <data key="address">456 demo street</data>
+        <data key="address2">Apt 456</data>
+        <data key="city">Austin</data>
+        <data key="zipCode">78759</data>
+        <data key="state">TX</data>
+        <data key="phone">1234567890</data>
+        <data key="email" unique="prefix">test@example.com</data>
+        <data key="emailCheck">test@example.com</data>
+        <data key="password">pwdTest123!</data>
+        <data key="stateName">Texas</data>
+    </entity>
+
     <entity name="VeniaCustomer3" type="customer">
         <data key="first">Veda</data>
         <data key="last">Peta</data>
@@ -56,5 +71,6 @@
         <data key="email">tom@test.com</data>
         <data key="password">Pasword1</data>
     </entity>
+
 
 </entities>

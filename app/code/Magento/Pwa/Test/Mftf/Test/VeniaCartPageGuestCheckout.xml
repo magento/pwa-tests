@@ -50,6 +50,7 @@
         <actionGroup ref="AddShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
         <actionGroup ref="AddCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
         <actionGroup ref="CartPageProceedToCheckout" stepKey="clickProceedToCheckoutButton"/>
+        <actionGroup ref="AssertGuestCheckoutPage" stepKey="assertGuestUser"/>
         <actionGroup ref="EnterShippingInfo" stepKey="enterShippingInformation"/>
         <actionGroup ref="SubmitShippingInfo" stepKey="submitShippingInfo"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation"/>
@@ -57,6 +58,7 @@
         <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName"/>
         <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails"/>
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
+        <actionGroup ref="AssertReviewOrderGuest" stepKey="assertReviewOrderIsSuccess"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2"/>
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>

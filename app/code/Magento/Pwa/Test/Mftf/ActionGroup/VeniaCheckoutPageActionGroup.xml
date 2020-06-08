@@ -163,11 +163,26 @@
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="waitForReviewOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="clickOnReviewOrderButton"/>
         <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AssertReviewOrderGuest">
         <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
         <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
         <see userInput="Tax" stepKey="seeTaxExists"/>
+        <see userInput="Shipping" stepKey="seeShippingExists"/>
+        <see userInput="Total" stepKey="seeTotalExists"/>
+    </actionGroup>
+
+    <actionGroup name="AssertReviewOrderAuth">
+        <dontSee userInput="Login and Checkout Faster" stepKey="assertGuestCheckoutHeadingDoeNotExists"/>
+        <dontSee userInput="Guest Checkout" stepKey="assertGuestCheckoutTextDoesNotExists"/>
+        <see userInput="Review and Place Order" stepKey="seeAuthUserRelatedText"/>
+        <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
+        <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
+        <dontSee userInput="Tax" stepKey="seeGiftCardExists"/>
         <see userInput="Shipping" stepKey="seeShippingExists"/>
         <see userInput="Total" stepKey="seeTotalExists"/>
     </actionGroup>
@@ -190,6 +205,14 @@
         <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertProductColorExists"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color1, product.size1)}}" stepKey="assertProductSizeExists"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertProductQtyExists"/>
+    </actionGroup>
+
+    <actionGroup name="AssertSimpleProductDetails">
+        <arguments>
+            <argument name="product" defaultValue="CarminaEarrings"/>
+        </arguments>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
     </actionGroup>
 
     <actionGroup name="PlaceOrder">
@@ -249,18 +272,9 @@
         <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
     </actionGroup>
 
-    <!--<actionGroup name="UpdateAuthUserShippingInfo3">-->
-        <!--<arguments>-->
-            <!--<argument name="customer" defaultValue="VeniaCustomer1"/>-->
-        <!--</arguments>-->
-        <!--<selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>-->
-        <!--<clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>-->
-        <!--<fillField  selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>-->
-    <!--</actionGroup>-->
-
     <actionGroup name="SubmitAuthUserShippingInfo">
         <click selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnSaveAndContinueMethod"/>
-        <wait time="10" stepKey="temporaryWait"/>
+        <wait time="15" stepKey="temporaryWait"/>
     </actionGroup>
 
     <actionGroup name="AddNewAddressInAddressBook">
@@ -275,7 +289,7 @@
 
     <actionGroup name="SubmitAuthUserShippingChanges">
         <click selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="clickOnApplyButton"/>
-        <wait time="10" stepKey="temporaryWait"/>
+        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
     <actionGroup name="AssertAuthAddressBookShippingDetails">
@@ -293,7 +307,7 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
-        <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
     </actionGroup>
 
 </actionGroups>
