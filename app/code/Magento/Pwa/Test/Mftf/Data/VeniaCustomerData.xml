@@ -21,6 +21,7 @@
         <data key="emailCheck">test@example.com</data>
         <data key="password">pwdTest123!</data>
         <data key="stateName">California</data>
+        <data key="country">US</data>
     </entity>
 
     <entity name="VeniaCustomer2" type="customer">
@@ -36,6 +37,7 @@
         <data key="emailCheck">updated@example.com</data>
         <data key="password">pwdTest123!</data>
         <data key="stateName">Texas</data>
+        <data key="country">US</data>
     </entity>
 
     <entity name="AuthUserUpdatedData" type="customer">
@@ -51,6 +53,7 @@
         <data key="emailCheck">test@example.com</data>
         <data key="password">pwdTest123!</data>
         <data key="stateName">Texas</data>
+        <data key="country">US</data>
     </entity>
 
     <entity name="VeniaCustomer3" type="customer">
@@ -63,6 +66,7 @@
         <data key="state">TX</data>
         <data key="phone">67893456</data>
         <data key="stateName">Texas</data>
+        <data key="country">US</data>
     </entity>
 
     <entity name="VeniaRegisteredCustomer" type="customer">

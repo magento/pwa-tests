@@ -59,6 +59,9 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
         <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 
@@ -181,8 +184,6 @@
         <see userInput="Review and Place Order" stepKey="seeAuthUserRelatedText"/>
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
-        <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
-        <dontSee userInput="Tax" stepKey="seeTaxDoesNotExists"/>
         <see userInput="Shipping" stepKey="seeShippingExists"/>
         <see userInput="Total" stepKey="seeTotalExists"/>
     </actionGroup>
@@ -235,6 +236,9 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
         <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
         <see userInput="{{shippingMethod}}" stepKey="seeShippingMethod"/>
     </actionGroup>
@@ -292,22 +296,26 @@
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
-    <actionGroup name="AssertAuthAddressBookShippingDetails">
-        <arguments>
-            <argument name="customer" defaultValue="VeniaCustomer1"/>
-        </arguments>
+    <actionGroup name="AssertAuthAddressBookDefaults">
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookRoot}}" stepKey="assertChangeShippingRootExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.cancelAddressChange}}" stepKey="assertCancelButtonExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="assertAddButtonExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookSelectedRoot}}" stepKey="assertSelectedAddressExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="assertAddNewAddressLinkExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.editAddress}}" stepKey="assertAddressEditLinkExists"/>
+    </actionGroup>
+    <actionGroup name="AssertAuthAddressBookShippingDetails">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
         <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
         <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
         <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
     </actionGroup>
 
 </actionGroups>

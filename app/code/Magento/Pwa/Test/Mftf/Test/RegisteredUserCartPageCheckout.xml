@@ -67,7 +67,8 @@
         </actionGroup>
         <scrollToTopOfPage stepKey="scrollOnTopOfPage"/>
         <actionGroup ref="EditShippingInfo" stepKey="clickOnEditShippingLink"/>
-        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBook"/>
+        <actionGroup ref="AssertAuthAddressBookDefaults" stepKey="assertAuthAddressBookDefaultLinksLabels"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping"/>
         <actionGroup ref="AddNewAddressInAddressBook" stepKey="clickONAddNewAddressLink"/>
         <actionGroup ref="EnterAuthUserShippingInfo1" stepKey="updateShippingInformationName">
             <argument name="customer" value="VeniaCustomer2"/>
@@ -79,12 +80,19 @@
             <argument name="customer" value="VeniaCustomer2"/>
         </actionGroup>
         <actionGroup ref="SaveAddressBookShippingInfo" stepKey="clickOnAddButton"/>
+        <actionGroup ref="AssertAuthAddressBookDefaults" stepKey="assertAuthAddressBookDefaultLinksLabels1"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping1"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping2">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
         <actionGroup ref="SubmitAuthUserShippingChanges" stepKey="clickOnApplyButton"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation">
             <argument name="customer" value="AuthUserUpdatedData"/>
         </actionGroup>
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
         <actionGroup ref="AssertReviewOrderAuth" stepKey="assertReviewOrderIsSuccess"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
+        <dontSee userInput="Tax" stepKey="seeTaxDoesNotExists"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation2">
             <argument name="customer" value="AuthUserUpdatedData"/>
         </actionGroup>
@@ -101,7 +109,7 @@
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails3"/>
         <actionGroup ref="AssertSimpleProductDetails" stepKey="verifyProductDetails4"/>
 
-        <!--******** Once Checkout Is Implemented, this test will be extended to include additional steps *******-->
+        <!--******** Once Customer Account and Order History implemented then this test can be extended to check related verification *******-->
 
     </test>
 </tests>
