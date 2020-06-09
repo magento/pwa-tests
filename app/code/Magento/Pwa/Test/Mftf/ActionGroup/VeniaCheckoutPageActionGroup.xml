@@ -182,7 +182,7 @@
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
         <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
-        <dontSee userInput="Tax" stepKey="seeGiftCardExists"/>
+        <dontSee userInput="Tax" stepKey="seeTaxDoesNotExists"/>
         <see userInput="Shipping" stepKey="seeShippingExists"/>
         <see userInput="Total" stepKey="seeTotalExists"/>
     </actionGroup>
