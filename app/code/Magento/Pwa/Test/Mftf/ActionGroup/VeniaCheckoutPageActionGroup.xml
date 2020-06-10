@@ -59,6 +59,9 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
         <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 
@@ -163,11 +166,24 @@
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="waitForReviewOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="clickOnReviewOrderButton"/>
         <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AssertReviewOrderGuest">
         <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
         <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
         <see userInput="Tax" stepKey="seeTaxExists"/>
+        <see userInput="Shipping" stepKey="seeShippingExists"/>
+        <see userInput="Total" stepKey="seeTotalExists"/>
+    </actionGroup>
+
+    <actionGroup name="AssertReviewOrderAuth">
+        <dontSee userInput="Login and Checkout Faster" stepKey="assertGuestCheckoutHeadingDoeNotExists"/>
+        <dontSee userInput="Guest Checkout" stepKey="assertGuestCheckoutTextDoesNotExists"/>
+        <see userInput="Review and Place Order" stepKey="seeAuthUserRelatedText"/>
+        <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
+        <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
         <see userInput="Shipping" stepKey="seeShippingExists"/>
         <see userInput="Total" stepKey="seeTotalExists"/>
     </actionGroup>
@@ -192,6 +208,14 @@
         <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertProductQtyExists"/>
     </actionGroup>
 
+    <actionGroup name="AssertSimpleProductDetails">
+        <arguments>
+            <argument name="product" defaultValue="CarminaEarrings"/>
+        </arguments>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
+    </actionGroup>
+
     <actionGroup name="PlaceOrder">
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="clickOnPlaceOrderButton"/>
@@ -212,6 +236,9 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
         <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
         <see userInput="{{shippingMethod}}" stepKey="seeShippingMethod"/>
     </actionGroup>
@@ -225,5 +252,70 @@
         <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 
+    <actionGroup name="EnterAuthUserShippingInfo1">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" stepKey="clearFieldInputIfAny1"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" stepKey="clearFieldInputIfAny2"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+    </actionGroup>
+
+    <actionGroup name="EnterAuthUserShippingInfo2">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.city}}" stepKey="clearFieldInputIfAny5"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
+        <fillField  selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
+    </actionGroup>
+
+    <actionGroup name="SubmitAuthUserShippingInfo">
+        <click selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnSaveAndContinueMethod"/>
+        <wait time="15" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AddNewAddressInAddressBook">
+        <click selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="clickOnSaveAndContinueMethod"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="SaveAddressBookShippingInfo">
+        <click selector="{{CheckoutPageEditAuthUserShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnAddButton"/>
+        <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="SubmitAuthUserShippingChanges">
+        <click selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="clickOnApplyButton"/>
+        <wait time="5" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AssertAuthAddressBookDefaults">
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookRoot}}" stepKey="assertChangeShippingRootExists"/>
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.cancelAddressChange}}" stepKey="assertCancelButtonExists"/>
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="assertAddButtonExists"/>
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookSelectedRoot}}" stepKey="assertSelectedAddressExists"/>
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="assertAddNewAddressLinkExists"/>
+        <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.editAddress}}" stepKey="assertAddressEditLinkExists"/>
+    </actionGroup>
+    <actionGroup name="AssertAuthAddressBookShippingDetails">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
+        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
+        <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
+    </actionGroup>
 
 </actionGroups>

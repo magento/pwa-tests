@@ -97,4 +97,22 @@
         <element name="updatePaymentInfo" type="button" selector="//button[contains(@class, 'editModal-update_button-')]/span[contains(text(), 'Update')]"/>
     </section>
 
+    <section name="CheckoutPageEnterAuthUserShippingDetailsSection">
+        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'customerForm-submit-')]/span[contains(text(), 'Save and Continue')]"/>
+    </section>
+
+    <section name="CheckoutPageAuthUserChangeShippingSection">
+        <element name="addressBookRoot" type="text" selector="//div[contains(@class, 'addressBook-root_active-')]"/>
+        <element name="cancelAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Cancel')]"/>
+        <element name="applyAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Apply')]"/>
+        <element name="addressBookSelectedRoot" type="text" selector="//div[contains(@class, 'addressCard-root_selected-')]"/>
+        <element name="addNewAddress" type="button" selector="//button[contains(@class, 'addressBook-addButton-')][contains(text(), 'Add New Address')]"/>
+        <element name="editAddress" type="button" selector="[class*='addressCard-editButton-']"/>
+    </section>
+
+    <section name="CheckoutPageEditAuthUserShippingDetailsSection">
+        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'customerForm-submit-')]/span[contains(text(), 'Add')]"/>
+        <element name="defaultCheckbox" type="text" selector="//span[contains(text(), 'Make this my default address')]"/>
+    </section>
+
 </sections>
