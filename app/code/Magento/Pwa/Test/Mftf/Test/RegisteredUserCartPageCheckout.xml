@@ -51,7 +51,7 @@
         </before>
 
         <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
-        <dontSee userInput="Sign In" stepKey="dontSeeSignInLink" />
+        <dontSeeElement selector="{{VeniaCartPageSection.signIn}}" stepKey="dontSeeSignInLink" />
         <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration"/>
         <actionGroup ref="VerifySimpleProductExists" stepKey="verifySimpleProductsExists"/>
         <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
