@@ -27,7 +27,7 @@
         <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
         <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postcode']"/>
         <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='telephone']"/>
-        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'guestForm-submit')]/span[contains(text(), 'Continue to Shipping Method')]"/>
+        <element name="submitShippingInfo" type="button" selector="//span[contains(text(), 'Continue to Shipping Method')]"/>
     </section>
 
     <section name="CheckoutPageEnterBillingDetailsSection">
@@ -94,7 +94,7 @@
 
     <section name="CheckoutPagePaymentOverlaySection">
         <element name="billingAddressCheckBox" type="text" selector="//span[contains(text(), 'Billing address same as shipping address')]"/>
-        <element name="updatePaymentInfo" type="button" selector="//button[contains(@class, 'editModal-update_button-')]/span[contains(text(), 'Update')]"/>
+        <element name="updatePaymentInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
     </section>
 
     <section name="CheckoutPageEnterAuthUserShippingDetailsSection">
