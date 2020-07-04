@@ -94,11 +94,11 @@
 
     <section name="CheckoutPagePaymentOverlaySection">
         <element name="billingAddressCheckBox" type="text" selector="//span[contains(text(), 'Billing address same as shipping address')]"/>
-        <element name="updatePaymentInfo" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
+        <element name="updatePaymentInfo" type="button" selector="//aside[contains(@class, 'editModal-root_open-')]//span[contains(text(), 'Update')]"/>
     </section>
 
     <section name="CheckoutPageEnterAuthUserShippingDetailsSection">
-        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'customerForm-submit-')]/span[contains(text(), 'Save and Continue')]"/>
+        <element name="submitShippingInfo" type="button" selector="//span[contains(text(), 'Save and Continue')]"/>
     </section>
 
     <section name="CheckoutPageAuthUserChangeShippingSection">
@@ -111,7 +111,7 @@
     </section>
 
     <section name="CheckoutPageEditAuthUserShippingDetailsSection">
-        <element name="submitShippingInfo" type="button" selector="//button[contains(@class, 'customerForm-submit-')]/span[contains(text(), 'Add')]"/>
+        <element name="submitShippingInfo" type="button" selector="//div[contains(@class, 'customerForm-buttons-')]//span[contains(text(), 'Add')]"/>
         <element name="defaultCheckbox" type="text" selector="//span[contains(text(), 'Make this my default address')]"/>
     </section>
 
