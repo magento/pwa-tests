@@ -27,14 +27,14 @@
     <section name="CartPageCouponCodeSection">
         <element name="couponCodeAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Enter Coupon Code')]"/>
         <element name="couponCode" type="input" selector="[id='couponCode']"/>
-        <element name="applyCoupon" type="button" selector="//button[contains(@class, 'couponCode-applyButton-')]/span[contains(text(), 'Apply')]"/>
+        <element name="applyCoupon" type="button" selector="//form[contains(@class, 'couponCode-entryForm-')]//span[contains(text(), 'Apply')]"/>
         <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')][contains(text(), 'Remove')]"/>
     </section>
 
     <section name="CartPageGiftCardSection">
         <element name="giftCardAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Apply Gift Card')]"/>
         <element name="giftCardCode" type="input" selector="[id*='giftCards-card-']"/>
-        <element name="applyGiftCard" type="button" selector="//button[contains(@class, 'giftCards-apply_button-')]/span[contains(text(), 'Apply')]"/>
+        <element name="applyGiftCard" type="button" selector="//div[contains(@class, 'giftCards-card-')]//span[contains(text(), 'Apply')]"/>
         <element name="removeGiftCard" type="button" selector="//button[contains(@class, 'giftCard-remove-')][contains(text(), 'Remove')]"/>
         <element name="giftCardCheckBalance" type="button" selector="//button[contains(text(), 'Check balance')]" />
     </section>
