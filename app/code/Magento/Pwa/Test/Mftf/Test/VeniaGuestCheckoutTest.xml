@@ -30,37 +30,39 @@
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
 
+            <seeElement selector="{{VeniaShoppingCartIconSection.shoppingCartIcon}}" stepKey="assertEmptyCartDoesExists"/>
+
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
-            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
+            <!--<actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>-->
 
-            <actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>
+            <!--<actionGroup ref="ProceedToCheckout" stepKey="ProceedToCheckout1"/>-->
 
-            <actionGroup ref="AddShippingDetails" stepKey="addshippingdetails">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
-            <actionGroup ref="AddEmailInfo" stepKey="addemailinformation">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
-            <actionGroup ref="SaveAndVerifyShippingDetails" stepKey="saveandverifyshippingdetails">
-                <argument name="customer" value="VeniaCustomer1"/>
-            </actionGroup>
+            <!--<actionGroup ref="AddShippingDetails" stepKey="addshippingdetails">-->
+                <!--<argument name="customer" value="VeniaCustomer1"/>-->
+            <!--</actionGroup>-->
+            <!--<actionGroup ref="AddEmailInfo" stepKey="addemailinformation">-->
+                <!--<argument name="customer" value="VeniaCustomer1"/>-->
+            <!--</actionGroup>-->
+            <!--<actionGroup ref="SaveAndVerifyShippingDetails" stepKey="saveandverifyshippingdetails">-->
+                <!--<argument name="customer" value="VeniaCustomer1"/>-->
+            <!--</actionGroup>-->
 
-            <click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>
+            <!--<click selector="{{VeniaShoppingCartDetailsSection.addBillingInformation}}" stepKey="clickOnAddBillingInformation01"/>-->
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad2"/>-->
 
-            <actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>
+            <!--<actionGroup ref="EnterCardDetails" stepKey="enterCreditCardDetails"/>-->
 
-            <actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>
+            <!--<actionGroup ref="SubmitPayment" stepKey="submitPaymentMethod"/>-->
 
-            <actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">
-                <argument name="shippingMethodName" value="Flat Rate"/>
-            </actionGroup>
+            <!--<actionGroup ref="AddGetItByShippingInformationViaTheShoppingCart" stepKey="addGetItByShippingInformationViaTheShoppingCart1">-->
+                <!--<argument name="shippingMethodName" value="Flat Rate"/>-->
+            <!--</actionGroup>-->
 
         </before>
 
-        <actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>
+        <!--<actionGroup ref="ConfirmOrder" stepKey="clickCOnfirmOrderButton"/>-->
 
     </test>
 </tests>

@@ -96,7 +96,10 @@
         <element name="sizeByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="quantity" type="select" selector="//aside[contains(@class, 'miniCart-root_open-')]//select[contains(@class,'select-input-')]"/>
         <element name="productOptionByValue" type="button" selector="//aside[contains(@class, 'miniCart-root_open-')]//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
-
     </section>
 
+    <section name="VeniaShoppingCartIconSection">
+        <element name="shoppingCartIcon" type="button" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]/button[contains(@aria-label, 'Toggle mini cart. You have 0 items in your cart.')]"/>
+        <element name="shoppingCartCounter" type="text" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]//span[contains(@class, 'cartTrigger-counter-')]"/>
+    </section>
 </sections>
