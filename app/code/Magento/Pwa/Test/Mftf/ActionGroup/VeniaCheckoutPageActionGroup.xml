@@ -220,6 +220,7 @@
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="clickOnPlaceOrderButton"/>
         <wait time="15" stepKey="temporaryWait"/>
+        <seeElement selector="{{VeniaShoppingCartIconSection.shoppingCartIcon}}" stepKey="assertEmptyCartDoesExists"/>
     </actionGroup>
 
     <actionGroup name="AssertOrderConfirmation">
