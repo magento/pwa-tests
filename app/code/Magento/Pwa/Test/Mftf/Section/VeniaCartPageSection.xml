@@ -11,7 +11,7 @@
     <section name="VeniaCartPageSection">
         <element name="cartHeader" type="text" selector="//h1[contains(text(), 'Cart')]"/>
         <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
-        <element name="signIn" type="button" selector="//button[contains(@class, 'cartPage-sign_in')]/span[contains(text(), 'Sign In')]"/>
+        <element name="signIn" type="button" selector="//div[contains(@class, 'cartPage-heading_container-')]//span[contains(text(), 'Sign In')]"/>
         <element name="checkout" type="button" selector="//button[contains(@class, 'button-root_highPriority-')]/span[contains(text(), 'Proceed to Checkout')]"/>
     </section>
 
@@ -28,15 +28,15 @@
         <element name="couponCodeAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Enter Coupon Code')]"/>
         <element name="couponCode" type="input" selector="[id='couponCode']"/>
         <element name="applyCoupon" type="button" selector="//form[contains(@class, 'couponCode-entryForm-')]//span[contains(text(), 'Apply')]"/>
-        <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')][contains(text(), 'Remove')]"/>
+        <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')]/span[contains(text(), 'Remove')]"/>
     </section>
 
     <section name="CartPageGiftCardSection">
         <element name="giftCardAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Apply Gift Card')]"/>
         <element name="giftCardCode" type="input" selector="[id*='giftCards-card-']"/>
         <element name="applyGiftCard" type="button" selector="//div[contains(@class, 'giftCards-card-')]//span[contains(text(), 'Apply')]"/>
-        <element name="removeGiftCard" type="button" selector="//button[contains(@class, 'giftCard-remove-')][contains(text(), 'Remove')]"/>
-        <element name="giftCardCheckBalance" type="button" selector="//button[contains(text(), 'Check balance')]" />
+        <element name="removeGiftCard" type="button" selector="//div[contains(@class, 'giftCards-cards_container-')]//span[contains(text(), 'Remove')]"/>
+        <element name="giftCardCheckBalance" type="button" selector="//span[contains(text(), 'Check balance')]" />
     </section>
 
     <section name="CartPageGiftOptionsSection">
