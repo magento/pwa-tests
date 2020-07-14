@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="FillShoppingCartShipToAddress">
+        <arguments>
+            <argument name="customer"/>
+        </arguments>
+
+        <fillField userInput="{{customer.first}}" selector="{{VeniaShoppingCartShippingAddressSection.firstName}}" stepKey="fillShipToFirstNameField01"/>
+        <fillField userInput="{{customer.last}}" selector="{{VeniaShoppingCartShippingAddressSection.lastName}}" stepKey="fillShipToLastNameField01"/>
+        <fillField userInput="{{customer.address}}" selector="{{VeniaShoppingCartShippingAddressSection.streetAddress}}" stepKey="fillShipToStreetAddress01"/>
+        <fillField userInput="{{customer.city}}" selector="{{VeniaShoppingCartShippingAddressSection.city}}" stepKey="fillShipToCity01"/>
+        <fillField userInput="{{customer.zipCode}}" selector="{{VeniaShoppingCartShippingAddressSection.zipCode}}" stepKey="fillShipToZipCode01"/>
+        <fillField userInput="{{customer.state}}" selector="{{VeniaShoppingCartShippingAddressSection.state}}" stepKey="fillShipToState01"/>
+        <fillField userInput="{{customer.phone}}" selector="{{VeniaShoppingCartShippingAddressSection.phoneNumber}}" stepKey="fillShipToPhoneNumber01"/>
+        <fillField userInput="{{customer.email}}" selector="{{VeniaShoppingCartShippingAddressSection.email}}" stepKey="fillShipToEmail01"/>
+    </actionGroup>
+</actionGroups>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertReviewOrderGuest">
+        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
+        <see userInput="Subtotal" stepKey="seeSubTotalExists"/>
+        <see userInput="Tax" stepKey="seeTaxExists"/>
+        <see userInput="Shipping" stepKey="seeShippingExists"/>
+        <see userInput="Total" stepKey="seeTotalExists"/>
+    </actionGroup>
+</actionGroups>

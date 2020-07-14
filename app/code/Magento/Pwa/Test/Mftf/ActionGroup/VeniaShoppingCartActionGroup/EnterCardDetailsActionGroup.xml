@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="EnterCardDetails">
+        <arguments>
+            <argument name="creditCard" defaultValue="FakeVisaCard"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartCardDetailsSection.textPayWithCard}}" stepKey="waitFOrPaymentSectionToLoad"/>
+        <switchToIFrame selector="{{VeniaShoppingCartCardDetailsSection.cartFrame}}" stepKey="switchToIframe4"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartCardDetailsSection.cardNumber}}" stepKey="waitForCardSectionToLoad"/>
+        <fillField userInput="{{creditCard.fakeCardNumber}}" selector="{{VeniaShoppingCartCardDetailsSection.cardNumber}}" stepKey="enterCardNumber"/>
+        <switchToIFrame stepKey="switchBack"/>
+        <switchToIFrame selector="{{VeniaShoppingCartCardDetailsSection.expirationFrame}}" stepKey="switchToIframe1"/>
+        <fillField userInput="{{creditCard.expirationDate}}" selector="{{VeniaShoppingCartCardDetailsSection.expirationDate}}" stepKey="enterCardExpirationDate"/>
+        <switchToIFrame stepKey="switchBack1"/>
+        <switchToIFrame selector="{{VeniaShoppingCartCardDetailsSection.codeFrame}}" stepKey="switchToIframe2"/>
+        <fillField userInput="{{creditCard.cvvCode}}" selector="{{VeniaShoppingCartCardDetailsSection.cvvCode}}" stepKey="enterCardcvvCode"/>
+        <switchToIFrame stepKey="switchBack2"/>
+    </actionGroup>
+</actionGroups>

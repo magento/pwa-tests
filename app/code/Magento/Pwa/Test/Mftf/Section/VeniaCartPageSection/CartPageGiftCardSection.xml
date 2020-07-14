@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CartPageGiftCardSection">
+        <element name="giftCardAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Apply Gift Card')]"/>
+        <element name="giftCardCode" type="input" selector="[id*='giftCards-card-']"/>
+        <element name="applyGiftCard" type="button" selector="//div[contains(@class, 'giftCards-card-')]//span[contains(text(), 'Apply')]"/>
+        <element name="removeGiftCard" type="button" selector="//div[contains(@class, 'giftCards-cards_container-')]//span[contains(text(), 'Remove')]"/>
+        <element name="giftCardCheckBalance" type="button" selector="//span[contains(text(), 'Check balance')]"/>
+    </section>
+</sections>

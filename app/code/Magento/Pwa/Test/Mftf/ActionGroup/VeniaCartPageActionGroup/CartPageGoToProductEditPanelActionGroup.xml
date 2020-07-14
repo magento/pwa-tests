@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="CartPageGoToProductEditPanel">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <click selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
+        <wait time="3" stepKey="wait123"/>
+        <waitForPwaElementVisible selector="{{CartPageKebabSection.editItem}}" stepKey="waitForKebabMenuToExpand"/>
+        <click selector="{{CartPageKebabSection.editItem}}" stepKey="clickOnEditItem"/>
+        <waitForPwaElementVisible selector="{{EditPanelSection.updateCart}}" stepKey="waitForEditPanelToDisplay"/>
+        <wait time="5" stepKey="temporaryWait"/>
+        <seeElement selector="{{EditPanelSection.updateCart}}" stepKey="checkForEditPanelDisplay"/>
+    </actionGroup>
+</actionGroups>

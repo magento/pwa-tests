@@ -12,14 +12,15 @@ namespace: Magento\FunctionalTestingFramework
 modules:
     enabled:
         - \Magento\FunctionalTestingFramework\Module\MagentoPwaWebDriver
-        - \Magento\FunctionalTestingFramework\Helper\Acceptance
-        - \Magento\FunctionalTestingFramework\Helper\MagentoFakerData
         - \Magento\FunctionalTestingFramework\Module\MagentoSequence
         - \Magento\FunctionalTestingFramework\Module\MagentoAssert
+        - \Magento\FunctionalTestingFramework\Module\MagentoActionProxies
         - Asserts
+        - \Magento\FunctionalTestingFramework\Helper\HelperContainer
     config:
         \Magento\FunctionalTestingFramework\Module\MagentoPwaWebDriver:
             url: "%STOREFRONT_URL%"
+            backend_url: "%MAGENTO_BACKEND_BASE_URL%"
             backend_name: "%MAGENTO_BACKEND_NAME%"
             browser: 'chrome'
             restart: true
@@ -27,10 +28,14 @@ modules:
             username: "%MAGENTO_ADMIN_USERNAME%"
             password: "%MAGENTO_ADMIN_PASSWORD%"
             pageload_timeout: "%WAIT_TIMEOUT%"
+            request_timeout: "%WAIT_TIMEOUT%"
+            connection_timeout: "%WAIT_TIMEOUT%"
             host: "%SELENIUM_HOST%"
             port: "%SELENIUM_PORT%"
             protocol: "%SELENIUM_PROTOCOL%"
             path: "%SELENIUM_PATH%"
+            close_all_sessions: "%SELENIUM_CLOSE_ALL_SESSIONS%"
             capabilities:
-              chromeOptions:
-                args: ["--window-size=1280,1024", "--disable-extensions", "--enable-automation", "--disable-gpu", "--enable-Passthrough"]
+                unhandledPromptBehavior: "ignore"
+                chromeOptions:
+                    args: ["--window-size=1280,1024", "--disable-extensions", "--enable-automation", "--disable-gpu", "--enable-Passthrough", "--disable-dev-shm-usage", "--ignore-certificate-errors"]

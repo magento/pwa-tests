@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CartPageShippingSection">
+        <element name="shippingAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'Estimate your Shipping')]"/>
+        <element name="estimateShippingLink" type="button" selector="//span[contains(text(), 'I want to estimate my shipping')]"/>
+        <element name="getShippingOptions" type="button" selector="//span[contains(text(), 'Get Shipping Options')]"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='zip']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
+        <element name="shippingMethodFixed" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, 'flatrate')]"/>
+    </section>
+</sections>
