@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="SaveAndVerifyShippingDetails">
+        <arguments>
+            <argument name="customer"/>
+        </arguments>
+
+        <click selector="{{VeniaShoppingCartShippingAddressSection.save}}" stepKey="clickOnSave01"/>
+        <waitForPwaElementNotVisible selector="{{VeniaShoppingCartDetailsSection.addressFormMainArea}}" stepKey="waitForPlaceOrderButtonToDisappear01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.orderDetailsMainArea}}" stepKey="waitForAddShipToInfoButton01"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="waitForMainArea1"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.payWithMainArea}}" stepKey="waitForMainArea2"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.getItByMainArea}}" stepKey="waitForMainArea3"/>
+        <waitForPwaElementVisible selector="{{VeniaShoppingCartDetailsSection.totalMainArea}}" stepKey="waitForMainArea4"/>
+        <see userInput="{{customer.first}} {{customer.last}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerName01"/>
+        <see userInput="{{customer.address}}" selector="{{VeniaShoppingCartDetailsSection.shipToMainArea}}" stepKey="seeFullCustomerAddress01"/>
+    </actionGroup>
+</actionGroups>

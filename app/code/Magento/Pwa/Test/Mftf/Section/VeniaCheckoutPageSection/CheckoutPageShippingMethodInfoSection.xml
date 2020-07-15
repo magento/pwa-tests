@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageShippingMethodInfoSection">
+        <element name="shippingMethodRoot" type="textarea" selector="//div[contains(@class, 'completedView-root-')]"/>
+        <element name="shippingMethodHeader" type="text" selector="//h5[contains(text(), 'Shipping Method')]"/>
+        <element name="shippingMethodEditLink" type="button" selector="//span[contains(@class, 'completedView-editButtonText-')][contains(text(), 'Edit')]"/>
+        <element name="selectedShippingMethod" type="text" selector="//div[contains(@class, 'completedView-contents-')]/span[contains(text(), '{{shipping_method}}')]" parameterized="true"/>
+    </section>
+</sections>

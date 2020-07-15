@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageAuthUserChangeShippingSection">
+        <element name="addressBookRoot" type="text" selector="//div[contains(@class, 'addressBook-root_active-')]"/>
+        <element name="cancelAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Cancel')]"/>
+        <element name="applyAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Apply')]"/>
+        <element name="addressBookSelectedRoot" type="text" selector="//div[contains(@class, 'addressCard-root_selected-')]"/>
+        <element name="addNewAddress" type="button" selector="//button[contains(@class, 'addressBook-addButton-')][contains(text(), 'Add New Address')]"/>
+        <element name="editAddress" type="button" selector="[class*='addressCard-editButton-']"/>
+    </section>
+</sections>

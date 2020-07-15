@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AddShippingMethod">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <click selector="{{CartPageShippingSection.shippingAccordion}}" stepKey="expandShippingAccordion"/>
+        <wait time="2" stepKey="wait1"/>
+        <click selector="{{CartPageShippingSection.estimateShippingLink}}" stepKey="clickEstimateShippingLink"/>
+        <wait time="2" stepKey="wait2"/>
+        <selectOption selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <wait time="2" stepKey="wait3"/>
+        <fillField selector="{{CartPageShippingSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
+        <wait time="1" stepKey="wait4"/>
+        <click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>
+        <wait time="5" stepKey="wait5"/>
+        <click selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="selectFlatRateShipping"/>
+        <wait time="5" stepKey="wait6"/>
+        <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
+    </actionGroup>
+</actionGroups>

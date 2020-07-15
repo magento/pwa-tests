@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaShoppingCartIconSection">
+        <element name="shoppingCartIcon" type="button" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]/button[contains(@aria-label, 'Toggle mini cart. You have 0 items in your cart.')]"/>
+        <element name="shoppingCartCounter" type="text" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]//span[contains(@class, 'cartTrigger-counter-')]"/>
+    </section>
+</sections>

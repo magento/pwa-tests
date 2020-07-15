@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="OpenMainMenuSubCategoryByName">
+        <arguments>
+            <argument name="categoryName" defaultValue="ShopTheLook"/>
+        </arguments>
+        <wait time="5" stepKey="temporaryStaticWait"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName.subCatName)}}" stepKey="wait3"/>
+        <click selector="{{VeniaMainMenuSection.categoryByName(categoryName.subCatName)}}" stepKey="clickOnCategoryName2"/>
+        <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName.subCatName)}}" stepKey="waitForPwaElementNotVisible01"/>
+    </actionGroup>
+</actionGroups>

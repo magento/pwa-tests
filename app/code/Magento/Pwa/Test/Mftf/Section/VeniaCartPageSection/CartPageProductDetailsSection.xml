@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CartPageProductDetailsSection">
+        <element name="cartProductName" type="text" selector="//span[contains(text(), '{{var_product_name}}')]" parameterized="true"/>
+        <element name="colorOption" type="button" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="button" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]/following-sibling::dt[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="productQty" type="input" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//input[@name='quantity'][@value='{{product_qty}}']" parameterized="true"/>
+        <element name="productPrice" type="input" selector="//li[./div/span[contains(text(), '{{product_name}}')]]//span[contains(text(), '{{product_price}}')]" parameterized="true"/>
+    </section>
+</sections>

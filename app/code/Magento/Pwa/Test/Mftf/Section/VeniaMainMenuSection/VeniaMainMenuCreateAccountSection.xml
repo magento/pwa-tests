@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaMainMenuCreateAccountSection">
+        <element name="mainArea" type="textarea" selector="[class*='createAccount-root-']"/>
+        <element name="message" type="text" selector="[class*='createAccount-lead-']"/>
+        <element name="email" type="input" selector="input[name='customer.email']"/>
+        <element name="firstName" type="input" selector="input[name='customer.firstname']"/>
+        <element name="lastName" type="input" selector="input[name='customer.lastname']"/>
+        <element name="password" type="input" selector="input[autocomplete='new-password']"/>
+        <element name="confirmPassword" type="input" selector="input[name='confirm']"/>
+        <element name="submit" type="button" selector="[class*='createAccount-actions-'] button"/>
+    </section>
+</sections>

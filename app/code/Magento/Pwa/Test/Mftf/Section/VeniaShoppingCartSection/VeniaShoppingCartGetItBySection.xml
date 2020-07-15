@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaShoppingCartGetItBySection">
+        <element name="title" type="text" selector="[class*='shippingForm-heading-']"/>
+        <element name="shippingMethod" type="select" selector="[class*='shippingForm-shippingMethod-'] select"/>
+        <element name="save" type="button" selector="[class*='shippingForm-footer-'] button[type='submit']"/>
+        <element name="cancel" type="button" selector="[class*='shippingForm-footer-'] button[type='button']"/>
+    </section>
+</sections>

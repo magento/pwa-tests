@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaShoppingCartThankYouSection">
+        <element name="thankYouMainArea" type="textarea" selector="[class*='receipt-body-']"/>
+        <element name="title" type="text" selector="[class*='receipt-header-']"/>
+        <element name="createAnAccount" type="button" selector="//*[contains(text(), 'Create an Account')]"/>
+        <element name="viewOrderDetails" type="button" selector="//*[contains(text(), 'View Order Details')]"/>
+    </section>
+</sections>
