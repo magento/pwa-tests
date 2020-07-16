@@ -13,7 +13,6 @@
             <argument name="searchData" type="string"/>
         </arguments>
 
-        <wait time="3" stepKey="waitForElementToLoad1"/>
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
         <fillField userInput="{{searchData}}" selector="{{VeniaHeaderSection.searchInput}}" stepKey="inputSearchString"/>
     </actionGroup>
