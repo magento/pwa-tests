@@ -28,8 +28,8 @@
 
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
-
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>-->
+            <waitForPwaElementVisible selector="{{VeniaShoppingCartIconSection.shoppingCartIcon}}" stepKey="waitForEmptyCart"/>
             <seeElement selector="{{VeniaShoppingCartIconSection.shoppingCartIcon}}" stepKey="assertEmptyCartDoesExists"/>
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>

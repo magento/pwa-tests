@@ -28,7 +28,7 @@
 
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
 
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+            <!--<actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>-->
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 

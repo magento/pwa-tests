@@ -9,6 +9,6 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="GoToCartPage">
         <amOnPage url="{{Cart.url}}" stepKey="goToCartPage"/>
-        <wait time="5" stepKey="temporaryStaticWait1"/>
+        <!--<wait time="5" stepKey="temporaryStaticWait1"/>-->
     </actionGroup>
 </actionGroups>
