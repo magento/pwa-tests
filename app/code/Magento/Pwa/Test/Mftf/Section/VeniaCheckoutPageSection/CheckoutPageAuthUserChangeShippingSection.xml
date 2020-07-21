@@ -12,7 +12,7 @@
         <element name="cancelAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Cancel')]"/>
         <element name="applyAddressChange" type="button" selector="//div[contains(@class, 'addressBook-buttonContainer-')]//span[contains(text(), 'Apply')]"/>
         <element name="addressBookSelectedRoot" type="text" selector="//div[contains(@class, 'addressCard-root_selected-')]"/>
-        <element name="addNewAddress" type="button" selector="//button[contains(@class, 'addressBook-addButton-')][contains(text(), 'Add New Address')]"/>
+        <element name="addNewAddress" type="button" selector="//span[contains(text(), 'Add New Address')]"/>
         <element name="editAddress" type="button" selector="[class*='addressCard-editButton-']"/>
     </section>
 </sections>
