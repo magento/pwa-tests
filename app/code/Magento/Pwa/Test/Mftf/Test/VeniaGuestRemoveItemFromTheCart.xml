@@ -17,9 +17,6 @@
             <severity value="CRITICAL"/>
             <testCaseId value="MC-34052"/>
             <group value="PWA"/>
-            <skip>
-                <issueId value="PWA-236"/>
-            </skip>
         </annotations>
 
         <before>
@@ -34,11 +31,11 @@
 
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
-            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
-
         </before>
-
-        <actionGroup ref="RemoveItemFromTheCart" stepKey="removeItemFromTheCart"/>
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
+        <actionGroup ref="AssertMiniCartProductExists" stepKey="assertProductExists"/>
+        <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeItemFromTheMiniCart"/>
+        <actionGroup ref="AssertEmptyMiniCart" stepKey="assertMiniCartIsEmpty"/>
 
     </test>
 </tests>

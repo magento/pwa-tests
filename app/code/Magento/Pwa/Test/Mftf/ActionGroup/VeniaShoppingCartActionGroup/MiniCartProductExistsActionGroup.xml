@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertMiniCartProductExists">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartproductImage(product.name)}}" stepKey="waitForDeleteIconToDisplay"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartproductImage(product.name)}}" stepKey="assertProductImage"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductName(product.name)}}" stepKey="assertProductName"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductColor(product.name, product.color)}}" stepKey="assertProductColor"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductSize(product.name, product.size)}}" stepKey="assertProductSize"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductQty(product.name, product.qty)}}" stepKey="assertProductQty"/>
+    </actionGroup>
+</actionGroups>

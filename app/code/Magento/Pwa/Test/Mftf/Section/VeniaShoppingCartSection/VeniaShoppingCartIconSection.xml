@@ -7,8 +7,8 @@
 -->
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="VeniaShoppingCartIconSection">
-        <element name="shoppingCartIcon" type="button" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]/button[contains(@aria-label, 'Toggle mini cart. You have 0 items in your cart.')]"/>
-        <element name="shoppingCartCounter" type="text" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]//span[contains(@class, 'cartTrigger-counter-')]"/>
+    <section name="VeniaMiniCartIconSection">
+        <element name="miniCartCounter" type="button" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]/button[contains(@aria-label, 'Toggle mini cart. You have {{cart_qty}} items in your cart.')]" parameterized="true"/>
+        <element name="miniCartIcon" type="button" selector="//div[contains(@class, 'cartTrigger-triggerContainer-')]/button[contains(@class, 'cartTrigger-trigger-')]"/>
     </section>
 </sections>
