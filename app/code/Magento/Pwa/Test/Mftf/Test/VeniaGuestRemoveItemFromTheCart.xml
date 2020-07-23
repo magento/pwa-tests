@@ -21,20 +21,36 @@
 
         <before>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
-
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
-
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
+                <argument name="cartQty" value="{{ValeriaTwoLayerTank.qty}}"/>
+            </actionGroup>
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{CarminaEarrings.qty}}" stepKey="selectProductQuantity01"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart2">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter1">
+                <argument name="cartQty" value="4"/>
+            </actionGroup>
 
         </before>
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
-        <actionGroup ref="AssertMiniCartProductExists" stepKey="assertProductExists"/>
-        <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeItemFromTheMiniCart"/>
+        <actionGroup ref="AssertMiniCartConfigurableProductExists" stepKey="assertConfigurableProductExists"/>
+        <actionGroup ref="AssertMiniCartSimpleProductExists" stepKey="assertSimpleProductExists"/>
+        <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeConfigurableProductFromTheMiniCart"/>
+        <actionGroup ref="AssertMiniCartSimpleProductExists" stepKey="assertSimpleProductExists1"/>
+        <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeSimpleProductFromTheMiniCart">
+            <argument name="product" value="CarminaEarrings"/>
+        </actionGroup>
         <actionGroup ref="AssertEmptyMiniCart" stepKey="assertMiniCartIsEmpty"/>
 
     </test>

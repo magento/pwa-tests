@@ -9,9 +9,9 @@
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertMiniCartCounter">
         <arguments>
-            <argument name="cartQty" defaultValue="0"/>
+            <argument name="cartQty" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMiniCartIconSection.miniCartCounter(cartQty)}}" stepKey="waitForMiniCartToDisplay"/>
-        <seeElement selector="{{VeniaMiniCartIconSection.miniCartCounter(cartQty)}}" stepKey="clickOnMiniCartIcon"/>
+        <waitForPwaElementVisible selector="{{VeniaMiniCartIconSection.miniCartCounter(cartQty)}}" stepKey="waitForElementToLoad"/>
+        <seeElement selector="{{VeniaMiniCartIconSection.miniCartCounter(cartQty)}}" stepKey="assertMiniCartQty"/>
     </actionGroup>
 </actionGroups>
