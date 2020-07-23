@@ -11,6 +11,6 @@
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
         <click selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="clickOnPlaceOrderButton"/>
         <wait time="15" stepKey="temporaryWait"/>
-        <seeElement selector="{{VeniaMiniCartIconSection.miniCartCounter('0')}}" stepKey="assertEmptyCartDoesExists"/>
+        <dontSeeElement selector="{{VeniaMiniCartIconSection.miniCartIcon}}" stepKey="assertMiniCartIconDoesNotExists"/>
     </actionGroup>
 </actionGroups>
