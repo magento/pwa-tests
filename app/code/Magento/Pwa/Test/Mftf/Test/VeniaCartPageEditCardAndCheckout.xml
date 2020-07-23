@@ -32,7 +32,8 @@
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
         </before>
-        <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
+        <actionGroup ref="ClickMiniCartEditShoppingBagLink" stepKey="goToCartPage"/>
         <actionGroup ref="CartPageGoToProductEditPanel" stepKey="goToCartPageEditPanel"/>
         <actionGroup ref="CartPageEditProductConfigurations" stepKey="editProductConfigurations"/>
         <actionGroup ref="VerifyUpdatedProductConfigurations" stepKey="verifyUpdatedProductConfigurationsOnCartPage"/>
