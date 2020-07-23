@@ -11,7 +11,7 @@
         <arguments>
             <argument name="product" defaultValue="CarminaEarrings"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="waitForDeleteIconToDisplay"/>
+        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="waitForProductImageToDisplay"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="assertProductImage"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductName(product.name)}}" stepKey="assertProductName"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductQty(product.name, product.qty)}}" stepKey="assertProductQty"/>
