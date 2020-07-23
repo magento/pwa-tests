@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="CheckAnchorLinks">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Anchor link tests"/>
+            <title value="Verify anchor across app"/>
+            <description value="Verify anchor across app"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-34052"/>
+            <group value="PWA"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
+                <argument name="product" value="ValeriaTwoLayerTank"/>
+            </actionGroup>
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+        </before>
+
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
+        <actionGroup ref="ClickCheckoutInMiniCart" stepKey="clickOnMiniCheckoutButton"/>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage">
+            <argument name="urlString" value=".com/checkout"/>
+        </actionGroup>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon1"/>
+        <actionGroup ref="ClickProductLink" stepKey="goToProductDetailsPage1">
+            <argument name="product" value="ValeriaTwoLayerTank"/>
+        </actionGroup>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage1">
+            <argument name="urlString" value="{{ValeriaTwoLayerTank.url}}"/>
+        </actionGroup>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon2"/>
+        <actionGroup ref="ClickProductImageLink" stepKey="goToProductDetailsPage2">
+            <argument name="product" value="ValeriaTwoLayerTank"/>
+        </actionGroup>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage2">
+            <argument name="urlString" value="{{ValeriaTwoLayerTank.url}}"/>
+        </actionGroup>
+
+
+    </test>
+</tests>

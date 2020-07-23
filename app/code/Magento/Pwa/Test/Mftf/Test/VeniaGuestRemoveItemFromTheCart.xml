@@ -11,7 +11,7 @@
     <test name="RemoveItemFromTheCart">
         <annotations>
             <features value="PWA"/>
-            <stories value="Kebab Features"/>
+            <stories value="miniCart features"/>
             <title value="Verify user should be able to Remove an item from the cart"/>
             <description value="Verify user should be able to Remove an item from the cart"/>
             <severity value="CRITICAL"/>

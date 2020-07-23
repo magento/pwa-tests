@@ -7,8 +7,9 @@
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="TriggerMiniCart">
-        <waitForPwaElementVisible selector="{{VeniaMiniCartIconSection.miniCartIcon}}" stepKey="waitForProductToGetAdded"/>
-        <click selector="{{VeniaMiniCartIconSection.miniCartIcon}}" stepKey="clickOnMiniCartIcon"/>
+    <actionGroup name="ClickCheckoutInMiniCart">
+        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartCheckout}}" stepKey="waitForCheckoutButtonToDisplay"/>
+        <click selector="{{VeniaMiniCartSection.miniCartCheckout}}" stepKey="clickOnCheckoutButton"/>
+        <wait time="5" stepKey="temporaryStaticWait1"/>
     </actionGroup>
 </actionGroups>
