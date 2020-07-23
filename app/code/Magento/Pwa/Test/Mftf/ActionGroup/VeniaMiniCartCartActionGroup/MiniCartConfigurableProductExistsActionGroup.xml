@@ -11,8 +11,8 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartproductImage(product.name)}}" stepKey="waitForDeleteIconToDisplay"/>
-        <seeElement selector="{{VeniaMiniCartSection.miniCartproductImage(product.name)}}" stepKey="assertProductImage"/>
+        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="waitForDeleteIconToDisplay"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="assertProductImage"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductName(product.name)}}" stepKey="assertProductName"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductColor(product.name, product.color)}}" stepKey="assertProductColor"/>
         <seeElement selector="{{VeniaMiniCartSection.miniCartProductSize(product.name, product.size)}}" stepKey="assertProductSize"/>

@@ -38,7 +38,7 @@
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon1"/>
-        <actionGroup ref="ClickProductLink" stepKey="goToProductDetailsPage1">
+        <actionGroup ref="ClickProductLink" stepKey="clickOnMiniCartProductName">
             <argument name="product" value="ValeriaTwoLayerTank"/>
         </actionGroup>
         <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage1">
@@ -47,13 +47,27 @@
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon2"/>
-        <actionGroup ref="ClickProductImageLink" stepKey="goToProductDetailsPage2">
+        <actionGroup ref="ClickProductImageLink" stepKey="clickOnMiniCartImage">
             <argument name="product" value="ValeriaTwoLayerTank"/>
         </actionGroup>
         <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage2">
             <argument name="urlString" value="{{ValeriaTwoLayerTank.url}}"/>
         </actionGroup>
 
+        <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+        <actionGroup ref="CartPageClickProductImageLink" stepKey="clickOnProductImage">
+            <argument name="product" value="ValeriaTwoLayerTank"/>
+        </actionGroup>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage3">
+            <argument name="urlString" value="{{ValeriaTwoLayerTank.url}}"/>
+        </actionGroup>
 
+        <actionGroup ref="GoToCartPage" stepKey="goToCartPage1"/>
+        <actionGroup ref="CartPageClickProductNameLink" stepKey="clickOnProductName">
+            <argument name="product" value="ValeriaTwoLayerTank"/>
+        </actionGroup>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage4">
+            <argument name="urlString" value="{{ValeriaTwoLayerTank.url}}"/>
+        </actionGroup>
     </test>
 </tests>
