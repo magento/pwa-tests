@@ -46,8 +46,14 @@
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
         <actionGroup ref="AssertMiniCartConfigurableProductExists" stepKey="assertConfigurableProductExists"/>
         <actionGroup ref="AssertMiniCartSimpleProductExists" stepKey="assertSimpleProductExists"/>
+        <actionGroup ref="AssertMiniCartItemCount" stepKey="verifyMiniCartTotalQty">
+            <argument name="cartItemQty" value="4"/>
+        </actionGroup>
         <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeConfigurableProductFromTheMiniCart"/>
         <actionGroup ref="AssertMiniCartSimpleProductExists" stepKey="assertSimpleProductExists1"/>
+        <actionGroup ref="AssertMiniCartItemCount" stepKey="verifyMiniCartTotalQty1">
+            <argument name="cartItemQty" value="2"/>
+        </actionGroup>
         <actionGroup ref="RemoveItemFromMiniCart" stepKey="removeSimpleProductFromTheMiniCart">
             <argument name="product" value="CarminaEarrings"/>
         </actionGroup>
