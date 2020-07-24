@@ -15,7 +15,7 @@
             <title value="Verify Add/Remove Cart promotions"/>
             <description value="Verify Add/Remove Cart promotions"/>
             <severity value="MAJOR"/>
-            <testCaseId value="MC-32192"/>
+            <testCaseId value="MC-35874"/>
             <group value="PWA"/>
             <group value="Cart"/>
         </annotations>

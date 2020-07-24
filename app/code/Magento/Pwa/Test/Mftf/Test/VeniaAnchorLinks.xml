@@ -12,10 +12,10 @@
         <annotations>
             <features value="PWA"/>
             <stories value="Anchor link tests"/>
-            <title value="Verify anchor across app"/>
-            <description value="Verify anchor across app"/>
+            <title value="Verify Anchor links on Venia"/>
+            <description value="Verify Anchor links on Venia"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-34052"/>
+            <testCaseId value="MC-36154"/>
             <group value="PWA"/>
         </annotations>
 
