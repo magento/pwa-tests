@@ -20,7 +20,7 @@
         <element name="estimateShippingLink" type="button" selector="//span[contains(text(), 'I want to estimate my shipping')]"/>
         <element name="getShippingOptions" type="button" selector="//span[contains(text(), 'Get Shipping Options')]"/>
         <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='zip']"/>
-        <element name="selectState" type="select" selector="[class*='select-input-'][name*='state']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
         <element name="shippingMethodFixed" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, 'flatrate')]"/>
     </section>
 
@@ -36,15 +36,13 @@
         <element name="giftCardCode" type="input" selector="[id*='giftCards-card-']"/>
         <element name="applyGiftCard" type="button" selector="//button[contains(@class, 'giftCards-apply_button-')]/span[contains(text(), 'Apply')]"/>
         <element name="removeGiftCard" type="button" selector="//button[contains(@class, 'giftCard-remove-')][contains(text(), 'Remove')]"/>
-        <element name="giftCardBalance" type="text" selector="//span[contains(@class, 'giftCard-balance-')]" />
-        <element name="giftCardBalanceLink" type="button" selector="//button[contains(@class, 'giftCards-check_balance_button')]" />
-        <element name="addAnotherGiftCard" type="button" selector="//button[contains(@class, 'giftCards-show_entry-')][contains(text(), '+ Add another gift card')]"/>
+        <element name="giftCardCheckBalance" type="button" selector="//button[contains(text(), 'Check balance')]" />
     </section>
 
     <section name="CartPageGiftOptionsSection">
         <element name="giftOptionsAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'See Gift Options')]"/>
-        <element name="includeGiftReceipt" type="checkbox" selector="[id='includeGiftReceipt']"/>
-        <element name="includePrintedCard" type="checkbox" selector="[id='includePrintedCard']"/>
+        <element name="includeGiftReceipt" type="input" selector="//span[contains(text(), 'Include gift receipt')]"/>
+        <element name="includePrintedCard" type="input" selector="//span[contains(text(), 'Include printed card')]"/>
         <element name="addGiftMessage" type="textarea" selector="[id='cardMessage']"/>
     </section>
 
@@ -73,7 +71,4 @@
         <element name="decreaseQtyStepper" type="button" selector="//aside[contains(@class, 'editModal-root_open-')]//button[contains(@aria-label,'Decrease Quantity')]"/>
     </section>
 
-
-    <!--<section name="CartPagePriceSummarySection">-->
-    <!--</section>-->
 </sections>

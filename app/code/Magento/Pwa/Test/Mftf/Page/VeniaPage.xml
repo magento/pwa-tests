@@ -21,4 +21,7 @@
     <page name="Cart" url="/cart" area="storefront" module="storefront">
         <section name="VeniaCartPageSection"/>
     </page>
+    <page name="Checkout" url="/checkout" area="storefront" module="storefront">
+        <section name="VeniaCheckoutPageSection"/>
+    </page>
 </pages>

@@ -41,7 +41,7 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
-    <actionGroup name="addShippingMethod">
+    <actionGroup name="AddShippingMethod">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
@@ -55,11 +55,12 @@
         <wait time="1" stepKey="wait4"/>
         <click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>
         <wait time="5" stepKey="wait5"/>
-        <seeElement selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="verifyFlatRateShipping"/>
+        <click selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="selectFlatRateShipping"/>
+        <wait time="5" stepKey="wait6"/>
         <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
     </actionGroup>
 
-    <actionGroup name="addCouponCode">
+    <actionGroup name="AddCouponCode">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -68,13 +69,13 @@
         <fillField  selector="{{CartPageCouponCodeSection.couponCode}}" userInput="{{discount.CouponCode}}" stepKey="enterCouponCode"/>
         <wait time="1" stepKey="wait4"/>
         <click selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="applyCouponCode"/>
-        <wait time="5" stepKey="wait5"/>
+        <wait time="10" stepKey="wait5"/>
         <seeElement selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="verifyRemoveCodeLink"/>
         <see userInput="{{discount.CouponCode}}" stepKey="seeAppliedCouponCode"/>
         <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
     </actionGroup>
 
-    <actionGroup name="removeCouponCode">
+    <actionGroup name="RemoveCouponCode">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -104,24 +105,24 @@
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
     </actionGroup>
 
-    <actionGroup name="addGiftCard">
+    <actionGroup name="AddGiftCard">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
         <click selector="{{CartPageGiftCardSection.giftCardAccordion}}" stepKey="expandGiftCardAccordion"/>
         <wait time="2" stepKey="wait1"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink"/>
         <fillField  selector="{{CartPageGiftCardSection.giftCardCode}}" userInput="{{discount.GiftCard}}" stepKey="enterGiftCardCode"/>
         <wait time="1" stepKey="wait4"/>
         <click selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="applyCouponCode"/>
         <wait time="5" stepKey="wait5"/>
         <seeElement selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="verifyRemoveGiftCardLink"/>
-        <seeElement selector="{{CartPageGiftCardSection.giftCardBalance}}" stepKey="assertGiftCardBalanceLabel"/>
-        <seeElement selector="{{CartPageGiftCardSection.addAnotherGiftCard}}" stepKey="assertAddAnotherGiftCardLink"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink2"/>
         <see userInput="{{discount.GiftCard}}" stepKey="seeAppliedGiftCard"/>
         <see userInput="Gift Card(s) applied" stepKey="seeAppliedGiftCardLabel"/>
     </actionGroup>
 
-    <actionGroup name="removeGiftCard">
+    <actionGroup name="RemoveGiftCard">
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
@@ -129,13 +130,13 @@
         <wait time="5" stepKey="wait5"/>
         <seeElement selector="{{CartPageGiftCardSection.giftCardCode}}" stepKey="seeGiftCardTextField"/>
         <seeElement selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="seeApplyGiftCardButton"/>
-        <seeElement selector="{{CartPageGiftCardSection.giftCardBalanceLink}}" stepKey="seeCheckGiftCardBalanceLink"/>
+        <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink"/>
         <dontSee userInput="{{discount.GiftCard}}" stepKey="doNotSeeAppliedGiftCard"/>
         <dontSee userInput="Gift Card(s) applied" stepKey="doNotSeeAppliedGiftCardLabel"/>
     </actionGroup>
 
 
-    <actionGroup name="addGiftOptions">
+    <actionGroup name="AddGiftOptions">
         <click selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="expandGiftOptionsAccordion"/>
         <wait time="2" stepKey="wait1"/>
         <click selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="checkGiftReceiptCheckBox"/>
@@ -167,8 +168,7 @@
         <waitForPwaElementVisible selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="waitForProducttoDisplay"/>
         <click selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{EditPanelSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
-        <!--Uncomment after PWA-411 is fixed-->
-        <!--<click selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="clickOnQtyIncreaseStepper"/>-->
+        <click selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="clickOnQtyIncreaseStepper"/>
         <wait time="2" stepKey="temporaryWait"/>
         <click selector="{{EditPanelSection.updateCart}}" stepKey="clickOnUpdateCartButton"/>
     </actionGroup>
@@ -182,9 +182,28 @@
         <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertUpdatedProductColorExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.sizeOption(product.name, product.color1, product.size1)}}" stepKey="assertUpdatedProductSizeExists"/>
-        <!--Uncomment after PWA-411 is fixed-->
-        <!--<seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertUpdatedProductQty"/>-->
+        <seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty1)}}" stepKey="assertUpdatedProductQty"/>
         <seeElement selector="{{CartPageProductDetailsSection.productPrice(product.name, product.price)}}" stepKey="assertProductPrice"/>
+    </actionGroup>
+
+    <actionGroup name="CartPageProceedToCheckout">
+        <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
+        <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
+        <wait time="10" stepKey="temporaryWait"/>
+    </actionGroup>
+
+    <actionGroup name="AssertGuestCheckoutPage">
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+    </actionGroup>
+
+    <actionGroup name="AssertAuthCheckoutPage">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <dontSee userInput="Login and Checkout Faster" stepKey="assertGuestCheckoutHeadingDoeNotExists"/>
+        <see userInput="Welcome {{customer.first}}!" stepKey="seeAuthUserWelcome"/>
     </actionGroup>
 
 </actionGroups>

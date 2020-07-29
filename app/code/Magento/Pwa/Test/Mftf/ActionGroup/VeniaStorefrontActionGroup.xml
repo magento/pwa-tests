@@ -20,12 +20,12 @@
         <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
 
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="waitForPageToLoad1"/>
     </actionGroup>
 
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="waitForPageToLoad"/>
     </actionGroup>
 
     <actionGroup name="SearchProduct">

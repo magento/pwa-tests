@@ -8,15 +8,16 @@
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
-    <test name="RemoveItemFromTheCart">
+    <test name="RemoveCartPromotions">
         <annotations>
             <features value="PWA"/>
-            <stories value="Kebab Features"/>
-            <title value="Verify user should be able to Remove an item from the cart"/>
-            <description value="Verify user should be able to Remove an item from the cart"/>
-            <severity value="CRITICAL"/>
-            <testCaseId value="MC-34052"/>
+            <stories value="Cart Page"/>
+            <title value="Verify Add/Remove Cart promotions"/>
+            <description value="Verify Add/Remove Cart promotions"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="MC-32192"/>
             <group value="PWA"/>
+            <group value="Cart"/>
         </annotations>
 
         <before>
@@ -35,7 +36,11 @@
 
         </before>
 
-        <actionGroup ref="RemoveItemFromTheCart" stepKey="removeItemFromTheCart"/>
+        <actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCartPage"/>
+        <actionGroup ref="AddCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
+        <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="RemoveCouponCode" stepKey="removeCouponCode"/>
+        <actionGroup ref="RemoveGiftCard" stepKey="removeGiftCard"/>
 
     </test>
 </tests>

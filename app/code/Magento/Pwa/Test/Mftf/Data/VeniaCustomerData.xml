@@ -9,16 +9,64 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
     <entity name="VeniaCustomer1" type="customer">
-        <data key="first">John</data>
-        <data key="last">Smith</data>
+        <data key="first">JohnTest</data>
+        <data key="last">SmithTest</data>
         <data key="address">123 Test Drive</data>
+        <data key="address2">Apt 123</data>
+        <data key="city">Culver City</data>
+        <data key="zipCode">90230</data>
+        <data key="state">CA</data>
+        <data key="phone">1234567890</data>
+        <data key="email" unique="prefix">test@example.com</data>
+        <data key="emailCheck">test@example.com</data>
+        <data key="password">pwdTest123!</data>
+        <data key="stateName">California</data>
+        <data key="country">US</data>
+    </entity>
+
+    <entity name="VeniaCustomer2" type="customer">
+        <data key="first">John1</data>
+        <data key="last">Smith2</data>
+        <data key="address">456 demo street</data>
+        <data key="address2">Apt 456</data>
         <data key="city">Austin</data>
-        <data key="zipCode">78717</data>
+        <data key="zipCode">78759</data>
+        <data key="state">TX</data>
+        <data key="phone">1234567890</data>
+        <data key="email" unique="prefix">updated@example.com</data>
+        <data key="emailCheck">updated@example.com</data>
+        <data key="password">pwdTest123!</data>
+        <data key="stateName">Texas</data>
+        <data key="country">US</data>
+    </entity>
+
+    <entity name="AuthUserUpdatedData" type="customer">
+        <data key="first">John1</data>
+        <data key="last">Smith2</data>
+        <data key="address">456 demo street</data>
+        <data key="address2">Apt 456</data>
+        <data key="city">Austin</data>
+        <data key="zipCode">78759</data>
         <data key="state">TX</data>
         <data key="phone">1234567890</data>
         <data key="email" unique="prefix">test@example.com</data>
+        <data key="emailCheck">test@example.com</data>
         <data key="password">pwdTest123!</data>
         <data key="stateName">Texas</data>
+        <data key="country">US</data>
+    </entity>
+
+    <entity name="VeniaCustomer3" type="customer">
+        <data key="first">Veda</data>
+        <data key="last">Peta</data>
+        <data key="address">987 alameda street</data>
+        <data key="address2">Apt 555</data>
+        <data key="city">San Antonio</data>
+        <data key="zipCode">78201</data>
+        <data key="state">TX</data>
+        <data key="phone">67893456</data>
+        <data key="stateName">Texas</data>
+        <data key="country">US</data>
     </entity>
 
     <entity name="VeniaRegisteredCustomer" type="customer">
@@ -27,5 +75,6 @@
         <data key="email">tom@test.com</data>
         <data key="password">Pasword1</data>
     </entity>
+
 
 </entities>

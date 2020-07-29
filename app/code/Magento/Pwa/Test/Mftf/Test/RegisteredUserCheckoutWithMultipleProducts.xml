@@ -15,7 +15,7 @@
             <title value="Verify guest user should be able to checkout with Multiple products."/>
             <description value="Verify guest user should be able to checkout with Multiple products."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-32235"/>
+            <testCaseId value="MC-34054"/>
             <group value="PWA"/>
         </annotations>
 
@@ -52,8 +52,6 @@
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
                 <argument name="product" value="AugustaEarrings"/>
             </actionGroup>
-
-            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="3" stepKey="selectProductQuantity1"/>
 
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
 

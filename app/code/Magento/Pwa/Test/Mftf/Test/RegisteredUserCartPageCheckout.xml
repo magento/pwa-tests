@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="CartPageRegisteredUserCheckout">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Cart Page"/>
+            <title value="Verify Registered user should be able to checkout via Cart Page"/>
+            <description value="Verify Registered user should be able to checkout via Cart Page"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-32012"/>
+            <group value="PWA"/>
+            <group value="Cart"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+
+            <actionGroup ref="NavigateToSignInFormFromCart" stepKey="navigateToSignInForm" />
+
+            <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
+
+            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
+                <argument name="product" value="ValeriaTwoLayerTank"/>
+            </actionGroup>
+
+            <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
+            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+
+            <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{CarminaEarrings.qty}}" stepKey="selectProductQuantity01"/>
+            <actionGroup ref="AddToCart" stepKey="addToCart2">
+                <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+        </before>
+
+        <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+        <dontSeeElement selector="{{VeniaCartPageSection.signIn}}" stepKey="dontSeeSignInLink" />
+        <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration"/>
+        <actionGroup ref="VerifySimpleProductExists" stepKey="verifySimpleProductsExists"/>
+        <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="AddGiftOptions" stepKey="addGiftOptions"/>
+        <actionGroup ref="CartPageProceedToCheckout" stepKey="clickProceedToCheckoutButton"/>
+        <actionGroup ref="AssertAuthCheckoutPage" stepKey="assertAuthUserWelcome"/>
+        <actionGroup ref="EnterAuthUserShippingInfo2" stepKey="enterShippingInformation"/>
+        <actionGroup ref="UpdateStateZip" stepKey="enterShippingInformationZipAndState"/>
+        <actionGroup ref="SubmitAuthUserShippingInfo" stepKey="submitShippingInfo"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation"/>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails">
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
+        </actionGroup>
+        <scrollToTopOfPage stepKey="scrollOnTopOfPage"/>
+        <actionGroup ref="EditShippingInfo" stepKey="clickOnEditShippingLink"/>
+        <actionGroup ref="AssertAuthAddressBookDefaults" stepKey="assertAuthAddressBookDefaultLinksLabels"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping"/>
+        <actionGroup ref="AddNewAddressInAddressBook" stepKey="clickONAddNewAddressLink"/>
+        <actionGroup ref="EnterAuthUserShippingInfo1" stepKey="updateShippingInformationName">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="EnterAuthUserShippingInfo2" stepKey="updateShippingInformationStreet">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="UpdateStateZip" stepKey="enterShippingInformationZipAndState2">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="SaveAddressBookShippingInfo" stepKey="clickOnAddButton"/>
+        <actionGroup ref="AssertAuthAddressBookDefaults" stepKey="assertAuthAddressBookDefaultLinksLabels1"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping1"/>
+        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping2">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="SubmitAuthUserShippingChanges" stepKey="clickOnApplyButton"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation">
+            <argument name="customer" value="AuthUserUpdatedData"/>
+        </actionGroup>
+        <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
+        <actionGroup ref="AssertReviewOrderAuth" stepKey="assertReviewOrderIsSuccess"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
+        <dontSee userInput="Tax" stepKey="seeTaxDoesNotExists"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation2">
+            <argument name="customer" value="AuthUserUpdatedData"/>
+        </actionGroup>
+        <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2">
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>
+        <actionGroup ref="AssertSimpleProductDetails" stepKey="verifyProductDetails2"/>
+        <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">
+            <argument name="customer" value="AuthUserUpdatedData"/>
+            <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
+        </actionGroup>
+        <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails3"/>
+        <actionGroup ref="AssertSimpleProductDetails" stepKey="verifyProductDetails4"/>
+
+        <!--******** Once Customer Account and Order History implemented then this test can be extended to check related verification *******-->
+
+    </test>
+</tests>

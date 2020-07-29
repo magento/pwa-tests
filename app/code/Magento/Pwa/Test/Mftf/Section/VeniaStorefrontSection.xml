@@ -29,4 +29,8 @@
         <element name="searchInProgress" type="text" selector="//div[contains(text(), 'Fetching results...')]" />
     </section>
 
+    <section name="VeniaHomePageSection">
+        <element name="shopNowButton" type="button" selector="//a[contains(text(), 'Shop Now')]"/>
+    </section>
+
 </sections>
