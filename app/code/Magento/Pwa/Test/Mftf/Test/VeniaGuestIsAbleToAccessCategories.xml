@@ -42,10 +42,7 @@
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
+        <click selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="clickOnShopTheLookButton"/>
 
-        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
-        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay3">
-            <argument name="categoryDisplayName" value="Shop The Look"/>
-        </actionGroup>
     </test>
 </tests>

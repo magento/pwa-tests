@@ -9,6 +9,6 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="GoToVeniaDesktopStorefront">
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
-        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.productImage('Shop The Look')}}" stepKey="waitForPwaCategoryVisible01"/>
+        <waitForPwaElementVisible selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="waitForPageToLoad"/>
     </actionGroup>
 </actionGroups>
