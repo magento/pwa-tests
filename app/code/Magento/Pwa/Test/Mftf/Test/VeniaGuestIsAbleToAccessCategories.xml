@@ -22,7 +22,7 @@
         <before>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
-        
+
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu">
             <argument name="categoryName" value="Bottoms"/>
         </actionGroup>
@@ -34,18 +34,6 @@
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
-
-        <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1"/>
-        <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu1"/>
-        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay2">
-            <argument name="categoryDisplayName" value="Minimalist Sensibility"/>
-        </actionGroup>
-
-        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
-
-        <actionGroup ref="OpenStorefrontCategoryByName" stepKey="openStorefrontCategoryByName1"/>
-        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay3">
-            <argument name="categoryDisplayName" value="Shop The Look"/>
-        </actionGroup>
+        <click selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="clickOnShopTheLookButton"/>
     </test>
 </tests>
