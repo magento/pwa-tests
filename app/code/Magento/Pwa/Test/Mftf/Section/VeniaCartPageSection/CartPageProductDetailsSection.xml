@@ -10,8 +10,8 @@
     <section name="CartPageProductDetailsSection">
         <element name="cartProductImage" type="button" selector="img[loading^='lazy'][alt='{{product_name}}'][class^='product-image']" parameterized="true"/>
         <element name="cartProductName" type="button" selector="//a[contains(@class, 'product-name-')][contains(text(), '{{var_product_name}}')]" parameterized="true"/>
-        <element name="colorOption" type="button" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]" parameterized="true"/>
-        <element name="sizeOption" type="button" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]/following-sibling::dt[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="colorOption" type="button" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="button" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]/parent::div/following-sibling::div/dd[contains(., '{{product_size}}')]" parameterized="true"/>
         <element name="productQty" type="input" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//input[@name='quantity'][@value='{{product_qty}}']" parameterized="true"/>
         <element name="productPrice" type="input" selector="//li[./div/a[contains(text(), '{{product_name}}')]]//span[contains(text(), '{{product_price}}')]" parameterized="true"/>
     </section>

@@ -16,8 +16,8 @@
         <element name="miniCartEditCart" type="button" selector="//div[contains(@class, 'miniCart-footer-')]//span[contains(text(), 'Edit Shopping Bag')]"/>
         <element name="miniCartProductImage" type="button" selector="img[loading^='lazy'][alt='{{product_name}}']" parameterized="true"/>
         <element name="miniCartProductName" type="button" selector="//a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]" parameterized="true"/>
-        <element name="miniCartProductColor" type="text" selector="//div[./a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]]/dl[contains(@class, 'item-options-')]/dt[contains(., '{{var_product_color}}')]" parameterized="true"/>
-        <element name="miniCartProductSize" type="text" selector="//div[./a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]]/dl[contains(@class, 'item-options-')]/dt[contains(., '{{var_product_size}}')]" parameterized="true"/>
+        <element name="miniCartProductColor" type="text" selector="//div[./a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]]/dl[contains(@class, 'item-options-')]//dd[contains(., '{{var_product_color}}')]" parameterized="true"/>
+        <element name="miniCartProductSize" type="text" selector="//div[./a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]]/dl[contains(@class, 'item-options-')]//dd[contains(., '{{var_product_size}}')]" parameterized="true"/>
         <element name="miniCartProductQty" type="text" selector="//div[./a[contains(@class, 'item-name-')][contains(text(), '{{var_product_name}}')]]/span[contains(@class, 'item-quantity-')][contains(text(), '{{var_product_qty}}')]" parameterized="true"/>
     </section>
 </sections>
