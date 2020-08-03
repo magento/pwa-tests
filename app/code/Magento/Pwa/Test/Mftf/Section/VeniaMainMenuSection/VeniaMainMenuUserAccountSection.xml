@@ -8,8 +8,8 @@
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaMainMenuUserAccountSection">
-        <element name="userInfoRoot" type="text" selector="div[class*='myAccount-user-']"/>
-        <element name="userInfoMore" type="button" selector="[class*='userChip-root-']"/>
-        <element name="signOut" type="button" selector="//*[contains(@class, 'accountLink-text-')][contains(text(), 'Sign Out')]"/>
+        <element name="userInfoRoot" type="text" selector="span[class*='accountChip-root-']"/>
+        <element name="userInfoMore" type="button" selector="[class*='authBar-contents-']"/>
+        <element name="signOut" type="button" selector="//div[contains(@class, 'myAccount-root-')]/*[contains(text(), 'Sign Out')]"/>
     </section>
 </sections>

@@ -9,8 +9,8 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="CheckoutPageProductDetailsSection">
         <element name="productName" type="text" selector="//div[contains(@class, 'item-root-')]//span[contains(text(), '{{product_name}}')]" parameterized="true"/>
-        <element name="colorOption" type="text" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]" parameterized="true"/>
-        <element name="sizeOption" type="text" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//dl/dt[contains(., '{{product_color}}')]/following-sibling::dt[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="colorOption" type="text" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="text" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]/parent::div/following-sibling::div/dd[contains(., '{{product_size}}')]" parameterized="true"/>
         <element name="productQty" type="input" selector="//div[./div/span[contains(text(), '{{product_name}}')]]//span[contains(text(), 'Qty : {{product_qty}}')]" parameterized="true"/>
     </section>
 </sections>

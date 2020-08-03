@@ -12,9 +12,7 @@
             <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.userInfoRoot}}" stepKey="waitForPwaElementVisible7"/>
-        <wait time="5" stepKey="temporaryStaticWait"/>
-        <see stepKey="assertName" userInput="{{Customer.first}}"/>
-        <see stepKey="assertLastName" userInput="{{Customer.last}}"/>
-        <see stepKey="assertEmail1" userInput="{{Customer.email}}"/>
+        <wait time="8" stepKey="temporaryStaticWait"/>
+        <see stepKey="assertName" userInput="HI, {{Customer.first}}"/>
     </actionGroup>
 </actionGroups>

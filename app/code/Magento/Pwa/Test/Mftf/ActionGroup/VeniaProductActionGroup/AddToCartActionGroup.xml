@@ -14,8 +14,5 @@
         <waitForPwaElementVisible selector="{{VeniaProductSection.addToCart}}" stepKey="waitForAddToCartButtonToBeReady"/>
         <click selector="{{VeniaProductSection.addToCart}}" stepKey="clickAddToCart1"/>
         <wait time="10" stepKey="wait1134"/>
-        <waitForPwaElementVisible selector="{{VeniaShoppingCartIconSection.shoppingCartCounter}}" stepKey="waitForShoppingCartToUpdate"/>
-        <seeElement selector="{{VeniaShoppingCartIconSection.shoppingCartCounter}}" stepKey="assertElementExists"/>
-        <dontSeeElement selector="{{VeniaShoppingCartIconSection.shoppingCartIcon}}" stepKey="assertEmptyCartDoesNotExists"/>
     </actionGroup>
 </actionGroups>

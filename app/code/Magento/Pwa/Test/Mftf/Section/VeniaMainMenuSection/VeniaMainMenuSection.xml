@@ -12,7 +12,7 @@
         <element name="back" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[1]"/>
         <element name="close" type="button" selector="(//*[contains(@class, 'navigation-header-')]//*[contains(@class, 'trigger-root-')])[2]"/>
         <element name="categoryByName" type="button" selector="//*[contains(@class, 'categoryLeaf-text-')][contains(text(), '{{var1}}')]" parameterized="true"/>
-        <element name="signIn" type="button" selector="[class*='authBar-'] [class*='highPriority']"/>
+        <element name="signIn" type="button" selector="[class*='authBar-signIn-']"/>
         <element name="navTrigger" type="button" selector="button[class^=navTrigger-root]"/>
         <element name="userChip" type="block" selector="div[class^=navigation-userChip]"/>
     </section>
