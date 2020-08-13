@@ -10,6 +10,6 @@
     <section name="VeniaMainMenuUserAccountSection">
         <element name="userInfoRoot" type="text" selector="span[class*='accountChip-root-']"/>
         <element name="userInfoMore" type="button" selector="[class*='authBar-contents-']"/>
-        <element name="signOut" type="button" selector="//div[contains(@class, 'myAccount-root-')]/*[contains(text(), 'Sign Out')]"/>
+        <element name="signOut" type="button" selector="//div[contains(@class, 'authModal-root-')]//*[contains(text(), 'Sign Out')]"/>
     </section>
 </sections>

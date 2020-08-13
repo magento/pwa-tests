@@ -9,10 +9,10 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaMainMenuSignInSection">
         <element name="mainArea" type="textarea" selector="[class*='navigation-signIn_open-']"/>
-        <element name="email" type="input" selector="[class*='signIn-root'] input[name='email']"/>
-        <element name="password" type="input" selector="[class*='signIn-root'] input[name='password']"/>
-        <element name="signIn" type="button" selector="//button[contains(@class, 'button-root_highPriority-')]/span[contains(text(), 'Sign In')]"/>
-        <element name="forgotUsernamePassword" type="button" selector="//*[contains(text(), 'Forgot Password?')]"/>
-        <element name="createAnAccount" type="button" selector="//span[contains(text(), 'Create an Account')]"/>
+        <element name="email" type="input" selector="[class*='authModal-root-'] input[name='email']"/>
+        <element name="password" type="input" selector="[class*='authModal-root-'] input[name='password']"/>
+        <element name="signIn" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Sign In')]"/>
+        <element name="forgotUsernamePassword" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Forgot Password?')]"/>
+        <element name="createAnAccount" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Create an Account')]"/>
     </section>
 </sections>

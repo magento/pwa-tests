@@ -5,3 +5,4 @@ vendor/*
 mftf.log
 /.credentials.example
 /utils/
+.credentials

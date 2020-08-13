@@ -10,6 +10,6 @@
     <section name="CheckoutPageOrderConfirmation">
         <element name="orderConfirmationRoot" type="textarea" selector="//div[contains(@class, 'orderConfirmationPage-root-')]"/>
         <element name="createAccount" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Create Account')]"/>
-        <element name="passwordField" type="input" selector="[class*='textInput-input-'][name*='password']"/>
+        <element name="passwordField" type="input" selector="[class*='orderConfirmationPage-sidebarContainer-'] input[name*='password']"/>
     </section>
 </sections>
