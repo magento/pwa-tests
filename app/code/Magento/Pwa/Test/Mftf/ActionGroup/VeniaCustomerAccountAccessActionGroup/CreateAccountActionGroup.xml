@@ -17,6 +17,7 @@
         <click selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="clickCreateAccountButton"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
         <fillField selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
+        <grabValueFrom selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="customerEmail"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.firstName}}" stepKey="waitForPwaElementVisible2"/>
         <fillField selector="{{VeniaMainMenuCreateAccountSection.firstName}}" userInput="{{Customer.first}}" stepKey="fillFirstName"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.lastName}}" stepKey="waitForPwaElementVisible3"/>
