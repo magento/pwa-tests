@@ -24,8 +24,6 @@
         <fillField selector="{{VeniaMainMenuCreateAccountSection.lastName}}" userInput="{{Customer.last}}" stepKey="fillLastName"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.password}}" stepKey="waitForPwaElementVisible4"/>
         <fillField selector="{{VeniaMainMenuCreateAccountSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.confirmPassword}}" stepKey="waitForPwaElementVisible5"/>
-        <fillField selector="{{VeniaMainMenuCreateAccountSection.confirmPassword}}" userInput="{{Customer.password}}" stepKey="fillConfirmPassword"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.submit}}" stepKey="waitForPwaElementVisible6"/>
         <click selector="{{VeniaMainMenuCreateAccountSection.submit}}" stepKey="clickSubmitButton"/>
     </actionGroup>

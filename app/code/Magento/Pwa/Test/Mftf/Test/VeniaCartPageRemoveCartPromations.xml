@@ -17,7 +17,6 @@
             <severity value="MAJOR"/>
             <testCaseId value="MC-35874"/>
             <group value="PWA"/>
-            <group value="Cart"/>
         </annotations>
 
         <before>

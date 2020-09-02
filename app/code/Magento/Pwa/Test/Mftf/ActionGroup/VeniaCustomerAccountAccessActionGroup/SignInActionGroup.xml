@@ -10,9 +10,10 @@
     <actionGroup name="SignIn">
         <arguments>
             <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="customerEmail" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.email}}" stepKey="wait21"/>
-        <fillField selector="{{VeniaMainMenuSignInSection.email}}" userInput="{{Customer.email}}" stepKey="fillUsername"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.email}}" userInput="{{customerEmail}}" stepKey="fillUsername"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
         <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>

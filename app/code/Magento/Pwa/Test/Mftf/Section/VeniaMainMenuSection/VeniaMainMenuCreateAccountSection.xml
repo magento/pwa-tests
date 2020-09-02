@@ -15,6 +15,6 @@
         <element name="lastName" type="input" selector="input[name='customer.lastname']"/>
         <element name="password" type="input" selector="input[autocomplete='new-password']"/>
         <element name="confirmPassword" type="input" selector="input[name='confirm']"/>
-        <element name="submit" type="button" selector="[class*='createAccount-actions-'] button"/>
+        <element name="submit" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Create an Account')]"/>
     </section>
 </sections>

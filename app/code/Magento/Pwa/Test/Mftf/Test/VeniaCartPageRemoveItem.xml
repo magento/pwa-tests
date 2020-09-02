@@ -17,7 +17,7 @@
             <severity value="CRITICAL"/>
             <testCaseId value="MC-35877"/>
             <group value="PWA"/>
-            <group value="Cart"/>
+            <group value="Smoke"/>
         </annotations>
 
         <before>

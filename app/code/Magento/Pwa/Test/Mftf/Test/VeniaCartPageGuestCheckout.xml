@@ -16,7 +16,6 @@
             <severity value="CRITICAL"/>
             <testCaseId value="MC-35862"/>
             <group value="PWA"/>
-            <group value="Cart"/>
         </annotations>
 
         <before>
@@ -49,16 +48,18 @@
         </actionGroup>
         <actionGroup ref="AddShippingMethod" stepKey="verifyShippingMethodGetsAdded"/>
         <actionGroup ref="AddCouponCode" stepKey="verifyCouponCodeGetsAdded"/>
+        <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
+        <actionGroup ref="AddGiftOptions" stepKey="addGiftOptions"/>
         <actionGroup ref="CartPageProceedToCheckout" stepKey="clickProceedToCheckoutButton"/>
         <actionGroup ref="AssertGuestCheckoutPage" stepKey="assertGuestUser"/>
         <actionGroup ref="EnterShippingInfo" stepKey="enterShippingInformation"/>
         <actionGroup ref="SubmitShippingInfo" stepKey="submitShippingInfo"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails"/>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName"/>
-        <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails"/>
+
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
         <actionGroup ref="AssertReviewOrderGuest" stepKey="assertReviewOrderIsSuccess"/>
+        <see userInput="Gift Card(s) applied" stepKey="seeGiftCardExists"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails2"/>
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails"/>
