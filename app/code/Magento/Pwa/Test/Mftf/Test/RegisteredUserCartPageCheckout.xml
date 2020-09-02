@@ -72,10 +72,10 @@
         <actionGroup ref="EnterAuthUserShippingInfo1" stepKey="updateShippingInformationName">
             <argument name="customer" value="VeniaCustomer2"/>
         </actionGroup>
-        <actionGroup ref="EnterAuthUserShippingInfo2" stepKey="updateShippingInformationStreet">
+        <actionGroup ref="EnterAuthUserShippingInfo3" stepKey="updateShippingInformationStreet">
             <argument name="customer" value="VeniaCustomer2"/>
         </actionGroup>
-        <actionGroup ref="UpdateStateZip" stepKey="enterShippingInformationZipAndState2">
+        <actionGroup ref="UpdateStateZipAuth" stepKey="enterShippingInformationZipAndState2">
             <argument name="customer" value="VeniaCustomer2"/>
         </actionGroup>
         <actionGroup ref="SaveAddressBookShippingInfo" stepKey="clickOnAddButton"/>

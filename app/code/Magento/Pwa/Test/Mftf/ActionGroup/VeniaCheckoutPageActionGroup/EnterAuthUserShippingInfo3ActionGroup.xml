@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<!--This action group is same as EnterAuthUserShippingInfo3 except city selector. City filed is not being identified so added this one-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="EnterAuthUserShippingInfo3">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <clearField selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.city}}" stepKey="clearFieldInputIfAny78"/>
+        <fillField selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
+    </actionGroup>
+</actionGroups>

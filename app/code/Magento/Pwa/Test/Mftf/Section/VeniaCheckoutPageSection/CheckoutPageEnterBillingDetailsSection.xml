@@ -14,7 +14,7 @@
         <element name="street" type="input" selector="[class*='textInput-input-'][name*='street1']"/>
         <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street2']"/>
         <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
-        <element name="selectState" type="select" selector="[class*='select-input-'][name*='state']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
         <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postalCode']"/>
         <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='phoneNumber']"/>
     </section>
