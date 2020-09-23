@@ -8,7 +8,7 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertNoResultsInSuggestionBox">
-        <wait time="5" stepKey="waitForElementToLoad1"/>
+        <!--<wait time="5" stepKey="waitForElementToLoad1"/>-->
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.suggestionBox}}" stepKey="waitForSuggestionBoxToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaSearchSuggestionResultsSection.noResults}}" stepKey="waitForSuggestionBoxResultsToLoad"/>
         <dontSeeElement selector="{{VeniaSearchSuggestionResultsSection.suggestedProducts}}" stepKey="productSuggestionShouldNotBeDisplayed"/>
@@ -17,3 +17,4 @@
         <see userInput="No results were found" stepKey="seeSearchedResult"/>
     </actionGroup>
 </actionGroups>
+

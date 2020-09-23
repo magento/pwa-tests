@@ -8,7 +8,7 @@
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaMainMenuUserAccountSection">
-        <element name="userInfoRoot" type="text" selector="span[class*='accountChip-root-']"/>
+        <element name="userInfoRoot" type="text" selector="//aside[contains(@class, 'navigation-root_open-')]//span[contains(@class, 'accountChip-root-')]"/>
         <element name="userInfoMore" type="button" selector="[class*='authBar-contents-']"/>
         <element name="signOut" type="button" selector="//div[contains(@class, 'authModal-root-')]//*[contains(text(), 'Sign Out')]"/>
     </section>

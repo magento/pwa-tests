@@ -14,5 +14,6 @@
         <element name="signIn" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Sign In')]"/>
         <element name="forgotUsernamePassword" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Forgot Password?')]"/>
         <element name="createAnAccount" type="button" selector="//div[contains(@class, 'authModal-root-')]//span[contains(text(), 'Create an Account')]"/>
+        <element name="navigationModal" type="input" selector="[class*='navigation-modal_open']"/>
     </section>
 </sections>

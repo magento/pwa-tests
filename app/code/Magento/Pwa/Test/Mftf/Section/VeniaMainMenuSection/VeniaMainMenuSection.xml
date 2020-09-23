@@ -15,5 +15,6 @@
         <element name="signIn" type="button" selector="[class*='authBar-signIn-']"/>
         <element name="navTrigger" type="button" selector="button[class^=navTrigger-root]"/>
         <element name="userChip" type="block" selector="div[class^=navigation-userChip]"/>
+        <element name="userMenu" type="block" selector="div[class^=navHeader-title-][textContent='Main Menu']"/>
     </section>
 </sections>

@@ -12,7 +12,9 @@
         <element name="suggestedCategories" type="textarea" selector="ul[class^='suggestedCategories-root-']"/>
         <element name="suggestedProducts" type="button" selector="a[class^='suggestedProduct-root-']"/>
         <element name="suggestedProduct" type="button" selector="a[class^='suggestedProduct-root-'][href*='{{productName}}']" parameterized="true"/>
-        <element name="noResults" type="text" selector="//div[contains(text(), 'No results found, try a different search')]"/>
+        <element name="noResults" type="text" selector="//div[contains(text(), 'No results were found.')]"/>
         <element name="searchInProgress" type="text" selector="//div[contains(text(), 'Fetching results...')]"/>
+        <element name="autoCompleteMessage" type="text" selector="div[class^='autocomplete-message']"/>
+        <element name="suggestionsHeading" type="text" selector="h2[class^='suggestions-heading']"/>
     </section>
 </sections>
