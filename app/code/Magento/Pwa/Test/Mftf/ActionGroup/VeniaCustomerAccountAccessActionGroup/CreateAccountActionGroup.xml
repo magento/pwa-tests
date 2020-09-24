@@ -14,6 +14,7 @@
         <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.navigationModal}}" stepKey="waitForModal"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="waitForCreateAccount"/>
+        <wait time="1" stepKey="waitForElementToLoad"/>
         <click selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="clickCreateAccountButton"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
         <fillField selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
