@@ -11,6 +11,9 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="waitForShippingRoot"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="waitForShippingHeader"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="waitForShippingEditLink"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>

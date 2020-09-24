@@ -9,8 +9,8 @@
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="ClickMiniCartEditShoppingBagLink">
         <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartEditCart}}" stepKey="waitForProductToGetAdded"/>
-        <wait time="2" stepKey="temporaryStaticWait2"/>
+        <!--<wait time="2" stepKey="temporaryStaticWait2"/>-->
         <click selector="{{VeniaMiniCartSection.miniCartEditCart}}" stepKey="clickOnMiniCartIcon"/>
-        <wait time="5" stepKey="temporaryStaticWait1"/>
+        <!--<wait time="5" stepKey="temporaryStaticWait1"/>-->
     </actionGroup>
 </actionGroups>

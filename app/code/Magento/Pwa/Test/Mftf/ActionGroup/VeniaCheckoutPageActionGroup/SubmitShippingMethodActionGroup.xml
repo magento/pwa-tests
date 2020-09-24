@@ -8,7 +8,9 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="SubmitShippingMethod">
+        <!--<wait time="5" stepKey="temporaryWait"/>-->
+        <waitForPwaElementVisible selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="waitForContinueToPaymentButton"/>
         <click selector="{{CheckoutPageSelectShippingMethodSection.submitShippingMethod}}" stepKey="clickOnContinueToPaymentButton"/>
-        <wait time="10" stepKey="temporaryWait"/>
+        <!--<wait time="10" stepKey="temporaryWait"/>-->
     </actionGroup>
 </actionGroups>

@@ -10,6 +10,6 @@
     <section name="CheckoutPageSelectShippingMethodSection">
         <element name="shippingMethodHeader" type="text" selector="//h3[contains(text(), 'Shipping Method')]"/>
         <element name="shippingMethodSelect" type="radio" selector="//input[contains(@class, 'radio-input-')][contains(@value, '{{shipping_method}}')]" parameterized="true"/>
-        <element name="submitShippingMethod" type="button" selector="//button[contains(@class, 'button-root_normalPriority-')]/span[contains(text(), 'Continue to Payment Information')]"/>
+        <element name="submitShippingMethod" type="button" selector="//div[contains(@class, 'shippingMethod-formButtons-')]//button[contains(@class,'button-root_normalPriority-')]"/>
     </section>
 </sections>

@@ -11,11 +11,14 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="waitForProducttoDisplay"/>
+        <waitForPwaElementVisible selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="waitForProductToDisplay"/>
+        <waitForPwaElementVisible selector="{{EditPanelSection.colorByValue(product.size1)}}" stepKey="waitForProductSizeToDisplay"/>
+        <waitForPwaElementVisible selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="waitForProductQtyToDisplay"/>
         <click selector="{{EditPanelSection.colorByValue(product.color1)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{EditPanelSection.sizeByValue(product.size1)}}" stepKey="clickOnSizeOption01"/>
         <click selector="{{EditPanelSection.increaseQtyStepper}}" stepKey="clickOnQtyIncreaseStepper"/>
-        <wait time="2" stepKey="temporaryWait"/>
+        <!--<wait time="2" stepKey="temporaryWait"/>-->
+        <waitForPwaElementVisible selector="{{EditPanelSection.updateCart}}" stepKey="waitForUpdateButtonToDisplay"/>
         <click selector="{{EditPanelSection.updateCart}}" stepKey="clickOnUpdateCartButton"/>
     </actionGroup>
 </actionGroups>

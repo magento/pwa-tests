@@ -11,6 +11,9 @@
         <arguments>
             <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShipping}}" type="string"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="waitForShippingMethodRoot"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="waitForShippingMethodHeader"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="waitForShippingMethodEditLink"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
