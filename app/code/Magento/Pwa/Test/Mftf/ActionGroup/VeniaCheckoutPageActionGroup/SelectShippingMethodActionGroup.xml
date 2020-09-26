@@ -11,6 +11,7 @@
         <arguments>
             <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingCode}}" type="string"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageSelectShippingMethodSection.shippingMethodSelect(shippingMethod)}}" stepKey="waitRadioButtonToBeVisible"/>
         <click selector="{{CheckoutPageSelectShippingMethodSection.shippingMethodSelect(shippingMethod)}}" stepKey="selectShippingMethod"/>
     </actionGroup>
 </actionGroups>

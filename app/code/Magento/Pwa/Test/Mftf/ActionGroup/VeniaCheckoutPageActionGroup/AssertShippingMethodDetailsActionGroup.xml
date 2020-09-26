@@ -17,6 +17,7 @@
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodRoot}}" stepKey="assertShippingMethodRootExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodHeader}}" stepKey="assertShippingMethodHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.shippingMethodEditLink}}" stepKey="assertShippingMethodEditLinkExists"/>
+        <waitForText stepKey="seeSubmittedShippingMethodExists" selector="{{CheckoutPageShippingMethodInfoSection.submittedShippingMethod}}" userInput="{{shippingMethod}}"/>
         <seeElement selector="{{CheckoutPageShippingMethodInfoSection.selectedShippingMethod(shippingMethod)}}" stepKey="assertSelectedShippingMethodExists"/>
     </actionGroup>
 </actionGroups>

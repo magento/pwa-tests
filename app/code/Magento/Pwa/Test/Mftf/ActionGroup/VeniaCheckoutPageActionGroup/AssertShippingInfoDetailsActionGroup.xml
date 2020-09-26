@@ -17,15 +17,15 @@
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
         <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>
-        <see userInput="{{customer.emailCheck}}" stepKey="seeEmailExists"/>
-        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
-        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <waitForText stepKey="seeEmailExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.emailCheck}}"/>
+        <waitForText stepKey="seeFirstNameExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.first}}"/>
+        <waitForText stepKey="seeLastNameExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.last}}"/>
+        <waitForText stepKey="seePhoneNumberExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.phone}}"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
         <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
         <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
         <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
-        <see userInput="{{customer.phone}}" stepKey="seePhoneNumberExists"/>
     </actionGroup>
 </actionGroups>
