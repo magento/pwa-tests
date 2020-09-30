@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageEnterBillingDetailsSection">
+        <element name="firstName" type="input" selector="[class*='textInput-input-'][name*='firstName']"/>
+        <element name="lastName" type="input" selector="[class*='textInput-input-'][name*='lastName']"/>
+        <element name="selectCountry" type="select" selector="[class*='select-input-'][name*='country']"/>
+        <element name="street" type="input" selector="[class*='textInput-input-'][name*='street1']"/>
+        <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street2']"/>
+        <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postalCode']"/>
+        <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='phoneNumber']"/>
+    </section>
+</sections>

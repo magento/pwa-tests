@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageShippingMethodOverlaySection">
+        <element name="shippingMethodEditOverlay" type="textarea" selector="//span[contains(@class, 'dialog-headerText-')][contains(text(), 'Edit Shipping Method')]"/>
+        <element name="updateShippingMethod" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Update')]"/>
+        <element name="cancelShippingMethodUpdate" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Cancel')]"/>
+    </section>
+</sections>

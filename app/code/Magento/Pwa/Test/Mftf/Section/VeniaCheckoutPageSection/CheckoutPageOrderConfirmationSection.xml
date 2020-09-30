@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageOrderConfirmation">
+        <element name="orderConfirmationRoot" type="textarea" selector="//div[contains(@class, 'orderConfirmationPage-root-')]"/>
+        <element name="createAccount" type="button" selector="//span[contains(@class, 'button-content-')][contains(text(), 'Create Account')]"/>
+        <element name="passwordField" type="input" selector="[class*='orderConfirmationPage-sidebarContainer-'] input[name*='password']"/>
+    </section>
+</sections>

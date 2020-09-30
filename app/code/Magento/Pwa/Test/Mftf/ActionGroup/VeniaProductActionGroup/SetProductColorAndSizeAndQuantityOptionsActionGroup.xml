@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="SetProductColorAndSizeAndQuantityOptions">
+        <arguments>
+            <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
+        </arguments>
+        <wait time="5" stepKey="wait123"/>
+        <waitForPwaElementVisible selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
+        <click selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
+        <click selector="{{VeniaProductSection.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
+        <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
+    </actionGroup>
+</actionGroups>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertProductDisplay">
+        <arguments>
+            <argument name="categoryDisplayName" type="string"/>
+        </arguments>
+        <wait time="5" stepKey="temporaryStaticWait"/>
+        <seeElement selector="{{VeniaCategorySection.categoryTitle(categoryDisplayName)}}" stepKey="assertcategoryTitleexists"/>
+        <seeElement selector="{{VeniaCategorySection.filterButton}}" stepKey="assertFilterButtonExists"/>
+        <seeElement selector="{{VeniaCategorySection.sortButton}}" stepKey="assertSortButtonExists"/>
+        <seeElement selector="{{VeniaCategorySection.galleryItems}}" stepKey="assertProductContainerExists"/>
+    </actionGroup>
+</actionGroups>

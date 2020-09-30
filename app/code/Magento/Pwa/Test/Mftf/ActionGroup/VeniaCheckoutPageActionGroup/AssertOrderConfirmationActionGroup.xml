@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertOrderConfirmation">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.fixedShippingDisplay}}" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.orderConfirmationRoot}}" stepKey="waitForCheckoutPageToLoad"/>
+        <see userInput="Thank you for your order!" stepKey="seeOrderConfirmationMessage"/>
+        <see userInput="Order Number: " stepKey="seeOrderNumber"/>
+        <see userInput="{{customer.emailCheck}}" stepKey="seeEmailExists"/>
+        <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
+        <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
+        <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
+        <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
+        <see userInput="{{customer.country}}" stepKey="seeCountryExists"/>
+        <dontSee userInput="{{customer.phone}}" stepKey="dontSeePhoneNumberExists"/>
+        <see userInput="{{shippingMethod}}" stepKey="seeShippingMethod"/>
+    </actionGroup>
+</actionGroups>

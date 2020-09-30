@@ -15,14 +15,15 @@
             <title value="user should be able to access the Categories via Home page and from Main Menu left drawer."/>
             <description value="user should be able to access the Categories via Home page and from Main Menu left drawer."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-34051"/>
+            <testCaseId value="MC-35878"/>
             <group value="PWA"/>
+            <group value="Smoke"/>
         </annotations>
 
         <before>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
-
+        
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu">
             <argument name="categoryName" value="Bottoms"/>
         </actionGroup>
@@ -34,6 +35,7 @@
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
+
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1"/>
         <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu1"/>
         <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay2">
@@ -42,5 +44,6 @@
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
         <click selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="clickOnShopTheLookButton"/>
+
     </test>
 </tests>

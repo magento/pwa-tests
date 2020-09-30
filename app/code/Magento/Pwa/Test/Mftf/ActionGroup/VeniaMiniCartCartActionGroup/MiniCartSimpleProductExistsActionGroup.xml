@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertMiniCartSimpleProductExists">
+        <arguments>
+            <argument name="product" defaultValue="CarminaEarrings"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="waitForProductImageToDisplay"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="assertProductImage"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductName(product.name)}}" stepKey="assertProductName"/>
+        <seeElement selector="{{VeniaMiniCartSection.miniCartProductQty(product.name, product.qty)}}" stepKey="assertProductQty"/>
+    </actionGroup>
+</actionGroups>

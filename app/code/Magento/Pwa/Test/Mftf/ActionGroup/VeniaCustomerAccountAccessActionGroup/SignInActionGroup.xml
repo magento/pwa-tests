@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="SignIn">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+            <argument name="customerEmail" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.email}}" stepKey="wait21"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.email}}" userInput="{{customerEmail}}" stepKey="fillUsername"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.password}}" stepKey="wait22"/>
+        <fillField selector="{{VeniaMainMenuSignInSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="wait23"/>
+        <click selector="{{VeniaMainMenuSignInSection.signIn}}" stepKey="clickSignIn2"/>
+    </actionGroup>
+</actionGroups>

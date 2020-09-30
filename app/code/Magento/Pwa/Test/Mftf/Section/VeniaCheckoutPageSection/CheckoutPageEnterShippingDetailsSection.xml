@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageEnterShippingDetailsSection">
+        <element name="guestEmail" type="input" selector="[class*='guestForm-email-'] input[name*='email']"/>
+        <element name="firstName" type="input" selector="[class*='textInput-input-'][name*='firstname']"/>
+        <element name="lastName" type="input" selector="[class*='textInput-input-'][name*='lastname']"/>
+        <element name="selectCountry" type="select" selector="[class*='select-input-'][name*='country']"/>
+        <element name="street" type="input" selector="[class*='textInput-input-'][name*='street[0]']"/>
+        <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street[1]']"/>
+        <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
+        <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
+        <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postcode']"/>
+        <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='telephone']"/>
+        <element name="submitShippingInfo" type="button" selector="//span[contains(text(), 'Continue to Shipping Method')]"/>
+    </section>
+</sections>

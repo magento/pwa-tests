@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CheckoutPageShippingInfoSection">
+        <element name="shippingInfoRoot" type="textarea" selector="//div[contains(@class, 'shippingInformation-root-')]"/>
+        <element name="shippingInfoHeader" type="text" selector="//h5[contains(text(), 'Shipping Information')]"/>
+        <element name="shippingInfoEditLink" type="button" selector="//span[contains(@class, 'shippingInformation-editText-')][contains(text(), 'Edit')]"/>
+    </section>
+</sections>

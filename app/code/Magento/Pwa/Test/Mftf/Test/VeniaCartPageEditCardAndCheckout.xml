@@ -15,9 +15,9 @@
             <title value="Edit product on cart page and checkout"/>
             <description value="Edit product on cart page and checkout"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-32298"/>
+            <testCaseId value="MC-35883"/>
             <group value="PWA"/>
-            <group value="Cart"/>
+            <group value="Smoke"/>
         </annotations>
 
         <before>
@@ -32,7 +32,8 @@
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
         </before>
-        <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+        <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
+        <actionGroup ref="ClickMiniCartEditShoppingBagLink" stepKey="goToCartPage"/>
         <actionGroup ref="CartPageGoToProductEditPanel" stepKey="goToCartPageEditPanel"/>
         <actionGroup ref="CartPageEditProductConfigurations" stepKey="editProductConfigurations"/>
         <actionGroup ref="VerifyUpdatedProductConfigurations" stepKey="verifyUpdatedProductConfigurationsOnCartPage"/>

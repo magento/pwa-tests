@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="CreateAccount">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
+        <wait time="3" stepKey="test1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="wait3"/>
+        <click selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="clickCreateAccountButton"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
+        <fillField selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
+        <grabValueFrom selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="customerEmail"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.firstName}}" stepKey="waitForPwaElementVisible2"/>
+        <fillField selector="{{VeniaMainMenuCreateAccountSection.firstName}}" userInput="{{Customer.first}}" stepKey="fillFirstName"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.lastName}}" stepKey="waitForPwaElementVisible3"/>
+        <fillField selector="{{VeniaMainMenuCreateAccountSection.lastName}}" userInput="{{Customer.last}}" stepKey="fillLastName"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.password}}" stepKey="waitForPwaElementVisible4"/>
+        <fillField selector="{{VeniaMainMenuCreateAccountSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword1"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.submit}}" stepKey="waitForPwaElementVisible6"/>
+        <click selector="{{VeniaMainMenuCreateAccountSection.submit}}" stepKey="clickSubmitButton"/>
+    </actionGroup>
+</actionGroups>

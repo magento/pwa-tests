@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="CartPageProductDetailsSection">
+        <element name="cartProductImage" type="button" selector="img[loading^='lazy'][alt='{{product_name}}'][class^='product-image']" parameterized="true"/>
+        <element name="cartProductName" type="button" selector="//a[contains(@class, 'product-name-')][contains(text(), '{{var_product_name}}')]" parameterized="true"/>
+        <element name="colorOption" type="button" selector="//li[./div/div/a[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]" parameterized="true"/>
+        <element name="sizeOption" type="button" selector="//li[./div/div/a[contains(text(), '{{product_name}}')]]//div/dd[contains(., '{{product_color}}')]/parent::div/following-sibling::div/dd[contains(., '{{product_size}}')]" parameterized="true"/>
+        <element name="productQty" type="input" selector="//li[./div/div/a[contains(text(), '{{product_name}}')]]//input[@name='quantity'][@value='{{product_qty}}']" parameterized="true"/>
+        <element name="productPrice" type="input" selector="//li[./div/div/a[contains(text(), '{{product_name}}')]]//span[contains(text(), '{{product_price}}')]" parameterized="true"/>
+    </section>
+</sections>

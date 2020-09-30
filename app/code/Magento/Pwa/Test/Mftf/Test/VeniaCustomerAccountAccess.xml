@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="CustomerAccountAccess">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Customer Account"/>
+            <title value="User should be able to create account on Venia storefront."/>
+            <description value="User should be able to create account on Venia storefront."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-35865"/>
+            <group value="PWA"/>
+            <group value="Smoke"/>
+        </annotations>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+
+        <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm" />
+        <actionGroup ref="CreateAccount" stepKey="createNewAccount"/>
+        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserAccountCreated"/>
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
+        <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm1" />
+        <actionGroup ref="SignIn" stepKey="signIntoAccount">
+            <argument name="customerEmail" value="$customerEmailCreateNewAccount"/>
+        </actionGroup>
+        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
+        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount1"/>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
+        <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm2"/>
+        <actionGroup ref="UpdatePassword" stepKey="forgotPassword">
+            <argument name="customerEmail" value="$customerEmailCreateNewAccount"/>
+        </actionGroup>
+
+    </test>
+</tests>
