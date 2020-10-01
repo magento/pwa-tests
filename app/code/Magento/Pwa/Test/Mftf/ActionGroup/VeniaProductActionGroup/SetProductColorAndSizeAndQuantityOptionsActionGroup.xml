@@ -15,6 +15,7 @@
         <waitForPwaElementVisible selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="waitFOrProducttoDisplay"/>
         <click selector="{{VeniaProductSection.productColorByValue(product.color)}}" stepKey="clickOnColorOption01"/>
         <click selector="{{VeniaProductSection.productSizeByValue(product.size)}}" stepKey="clickOnSizeOption01"/>
-        <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
+        <pressKey selector="{{VeniaProductSection.productQuantity}}" parameterArray="[\Facebook\WebDriver\WebDriverKeys::BACKSPACE]" stepKey="clearDefaultQty1"/>
+        <fillField selector="{{VeniaProductSection.productQuantity}}" userInput="{{product.qty}}" stepKey="selectProductQuantity01"/>
     </actionGroup>
 </actionGroups>

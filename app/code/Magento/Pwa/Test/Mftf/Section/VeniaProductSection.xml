@@ -17,7 +17,8 @@
         <element name="productSize" type="button" selector="//*[contains(@class, 'tileList-root-')]//span"/>
         <element name="productSizeByValue" type="button" selector="//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="productOptionByValue" type="button" selector="//*[contains(@class, 'tileList-root-')]//span[contains(text(), '{{var1}}')]" parameterized="true"/>
-        <element name="productQuantity" type="select" selector="[class*='quantity-root-'] [name*='quantity']"/>
+        <element name="productQuantity" type="input" selector="[class*='quantity-root-'] [name*='quantity']"/>
+        <element name="productQtyIncrease" type="button" selector="[class*='quantity-button_increment-']"/>
         <element name="addToCart" type="button" selector="[class*='productFullDetail-cartActions-'] button"/>
     </section>
 </sections>

@@ -35,7 +35,7 @@
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
-            <selectOption selector="{{VeniaProductSection.productQuantity}}" userInput="{{CarminaEarrings.qty}}" stepKey="selectProductQuantity01"/>
+            <click selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="updateProductQty"/>
             <actionGroup ref="AddToCart" stepKey="addToCart2">
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
