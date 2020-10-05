@@ -21,18 +21,6 @@
         </annotations>
 
         <before>
-            <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
-
-            <actionGroup ref="NavigateToSignInFormFromCart" stepKey="navigateToSignInForm" />
-
-            <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
-                <argument name="Customer" value="VeniaCustomer1"/>
-            </actionGroup>
-
-            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
-                <argument name="Customer" value="VeniaCustomer1"/>
-            </actionGroup>
-
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
@@ -40,7 +28,18 @@
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
             <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
-
+            <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
+            <actionGroup ref="VerifyConfigurableProductExists" stepKey="verifyProductsExistsWithRespectiveConfiguration"/>
+            <actionGroup ref="NavigateToSignInFormFromCart" stepKey="navigateToSignInForm" />
+            <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
+            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
+                <argument name="Customer" value="VeniaCustomer1"/>
+            </actionGroup>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
+                <argument name="cartQty" value="{{ValeriaTwoLayerTank.qty}}"/>
+            </actionGroup>
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
