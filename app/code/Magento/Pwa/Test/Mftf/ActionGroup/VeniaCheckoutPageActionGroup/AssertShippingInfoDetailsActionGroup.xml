@@ -14,13 +14,13 @@
         <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="waitForShippingRoot"/>
         <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="waitForShippingHeader"/>
         <waitForPwaElementVisible selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="waitForShippingEditLink"/>
-        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
-        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>
         <waitForText stepKey="seeEmailExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.emailCheck}}"/>
         <waitForText stepKey="seeFirstNameExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.first}}"/>
         <waitForText stepKey="seeLastNameExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.last}}"/>
         <waitForText stepKey="seePhoneNumberExists" selector="{{CheckoutPageShippingInfoSection.shippingInfoEmail}}" userInput="{{customer.phone}}"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoRoot}}" stepKey="assertGuestCheckoutHeadingExists"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoHeader}}" stepKey="assertShippingInfoHeaderExists"/>
+        <seeElement selector="{{CheckoutPageShippingInfoSection.shippingInfoEditLink}}" stepKey="assertShippingInfoEditLinkExists"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>

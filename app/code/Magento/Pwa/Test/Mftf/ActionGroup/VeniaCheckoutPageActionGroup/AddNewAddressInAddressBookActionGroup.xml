@@ -8,7 +8,7 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AddNewAddressInAddressBook">
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="waitForAddNewAddressElementToLoad"/>
         <click selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="clickOnSaveAndContinueMethod"/>
-        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 </actionGroups>

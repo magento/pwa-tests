@@ -6,14 +6,14 @@
   */
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="AssertAuthAddressBookShippingDetails">
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertAuthAddressBookSelectedShippingDetails">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
-        <waitForText stepKey="waitForFirstNameToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressCardRoot}}" userInput="{{customer.first}}"/>
-        <waitForText stepKey="waitForLastNameToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressCardRoot}}" userInput="{{customer.last}}"/>
-        <waitForText stepKey="waitForZipToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressCardRoot}}" userInput="{{customer.zipCode}}"/>
+        <waitForText stepKey="waitForFirstNameToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookSelectedRoot}}" userInput="{{customer.first}}"/>
+        <waitForText stepKey="waitForLastNameToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookSelectedRoot}}" userInput="{{customer.last}}"/>
+        <waitForText stepKey="waitForZipToLoad" selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookSelectedRoot}}" userInput="{{customer.zipCode}}"/>
         <see userInput="{{customer.first}}" stepKey="seeFirstNameExists"/>
         <see userInput="{{customer.last}}" stepKey="seeLastNameExists"/>
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>

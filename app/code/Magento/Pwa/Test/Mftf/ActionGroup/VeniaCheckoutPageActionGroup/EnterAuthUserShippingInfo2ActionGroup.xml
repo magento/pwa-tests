@@ -11,6 +11,8 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="waitForTextFieldToBeReady"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="waitForTextFieldToBeReady1"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
