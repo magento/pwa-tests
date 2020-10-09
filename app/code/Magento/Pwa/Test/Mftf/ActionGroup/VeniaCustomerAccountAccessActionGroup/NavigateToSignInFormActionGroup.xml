@@ -11,7 +11,6 @@
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
-        <!--<wait time="3" stepKey="test1"/>-->
         <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignIn"/>
     </actionGroup>
 </actionGroups>

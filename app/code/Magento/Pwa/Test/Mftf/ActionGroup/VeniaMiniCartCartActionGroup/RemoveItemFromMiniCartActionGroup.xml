@@ -13,6 +13,8 @@
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartDeleteProduct(product.name)}}" stepKey="waitForDeleteIconToDisplay"/>
         <click selector="{{VeniaMiniCartSection.miniCartDeleteProduct(product.name)}}" stepKey="clickOnDeleteIcon"/>
-        <wait time="5" stepKey="wait123"/>
+        <waitForPwaElementNotVisible selector="{{VeniaMiniCartSection.miniCartDeleteProduct(product.name)}}" stepKey="waitForProductToBeRemoved"/>
+        <waitForPwaElementNotVisible selector="{{VeniaMiniCartSection.miniCartProductImage(product.name)}}" stepKey="waitForProductToBeRemoved1"/>
+        <waitForPwaElementNotVisible selector="{{VeniaMiniCartSection.miniCartProductName(product.name)}}" stepKey="waitForProductToBeRemoved2"/>
     </actionGroup>
 </actionGroups>

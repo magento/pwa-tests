@@ -9,9 +9,7 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="GoToVeniaMobileStorefront">
         <resizeWindow width="375" height="812" stepKey="resizeWindowForMobile1"/>
-
         <amOnPage url="{{Venia.url}}" stepKey="goToVeniaStorefront1"/>
         <waitForPwaElementVisible selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="waitForPageToLoad1"/>
-        <wait time="5" stepKey="waitForElementToLoad1"/>
     </actionGroup>
 </actionGroups>

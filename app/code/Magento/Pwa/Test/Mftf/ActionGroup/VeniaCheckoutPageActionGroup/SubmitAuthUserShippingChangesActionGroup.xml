@@ -10,6 +10,5 @@
     <actionGroup name="SubmitAuthUserShippingChanges">
         <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="waitForApplyAddressButtonElementToLoad"/>
         <click selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="clickOnApplyButton"/>
-        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 </actionGroups>

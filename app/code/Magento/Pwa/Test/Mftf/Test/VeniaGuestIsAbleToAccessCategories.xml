@@ -44,6 +44,12 @@
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
         <click selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="clickOnShopTheLookButton"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay3">
+            <argument name="categoryDisplayName" value="Shop The Look"/>
+        </actionGroup>
+        <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage">
+            <argument name="urlString" value="/shop-the-look.html?page=1"/>
+        </actionGroup>
 
     </test>
 </tests>

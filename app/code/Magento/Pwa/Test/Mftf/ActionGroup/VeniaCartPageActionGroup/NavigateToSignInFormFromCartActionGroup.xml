@@ -11,7 +11,6 @@
         <waitForPwaElementVisible selector="{{VeniaCartPageSection.signIn}}" stepKey="wait1"/>
         <click selector="{{VeniaCartPageSection.signIn}}" stepKey="clickSignInOnCartPage"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
-        <!--<wait time="3" stepKey="wait3"/>-->
         <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignInOnLeftPanel"/>
     </actionGroup>
 </actionGroups>

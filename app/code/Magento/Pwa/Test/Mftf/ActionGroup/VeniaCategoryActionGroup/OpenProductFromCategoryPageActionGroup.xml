@@ -12,11 +12,10 @@
             <argument name="productName" type="string"/>
             <argument name="categoryName" type="string"/>
         </arguments>
-
+        <waitForPwaElementVisible selector="{{productName}}" stepKey="waitForElementToLoad1"/>
         <click selector="{{productName}}" stepKey="clickOnProductImage1"/>
         <waitForPwaElementNotVisible selector="{{VeniaStorefrontSection.productImage(categoryName)}}" stepKey="waitForPwaElementNotVisible1"/>
         <waitForPwaElementVisible selector="{{VeniaProductSection.productName}}" stepKey="waitForPwaElementVisible1"/>
-        <wait time="5" stepKey="temporaryStaticWait1"/>
         <seeElement selector="{{VeniaProductSection.productName}}" stepKey="assertProductIsVisible1"/>
     </actionGroup>
 </actionGroups>

@@ -13,7 +13,6 @@
             <argument name="productDetails" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="waitForSearchItemToLoad1"/>
-        <!--<wait time="5" stepKey="waitForElementToLoad"/>-->
         <seeElement selector="{{VeniaSearchResultSection.productImage(productDetails)}}" stepKey="seeSearchedResults"/>
         <see userInput="{{productDetails}}" stepKey="seeSearchedResult"/>
     </actionGroup>

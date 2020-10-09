@@ -9,7 +9,6 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertNoSearchResults">
         <waitForPwaElementVisible selector="{{VeniaSearchResultSection.resultSection}}" stepKey="waitForSearchItemToLoad1"/>
-        <!--<wait time="8" stepKey="waitForElementToLoad1"/>-->
         <see userInput="No results found!" stepKey="seeNoResultsAreDisplayed"/>
     </actionGroup>
 </actionGroups>

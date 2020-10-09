@@ -12,7 +12,6 @@
         <arguments>
             <argument name="searchData" type="string"/>
         </arguments>
-        <!--<wait time="3" stepKey="waitForElementToLoad1"/>-->
         <waitForPwaElementVisible selector="{{VeniaHeaderSection.searchInput}}" stepKey="waitForSearchFieldToLoad"/>
         <pressKey selector="{{VeniaHeaderSection.searchInput}}" parameterArray="['{{searchData}}',\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="inputSearchStringAndPressEnter"/>
     </actionGroup>

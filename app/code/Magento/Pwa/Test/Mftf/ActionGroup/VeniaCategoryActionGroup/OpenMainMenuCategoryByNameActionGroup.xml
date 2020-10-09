@@ -14,6 +14,7 @@
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="wait2"/>
+        <!--This is needed else test will fail randomly-->
         <wait time="2" stepKey="temporaryStaticWait"/>
         <click selector="{{VeniaMainMenuSection.categoryByName(categoryName.name)}}" stepKey="clickOnCategoryName1"/>
     </actionGroup>
