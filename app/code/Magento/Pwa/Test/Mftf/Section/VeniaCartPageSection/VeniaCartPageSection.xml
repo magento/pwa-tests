@@ -12,5 +12,7 @@
         <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
         <element name="signIn" type="button" selector="//div[contains(@class, 'cartPage-heading_container-')]//span[contains(text(), 'Sign In')]"/>
         <element name="checkout" type="button" selector="//button[contains(@class, 'button-root_highPriority-')]/span[contains(text(), 'Proceed to Checkout')]"/>
+        <element name="checkoutDisabled" type="button" selector="button[class*='button-root_highPriority-'] disabled"/>
+        <element name="priceSummary" type="block" selector="div[class*='priceSummary-root-'] div[class*='priceSummary-lineItems-']"/>
     </section>
 </sections>

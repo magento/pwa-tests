@@ -8,11 +8,13 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AddGiftOptions">
+        <waitForPwaElementVisible selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="waitForGiftAccordionToLoad"/>
         <click selector="{{CartPageGiftOptionsSection.giftOptionsAccordion}}" stepKey="expandGiftOptionsAccordion"/>
-        <wait time="2" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="waitForGiftReceipt"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftOptionsSection.includePrintedCard}}" stepKey="waitForPrintCard"/>
         <click selector="{{CartPageGiftOptionsSection.includeGiftReceipt}}" stepKey="checkGiftReceiptCheckBox"/>
         <click selector="{{CartPageGiftOptionsSection.includePrintedCard}}" stepKey="checkPrintCardCheckBox"/>
-        <wait time="1" stepKey="wait4"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftOptionsSection.addGiftMessage}}" stepKey="waitForGiftMsgField"/>
         <fillField selector="{{CartPageGiftOptionsSection.addGiftMessage}}" userInput="Test message for gift options" stepKey="enterTestGiftMessage"/>
         <see userInput="Include gift receipt" stepKey="seeGiftLabelExists"/>
         <see userInput="Include printed card" stepKey="seePrintCardLabelExists"/>

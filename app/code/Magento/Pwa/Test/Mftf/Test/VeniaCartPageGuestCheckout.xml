@@ -24,20 +24,15 @@
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
-
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
                 <argument name="product" value="IsadoraSkirt"/>
             </actionGroup>
-
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithDifferentConfigurations">
                 <argument name="product" value="IsadoraSkirt"/>
             </actionGroup>
-
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad1"/>
             <actionGroup ref="AddToCart" stepKey="addToCart2"/>
         </before>
 
