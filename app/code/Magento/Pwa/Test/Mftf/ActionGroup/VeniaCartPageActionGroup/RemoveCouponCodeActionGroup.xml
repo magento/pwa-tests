@@ -11,8 +11,10 @@
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="waitForRemoveLinkToBeReady"/>
         <click selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="removeCouponCode"/>
-        <wait time="5" stepKey="wait5"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.couponCode}}" stepKey="waitForCouponTextFieldToDisplay"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="waitForApplyCouponButtonToDisplay"/>
         <seeElement selector="{{CartPageCouponCodeSection.couponCode}}" stepKey="seeCouponCodeTextField"/>
         <seeElement selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="seeApplyButton"/>
         <dontSee userInput="{{discount.CouponCode}}" stepKey="doNotAppliedCouponCode"/>

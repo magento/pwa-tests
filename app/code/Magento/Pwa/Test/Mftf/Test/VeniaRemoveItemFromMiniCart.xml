@@ -27,7 +27,6 @@
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
             <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
                 <argument name="cartQty" value="{{ValeriaTwoLayerTank.qty}}"/>

@@ -24,15 +24,8 @@
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
-
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
-
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
-
-            <actionGroup ref="TemporaryWait5" stepKey="waitForElementToLoad5"/>
-
         </before>
 
         <actionGroup ref="GoToCartPage" stepKey="removeItemFromTheCartPage"/>
@@ -40,6 +33,5 @@
         <actionGroup ref="AddGiftCard" stepKey="addGiftCard"/>
         <actionGroup ref="RemoveCouponCode" stepKey="removeCouponCode"/>
         <actionGroup ref="RemoveGiftCard" stepKey="removeGiftCard"/>
-
     </test>
 </tests>
