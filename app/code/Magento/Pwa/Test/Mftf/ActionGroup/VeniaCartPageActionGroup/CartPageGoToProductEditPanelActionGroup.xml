@@ -11,12 +11,11 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="waitForKebabMenuToDisplay"/>
         <click selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
-        <wait time="3" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{CartPageKebabSection.editItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{CartPageKebabSection.editItem}}" stepKey="clickOnEditItem"/>
         <waitForPwaElementVisible selector="{{EditPanelSection.updateCart}}" stepKey="waitForEditPanelToDisplay"/>
-        <wait time="5" stepKey="temporaryWait"/>
         <seeElement selector="{{EditPanelSection.updateCart}}" stepKey="checkForEditPanelDisplay"/>
     </actionGroup>
 </actionGroups>

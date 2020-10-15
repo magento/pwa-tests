@@ -11,9 +11,10 @@
         <arguments>
             <argument name="Customer" defaultValue="VeniaCustomer1"/>
         </arguments>
-        <!--Remove this hard coded wait once waitForPwaElementVisisble method works properly-->
-        <wait time="3" stepKey="test1"/>
-        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="wait3"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.navigationModal}}" stepKey="waitForModal"/>
+        <waitForPwaElementVisible selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="waitForCreateAccount"/>
+        <!--This is needed else test will fail randomly-->
+        <wait time="1" stepKey="waitForElementToLoad"/>
         <click selector="{{VeniaMainMenuSignInSection.createAnAccount}}" stepKey="clickCreateAccountButton"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
         <fillField selector="{{VeniaMainMenuCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>

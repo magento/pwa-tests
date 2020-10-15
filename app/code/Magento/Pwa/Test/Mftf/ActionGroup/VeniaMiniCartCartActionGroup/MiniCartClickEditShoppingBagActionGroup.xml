@@ -10,6 +10,5 @@
     <actionGroup name="ClickMiniCartEditShoppingBagLink">
         <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartEditCart}}" stepKey="waitForProductToGetAdded"/>
         <click selector="{{VeniaMiniCartSection.miniCartEditCart}}" stepKey="clickOnMiniCartIcon"/>
-        <wait time="5" stepKey="temporaryStaticWait1"/>
     </actionGroup>
 </actionGroups>

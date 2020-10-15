@@ -11,8 +11,11 @@
         <arguments>
             <argument name="categoryDisplayName" type="string"/>
         </arguments>
-        <wait time="5" stepKey="temporaryStaticWait"/>
-        <seeElement selector="{{VeniaCategorySection.categoryTitle(categoryDisplayName)}}" stepKey="assertcategoryTitleexists"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.categoryTitle(categoryDisplayName)}}" stepKey="waitForCategoryTittle"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.filterButton}}" stepKey="waitForFilterButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.sortButton}}" stepKey="waitForSortButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.galleryItems}}" stepKey="waitForProductContainer"/>
+        <seeElement selector="{{VeniaCategorySection.categoryTitle(categoryDisplayName)}}" stepKey="assertCategoryTitleExists"/>
         <seeElement selector="{{VeniaCategorySection.filterButton}}" stepKey="assertFilterButtonExists"/>
         <seeElement selector="{{VeniaCategorySection.sortButton}}" stepKey="assertSortButtonExists"/>
         <seeElement selector="{{VeniaCategorySection.galleryItems}}" stepKey="assertProductContainerExists"/>

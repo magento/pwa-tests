@@ -8,7 +8,7 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="SubmitAuthUserShippingChanges">
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="waitForApplyAddressButtonElementToLoad"/>
         <click selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="clickOnApplyButton"/>
-        <wait time="5" stepKey="temporaryWait"/>
     </actionGroup>
 </actionGroups>

@@ -11,11 +11,13 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="waitForKebabMenuToDisplay"/>
         <click selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="clickOnKebabMenu"/>
-        <wait time="3" stepKey="wait123"/>
         <waitForPwaElementVisible selector="{{CartPageKebabSection.removeItem}}" stepKey="waitForKebabMenuToExpand"/>
         <click selector="{{CartPageKebabSection.removeItem}}" stepKey="clickOnRemoveItem"/>
-        <wait time="10" stepKey="wait1234"/>
+        <waitForPwaElementNotVisible selector="{{CartPageKebabSection.removeItem}}" stepKey="waitForProductToBeRemoved2"/>
+        <waitForPwaElementNotVisible selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="waitForProductToBeRemoved1"/>
+        <waitForPwaElementNotVisible selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="waitForProductToBeRemoved"/>
         <see userInput="There are no items in your cart." stepKey="seeEmptyCartText"/>
         <dontSee userInput="{{product.name}}" stepKey="dontSeeProductInCart"/>
         <seeElement selector="{{VeniaCartPageSection.signIn}}" stepKey="checkForSignInButton"/>

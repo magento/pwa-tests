@@ -38,12 +38,12 @@
             </actionGroup>
 
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
+            <waitForPwaElementVisible selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="waitForQtyButtonToBeReady"/>
             <click selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="updateProductQty"/>
             <actionGroup ref="AddToCart" stepKey="addToCart2">
                 <argument name="product" value="CarminaEarrings"/>
@@ -81,13 +81,14 @@
         <actionGroup ref="SaveAddressBookShippingInfo" stepKey="clickOnAddButton"/>
         <actionGroup ref="AssertAuthAddressBookDefaults" stepKey="assertAuthAddressBookDefaultLinksLabels1"/>
         <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping1"/>
-        <actionGroup ref="AssertAuthAddressBookShippingDetails" stepKey="assertAuthAddressBookShipping2">
+        <actionGroup ref="AssertAuthAddressBookSelectedShippingDetails" stepKey="assertAuthAddressBookShipping2">
             <argument name="customer" value="VeniaCustomer2"/>
         </actionGroup>
         <actionGroup ref="SubmitAuthUserShippingChanges" stepKey="clickOnApplyButton"/>
         <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyUpdatedShippingInformation">
             <argument name="customer" value="AuthUserUpdatedData"/>
         </actionGroup>
+        <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" stepKey="waitForCardHolderName1"/>
         <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName"/>
         <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails"/>
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>

@@ -10,6 +10,5 @@
     <actionGroup name="ClickCheckoutInMiniCart">
         <waitForPwaElementVisible selector="{{VeniaMiniCartSection.miniCartCheckout}}" stepKey="waitForCheckoutButtonToDisplay"/>
         <click selector="{{VeniaMiniCartSection.miniCartCheckout}}" stepKey="clickOnCheckoutButton"/>
-        <wait time="5" stepKey="temporaryStaticWait1"/>
     </actionGroup>
 </actionGroups>

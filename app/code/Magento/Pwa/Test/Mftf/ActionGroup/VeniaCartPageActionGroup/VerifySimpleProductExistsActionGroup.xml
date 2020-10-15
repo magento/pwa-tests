@@ -11,6 +11,8 @@
         <arguments>
             <argument name="product" defaultValue="CarminaEarrings"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="waitForKebabMenuToBeReady"/>
+        <waitForPwaElementVisible selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="waitForProductNameElementToBeReady"/>
         <seeElement selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="assertKebabMenuExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQty"/>

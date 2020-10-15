@@ -8,7 +8,7 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="SubmitAuthUserShippingInfo">
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.submitShippingInfo}}" stepKey="waitForElementToLoad"/>
         <click selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.submitShippingInfo}}" stepKey="clickOnSaveAndContinueMethod"/>
-        <wait time="15" stepKey="temporaryWait"/>
     </actionGroup>
 </actionGroups>

@@ -11,13 +11,17 @@
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.giftCardAccordion}}" stepKey="waitForGiftCardAccordionToLoad"/>
         <click selector="{{CartPageGiftCardSection.giftCardAccordion}}" stepKey="expandGiftCardAccordion"/>
-        <wait time="2" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="waitForCheckBalanceLinkToBeReady"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.giftCardCode}}" stepKey="waitForGiftCardTextFieldToBeReady"/>
         <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink"/>
         <fillField selector="{{CartPageGiftCardSection.giftCardCode}}" userInput="{{discount.GiftCard}}" stepKey="enterGiftCardCode"/>
-        <wait time="1" stepKey="wait4"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="waitForApplyGiftCardButtonToBeReady"/>
         <click selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="applyCouponCode"/>
-        <wait time="5" stepKey="wait5"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="waitForRemoveGiftCardLinkToDisplay"/>
+        <waitForText selector="{{CartPageGiftCardSection.giftCardApplied}}" userInput="{{discount.GiftCard}}" stepKey="waitForGiftCardToBeApplied"/>
+        <waitForText selector="{{VeniaCartPageSection.priceSummary}}" userInput="Gift Card(s) applied" stepKey="waitForPriceSummaryToUpdate"/>
         <seeElement selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="verifyRemoveGiftCardLink"/>
         <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink2"/>
         <see userInput="{{discount.GiftCard}}" stepKey="seeAppliedGiftCard"/>

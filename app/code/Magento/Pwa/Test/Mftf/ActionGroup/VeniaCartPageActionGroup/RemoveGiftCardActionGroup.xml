@@ -11,8 +11,12 @@
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="waitForGiftCardRemoveLink"/>
         <click selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="removeGiftCard"/>
-        <wait time="5" stepKey="wait5"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.giftCardCode}}" stepKey="waitForGiftCardField"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="waitForGiftCardApplyButton"/>
+        <waitForPwaElementVisible selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="waitForGiftCardCheckBalanceLink"/>
+        <waitForPwaElementNotVisible selector="{{CartPageGiftCardSection.removeGiftCard}}" stepKey="verifyGiftCardRemoveLinkIsNoMoreDisplayed"/>
         <seeElement selector="{{CartPageGiftCardSection.giftCardCode}}" stepKey="seeGiftCardTextField"/>
         <seeElement selector="{{CartPageGiftCardSection.applyGiftCard}}" stepKey="seeApplyGiftCardButton"/>
         <seeElement selector="{{CartPageGiftCardSection.giftCardCheckBalance}}" stepKey="assertCheckGiftCardBalanceLink"/>

@@ -11,6 +11,7 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="waitForProductName"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertProductColorExists"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.sizeOption(product.name, product.color1, product.size1)}}" stepKey="assertProductSizeExists"/>

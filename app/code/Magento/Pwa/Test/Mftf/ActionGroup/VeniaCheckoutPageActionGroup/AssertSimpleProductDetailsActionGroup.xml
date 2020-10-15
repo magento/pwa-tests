@@ -11,6 +11,8 @@
         <arguments>
             <argument name="product" defaultValue="CarminaEarrings"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="waitForProductNameToDisplay"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="waitForProductQtyToDisplay"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.productName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CheckoutPageProductDetailsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
     </actionGroup>

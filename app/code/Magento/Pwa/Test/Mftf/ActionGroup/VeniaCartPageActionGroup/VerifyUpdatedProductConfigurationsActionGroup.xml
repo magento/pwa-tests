@@ -11,7 +11,8 @@
         <arguments>
             <argument name="product" defaultValue="ValeriaTwoLayerTank"/>
         </arguments>
-        <wait time="5" stepKey="temporaryWait"/>
+        <waitForPwaElementVisible selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="waitForKebabMenu"/>
+        <waitForPwaElementVisible selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="waitForProductName"/>
         <seeElement selector="{{CartPageKebabSection.kebabMenu(product.name)}}" stepKey="assertKebabMenuExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="assertProductNameExists"/>
         <seeElement selector="{{CartPageProductDetailsSection.colorOption(product.name, product.color1)}}" stepKey="assertUpdatedProductColorExists"/>

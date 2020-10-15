@@ -11,18 +11,22 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.shippingAccordion}}" stepKey="waitForShippingAccordionToLoad"/>
         <click selector="{{CartPageShippingSection.shippingAccordion}}" stepKey="expandShippingAccordion"/>
-        <wait time="2" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.estimateShippingLink}}" stepKey="waitForEstShippingLinkToLoad"/>
         <click selector="{{CartPageShippingSection.estimateShippingLink}}" stepKey="clickEstimateShippingLink"/>
-        <wait time="2" stepKey="wait2"/>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.selectState}}" stepKey="waitForStateToLoad"/>
+        <waitForText selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="waitForStateTextToLoad"/>
         <selectOption selector="{{CartPageShippingSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
-        <wait time="2" stepKey="wait3"/>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.zipCode}}" stepKey="waitForZipToLoad"/>
         <fillField selector="{{CartPageShippingSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
-        <wait time="1" stepKey="wait4"/>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="waitForGetShippingOptionsButtonToLoad"/>
         <click selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="getShippingOptions"/>
-        <wait time="5" stepKey="wait5"/>
+        <waitForPwaElementNotVisible selector="{{CartPageShippingSection.getShippingOptions}}" stepKey="verifyGetShippingButtonDoesNotDisplay"/>
+        <waitForPwaElementVisible selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="waitForFlatRateShippingMethodToDisplay"/>
         <click selector="{{CartPageShippingSection.shippingMethodFixed}}" stepKey="selectFlatRateShipping"/>
-        <wait time="5" stepKey="wait6"/>
-        <see userInput="Estimated Shipping" stepKey="seeShippingMethodInPriceSummary"/>
+        <waitForPwaElementNotVisible selector="{{VeniaCartPageSection.checkoutDisabled}}" stepKey="verifyUpdateIsComplete"/>
+        <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="verifyUpdateIsComplete1"/>
+        <waitForText selector="{{VeniaCartPageSection.priceSummary}}" userInput="Estimated Shipping" stepKey="waitForPriceSummaryToUpdate1"/>
     </actionGroup>
 </actionGroups>

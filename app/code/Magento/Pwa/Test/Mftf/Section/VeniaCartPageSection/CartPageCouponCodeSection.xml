@@ -12,5 +12,6 @@
         <element name="couponCode" type="input" selector="[id='couponCode']"/>
         <element name="applyCoupon" type="button" selector="//form[contains(@class, 'couponCode-entryForm-')]//span[contains(text(), 'Apply')]"/>
         <element name="removeCoupon" type="button" selector="//button[contains(@class, 'couponCode-removeButton-')]/span[contains(text(), 'Remove')]"/>
+        <element name="couponCodeApplied" type="text" selector="//div[contains(@class, 'section-contents_container')]//span[contains(text(), '{{var_coupon_code}}')]" parameterized="true"/>
     </section>
 </sections>

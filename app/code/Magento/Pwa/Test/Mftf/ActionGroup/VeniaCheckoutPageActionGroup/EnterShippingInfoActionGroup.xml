@@ -11,6 +11,7 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" stepKey="waitForGuestEmailFieldToBeReady"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" stepKey="clearFieldInputIfAny"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" userInput="{{customer.email}}" stepKey="enterEmail"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" stepKey="clearFieldInputIfAny1"/>

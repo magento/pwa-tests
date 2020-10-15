@@ -28,10 +28,12 @@
             </actionGroup>
 
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
 
         </before>
+        <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter1">
+            <argument name="cartQty" value="2"/>
+        </actionGroup>
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
         <actionGroup ref="ClickMiniCartEditShoppingBagLink" stepKey="goToCartPage"/>
         <actionGroup ref="CartPageGoToProductEditPanel" stepKey="goToCartPageEditPanel"/>
@@ -49,6 +51,7 @@
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyShippingMethodDetails">
             <argument name="shippingMethod" value="{{ShippingMethods.freeShipping}}"/>
         </actionGroup>
+        <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" stepKey="waitForCardHolderName"/>
         <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName"/>
         <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails"/>
         <actionGroup ref="ReviewOrder" stepKey="clickOnReviewOrder"/>
@@ -77,8 +80,8 @@
         <actionGroup ref="SelectShippingMethod" stepKey="selectShippingMethod"/>
         <actionGroup ref="UpdateShippingMethod" stepKey="updateShippingMethod"/>
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyUpdatedShippingMethodDetails"/>
-
         <actionGroup ref="EditPaymentInfo" stepKey="clickOnEditPaymentMethodLink"/>
+        <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" stepKey="waitForCardHolderName1"/>
         <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.updatedCardHolderName}}" stepKey="enterCardHolderName2"/>
         <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails2"/>
         <actionGroup ref="EnableBillingForm" stepKey="enableBillingInfo"/>
@@ -86,7 +89,6 @@
         <actionGroup ref="UpdatePaymentInfo" stepKey="updatePaymentMethod"/>
         <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails2"/>
         <actionGroup ref="AssertBillingInfoDetails" stepKey="assertBillingInfo"/>
-
         <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
         <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">
             <argument name="customer" value="VeniaCustomer2"/>

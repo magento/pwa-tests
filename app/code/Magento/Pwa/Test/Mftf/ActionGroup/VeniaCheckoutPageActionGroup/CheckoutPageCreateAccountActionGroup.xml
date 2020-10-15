@@ -11,8 +11,11 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.passwordField}}" stepKey="waitForPasswordFieldToLoad"/>
         <fillField selector="{{CheckoutPageOrderConfirmation.passwordField}}" userInput="{{customer.password}}" stepKey="enterPassword"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="waitForCreateAccountButton"/>
         <click selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="clickOnCreateAccount"/>
-        <wait time="5" stepKey="temporaryWait"/>
+        <waitForPwaElementNotVisible selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="waitForCreateAccountSuccess"/>
+        <waitForPwaElementNotVisible selector="{{CheckoutPageOrderConfirmation.passwordField}}" stepKey="waitForCreateAccountSuccess1"/>
     </actionGroup>
 </actionGroups>

@@ -10,11 +10,9 @@
     <actionGroup name="SignOut">
         <waitForPwaElementVisible selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="waitForSignOutButtonToLoad"/>
         <click selector="{{VeniaMainMenuUserAccountSection.signOut}}" stepKey="clickOnSignOut"/>
-        <wait time="3" stepKey="temporaryStaticWait2"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
-        <wait time="2" stepKey="waitForElementToLoad"/>
         <see userInput="Sign In" stepKey="seeSignInButtonPresent"/>
         <dontSee userInput="Sign Out" stepKey="dontSeeSignOutButton"/>
     </actionGroup>

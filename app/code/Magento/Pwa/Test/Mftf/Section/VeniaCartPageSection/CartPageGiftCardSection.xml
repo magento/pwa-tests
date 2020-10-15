@@ -13,5 +13,6 @@
         <element name="applyGiftCard" type="button" selector="//div[contains(@class, 'giftCards-card-')]//span[contains(text(), 'Apply')]"/>
         <element name="removeGiftCard" type="button" selector="//div[contains(@class, 'giftCards-cards_container-')]//span[contains(text(), 'Remove')]"/>
         <element name="giftCardCheckBalance" type="button" selector="//span[contains(text(), 'Check balance')]"/>
+        <element name="giftCardApplied" type="block" selector="div[class*='giftCard-card_info-']"/>
     </section>
 </sections>

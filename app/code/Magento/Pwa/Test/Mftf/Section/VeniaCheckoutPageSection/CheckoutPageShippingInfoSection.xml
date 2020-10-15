@@ -11,5 +11,6 @@
         <element name="shippingInfoRoot" type="textarea" selector="//div[contains(@class, 'shippingInformation-root-')]"/>
         <element name="shippingInfoHeader" type="text" selector="//h5[contains(text(), 'Shipping Information')]"/>
         <element name="shippingInfoEditLink" type="button" selector="//span[contains(@class, 'shippingInformation-editText-')][contains(text(), 'Edit')]"/>
+        <element name="shippingInfoEmail" type="text" selector="[class*='shippingInformation-root-'] div[class*='card-root-']"/>
     </section>
 </sections>

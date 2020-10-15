@@ -11,14 +11,17 @@
         <arguments>
             <argument name="discount" defaultValue="CartPromotion"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.couponCodeAccordion}}" stepKey="waitForCouponAccordionToLoad"/>
         <click selector="{{CartPageCouponCodeSection.couponCodeAccordion}}" stepKey="expandCouponAccordion"/>
-        <wait time="2" stepKey="wait1"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.couponCode}}" stepKey="waitForCouponCodeFieldToLoad"/>
         <fillField selector="{{CartPageCouponCodeSection.couponCode}}" userInput="{{discount.CouponCode}}" stepKey="enterCouponCode"/>
-        <wait time="1" stepKey="wait4"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="waitForApplyCouponButtonToLoad"/>
         <click selector="{{CartPageCouponCodeSection.applyCoupon}}" stepKey="applyCouponCode"/>
-        <wait time="10" stepKey="wait5"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="waitForRemoveCouponLinkToLoad"/>
+        <waitForPwaElementNotVisible selector="{{VeniaCartPageSection.checkoutDisabled}}" stepKey="verifyUpdateIsComplete"/>
         <seeElement selector="{{CartPageCouponCodeSection.removeCoupon}}" stepKey="verifyRemoveCodeLink"/>
-        <see userInput="{{discount.CouponCode}}" stepKey="seeAppliedCouponCode"/>
-        <see userInput="Discounts applied" stepKey="seeAppliedDiscountLabel"/>
+        <waitForPwaElementVisible selector="{{CartPageCouponCodeSection.couponCodeApplied(discount.CouponCode)}}" stepKey="waitForCouponToBeApplied"/>
+        <seeElement selector="{{CartPageCouponCodeSection.couponCodeApplied(discount.CouponCode)}}" stepKey="verifyAppliedCouponElementExists"/>
+        <waitForText selector="{{VeniaCartPageSection.priceSummary}}" userInput="Discounts applied" stepKey="waitForPriceSummaryToUpdate1"/>
     </actionGroup>
 </actionGroups>

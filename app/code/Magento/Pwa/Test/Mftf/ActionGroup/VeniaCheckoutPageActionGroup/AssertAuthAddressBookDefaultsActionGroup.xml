@@ -8,6 +8,10 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertAuthAddressBookDefaults">
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookRoot}}" stepKey="waitForAddressBookRootToLoad"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.cancelAddressChange}}" stepKey="waitForCancelButtonToLoad"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.addNewAddress}}" stepKey="waitForAddNewAddressCardToLoad"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageAuthUserChangeShippingSection.editAddress}}" stepKey="waitForEditLinkToLoad"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.addressBookRoot}}" stepKey="assertChangeShippingRootExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.cancelAddressChange}}" stepKey="assertCancelButtonExists"/>
         <seeElement selector="{{CheckoutPageAuthUserChangeShippingSection.applyAddressChange}}" stepKey="assertAddButtonExists"/>

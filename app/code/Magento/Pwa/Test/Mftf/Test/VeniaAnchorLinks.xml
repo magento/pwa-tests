@@ -27,14 +27,14 @@
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
-            <actionGroup ref="TemporaryWait3" stepKey="waitForElementToLoad"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
         </before>
 
         <actionGroup ref="TriggerMiniCart" stepKey="clickOnMiniCartIcon"/>
         <actionGroup ref="ClickCheckoutInMiniCart" stepKey="clickOnMiniCheckoutButton"/>
+        <actionGroup ref="AssertGuestCheckoutPage" stepKey="assertGuestUser"/>
         <actionGroup ref="AssertAnchorLink" stepKey="assertCorrectPage">
-            <argument name="urlString" value=".com/checkout"/>
+            <argument name="urlString" value="/checkout"/>
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>

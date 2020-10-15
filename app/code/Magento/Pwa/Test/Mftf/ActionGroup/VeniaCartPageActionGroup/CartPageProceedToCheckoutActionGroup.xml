@@ -10,6 +10,5 @@
     <actionGroup name="CartPageProceedToCheckout">
         <waitForPwaElementVisible selector="{{VeniaCartPageSection.checkout}}" stepKey="waitForCheckoutButtonToBeReady"/>
         <click selector="{{VeniaCartPageSection.checkout}}" stepKey="clickOnCheckoutButton"/>
-        <wait time="10" stepKey="temporaryWait"/>
     </actionGroup>
 </actionGroups>

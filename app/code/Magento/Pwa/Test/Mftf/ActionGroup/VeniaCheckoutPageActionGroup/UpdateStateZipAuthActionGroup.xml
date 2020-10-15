@@ -11,6 +11,8 @@
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.selectState}}" stepKey="waitForStateDropDownToBeReady"/>
+        <waitForText selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="waitForStateDropDownToBeReady1"/>
         <selectOption selector="{{CheckoutPageEnterAuthUserShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
