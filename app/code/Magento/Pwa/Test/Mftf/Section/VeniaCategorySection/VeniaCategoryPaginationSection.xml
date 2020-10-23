@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaCategoryPaginationSection">
+        <element name="moveToFirstPageDisabled" type="button" selector="button[aria-label*='move to the first page'] span[class^='navButton-icon_disabled-']"/>
+        <element name="moveToPreviousPageDisabled" type="button" selector="button[aria-label*='move to the previous page'] span[class^='navButton-icon_disabled-']"/>
+        <element name="moveToFirstPage" type="button" selector="button[aria-label*='move to the first page'] span[class^='navButton-icon-']"/>
+        <element name="moveToPreviousPage" type="button" selector="button[aria-label*='move to the previous page'] span[class^='navButton-icon-']"/>
+        <element name="moveToNextPageDisabled" type="button" selector="button[aria-label*='move to the next page'] span[class^='navButton-icon_disabled-']"/>
+        <element name="moveToLastPageDisabled" type="button" selector="button[aria-label*='move to the last page'] span[class^='navButton-icon_disabled-']"/>
+        <element name="moveToNextPage" type="button" selector="button[aria-label*='move to the next page'] span[class^='navButton-icon-']"/>
+        <element name="moveToLastPage" type="button" selector="button[aria-label*='move to the last page'] span[class^='navButton-icon-']"/>
+        <element name="activePage" type="button" selector="//div[contains(@class, 'pagination-root-')]/button[starts-with(@class, 'tile-root_active-')][starts-with(text(), '{{var_active_page_number}}')]" parameterized="true"/>
+        <element name="selectPage" type="button" selector="//div[contains(@class, 'pagination-root-')]/button[starts-with(@class, 'tile-root-')][starts-with(text(), '{{var_select_page_number}}')]" parameterized="true"/>
+    </section>
+</sections>

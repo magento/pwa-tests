@@ -11,5 +11,6 @@
     <element name="submitShippingInfo" type="button" selector="//span[contains(text(), 'Save and Continue')]"/>
     <element name="city" type="input" selector="//div[contains(@class, 'editModal-body-')]//input[contains(@name, 'city')]"/>
     <element name="selectState" type="select" selector="[class*='select-input-'][name*='region[region_id]']"/>
+    <element name="zipCode" type="input" selector="//div[contains(@class, 'editModal-body-')]//input[contains(@name, 'postcode')]"/>
 </section>
 </sections>

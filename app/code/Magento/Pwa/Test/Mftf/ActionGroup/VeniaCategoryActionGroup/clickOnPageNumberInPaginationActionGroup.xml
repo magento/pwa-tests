@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="clickOnPageNumberInPagination">
+        <arguments>
+            <argument name="selectNewPage" type="string" defaultValue="2"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.selectPage(selectNewPage)}}" stepKey="waitForPageNumberElementToLoad"/>
+        <click selector="{{VeniaCategoryPaginationSection.selectPage(selectNewPage)}}" stepKey="clickOnPageInPagination"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.galleryItems}}" stepKey="waitForProductContainer"/>
+    </actionGroup>
+</actionGroups>

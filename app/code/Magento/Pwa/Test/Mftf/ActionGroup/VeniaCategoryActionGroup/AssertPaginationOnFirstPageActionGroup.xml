@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertPaginationOnFirstPage">
+        <arguments>
+            <argument name="activePageNumber" type="string" defaultValue="1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.moveToFirstPageDisabled}}" stepKey="waitForMoveToFirstPageElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.moveToPreviousPageDisabled}}" stepKey="waitForMoveToPreviousPageElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.moveToNextPage}}" stepKey="waitForMoveToNextElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.moveToLastPage}}" stepKey="waitForMoveToLastElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategoryPaginationSection.activePage(activePageNumber)}}" stepKey="waitActivePageElementToLoad"/>
+        <seeElement selector="{{VeniaCategoryPaginationSection.moveToFirstPageDisabled}}" stepKey="assertMoveToFirstPageElementLoads"/>
+        <seeElement selector="{{VeniaCategoryPaginationSection.moveToPreviousPageDisabled}}" stepKey="assertMoveToPreviousPageElementLoads"/>
+        <seeElement selector="{{VeniaCategoryPaginationSection.moveToNextPage}}" stepKey="assertMoveToNextPageElementLoads"/>
+        <seeElement selector="{{VeniaCategoryPaginationSection.moveToLastPage}}" stepKey="assertMoveToLastPageElementLoads"/>
+        <seeElement selector="{{VeniaCategoryPaginationSection.activePage(activePageNumber)}}" stepKey="assertFirstPageIsSelected"/>
+        <seeInCurrentUrl url="page={{activePageNumber}}" stepKey="seeCorrectPage"/>
+    </actionGroup>
+</actionGroups>

@@ -15,7 +15,7 @@
             <title value="User should be able to create account on Venia storefront."/>
             <description value="User should be able to create account on Venia storefront."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-35865"/>
+            <testCaseId value="MC-38630"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

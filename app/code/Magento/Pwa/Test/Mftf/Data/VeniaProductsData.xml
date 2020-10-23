@@ -58,6 +58,7 @@
         <data key="valid_product_name1">Valeria Two-Layer Tank</data>
         <data key="valid_product_href1">/valeria-two-layer-tank.html</data>
         <data key="invalid_product_name">Valeriaxyz</data>
+        <data key="valid_category_name">Tops</data>
     </entity>
 
 </entities>

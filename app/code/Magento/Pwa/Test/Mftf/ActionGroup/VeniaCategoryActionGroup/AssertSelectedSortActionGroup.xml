@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertSelectedSort">
+        <arguments>
+            <argument name="selectedSort" type="string" defaultValue="Best Match"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.sortButton}}" stepKey="waitForSortButtonToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.selectedSortOptionDisplay(selectedSort)}}" stepKey="waitForSelectedSortDisplayMessage"/>
+        <click selector="{{VeniaCategorySection.sortButton}}" stepKey="clickOnSortButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.sortMenu}}" stepKey="waitForSortDropMenuToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.selectedSortOption(selectedSort)}}" stepKey="waitForSelectedSortToLoad"/>
+        <click selector="{{VeniaCategorySection.sortButton}}" stepKey="clickOnSortButtonToClose"/>
+    </actionGroup>
+</actionGroups>

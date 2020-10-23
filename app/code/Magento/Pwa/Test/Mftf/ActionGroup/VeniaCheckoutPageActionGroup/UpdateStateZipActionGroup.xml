@@ -14,7 +14,9 @@
         <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" stepKey="waitForStateDropDownToBeReady"/>
         <waitForText selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="waitForStateDropDownToBeReady1"/>
         <selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
-        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny"/>
-        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
+        <!--clearField is not clearing zip input, so have put this temporary fix-->
+        <pressKey selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" parameterArray="[\Facebook\WebDriver\WebDriverKeys::BACKSPACE, \Facebook\WebDriver\WebDriverKeys::BACKSPACE, \Facebook\WebDriver\WebDriverKeys::BACKSPACE, \Facebook\WebDriver\WebDriverKeys::BACKSPACE, \Facebook\WebDriver\WebDriverKeys::BACKSPACE]" stepKey="clearZipField"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearFieldInputIfAny123445"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode1"/>
     </actionGroup>
 </actionGroups>

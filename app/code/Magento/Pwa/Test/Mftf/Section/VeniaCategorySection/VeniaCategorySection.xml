@@ -16,7 +16,11 @@
         <element name="productPrice" type="text" selector="[class*='item-price-']"/>
         <element name="categoryTitle" type="text" selector="//div[contains(text(), '{{categoryName}}')]" parameterized="true"/>
         <element name="filterButton" type="button" selector="//span[contains(text(), 'Filter')]"/>
-        <element name="sortButton" type="button" selector="//span[contains(text(), 'Sort')]"/>
+        <element name="sortButton" type="button" selector="button[class*='productSort-sortButton-'] span[class*='button-content-']"/>
+        <element name="sortMenu" type="block" selector="div[class*='productSort-menu-']"/>
+        <element name="selectedSortOption" type="button" selector="//button/span[./span[contains(text(), '{{var_sort_option_selected}}')]]/span[contains(@class, 'icon-root-')]" parameterized="true"/>
+        <element name="selectSortOption" type="button" selector="//button[contains(@class, 'sortItem-root-')]//span[contains(text(), '{{var_sort_option}}')]" parameterized="true"/>
+        <element name="selectedSortOptionDisplay" type="text" selector="//div[contains(text(), 'Items sorted by ')]/span[contains(text(), '{{var_sort_option_selected}}')]" parameterized="true"/>
         <element name="galleryItems" type="text" selector="div[class*='gallery-items-']"/>
     </section>
 </sections>

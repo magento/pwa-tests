@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="SortProducts">
+        <arguments>
+            <argument name="selectSort" type="string" defaultValue="Price: Low to High"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.sortButton}}" stepKey="waitForSortButtonToLoad"/>
+        <click selector="{{VeniaCategorySection.sortButton}}" stepKey="clickOnSortButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.sortMenu}}" stepKey="waitForSortDropMenuToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.selectSortOption(selectSort)}}" stepKey="waitForSortOptionsToLoad"/>
+        <click selector="{{VeniaCategorySection.selectSortOption(selectSort)}}" stepKey="clickOnNewSort"/>
+        <waitForPwaElementVisible selector="{{VeniaCategorySection.galleryItems}}" stepKey="waitForProductContainer"/>
+    </actionGroup>
+</actionGroups>

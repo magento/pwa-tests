@@ -26,6 +26,7 @@
         <data key="name">Tops</data>
         <data key="is_active">true</data>
         <data key="include_in_menu">true</data>
+        <data key="url">/venia-tops.html</data>
     </entity>
 
     <entity name="Accessories" type="category">
