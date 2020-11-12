@@ -82,12 +82,16 @@
         <actionGroup ref="AssertShippingMethodDetails" stepKey="verifyUpdatedShippingMethodDetails"/>
         <actionGroup ref="EditPaymentInfo" stepKey="clickOnEditPaymentMethodLink"/>
         <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" stepKey="waitForCardHolderName1"/>
-        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.updatedCardHolderName}}" stepKey="enterCardHolderName2"/>
-        <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails2"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeMasterCard.updatedCardHolderName}}" stepKey="enterCardHolderName2"/>
+        <actionGroup ref="EnterCardDetails" stepKey="enterPaymentDetails2">
+            <argument name="creditCard" value="FakeMasterCard"/>
+        </actionGroup>
         <actionGroup ref="EnableBillingForm" stepKey="enableBillingInfo"/>
         <actionGroup ref="EnterBillingInfo" stepKey="updateBillingInfo"/>
         <actionGroup ref="UpdatePaymentInfo" stepKey="updatePaymentMethod"/>
-        <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails2"/>
+        <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails2">
+            <argument name="shortCardDescription" value="{{FakeMasterCard.shortDescription}}"/>
+        </actionGroup>
         <actionGroup ref="AssertBillingInfoDetails" stepKey="assertBillingInfo"/>
         <actionGroup ref="PlaceOrder" stepKey="placeOrder"/>
         <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">

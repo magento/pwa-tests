@@ -16,5 +16,14 @@
         <data key="cvvCode">123</data>
         <data key="cardHolderName">JohnTest SmithTest</data>
         <data key="updatedCardHolderName">Peterxyz Doe</data>
+        <data key="shortDescription">Visa ending in 1111</data>
+    </entity>
+
+    <entity name="FakeMasterCard" type="data">
+        <data key="fakeCardNumber">5555 5555 5555 4444</data>
+        <data key="expirationDate">0125</data>
+        <data key="cvvCode">123</data>
+        <data key="updatedCardHolderName">Peterxyz Doe</data>
+        <data key="shortDescription">MasterCard ending in 4444</data>
     </entity>
 </entities>

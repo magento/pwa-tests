@@ -9,8 +9,12 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="NavigateToSignInForm">
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="wait1"/>
+        <!--This is needed else test will fail randomly-->
+        <wait time="1" stepKey="waitForElementToLoad"/>
         <click selector="{{VeniaMainMenuSection.navTrigger}}" stepKey="expandNav"/>
         <waitForPwaElementVisible selector="{{VeniaMainMenuSection.signIn}}" stepKey="wait2"/>
+        <!--This is needed else test will fail randomly-->
+        <wait time="1" stepKey="waitForElementToLoad1"/>
         <click selector="{{VeniaMainMenuSection.signIn}}" stepKey="clickSignIn"/>
     </actionGroup>
 </actionGroups>

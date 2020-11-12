@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VerifyFilterFeature">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Filter"/>
+            <title value="Verify Filter Functionality on Category and Search results page."/>
+            <description value="Verify Filter Functionality on Category and Search results page."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-38646"/>
+            <group value="PWA"/>
+            <group value="Smoke"/>
+        </annotations>
+
+        <before>
+            <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        </before>
+        <actionGroup ref="GoToCategoryPage" stepKey="openCategoryFromMainMenu"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton"/>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectPriceFilter"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay">
+            <argument name="categoryDisplayName" value="Tops"/>
+        </actionGroup>
+        <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExists"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton1"/>
+        <actionGroup ref="ClearIndividualFilter" stepKey="clearAppliedFilter"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton1"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay1">
+            <argument name="categoryDisplayName" value="Tops"/>
+        </actionGroup>
+        <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage1"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton2"/>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter1">
+            <argument name="filterableNode" value="Color"/>
+            <argument name="filterOption" value="Latte"/>
+        </actionGroup>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter2">
+            <argument name="filterableNode" value="Material"/>
+            <argument name="filterOption" value="Spandex"/>
+        </actionGroup>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton2"/>
+        <actionGroup ref="AssertNoFilterResults" stepKey="assertNoResults"/>
+
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
+            <argument name="searchData" value="{{SearchInputData.valid_category_name}}"/>
+        </actionGroup>
+        <!--Remove below 2 lines once PWA-931 is fixed-->
+        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.filterButton}}" stepKey="waitForFilterButton"/>
+        <click selector="{{VeniaStorefrontSection.filterButton}}" stepKey="clickOnFilterButtonElement"/>
+        <actionGroup ref="ClickOnSearchFilterButton" stepKey="clickOnFilterButton5"/>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter3">
+            <argument name="filterableNode" value="Price"/>
+            <argument name="filterOption" value="100-200"/>
+        </actionGroup>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter4">
+            <argument name="filterableNode" value="Category"/>
+            <argument name="filterOption" value="Tops"/>
+        </actionGroup>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton3"/>
+        <actionGroup ref="AssertSearchProductDisplay" stepKey="assertProductGalleryExists"/>
+        <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExists1"/>
+        <actionGroup ref="ClickOnSearchFilterButton" stepKey="clickOnFilterButton6"/>
+        <actionGroup ref="ClearAllAppliedFilters" stepKey="clearAllAppliedFilters"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton4"/>
+        <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage2"/>
+    </test>
+</tests>

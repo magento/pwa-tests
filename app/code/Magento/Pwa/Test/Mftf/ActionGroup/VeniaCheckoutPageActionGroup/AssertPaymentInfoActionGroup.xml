@@ -8,9 +8,12 @@
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertPaymentInfo">
+        <arguments>
+            <argument name="shortCardDescription" type="string" defaultValue="{{FakeVisaCard.shortDescription}}"/>
+        </arguments>
         <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.paymentHeader}}" stepKey="waitForPaymentHeader"/>
         <seeElement selector="{{CheckoutPagePaymentCardInfo.paymentHeader}}" stepKey="assertPaymentHeader"/>
-        <see userInput="Credit Card" stepKey="seeEmailExists"/>
-        <see userInput="Visa ending in 1111" stepKey="seeFirstNameExists"/>
+        <see userInput="Credit Card" stepKey="seeCardTittleExists"/>
+        <see userInput="{{shortCardDescription}}" stepKey="seeCardExists"/>
     </actionGroup>
 </actionGroups>

@@ -9,6 +9,7 @@
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaCategoryPaginationSection">
+        <element name="paginationRoot" type="block" selector="div[class^='category-pagination-'] div[class^='pagination-root-']"/>
         <element name="moveToFirstPageDisabled" type="button" selector="button[aria-label*='move to the first page'] span[class^='navButton-icon_disabled-']"/>
         <element name="moveToPreviousPageDisabled" type="button" selector="button[aria-label*='move to the previous page'] span[class^='navButton-icon_disabled-']"/>
         <element name="moveToFirstPage" type="button" selector="button[aria-label*='move to the first page'] span[class^='navButton-icon-']"/>

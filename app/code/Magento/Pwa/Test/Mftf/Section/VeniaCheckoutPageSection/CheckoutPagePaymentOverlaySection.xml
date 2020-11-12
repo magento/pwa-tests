@@ -9,6 +9,6 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="CheckoutPagePaymentOverlaySection">
         <element name="billingAddressCheckBox" type="text" selector="//span[contains(text(), 'Billing address same as shipping address')]"/>
-        <element name="updatePaymentInfo" type="button" selector="//aside[contains(@class, 'editModal-root_open-')]//span[contains(text(), 'Update')]"/>
+        <element name="updatePaymentInfo" type="button" selector="//aside[contains(@class, 'dialog-root_open-')]//span[contains(text(), 'Update')]"/>
     </section>
 </sections>
