@@ -27,6 +27,9 @@
             </actionGroup>
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter1">
+                <argument name="cartQty" value="2"/>
+            </actionGroup>
 
         </before>
 

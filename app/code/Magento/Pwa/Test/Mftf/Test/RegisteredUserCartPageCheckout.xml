@@ -39,7 +39,9 @@
 
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
-
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
+                <argument name="cartQty" value="2"/>
+            </actionGroup>
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
                 <argument name="product" value="CarminaEarrings"/>
             </actionGroup>
@@ -47,6 +49,9 @@
             <click selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="updateProductQty"/>
             <actionGroup ref="AddToCart" stepKey="addToCart2">
                 <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter1">
+                <argument name="cartQty" value="4"/>
             </actionGroup>
         </before>
 

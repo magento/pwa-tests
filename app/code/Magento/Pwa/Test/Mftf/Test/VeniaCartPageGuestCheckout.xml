@@ -26,7 +26,9 @@
             </actionGroup>
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
-
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
+                <argument name="cartQty" value="2"/>
+            </actionGroup>
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage2">
                 <argument name="product" value="IsadoraSkirt"/>
             </actionGroup>
@@ -34,6 +36,9 @@
                 <argument name="product" value="IsadoraSkirt"/>
             </actionGroup>
             <actionGroup ref="AddToCart" stepKey="addToCart2"/>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter1">
+                <argument name="cartQty" value="3"/>
+            </actionGroup>
         </before>
 
         <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
