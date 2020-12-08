@@ -38,6 +38,8 @@
         <data key="password">pwdTest123!</data>
         <data key="stateName">Texas</data>
         <data key="country">US</data>
+        <data key="fullName">John1 Smith2</data>
+        <data key="addressCombined">Austin, Texas 78759 US</data>
     </entity>
 
     <entity name="AuthUserUpdatedData" type="customer">

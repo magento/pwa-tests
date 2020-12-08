@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaOrderHistoryBillingSection">
+        <element name="billingTitle" type="text" selector="//div[contains(@class, 'orderDetails-billingInformationContainer-')]//div[contains(text(), 'Billing Information')]"/>
+        <element name="billingFullName" type="text" selector="//div[contains(@class, 'orderDetails-billingInformationContainer-')]//span[contains(text(), '{{var_full_name}}')]"  parameterized="true"/>
+        <element name="billingStreet1" type="text" selector="//div[contains(@class, 'orderDetails-billingInformationContainer-')]//span[contains(text(), '{{var_street1}}')]"  parameterized="true"/>
+        <element name="billingStreet2" type="text" selector="//div[contains(@class, 'orderDetails-billingInformationContainer-')]//span[contains(text(), '{{var_street2}}')]"  parameterized="true"/>
+        <element name="billingCityStateZipCountry" type="text" selector="//div[contains(@class, 'orderDetails-billingInformationContainer-')]//div[contains(text(), '{{var_city_state_zip_country}}')]"  parameterized="true"/>
+    </section>
+</sections>

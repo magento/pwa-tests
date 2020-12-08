@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertOrderDefaultState">
+        <arguments>
+            <argument name="orderNumber" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderHistoryTable}}" stepKey="waitForOrderTableElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderHistoryRow}}" stepKey="waitForOrderRowElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderNumber(orderNumber)}}" stepKey="waitForOrderNumberElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderDate}}" stepKey="waitForOrderDateElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderTotal}}" stepKey="waitForOrderTotalElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderItems}}" stepKey="waitForOrderItemsElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderProgressBar}}" stepKey="waitForOrderProgressBarElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderViewToggle}}" stepKey="waitForOrderDetailsExpandButtonElementToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistorySection.orderContentCollapsed}}" stepKey="waitForOrderCollapseElementToLoad"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderHistoryTable}}" stepKey="assertOrderTableElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderHistoryRow}}" stepKey="assertOrderRowElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderNumber(orderNumber)}}" stepKey="assertOrderNumberElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderDate}}" stepKey="assertOrderDateElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderTotal}}" stepKey="assertOrderTotalElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderItems}}" stepKey="assertOrderItemsElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderProgressBar}}" stepKey="assertOrderProgressBarElement"/>
+        <seeElement selector="{{VeniaOrderHistorySection.orderViewToggle}}" stepKey="assertOrderDetailsExpandButtonElement"/>
+    </actionGroup>
+</actionGroups>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertShippingMethod">
+        <arguments>
+            <argument name="shippingMethod" defaultValue="{{ShippingMethods.freeShippingDisplay}}" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryShippingMethodSection.shippingMethodTitle}}" stepKey="waitForShippingMethodTitle"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryShippingMethodSection.shippingMethodName(shippingMethod)}}" stepKey="waitForShippingMethodName"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryShippingMethodSection.trackingInfo}}" stepKey="waitForTrackingInfoText"/>
+        <seeElement selector="{{VeniaOrderHistoryShippingMethodSection.shippingMethodTitle}}" stepKey="assertShippingMethodTitle"/>
+        <seeElement selector="{{VeniaOrderHistoryShippingMethodSection.shippingMethodName(shippingMethod)}}" stepKey="assertShippingMethodName"/>
+        <seeElement selector="{{VeniaOrderHistoryShippingMethodSection.trackingInfo}}" stepKey="assertTrackingInfo"/>
+    </actionGroup>
+</actionGroups>

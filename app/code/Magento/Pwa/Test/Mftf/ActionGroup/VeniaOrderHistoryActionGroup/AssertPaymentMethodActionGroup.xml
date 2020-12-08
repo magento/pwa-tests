@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertPaymentMethod">
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryPaymentMethodSection.paymentMethodTitle}}" stepKey="waitForShippingMethodTitle"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryPaymentMethodSection.paymentMethodName}}" stepKey="waitForShippingMethodName"/>
+        <seeElement selector="{{VeniaOrderHistoryPaymentMethodSection.paymentMethodTitle}}" stepKey="assertShippingMethodTitle"/>
+        <seeElement selector="{{VeniaOrderHistoryPaymentMethodSection.paymentMethodName}}" stepKey="assertShippingMethodName"/>
+    </actionGroup>
+</actionGroups>

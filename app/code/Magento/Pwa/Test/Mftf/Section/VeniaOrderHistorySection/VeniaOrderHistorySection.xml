@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaOrderHistorySection">
+        <element name="orderHistoryTable" type="block" selector="ul[class*='orderHistoryPage-orderHistoryTable-']"/>
+        <element name="orderHistoryRow" type="block" selector="ul[class*='orderHistoryPage-orderHistoryTable-'] li[class*='orderRow-root-']"/>
+        <element name="orderNumber" type="text" selector="//div[contains(@class, 'orderRow-orderNumberContainer-')]/span[contains(text(), '{{var_order_number}}')]"  parameterized="true"/>
+        <element name="orderDate" type="text" selector="//div[contains(@class, 'orderRow-orderDateContainer-')]/span[contains(text(), 'Order Date')]"/>
+        <element name="orderTotal" type="text" selector="//div[contains(@class, 'orderRow-orderTotalContainer-')]/span[contains(text(), 'Order Total')]"/>
+        <element name="orderItems" type="block" selector="div[class*='orderRow-orderItemsContainer-'] div[class*='collapsedImageGallery-root-']"/>
+        <element name="orderProgressBar" type="block" selector="div[class*='orderRow-orderStatusContainer-'] span[class*='orderProgressBar-step_completed-']"/>
+        <element name="orderViewToggle" type="button" selector="button[class*='orderRow-contentToggleContainer-']"/>
+        <element name="orderContentCollapsed" type="block" selector="div[class^='orderRow-content_collapsed-']"/>
+    </section>
+</sections>

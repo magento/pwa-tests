@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaOrderHistoryOrderTotalSection">
+        <element name="orderTotalTitle" type="text" selector="//div[contains(@class, 'orderDetails-orderTotalContainer-')]//div[contains(text(), 'Order Total')]"/>
+        <element name="orderSubTotal" type="block" selector="div[class*='orderTotal-subTotal-']"/>
+        <element name="orderTax" type="block" selector="div[class*='orderTotal-tax-']"/>
+        <element name="orderShipping" type="block" selector="div[class*='orderTotal-shipping-']"/>
+        <element name="orderTotal" type="block" selector="div[class*='orderTotal-total-']"/>
+    </section>
+</sections>

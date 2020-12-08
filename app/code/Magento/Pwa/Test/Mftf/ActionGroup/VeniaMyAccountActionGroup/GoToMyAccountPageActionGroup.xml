@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="GoToMyAccountPage">
+        <arguments>
+            <argument name="customerFirstName" type="string"/>
+            <argument name="myAccountPage" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.myAccountRoot(customerFirstName)}}" stepKey="waitForMyAccountRootToLoad"/>
+        <click selector="{{VeniaMyAccountSection.myAccountRoot(customerFirstName)}}" stepKey="openMyAccountMenu"/>
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.myAccountMenuOpen}}" stepKey="waitForMyAccountMenuToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="waitForMyAccountMenuElementToLoad"/>
+        <click selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="goToRespectivePage"/>
+        <waitForPwaElementNotVisible selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="waitForMyAccountMenuElementToDisappear"/>
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.pageHeader(myAccountPage)}}" stepKey="waitForPageHeaderToLoad"/>
+    </actionGroup>
+</actionGroups>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaOrderHistoryShippingMethodSection">
+        <element name="shippingMethodTitle" type="text" selector="//div[contains(@class, 'orderDetails-shippingMethodContainer-')]//div[contains(text(), 'Shipping Method')]"/>
+        <element name="shippingMethodName" type="text" selector="//div[contains(@class, 'orderDetails-shippingMethodContainer-')]//div[contains(text(), '{{var_shipping_method}}')]"  parameterized="true"/>
+        <element name="trackingInfo" type="text" selector="//div[contains(@class, 'orderDetails-shippingMethodContainer-')]//div[contains(text(), 'Waiting for tracking information')]"/>
+    </section>
+</sections>

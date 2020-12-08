@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertOrderSimpleProductDetails">
+        <arguments>
+            <argument name="product" defaultValue="CarminaEarrings"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryItemsSection.orderItemProductName(product.name)}}" stepKey="waitForProductNameToDisplay"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryItemsSection.productQty(product.name, product.qty)}}" stepKey="waitForProductQtyToDisplay"/>
+        <seeElement selector="{{VeniaOrderHistoryItemsSection.orderItemProductName(product.name)}}" stepKey="assertProductNameExists"/>
+        <seeElement selector="{{VeniaOrderHistoryItemsSection.productQty(product.name, product.qty)}}" stepKey="assertProductQtyExists"/>
+    </actionGroup>
+</actionGroups>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertOrderTotal">
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryOrderTotalSection.orderTotalTitle}}" stepKey="waitForOrderTotalTitle"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryOrderTotalSection.orderSubTotal}}" stepKey="waitForOrderSubTotal"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryOrderTotalSection.orderTax}}" stepKey="waitForOrderTax"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryOrderTotalSection.orderShipping}}" stepKey="waitForOrderShipping"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryOrderTotalSection.orderTotal}}" stepKey="waitForOrderTotal"/>
+        <seeElement selector="{{VeniaOrderHistoryOrderTotalSection.orderTotalTitle}}" stepKey="assertOrderTotalTitleElement"/>
+        <seeElement selector="{{VeniaOrderHistoryOrderTotalSection.orderSubTotal}}" stepKey="assertOrderSubTotalElement"/>
+        <seeElement selector="{{VeniaOrderHistoryOrderTotalSection.orderTax}}" stepKey="assertOrderTaxElement"/>
+        <seeElement selector="{{VeniaOrderHistoryOrderTotalSection.orderShipping}}" stepKey="assertOrderShippingElement"/>
+        <seeElement selector="{{VeniaOrderHistoryOrderTotalSection.orderTotal}}" stepKey="assertOrderTotalElement"/>
+    </actionGroup>
+</actionGroups>

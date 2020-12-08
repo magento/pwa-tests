@@ -114,8 +114,21 @@
         </actionGroup>
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails3"/>
         <actionGroup ref="AssertSimpleProductDetails" stepKey="verifyProductDetails4"/>
-
-        <!--******** Once Customer Account and Order History implemented then this test can be extended to check related verification *******-->
-
+        <actionGroup ref="GrabOrderNumber" stepKey="getOrderNumber"/>
+        <actionGroup ref="GoToMyAccountPage" stepKey="goToOrderHistoryPage">
+            <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
+            <argument name="myAccountPage" value="Order History"/>
+        </actionGroup>
+        <actionGroup ref="AssertOrderDefaultState" stepKey="assertOrderDetailsInCollapsedState">
+            <argument name="orderNumber" value="{$orderNumberGetOrderNumber}"/>
+        </actionGroup>
+        <actionGroup ref="ToggleOrderView" stepKey="expandOrderDetailsSection" />
+        <actionGroup ref="AssertShippingAddress" stepKey="assertShippingAddressDetails" />
+        <actionGroup ref="AssertShippingMethod" stepKey="assertShippingMethodDetails" />
+        <actionGroup ref="AssertBillingAddress" stepKey="assertBillingAddressDetails" />
+        <actionGroup ref="AssertPaymentMethod" stepKey="assertPaymentMethodDetails" />
+        <actionGroup ref="AssertOrderTotal" stepKey="assertOrderPriceSummaryDetails" />
+        <actionGroup ref="AssertOrderConfigurableProductDetails" stepKey="assertConfigurableProduct"/>
+        <actionGroup ref="AssertOrderSimpleProductDetails" stepKey="assertSimpleProduct"/>
     </test>
 </tests>

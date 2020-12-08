@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertBillingAddress">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer2"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryBillingSection.billingTitle}}" stepKey="waitForBillingTitle"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryBillingSection.billingFullName(customer.fullName)}}" stepKey="waitForFullName"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryBillingSection.billingStreet1(customer.address)}}" stepKey="waitForAddress"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryBillingSection.billingStreet2(customer.address2)}}" stepKey="waitForAddress2"/>
+        <waitForPwaElementVisible selector="{{VeniaOrderHistoryBillingSection.billingCityStateZipCountry(customer.addressCombined)}}" stepKey="waitForRemainingAddress"/>
+        <seeElement selector="{{VeniaOrderHistoryBillingSection.billingTitle}}" stepKey="assertBillingTitle"/>
+        <seeElement selector="{{VeniaOrderHistoryBillingSection.billingFullName(customer.fullName)}}" stepKey="assertFullName"/>
+        <seeElement selector="{{VeniaOrderHistoryBillingSection.billingStreet1(customer.address)}}" stepKey="assertAddress"/>
+        <seeElement selector="{{VeniaOrderHistoryBillingSection.billingStreet2(customer.address2)}}" stepKey="assertAddress2"/>
+        <seeElement selector="{{VeniaOrderHistoryBillingSection.billingCityStateZipCountry(customer.addressCombined)}}" stepKey="assertRemainingAddress"/>
+    </actionGroup>
+</actionGroups>
