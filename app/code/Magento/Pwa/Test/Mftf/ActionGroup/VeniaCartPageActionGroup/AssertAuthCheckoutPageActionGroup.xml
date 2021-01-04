@@ -12,7 +12,7 @@
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
         <waitForText stepKey="seeWelcomeMsg" selector="{{VeniaCheckoutPageSection.authWelcomeMsg}}" userInput="Welcome {{customer.first}}!"/>
-        <dontSee userInput="Login and Checkout Faster" stepKey="assertGuestCheckoutHeadingDoeNotExists"/>
+        <waitForPwaElementNotVisible selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertSignInLinkDoesNotExists"/>
         <see userInput="Welcome {{customer.first}}!" stepKey="seeAuthUserWelcome"/>
     </actionGroup>
 </actionGroups>

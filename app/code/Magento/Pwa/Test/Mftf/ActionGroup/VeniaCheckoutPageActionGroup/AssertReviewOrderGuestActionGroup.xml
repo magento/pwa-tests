@@ -10,7 +10,7 @@
     <actionGroup name="AssertReviewOrderGuest">
         <waitForPwaElementNotVisible selector="{{VeniaCheckoutPageSection.reviewOrder}}" stepKey="waitForCheckoutPlaceOrderScreen"/>
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.placeOrder}}" stepKey="waitForPlaceOrderButtonToBeReady"/>
-        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertSignInLinkDoesExists"/>
         <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
         <see userInput="Order Summary" stepKey="seeOrderSummaryExists"/>
         <see userInput="Subtotal" stepKey="seeSubTotalExists"/>

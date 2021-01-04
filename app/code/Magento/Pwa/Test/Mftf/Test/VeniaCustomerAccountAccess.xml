@@ -25,20 +25,39 @@
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm" />
         <actionGroup ref="CreateAccount" stepKey="createNewAccount"/>
         <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserAccountCreated"/>
-        <actionGroup ref="SignOut" stepKey="signOutFromTheAccount"/>
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront4"/>
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
+            <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
+        </actionGroup>
+        <actionGroup ref="GoToMyAccountPage" stepKey="goToAccountInformationPage">
+            <argument name="myAccountPage" value="Account Information"/>
+        </actionGroup>
+        <actionGroup ref="AssertAccountInfo" stepKey="assertAccountyInfo"/>
+        <actionGroup ref="EditAccountInfo" stepKey="openEditInfoOverlay"/>
+        <actionGroup ref="UpdateAccountInfo" stepKey="enterNewAccountInfo"/>
+        <actionGroup ref="UpdateAccountPassword" stepKey="enterNewPassword"/>
+        <actionGroup ref="SubmitAccountInfo" stepKey="submitNewAccountInfo"/>
+        <actionGroup ref="AssertAccountInfo" stepKey="assertAccountInfo2">
+            <argument name="customer" value="VeniaCustomer2"/>
+        </actionGroup>
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu1">
+            <argument name="customerFirstName" value="{{VeniaCustomer2.first}}"/>
+        </actionGroup>
+        <actionGroup ref="SignOutFromAccount" stepKey="signOutFromTheAccount"/>
 
-        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm1" />
         <actionGroup ref="SignIn" stepKey="signIntoAccount">
-            <argument name="customerEmail" value="$customerEmailCreateNewAccount"/>
+            <argument name="Customer" value="VeniaCustomer2"/>
+            <argument name="customerEmail" value="$customerUpdatedEmailEnterNewAccountInfo"/>
         </actionGroup>
-        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn"/>
+        <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
+            <argument name="Customer" value="VeniaCustomer2"/>
+        </actionGroup>
         <actionGroup ref="SignOut" stepKey="signOutFromTheAccount1"/>
-
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm2"/>
         <actionGroup ref="UpdatePassword" stepKey="forgotPassword">
-            <argument name="customerEmail" value="$customerEmailCreateNewAccount"/>
+            <argument name="customerEmail" value="$customerUpdatedEmailEnterNewAccountInfo"/>
         </actionGroup>
 
     </test>

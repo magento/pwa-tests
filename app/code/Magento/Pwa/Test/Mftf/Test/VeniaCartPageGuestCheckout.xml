@@ -72,8 +72,13 @@
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails4">
             <argument name="product" value="IsadoraSkirt"/>
         </actionGroup>
-        <actionGroup ref="CheckoutPageCreateAccount" stepKey="createAccountViaCheckoutPage"/>
-        <!--Test will continue once customer account info page is developed-->
-
+        <actionGroup ref="OrderConfirmationPageCreateAccount" stepKey="createAccountViaCheckoutPage"/>
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
+            <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
+        </actionGroup>
+        <actionGroup ref="GoToMyAccountPage" stepKey="goToCommunicationsPage">
+            <argument name="myAccountPage" value="Communications"/>
+        </actionGroup>
+        <actionGroup ref="AssertCommunicationsPageElements" stepKey="assertCommunicationsPageExists"/>
     </test>
 </tests>

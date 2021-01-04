@@ -6,16 +6,21 @@
   */
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="CheckoutPageCreateAccount">
         <arguments>
             <argument name="customer" defaultValue="VeniaCustomer1"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.passwordField}}" stepKey="waitForPasswordFieldToLoad"/>
-        <fillField selector="{{CheckoutPageOrderConfirmation.passwordField}}" userInput="{{customer.password}}" stepKey="enterPassword"/>
-        <waitForPwaElementVisible selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="waitForCreateAccountButton"/>
-        <click selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="clickOnCreateAccount"/>
-        <waitForPwaElementNotVisible selector="{{CheckoutPageOrderConfirmation.createAccount}}" stepKey="waitForCreateAccountSuccess"/>
-        <waitForPwaElementNotVisible selector="{{CheckoutPageOrderConfirmation.passwordField}}" stepKey="waitForCreateAccountSuccess1"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSignInSection.createAnAccount}}" stepKey="waitForCreateAnAccountButtonToLoad"/>
+        <click selector="{{VeniaCheckoutPageSignInSection.createAnAccount}}" stepKey="clickOnCreateAccountButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageCreateAccountSection.firstName}}" stepKey="waitForFirstNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageCreateAccountSection.lastName}}" stepKey="waitForLastNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageCreateAccountSection.email}}" stepKey="waitForEmailFieldTOLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageCreateAccountSection.password}}" stepKey="waitForPasswordFieldToLoad"/>
+        <fillField selector="{{VeniaCheckoutPageCreateAccountSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <fillField selector="{{VeniaCheckoutPageCreateAccountSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <fillField selector="{{VeniaCheckoutPageCreateAccountSection.email}}" userInput="{{customer.email}}" stepKey="enterEmail"/>
+        <fillField selector="{{VeniaCheckoutPageCreateAccountSection.password}}" userInput="{{customer.password}}" stepKey="enterPassword"/>
+        <click selector="{{VeniaCheckoutPageCreateAccountSection.createAccount}}" stepKey="clickOnCreateAccount"/>
     </actionGroup>
 </actionGroups>

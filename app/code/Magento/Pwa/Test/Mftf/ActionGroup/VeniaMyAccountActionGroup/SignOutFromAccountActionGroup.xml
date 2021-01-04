@@ -7,13 +7,13 @@
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="GoToMyAccountPage">
+    <actionGroup name="SignOutFromAccount">
         <arguments>
-            <argument name="myAccountPage" type="string"/>
+            <argument name="myAccountPage" defaultValue="Sign Out" type="string"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="waitForMyAccountMenuElementToLoad"/>
         <click selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="goToRespectivePage"/>
         <waitForPwaElementNotVisible selector="{{VeniaMyAccountSection.myAccountPageToNavigateTo(myAccountPage)}}" stepKey="waitForMyAccountMenuElementToDisappear"/>
-        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.pageHeader(myAccountPage)}}" stepKey="waitForPageHeaderToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaHomePageSection.shopNowButton}}" stepKey="waitForPageToLoad"/>
     </actionGroup>
 </actionGroups>

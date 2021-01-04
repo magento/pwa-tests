@@ -9,8 +9,7 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertGuestCheckoutPage">
         <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="waitForCheckoutPageToLoad"/>
-        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="waitForSignInLinkToLoad"/>
         <seeElement selector="{{VeniaCheckoutPageSection.guestCheckoutHeader}}" stepKey="assertGuestCheckoutHeadingExists"/>
-        <seeElement selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertLoginAndCheckoutFasterLinkExists"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="assertSignInLinkExists"/>
     </actionGroup>
 </actionGroups>

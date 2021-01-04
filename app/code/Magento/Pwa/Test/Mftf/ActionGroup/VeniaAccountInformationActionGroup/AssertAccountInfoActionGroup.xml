@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertAccountInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForText selector="{{AccountInformationSection.customerName}}" userInput="{{customer.fullName}}" stepKey="waitForFirstNameToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationSection.nameLabel}}" stepKey="waitForNameLabelToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationSection.emailLabel}}" stepKey="waitForEmailLabelToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationSection.passwordLabel}}" stepKey="waitForPasswordLabelToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationSection.editButton}}" stepKey="waitForEditButtonToLoad"/>
+        <see userInput="{{customer.fullName}}" stepKey="seeNameExists"/>
+        <see userInput="{{customer.emailCheck}}" stepKey="seeEmailExists"/>
+        <see userInput="***********" stepKey="seePasswordExists"/>
+    </actionGroup>
+</actionGroups>

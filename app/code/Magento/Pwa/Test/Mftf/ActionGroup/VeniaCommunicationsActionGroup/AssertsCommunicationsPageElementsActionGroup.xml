@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertCommunicationsPageElements">
+        <waitForPwaElementVisible selector="{{VeniaCommunicationsSection.communicationsRoot}}" stepKey="waitForCommunicationsRootToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCommunicationsSection.subscribeCheckBox}}" stepKey="waitForSubscribeCheckBoxToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCommunicationsSection.saveChangesButton}}" stepKey="waitForSaveChangesButtonToLoad"/>
+        <seeElement selector="{{VeniaCommunicationsSection.communicationsRoot}}" stepKey="assertCommunicationsRoot"/>
+        <seeElement selector="{{VeniaCommunicationsSection.subscribeCheckBox}}" stepKey="assertSubscribeCheckBox"/>
+        <seeElement selector="{{VeniaCommunicationsSection.saveChangesButton}}" stepKey="assertSaveChangesButton"/>
+    </actionGroup>
+</actionGroups>

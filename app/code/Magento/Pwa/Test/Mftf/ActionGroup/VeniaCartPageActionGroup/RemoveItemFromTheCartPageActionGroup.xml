@@ -20,7 +20,6 @@
         <waitForPwaElementNotVisible selector="{{CartPageProductDetailsSection.cartProductName(product.name)}}" stepKey="waitForProductToBeRemoved"/>
         <see userInput="There are no items in your cart." stepKey="seeEmptyCartText"/>
         <dontSee userInput="{{product.name}}" stepKey="dontSeeProductInCart"/>
-        <seeElement selector="{{VeniaCartPageSection.signIn}}" stepKey="checkForSignInButton"/>
         <dontSee userInput="Proceed to Checkout" stepKey="dontSeeCheckoutButton"/>
         <dontSee userInput="Estimate your Shipping" stepKey="dontSeeShippingAccordion"/>
     </actionGroup>

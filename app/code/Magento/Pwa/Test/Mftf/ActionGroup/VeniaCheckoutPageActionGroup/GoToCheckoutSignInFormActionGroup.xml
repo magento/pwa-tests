@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="GoToCheckoutSignInForm">
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="waitForSignInLinkToLoad"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.guestEmail}}" stepKey="waitForGuestEmailFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{CheckoutPageEnterShippingDetailsSection.submitShippingInfo}}" stepKey="waitForSubmitShippingButtonToLoad"/>
+        <click selector="{{VeniaCheckoutPageSection.signIn}}" stepKey="clickOnSignInLink"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSignInSection.signIn}}" stepKey="waitForSignInButtonToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSignInSection.forgotUsernamePassword}}" stepKey="waitForForGotPasswordLinkToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSignInSection.createAnAccount}}" stepKey="waitForCreateAnAccountButtonToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaCheckoutPageSignInSection.backToCheckout}}" stepKey="waitForBackToCheckoutLinkToLoad"/>
+    </actionGroup>
+</actionGroups>

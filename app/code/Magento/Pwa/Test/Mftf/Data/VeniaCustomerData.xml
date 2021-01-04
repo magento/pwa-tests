@@ -22,6 +22,7 @@
         <data key="password">pwdTest123!</data>
         <data key="stateName">California</data>
         <data key="country">US</data>
+        <data key="fullName">JohnTest SmithTest</data>
     </entity>
 
     <entity name="VeniaCustomer2" type="customer">
@@ -35,7 +36,7 @@
         <data key="phone">1234567890</data>
         <data key="email" unique="prefix">updated@example.com</data>
         <data key="emailCheck">updated@example.com</data>
-        <data key="password">pwdTest123!</data>
+        <data key="password">Update123!</data>
         <data key="stateName">Texas</data>
         <data key="country">US</data>
         <data key="fullName">John1 Smith2</data>

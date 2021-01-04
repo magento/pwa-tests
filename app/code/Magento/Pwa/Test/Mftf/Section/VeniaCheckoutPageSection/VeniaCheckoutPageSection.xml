@@ -10,7 +10,7 @@
     <section name="VeniaCheckoutPageSection">
         <element name="guestCheckoutHeader" type="text" selector="//h1[contains(text(), 'Guest Checkout')]"/>
         <element name="emptyCartMessage" type="text" selector="//h3[contains(text(), 'There are no items in your cart.')]"/>
-        <element name="signIn" type="button" selector="//span[contains(text(), 'Login and Checkout Faster')]"/>
+        <element name="signIn" type="button" selector="button[class*='checkoutPage-signInButton-'] span[class*='button-content-']"/>
         <element name="reviewOrder" type="button" selector="//span[contains(text(), 'Review Order')]"/>
         <element name="placeOrder" type="button" selector="//button[contains(@class, 'checkoutPage-place_order_button-')]/span[contains(text(), 'Place Order')]"/>
         <element name="authWelcomeMsg" type="text" selector="div[class*='checkoutPage-heading_container-'] h1[class*='checkoutPage-heading-']"/>

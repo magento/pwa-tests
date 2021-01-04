@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaCheckoutPageSignInSection">
+        <element name="email" type="input" selector="div[class*='guestSignIn-contentContainer-'] input[name='email']"/>
+        <element name="password" type="input" selector="div[class*='guestSignIn-contentContainer-'] input[name='password']"/>
+        <element name="signIn" type="button" selector="//div[contains(@class, 'guestSignIn-contentContainer-')]//span[contains(text(), 'Sign In')]"/>
+        <element name="forgotUsernamePassword" type="button" selector="div[class^='guestSignIn-contentContainer-'] button[class^='signIn-forgotPasswordButton']"/>
+        <element name="createAnAccount" type="button" selector="div[class^='guestSignIn-contentContainer-'] button[class^='button-root_normalPriority']"/>
+        <element name="backToCheckout" type="button" selector="//div[contains(@class, 'guestSignIn-contentContainer-')]//span[contains(text(), 'Back to Checkout')]"/>
+    </section>
+</sections>

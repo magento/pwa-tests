@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="UpdateAccountInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer2"/>
+            <argument name="currentPassword" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{AccountInformationEditOverlaySection.firstName}}" stepKey="waitForFirstNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationEditOverlaySection.lastName}}" stepKey="waitForLastNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationEditOverlaySection.email}}" stepKey="waitForEmailFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{AccountInformationEditOverlaySection.currentPassword}}" stepKey="waitForCurrentPasswordFieldToLoad"/>
+        <clearField selector="{{AccountInformationEditOverlaySection.firstName}}" stepKey="clearFirstName"/>
+        <fillField selector="{{AccountInformationEditOverlaySection.firstName}}" userInput="{{customer.first}}" stepKey="updateFirstName"/>
+        <clearField selector="{{AccountInformationEditOverlaySection.lastName}}" stepKey="clearLastName"/>
+        <fillField selector="{{AccountInformationEditOverlaySection.lastName}}" userInput="{{customer.last}}" stepKey="updateLastName"/>
+        <clearField selector="{{AccountInformationEditOverlaySection.email}}" stepKey="clearEmail"/>
+        <fillField selector="{{AccountInformationEditOverlaySection.email}}" userInput="{{customer.email}}" stepKey="updateEmail"/>
+        <grabValueFrom selector="{{AccountInformationEditOverlaySection.email}}" stepKey="customerUpdatedEmail"/>
+        <fillField selector="{{AccountInformationEditOverlaySection.currentPassword}}" userInput="{{currentPassword.password}}" stepKey="updateCurrentPassword"/>
+    </actionGroup>
+</actionGroups>

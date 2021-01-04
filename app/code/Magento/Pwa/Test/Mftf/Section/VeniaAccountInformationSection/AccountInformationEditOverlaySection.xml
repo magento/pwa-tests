@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="AccountInformationEditOverlaySection">
+        <element name="firstName" type="input" selector="input[name='firstname']"/>
+        <element name="lastName" type="input" selector="input[name='lastname']"/>
+        <element name="email" type="input" selector="input[name='email']"/>
+        <element name="currentPassword" type="input" selector="input[autocomplete='current-password']"/>
+        <element name="newPassword" type="input" selector="input[name='newPassword']"/>
+        <element name="changePasswordLink" type="button" selector="//div[contains(@class, 'editForm-changePasswordButtonContainer-')]//span[contains(text(), 'Change Password')]"/>
+        <element name="cancelButton" type="button" selector="//button[contains(@class, 'dialog-cancelButton-')]/span[contains(text(), 'Cancel')]"/>
+        <element name="confirmButton" type="button" selector="//button[contains(@class, 'dialog-confirmButton-')]/span[contains(text(), 'Confirm')]"/>
+    </section>
+</sections>

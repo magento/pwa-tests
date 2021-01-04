@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="AccountInformationSection">
+        <element name="nameLabel" type="text" selector="span[class*='accountInformationPage-nameLabel-']"/>
+        <element name="emailLabel" type="text" selector="span[class*='accountInformationPage-emailLabel-']"/>
+        <element name="passwordLabel" type="text" selector="span[class*='accountInformationPage-passwordLabel-']"/>
+        <element name="editButton" type="button" selector="button[class*='accountInformationPage-editInformationButton-']"/>
+        <element name="customerName" type="text" selector="span[class*='accountInformationPage-nameValue-']"/>
+    </section>
+</sections>

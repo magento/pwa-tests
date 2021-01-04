@@ -10,7 +10,7 @@
     <section name="VeniaMyAccountSection">
         <element name="myAccountRoot" type="button" selector="//button[contains(@class, 'accountTrigger-trigger-')]//span[contains(text(), 'Hi, {{var_customer_name}}')]"  parameterized="true"/>
         <element name="myAccountMenuOpen" type="block" selector="div[class*='accountMenu-contents_open-']"/>
-        <element name="myAccountPageToNavigateTo" type="button" selector="//div[contains(@class, 'accountMenuItems-root-')]/a[contains(text(), '{{var_page_name}}')]"  parameterized="true"/>
+        <element name="myAccountPageToNavigateTo" type="button" selector="//div[contains(@class, 'accountMenuItems-root-')]/*[contains(text(), '{{var_page_name}}')]"  parameterized="true"/>
         <element name="pageHeader" type="button" selector="//div[contains(@class, 'main-page-')]//h1[contains(text(), '{{var_page_heading}}')]"  parameterized="true"/>
     </section>
 </sections>

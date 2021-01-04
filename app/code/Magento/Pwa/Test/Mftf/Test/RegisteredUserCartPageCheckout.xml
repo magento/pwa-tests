@@ -21,29 +21,23 @@
         </annotations>
 
         <before>
-            <actionGroup ref="GoToCartPage" stepKey="goToCartPage"/>
-
-            <actionGroup ref="NavigateToSignInFormFromCart" stepKey="navigateToSignInForm" />
-
-            <actionGroup ref="CreateAccount" stepKey="enterEmailForAccount">
-                <argument name="Customer" value="VeniaCustomer1"/>
-            </actionGroup>
-
-            <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserSignIn">
-                <argument name="Customer" value="VeniaCustomer1"/>
-            </actionGroup>
-
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage">
                 <argument name="product" value="ValeriaTwoLayerTank"/>
             </actionGroup>
-
             <actionGroup ref="SetProductColorAndSizeAndQuantityOptions" stepKey="addProductToCartWithColorAndSizeAndQuantityOptions1"/>
             <actionGroup ref="AddToCart" stepKey="addToCart1"/>
             <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter">
                 <argument name="cartQty" value="2"/>
             </actionGroup>
+            <actionGroup ref="GoToCheckoutPage" stepKey="goToCheckoutPage"/>
+            <actionGroup ref="GoToCheckoutSignInForm" stepKey="goToSignInForm"/>
+            <actionGroup ref="CheckoutPageCreateAccount" stepKey="createAnAccount"/>
+            <actionGroup ref="AssertAuthCheckoutPage" stepKey="assertSuccessfulAccountCreation"/>
             <actionGroup ref="GoToProductDetailsPage" stepKey="goToProductDetailsPage1">
                 <argument name="product" value="CarminaEarrings"/>
+            </actionGroup>
+            <actionGroup ref="AssertMiniCartCounter" stepKey="verifyMiniCartCounter12">
+                <argument name="cartQty" value="2"/>
             </actionGroup>
             <waitForPwaElementVisible selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="waitForQtyButtonToBeReady"/>
             <click selector="{{VeniaProductSection.productQtyIncrease}}" stepKey="updateProductQty"/>
@@ -115,8 +109,10 @@
         <actionGroup ref="AssertProductDetails" stepKey="verifyProductDetails3"/>
         <actionGroup ref="AssertSimpleProductDetails" stepKey="verifyProductDetails4"/>
         <actionGroup ref="GrabOrderNumber" stepKey="getOrderNumber"/>
-        <actionGroup ref="GoToMyAccountPage" stepKey="goToOrderHistoryPage">
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
             <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
+        </actionGroup>
+        <actionGroup ref="GoToMyAccountPage" stepKey="goToOrderHistoryPage">
             <argument name="myAccountPage" value="Order History"/>
         </actionGroup>
         <actionGroup ref="AssertOrderDefaultState" stepKey="assertOrderDetailsInCollapsedState">
