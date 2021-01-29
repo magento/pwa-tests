@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="UpdateCountryStateForUK">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaUKCustomer"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" stepKey="waitForCountryDropDownToLoad"/>
+        <waitForText selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.country}}" stepKey="waitForCountryDropDownValuesToLoad"/>
+        <selectOption selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.country}}" stepKey="selectCountry"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.enterState}}" stepKey="waitForStateFieldToLoad"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.enterState}}" userInput="{{customer.stateName}}" stepKey="enterStateName"/>
+    </actionGroup>
+</actionGroups>

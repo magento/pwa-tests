@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="GoToAddAddressOverlay">
+        <waitForPwaElementVisible selector="{{MyAccountAddressBook.addressBookRoot}}" stepKey="waitForAddressBookRootToLoad"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBook.addAddress}}" stepKey="waitForAddAddressElementToLoad"/>
+        <click selector="{{MyAccountAddressBook.addAddress}}" stepKey="clickOnAddAddressLink"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.firstName}}" stepKey="waitForFirstNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.lastName}}" stepKey="waitForLastNameFieldToLoad"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.saveAddress}}" stepKey="waitForSaveButtonToLoad"/>
+    </actionGroup>
+</actionGroups>

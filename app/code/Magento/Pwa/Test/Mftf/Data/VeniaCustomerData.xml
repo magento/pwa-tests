@@ -23,6 +23,8 @@
         <data key="stateName">California</data>
         <data key="country">US</data>
         <data key="fullName">JohnTest SmithTest</data>
+        <data key="addressCombined">Culver, California 90230</data>
+        <data key="countryFull">United States</data>
     </entity>
 
     <entity name="VeniaCustomer2" type="customer">
@@ -72,12 +74,19 @@
         <data key="country">US</data>
     </entity>
 
-    <entity name="VeniaRegisteredCustomer" type="customer">
-        <data key="first">asdf</data>
-        <data key="last">asdf</data>
-        <data key="email">tom@test.com</data>
-        <data key="password">Pasword1</data>
+    <entity name="VeniaUKCustomer" type="customer">
+        <data key="first">Robert</data>
+        <data key="last">Russel</data>
+        <data key="address">Great Russell St</data>
+        <data key="address2">Bloomsbury</data>
+        <data key="city">London</data>
+        <data key="zipCode">WC1B 3DG</data>
+        <data key="phone">+44 1234 5678</data>
+        <data key="stateName">England</data>
+        <data key="country">United Kingdom</data>
+        <data key="fullName">Robert Russel</data>
+        <data key="addressCombined">London, England WC1B 3DG</data>
+        <data key="countryFull">United Kingdom</data>
     </entity>
-
 
 </entities>

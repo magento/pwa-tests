@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertAddressDetails">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBook.addressExists}}" stepKey="waitForAddAddressElementToLoad"/>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBook.editAddress(customer.fullName)}}" stepKey="waitForEditAddressElementToLoad"/>
+        <see userInput="{{customer.fullName}}" stepKey="seeNameExists"/>
+        <see userInput="{{customer.address}}" stepKey="seeStreetExists"/>
+        <see userInput="{{customer.addressCombined}}" stepKey="seeCityStateZipExists"/>
+        <see userInput="{{customer.countryFull}}" stepKey="seeCountryExists"/>
+        <see userInput="{{customer.phone}}" stepKey="seePhoneExists"/>
+    </actionGroup>
+</actionGroups>

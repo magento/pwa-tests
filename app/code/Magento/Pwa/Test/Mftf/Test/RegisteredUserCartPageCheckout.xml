@@ -15,7 +15,7 @@
             <title value="Verify Registered user should be able to checkout via Cart Page"/>
             <description value="Verify Registered user should be able to checkout via Cart Page"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38634"/>
+            <testCaseId value="PWA-1222"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

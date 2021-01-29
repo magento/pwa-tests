@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VerifyAccountAddressBook">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Customer Account"/>
+            <title value="Verify My Account - Address Book"/>
+            <description value="Verify My Account - Address Book"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="PWA-1216"/>
+            <group value="PWA"/>
+            <group value="Smoke"/>
+        </annotations>
+
+        <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
+        <actionGroup ref="GoToSignInForm" stepKey="navigateToSignInForm" />
+        <actionGroup ref="MyAccountCreateAccount" stepKey="createNewAccount"/>
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
+            <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
+        </actionGroup>
+        <actionGroup ref="GoToMyAccountPage" stepKey="goToAccountInformationPage">
+            <argument name="myAccountPage" value="Address Book"/>
+        </actionGroup>
+        <actionGroup ref="AssertEmptyAddressBook" stepKey="assertEmptyAddressBook"/>
+        <actionGroup ref="GoToAddAddressOverlay" stepKey="clickOnAddAddressLink"/>
+        <actionGroup ref="EnterAddressInfo" stepKey="enterAddressDetails"/>
+        <actionGroup ref="UpdateCountryStateForUS" stepKey="selectState"/>
+        <actionGroup ref="CheckDefaultAddressCheckBox" stepKey="makeAddressAsDefault"/>
+        <actionGroup ref="SaveAddress" stepKey="saveAddressToAddressBook"/>
+        <actionGroup ref="AssertAddressDetails" stepKey="assertSavedAddressExists"/>
+        <actionGroup ref="AssertDefaultLabel" stepKey="assertDefaultAddressLabel"/>
+        <actionGroup ref="GoToAddAddressOverlay" stepKey="clickOnAddAddressLink2"/>
+        <actionGroup ref="EnterAddressInfo" stepKey="enterAddress2">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="UpdateCountryStateForUK" stepKey="updateCountryState"/>
+        <actionGroup ref="SaveAddress" stepKey="saveAddressToAddressBook2"/>
+        <actionGroup ref="AssertAddressDetails" stepKey="assertSavedAddressExists2">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="EditAddress" stepKey="clickONEditLink">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="CheckDefaultAddressCheckBox" stepKey="makeAddressAsDefault2"/>
+        <actionGroup ref="SaveAddress" stepKey="saveAddressToAddressBook3"/>
+        <actionGroup ref="AssertAddressDetails" stepKey="assertSavedAddressExists3">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="AssertDefaultLabel" stepKey="assertDefaultAddressLabel2">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="DeleteAddress" stepKey="deleteAddress"/>
+        <actionGroup ref="AssertAddressDetails" stepKey="assertSavedAddressExists4">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="AssertDefaultLabel" stepKey="assertDefaultAddressLabel3">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+    </test>
+</tests>

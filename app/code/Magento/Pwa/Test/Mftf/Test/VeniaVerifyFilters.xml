@@ -15,7 +15,7 @@
             <title value="Verify Filter Functionality on Category and Search results page."/>
             <description value="Verify Filter Functionality on Category and Search results page."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38646"/>
+            <testCaseId value="PWA-1209"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

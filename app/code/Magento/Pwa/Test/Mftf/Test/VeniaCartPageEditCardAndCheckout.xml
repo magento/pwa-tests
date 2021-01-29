@@ -15,7 +15,7 @@
             <title value="Edit product on cart page and checkout"/>
             <description value="Edit product on cart page and checkout"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38635"/>
+            <testCaseId value="PWA-1213"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

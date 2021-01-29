@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="MyAccountCreateAccount">
+        <arguments>
+            <argument name="Customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaSignInSection.createAnAccount}}" stepKey="waitForCreateAccountButtonToLoad"/>
+        <click selector="{{VeniaSignInSection.createAnAccount}}" stepKey="clickOnCreateAccountButton"/>
+        <waitForPwaElementVisible selector="{{VeniaCreateAccountSection.email}}" stepKey="waitForPwaElementVisible1"/>
+        <fillField selector="{{VeniaCreateAccountSection.email}}" userInput="{{Customer.email}}" stepKey="fillEmail"/>
+        <grabValueFrom selector="{{VeniaCreateAccountSection.email}}" stepKey="customerEmail"/>
+        <waitForPwaElementVisible selector="{{VeniaCreateAccountSection.firstName}}" stepKey="waitForPwaElementVisible2"/>
+        <fillField selector="{{VeniaCreateAccountSection.firstName}}" userInput="{{Customer.first}}" stepKey="fillFirstName"/>
+        <waitForPwaElementVisible selector="{{VeniaCreateAccountSection.lastName}}" stepKey="waitForPwaElementVisible3"/>
+        <fillField selector="{{VeniaCreateAccountSection.lastName}}" userInput="{{Customer.last}}" stepKey="fillLastName"/>
+        <waitForPwaElementVisible selector="{{VeniaCreateAccountSection.password}}" stepKey="waitForPwaElementVisible4"/>
+        <fillField selector="{{VeniaCreateAccountSection.password}}" userInput="{{Customer.password}}" stepKey="fillPassword1"/>
+        <waitForPwaElementVisible selector="{{VeniaCreateAccountSection.submit}}" stepKey="waitForPwaElementVisible6"/>
+        <click selector="{{VeniaCreateAccountSection.submit}}" stepKey="clickSubmitButton"/>
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.myAccountRoot(Customer.first)}}" stepKey="waitForMyAccountRootToLoad"/>
+    </actionGroup>
+</actionGroups>

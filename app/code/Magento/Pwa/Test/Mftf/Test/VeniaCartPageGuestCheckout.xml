@@ -14,7 +14,7 @@
             <title value="Venia guest user should be able to checkout via Cart Page"/>
             <description value="Venia guest user should be able to checkout via Cart Page"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38638"/>
+            <testCaseId value="PWA-1215"/>
             <group value="PWA"/>
         </annotations>
 

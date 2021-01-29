@@ -15,7 +15,7 @@
             <title value="Verify Sort and Pagination functionalities on Category and Search results page."/>
             <description value="Verify Sort and Pagination functionalities on Category and Search results page."/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38647"/>
+            <testCaseId value="PWA-1210"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

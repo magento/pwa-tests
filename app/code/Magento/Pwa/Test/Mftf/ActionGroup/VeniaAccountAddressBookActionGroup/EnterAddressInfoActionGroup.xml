@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="EnterAddressInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaCustomer1"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.firstName}}" stepKey="waitForOverlayToLoad"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZip"/>
+        <fillField selector="{{MyAccountAddressBookOverlaySection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
+    </actionGroup>
+</actionGroups>

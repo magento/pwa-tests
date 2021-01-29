@@ -15,7 +15,7 @@
             <title value="Verify Anchor links on Venia"/>
             <description value="Verify Anchor links on Venia"/>
             <severity value="CRITICAL"/>
-            <testCaseId value="MC-38633"/>
+            <testCaseId value="PWA-1219"/>
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>

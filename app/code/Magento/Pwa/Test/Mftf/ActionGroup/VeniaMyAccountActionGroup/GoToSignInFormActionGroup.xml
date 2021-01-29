@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="GoToSignInForm">
+        <waitForPwaElementVisible selector="{{VeniaMyAccountSection.signIn}}" stepKey="waitForSignInElementToLoad"/>
+        <click selector="{{VeniaMyAccountSection.signIn}}" stepKey="clickOnSignInLink"/>
+        <waitForPwaElementVisible selector="{{VeniaSignInSection.signInRoot}}" stepKey="waitForOverlayToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaSignInSection.signIn}}" stepKey="waitForSignInButtonToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaSignInSection.forgotUsernamePassword}}" stepKey="waitForForgotPasswordLinkToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaSignInSection.createAnAccount}}" stepKey="waitForCreateAccountButtonToLoad"/>
+    </actionGroup>
+</actionGroups>

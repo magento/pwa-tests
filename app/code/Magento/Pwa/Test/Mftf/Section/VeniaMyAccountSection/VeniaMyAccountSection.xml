@@ -8,6 +8,7 @@
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="VeniaMyAccountSection">
+        <element name="signIn" type="button" selector="//button[contains(@class, 'accountTrigger-trigger-')]//span[contains(text(), 'Sign In')]"/>
         <element name="myAccountRoot" type="button" selector="//button[contains(@class, 'accountTrigger-trigger-')]//span[contains(text(), 'Hi, {{var_customer_name}}')]"  parameterized="true"/>
         <element name="myAccountMenuOpen" type="block" selector="div[class*='accountMenu-contents_open-']"/>
         <element name="myAccountPageToNavigateTo" type="button" selector="//div[contains(@class, 'accountMenuItems-root-')]/*[contains(text(), '{{var_page_name}}')]"  parameterized="true"/>

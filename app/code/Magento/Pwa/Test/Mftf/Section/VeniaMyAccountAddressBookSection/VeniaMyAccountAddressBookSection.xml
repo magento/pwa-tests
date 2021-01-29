@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!--
+         /**
+          * Copyright © Magento, Inc. All rights reserved.
+          * See COPYING.txt for license details.
+          */
+        -->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+<section name="MyAccountAddressBook">
+    <element name="addressBookRoot" type="block" selector="div[class^='addressBookPage-root-']"/>
+    <element name="addAddress" type="button" selector="button[class^='addressBookPage-addButton-']"/>
+    <element name="editAddress" type="button" selector="//div[./div/span[contains(text(), '{{var_customer_name}}')]]/div/button[contains(@class, 'addressCard-editButton-')]" parameterized="true"/>
+    <element name="deleteAddress" type="button" selector="//div[./div/span[contains(text(), '{{var_customer_name}}')]]/div/button[contains(@class, 'addressCard-deleteButton-')]" parameterized="true"/>
+    <element name="confirmDeleteAddress" type="button" selector="button[class^='addressCard-confirmDeleteButton-']"/>
+    <element name="defaultLabel" type="text" selector="//div[./span[contains(text(), '{{var_customer_name}}')] and ./span[contains(text(), 'Default')]]" parameterized="true"/>
+    <element name="addressExists" type="block" selector="div[class^='addressBookPage-content-'] div[class^='addressCard-root-']"/>
+</section>
+</sections>
