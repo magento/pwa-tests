@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="ClickOnMegaMenuSubCategory">
+        <arguments>
+            <argument name="categoryName" defaultValue="Accessories" type="string"/>
+            <argument name="subCategoryName" defaultValue="Belts" type="string"/>
+        </arguments>
+        <waitForPwaElementVisible selector="{{VeniaMegaMenuSection.categoryName(categoryName)}}" stepKey="waitForCategoryToLoad"/>
+        <moveMouseOver selector="{{VeniaMegaMenuSection.categoryName(categoryName)}}" stepKey="hoverMouse"/>
+        <waitForPwaElementVisible selector="{{VeniaMegaMenuSection.subCategoryName(subCategoryName)}}" stepKey="waitForSubCategoryToLoad"/>
+        <click selector="{{VeniaMegaMenuSection.subCategoryName(subCategoryName)}}" stepKey="clickOnSubCategory"/>
+    </actionGroup>
+</actionGroups>

@@ -21,9 +21,9 @@
         </annotations>
 
         <before>
+            <resizeWindow width="375" height="812" stepKey="resizeToMobileView"/>
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
-        
         <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu">
             <argument name="categoryName" value="Bottoms"/>
         </actionGroup>
@@ -34,12 +34,11 @@
             <argument name="categoryDisplayName" value="Skirts"/>
         </actionGroup>
 
+        <resizeWindow width="1280" height="1024" stepKey="resizeToDesktopView"/>
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront2"/>
-
-        <actionGroup ref="OpenMainMenuCategoryByName" stepKey="openCategoryFromMainMenu1"/>
-        <actionGroup ref="OpenMainMenuSubCategoryByName" stepKey="openSubCategoryFromMainMenu1"/>
+        <actionGroup ref="ClickOnMegaMenuSubCategory" stepKey="goToCategoryViaMegaMenu"/>
         <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay2">
-            <argument name="categoryDisplayName" value="Minimalist Sensibility"/>
+            <argument name="categoryDisplayName" value="Belts"/>
         </actionGroup>
 
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront3"/>

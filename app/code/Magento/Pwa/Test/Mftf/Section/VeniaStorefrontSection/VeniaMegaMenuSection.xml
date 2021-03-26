@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="VeniaMegaMenuSection">
+        <element name="categoryName" type="button" selector="//div[contains(@class, 'megaMenuItem-megaMenuItem-')]/a[contains(text(), '{{var_category_name}}')]" parameterized="true"/>
+        <element name="subCategoryName" type="button" selector="//div[contains(@class, 'submenu-submenuItems-')]//h3[contains(text(), '{{var_sub_cat_name}}')]" parameterized="true"/>
+    </section>
+</sections>

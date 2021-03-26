@@ -19,12 +19,12 @@
             <group value="PWA"/>
             <group value="Smoke"/>
         </annotations>
-
+        <resizeWindow width="375" height="812" stepKey="resizeToMobileView"/>
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
-
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm" />
         <actionGroup ref="CreateAccount" stepKey="createNewAccount"/>
         <actionGroup ref="AssertSuccessfulSignIn" stepKey="assertUserAccountCreated"/>
+        <resizeWindow width="1280" height="1024" stepKey="resizeBackToDesktopView"/>
         <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront4"/>
         <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
             <argument name="customerFirstName" value="{{VeniaCustomer1.first}}"/>
@@ -44,7 +44,7 @@
             <argument name="customerFirstName" value="{{VeniaCustomer2.first}}"/>
         </actionGroup>
         <actionGroup ref="SignOutFromAccount" stepKey="signOutFromTheAccount"/>
-
+        <resizeWindow width="375" height="812" stepKey="resizeToMobileView2"/>
         <actionGroup ref="NavigateToSignInForm" stepKey="navigateToSignInForm1" />
         <actionGroup ref="SignIn" stepKey="signIntoAccount">
             <argument name="Customer" value="VeniaCustomer2"/>
