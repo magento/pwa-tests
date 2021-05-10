@@ -15,7 +15,7 @@
         <element name="productNameLink" type="button" selector="//*[contains(@class, 'item-name-')]/span[contains(text(), '{{var1}}')]" parameterized="true"/>
         <element name="productPrice" type="text" selector="[class*='item-price-']"/>
         <element name="categoryTitle" type="text" selector="//div[contains(text(), '{{categoryName}}')]" parameterized="true"/>
-        <element name="filterButton" type="button" selector="button[class*='category-filterButton-'] span[class*='button-content-']"/>
+        <element name="filterButton" type="button" selector="button[class*='filterModalOpenButton-filterButton-'] span[class*='button-content-']"/>
         <element name="sortButton" type="button" selector="button[class*='productSort-sortButton-'] span[class*='button-content-']"/>
         <element name="sortMenu" type="block" selector="div[class*='productSort-menu-']"/>
         <element name="selectedSortOption" type="button" selector="//button/span[./span[contains(text(), '{{var_sort_option_selected}}')]]/span[contains(@class, 'icon-root-')]" parameterized="true"/>
