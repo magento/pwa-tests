@@ -9,7 +9,7 @@
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="AssertSelectedSort">
         <arguments>
-            <argument name="selectedSort" type="string" defaultValue="Best Match"/>
+            <argument name="selectedSort" type="string" defaultValue="Position"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.sortButton}}" stepKey="waitForSortButtonToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.selectedSortOptionDisplay(selectedSort)}}" stepKey="waitForSelectedSortDisplayMessage"/>

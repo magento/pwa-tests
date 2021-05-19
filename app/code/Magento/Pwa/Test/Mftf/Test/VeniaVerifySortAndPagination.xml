@@ -39,6 +39,13 @@
             <argument name="selectedSort" value="Price: High to Low"/>
         </actionGroup>
         <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage1"/>
+        <actionGroup ref="SortProducts" stepKey="applyNewSort3">
+            <argument name="selectSort" value="Best Match"/>
+        </actionGroup>
+        <actionGroup ref="AssertSelectedSort" stepKey="verifyNewSortIsApplied3">
+            <argument name="selectedSort" value="Best Match"/>
+        </actionGroup>
+        <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage3"/>
 
         <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
         <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
