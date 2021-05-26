@@ -24,54 +24,85 @@
             <actionGroup ref="GoToVeniaDesktopStorefront" stepKey="goToVeniaDesktopStorefront1"/>
         </before>
         <actionGroup ref="GoToCategoryPage" stepKey="openCategoryFromMainMenu"/>
-        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton"/>
         <actionGroup ref="SelectFilterOptionsAction" stepKey="selectPriceFilter"/>
-        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton"/>
         <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay">
             <argument name="categoryDisplayName" value="Tops"/>
         </actionGroup>
         <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExists"/>
-        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton1"/>
         <actionGroup ref="ClearIndividualFilter" stepKey="clearAppliedFilter"/>
-        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton1"/>
         <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplay1">
             <argument name="categoryDisplayName" value="Tops"/>
         </actionGroup>
         <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage1"/>
-        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButton2"/>
-        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter1">
+        <actionGroup ref="SelectFilterOptionsShowMoreActionGroup" stepKey="selectFilter1">
             <argument name="filterableNode" value="Color"/>
             <argument name="filterOption" value="Latte"/>
         </actionGroup>
-        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter2">
+        <actionGroup ref="SelectFilterOptionsShowMoreActionGroup" stepKey="selectFilter2">
             <argument name="filterableNode" value="Material"/>
             <argument name="filterOption" value="Spandex"/>
         </actionGroup>
-        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton2"/>
         <actionGroup ref="AssertNoFilterResults" stepKey="assertNoResults"/>
 
         <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIcon"/>
         <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
             <argument name="searchData" value="{{SearchInputData.valid_category_name}}"/>
         </actionGroup>
-        <!--Remove below 2 lines once PWA-931 is fixed-->
-        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.filterButton}}" stepKey="waitForFilterButton"/>
-        <click selector="{{VeniaStorefrontSection.filterButton}}" stepKey="clickOnFilterButtonElement"/>
-        <actionGroup ref="ClickOnSearchFilterButton" stepKey="clickOnFilterButton5"/>
-        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter3">
-            <argument name="filterableNode" value="Price"/>
-            <argument name="filterOption" value="100-200"/>
-        </actionGroup>
+        <!-- Deselect Search bar due to bug PWA-1784 -->
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIconToDeselect"/>
+        <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter3"/>
         <actionGroup ref="SelectFilterOptionsAction" stepKey="selectFilter4">
             <argument name="filterableNode" value="Category"/>
             <argument name="filterOption" value="Tops"/>
         </actionGroup>
-        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton3"/>
         <actionGroup ref="AssertSearchProductDisplay" stepKey="assertProductGalleryExists"/>
         <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExists1"/>
-        <actionGroup ref="ClickOnSearchFilterButton" stepKey="clickOnFilterButton6"/>
         <actionGroup ref="ClearAllAppliedFilters" stepKey="clearAllAppliedFilters"/>
-        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton4"/>
         <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage2"/>
+        <!-- Mobile View - Category -->
+        <actionGroup ref="GoToVeniaMobileStorefront" stepKey="goToVeniaMobileStorefront"/>
+        <actionGroup ref="GoToCategoryPage" stepKey="openCategoryFromMainMenuOnMobile"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButtonOnMobile"/>
+        <actionGroup ref="SelectFilterOptionsMobileActionGroup" stepKey="selectPriceFilterOnMobile1"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButtonOnMobile"/>
+        <actionGroup ref="AssertProductDisplay" stepKey="assertProductsDisplayOnMobile">
+            <argument name="categoryDisplayName" value="Tops"/>
+        </actionGroup>
+        <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExistsOnMobile"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButtonToClearOnMobile"/>
+        <actionGroup ref="ClearIndividualFilterMobileActionGroup" stepKey="clearAppliedFilterOnMobile"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton2OnMobile"/>
+        <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage1Mobile"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButtonToSelectOptionOnMobile"/>
+        <actionGroup ref="SelectFilterOptionsShowMoreMobileActionGroup" stepKey="selectFilter1Mobile">
+            <argument name="filterableNode" value="Color"/>
+            <argument name="filterOption" value="Latte"/>
+        </actionGroup>
+        <actionGroup ref="SelectFilterOptionsShowMoreMobileActionGroup" stepKey="selectFilter2Mobile">
+            <argument name="filterableNode" value="Material"/>
+            <argument name="filterOption" value="Spandex"/>
+        </actionGroup>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton3OnMobile"/>
+        <actionGroup ref="AssertNoFilterResults" stepKey="assertNoResultsOnMobile"/>
+        <!-- Mobile View - Search -->
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIconOnMobile"/>
+        <actionGroup ref="SearchProduct" stepKey="searchForProduct4OnMobile">
+            <argument name="searchData" value="{{SearchInputData.valid_category_name}}"/>
+        </actionGroup>
+        <!-- Deselect Search bar due to bug PWA-1784 -->
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIconToDeselectOnMobile"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButtonOptionAfterSearchOnMobile"/>
+        <actionGroup ref="SelectFilterOptionsMobileActionGroup" stepKey="selectFilter3OOnMobile"/>
+        <actionGroup ref="SelectFilterOptionsMobileActionGroup" stepKey="selectFilter4OnMobile">
+            <argument name="filterableNode" value="Category"/>
+            <argument name="filterOption" value="Tops"/>
+        </actionGroup>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton4OnMobile"/>
+        <actionGroup ref="AssertSearchProductDisplay" stepKey="assertProductGalleryExistsOnMobile"/>
+        <actionGroup ref="AssertPaginationDoesNotExists" stepKey="assertPaginationDoesNotExists1OnMobile"/>
+        <actionGroup ref="ClickOnFilterButton" stepKey="clickOnFilterButtonToClearOptionOnMobile"/>
+        <actionGroup ref="ClearAllAppliedFiltersMobileActionGroup" stepKey="clearAllAppliedFilters2"/>
+        <actionGroup ref="ApplyFilters" stepKey="clickOnSeeResultsButton5OnMobile"/>
+        <actionGroup ref="AssertPaginationOnFirstPage" stepKey="verifyPaginationExistsOnFirstPage2OnMobile"/>
     </test>
 </tests>

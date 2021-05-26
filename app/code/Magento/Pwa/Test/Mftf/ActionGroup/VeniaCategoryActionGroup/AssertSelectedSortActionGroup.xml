@@ -12,7 +12,6 @@
             <argument name="selectedSort" type="string" defaultValue="Position"/>
         </arguments>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.sortButton}}" stepKey="waitForSortButtonToLoad"/>
-        <waitForPwaElementVisible selector="{{VeniaCategorySection.selectedSortOptionDisplay(selectedSort)}}" stepKey="waitForSelectedSortDisplayMessage"/>
         <click selector="{{VeniaCategorySection.sortButton}}" stepKey="clickOnSortButton"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.sortMenu}}" stepKey="waitForSortDropMenuToLoad"/>
         <waitForPwaElementVisible selector="{{VeniaCategorySection.selectedSortOption(selectedSort)}}" stepKey="waitForSelectedSortToLoad"/>

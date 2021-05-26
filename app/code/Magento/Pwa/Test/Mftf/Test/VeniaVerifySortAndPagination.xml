@@ -51,9 +51,8 @@
         <actionGroup ref="SearchProduct" stepKey="searchForProduct4">
             <argument name="searchData" value="{{SearchInputData.valid_category_name}}"/>
         </actionGroup>
-        <!--Remove below 2 lines once PWA-931 is fixed-->
-        <waitForPwaElementVisible selector="{{VeniaStorefrontSection.filterButton}}" stepKey="waitForFilterButton"/>
-        <click selector="{{VeniaStorefrontSection.filterButton}}" stepKey="clickOnFilterButtonElement"/>
+        <!-- Deselect Search bar due to bug PWA-1784 -->
+        <click selector="{{VeniaHeaderSection.searchIcon}}" stepKey="clickOnSearchIconToDeselect"/>
         <actionGroup ref="AssertSelectedSort" stepKey="verifyDefaultSortExists2"/>
         <actionGroup ref="SortProducts" stepKey="applyNewSort2"/>
         <actionGroup ref="AssertSelectedSort" stepKey="verifyNewSortIsApplied2">

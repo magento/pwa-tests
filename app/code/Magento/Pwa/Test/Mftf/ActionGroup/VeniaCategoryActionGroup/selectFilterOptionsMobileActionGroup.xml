@@ -7,14 +7,15 @@
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="SelectFilterOptionsAction">
+    <actionGroup name="SelectFilterOptionsMobileActionGroup">
         <arguments>
             <argument name="filterableNode" defaultValue="Price" type="string"/>
             <argument name="filterOption" defaultValue="100-200" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableNode(filterableNode)}}" stepKey="waitForFilterableNodeToLoad"/>
-        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableOption(filterableNode,filterOption)}}" stepKey="waitForFilterOptionsToLoad"/>
-        <click selector="{{VeniaFilterSection.filterableOption(filterableNode,filterOption)}}" stepKey="clickOnFilterOptionCheckBox"/>
+        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableNodeMobile(filterableNode)}}" stepKey="waitForFilterableNodeToLoad"/>
+        <click selector="{{VeniaFilterSection.filterableNodeMobile(filterableNode)}}" stepKey="clickOnFilterButtonElement"/>
+        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableOptionMobile(filterableNode,filterOption)}}" stepKey="waitForFilterOptionsToLoad"/>
+        <click selector="{{VeniaFilterSection.filterableOptionMobile(filterableNode,filterOption)}}" stepKey="clickOnFilterOptionCheckBox"/>
         <waitForPwaElementVisible selector="{{VeniaFilterSection.clearFilters}}" stepKey="waitForClearAllLinkToLoad"/>
         <seeElement selector="{{VeniaFilterSection.clearFilters}}" stepKey="assertClearAllLinkExists"/>
         <waitForPwaElementVisible selector="{{VeniaFilterSection.appliedFilters(filterOption)}}" stepKey="waitForAppliedFilterOptionToLoad"/>

@@ -13,9 +13,14 @@
         <element name="filterHeader" type="text" selector="h2[class*='filterModal-headerTitle-']"/>
         <element name="filterCloseIcon" type="button" selector="//div[contains(@class, 'filterModal-header-')]//button/span[contains(@class, 'icon-root-')]"/>
         <element name="filterableNode" type="button" selector="//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]" parameterized="true"/>
+        <element name="filterableNodeMobile" type="button" selector="//aside[contains(@class, 'filterModal-root_open')]//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]" parameterized="true"/>
         <element name="filterableOption" type="text" selector="//li[.//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]]//span[contains(text(), '{{var_filter_option_name}}')]" parameterized="true"/>
+        <element name="filterableOptionMobile" type="text" selector="//aside[contains(@class, 'filterModal-root_open')]//li[.//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]]//span[contains(text(), '{{var_filter_option_name}}')]" parameterized="true"/>
+        <element name="showMore" type="button" selector="//li[.//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]]//button[contains(text(), 'Show More')]" parameterized="true"/>
+        <element name="showMoreMobile" type="button" selector="//aside[contains(@class, 'filterModal-root_open')]//li[.//span[contains(@class, 'filterBlock-header-')]/span[contains(text(), '{{var_filter_name}}')]]//button[contains(text(), 'Show More')]" parameterized="true"/>
         <element name="seeResults" type="button" selector="//span[contains(text(), 'See Results')]"/>
         <element name="clearFilters" type="button" selector="//span[contains(text(), 'Clear all')]"/>
+        <element name="clearFiltersMobile" type="button" selector="//aside[contains(@class, 'filterModal-root_open')]//span[contains(text(), 'Clear all')]"/>
         <element name="appliedFilters" type="text" selector="//ul[contains(@class, 'currentFilters-root')]//span[contains(text(), '{{var_applied_filter_name}}')]" parameterized="true"/>
     </section>
 </sections>

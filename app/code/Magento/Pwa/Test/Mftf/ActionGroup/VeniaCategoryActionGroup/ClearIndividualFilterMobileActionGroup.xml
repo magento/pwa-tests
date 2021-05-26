@@ -7,13 +7,13 @@
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="ClearIndividualFilter">
+    <actionGroup name="ClearIndividualFilterMobileActionGroup">
         <arguments>
             <argument name="filterableNode" defaultValue="Price" type="string"/>
             <argument name="filterOption" defaultValue="100-200" type="string"/>
         </arguments>
-        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableNode(filterableNode)}}" stepKey="waitForFilterableNodeToLoad"/>
-        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableOption(filterableNode,filterOption)}}" stepKey="waitFilterOptionToLoad"/>
-        <click selector="{{VeniaFilterSection.filterableOption(filterableNode,filterOption)}}" stepKey="clickOnFilterOption"/>
+        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableNodeMobile(filterableNode)}}" stepKey="waitForFilterableNodeToLoad"/>
+        <waitForPwaElementVisible selector="{{VeniaFilterSection.filterableOptionMobile(filterableNode,filterOption)}}" stepKey="waitFilterOptionToLoad"/>
+        <click selector="{{VeniaFilterSection.filterableOptionMobile(filterableNode,filterOption)}}" stepKey="clickOnFilterOption"/>
     </actionGroup>
 </actionGroups>
