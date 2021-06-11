@@ -10,6 +10,6 @@
     <section name="CheckoutPagePaymentCardInfo">
         <element name="cardHolderName" type="input" selector="[id*='braintree__card-view-input__cardholder-name']"/>
         <element name="paymentHeader" type="text" selector="//h5[contains(text(), 'Payment Information')]"/>
-        <element name="paymentEditLink" type="button" selector="//span[contains(@class, 'summary-edit_text-')][contains(text(), 'Edit')]"/>
+        <element name="paymentEditLink" type="button" selector="//span[contains(@class, 'braintreeSummary-edit_text-')][contains(text(), 'Edit')]"/>
     </section>
 </sections>
