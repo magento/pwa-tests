@@ -11,6 +11,6 @@
         <element name="giftOptionsAccordion" type="button" selector="//button[contains(@class, 'section-title_container-')]//span[contains(text(), 'See Gift Options')]"/>
         <element name="includeGiftReceipt" type="input" selector="//span[contains(text(), 'Include gift receipt')]"/>
         <element name="includePrintedCard" type="input" selector="//span[contains(text(), 'Include printed card')]"/>
-        <element name="addGiftMessage" type="textarea" selector="[id='cardMessage']"/>
+        <element name="addGiftMessage" type="textarea" selector="[name='cardMessage']"/>
     </section>
 </sections>
