@@ -43,6 +43,7 @@
         <data key="country">US</data>
         <data key="fullName">John1 Smith2</data>
         <data key="addressCombined">Austin, Texas 78759 US</data>
+        <data key="countryFull">United States</data>
     </entity>
 
     <entity name="AuthUserUpdatedData" type="customer">
@@ -83,10 +84,13 @@
         <data key="zipCode">WC1B 3DG</data>
         <data key="phone">+44 1234 5678</data>
         <data key="stateName">England</data>
-        <data key="country">United Kingdom</data>
+        <data key="state">England</data>
         <data key="fullName">Robert Russel</data>
         <data key="addressCombined">London, England WC1B 3DG</data>
         <data key="countryFull">United Kingdom</data>
+        <data key="country">GB</data>
+        <data key="email" unique="prefix">testUK@example.com</data>
+        <data key="emailCheck">testUK@example.com</data>
     </entity>
 
 </entities>
