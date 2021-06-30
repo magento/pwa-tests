@@ -13,6 +13,6 @@
         </arguments>
         <!-- Enter customer address state/region -->
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.enterState}}" stepKey="waitForStateDropDownValuesToLoad"/>
-        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.enterState}}" userInput="{{VeniaUKCustomer.state}}" stepKey="selectState"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.enterState}}" userInput="{{customer.state}}" stepKey="selectState"/>
     </actionGroup>
 </actionGroups>
