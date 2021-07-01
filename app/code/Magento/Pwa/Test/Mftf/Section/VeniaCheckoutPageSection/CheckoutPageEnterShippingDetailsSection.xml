@@ -16,6 +16,7 @@
         <element name="street2" type="input" selector="[class*='textInput-input-'][name*='street[1]']"/>
         <element name="city" type="input" selector="[class*='textInput-input-'][name*='city']"/>
         <element name="selectState" type="select" selector="[class*='select-input-'][name*='region']"/>
+        <element name="enterState" type="input" selector="[class*='textInput-input-'][name*='region']"/>
         <element name="zipCode" type="input" selector="[class*='textInput-input-'][name*='postcode']"/>
         <element name="phoneNumber" type="input" selector="[class*='textInput-input-'][name*='telephone']"/>
         <element name="submitShippingInfo" type="button" selector="//span[contains(text(), 'Continue to Shipping Method')]"/>

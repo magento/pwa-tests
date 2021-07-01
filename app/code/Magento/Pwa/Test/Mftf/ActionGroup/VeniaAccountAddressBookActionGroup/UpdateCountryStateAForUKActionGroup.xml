@@ -12,8 +12,8 @@
             <argument name="customer" defaultValue="VeniaUKCustomer"/>
         </arguments>
         <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" stepKey="waitForCountryDropDownToLoad"/>
-        <waitForText selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.country}}" stepKey="waitForCountryDropDownValuesToLoad"/>
-        <selectOption selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.country}}" stepKey="selectCountry"/>
+        <waitForText selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.countryFull}}" stepKey="waitForCountryDropDownValuesToLoad"/>
+        <selectOption selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.countryFull}}" stepKey="selectCountry"/>
         <waitForPwaElementVisible selector="{{MyAccountAddressBookOverlaySection.enterState}}" stepKey="waitForStateFieldToLoad"/>
         <fillField selector="{{MyAccountAddressBookOverlaySection.enterState}}" userInput="{{customer.stateName}}" stepKey="enterStateName"/>
     </actionGroup>

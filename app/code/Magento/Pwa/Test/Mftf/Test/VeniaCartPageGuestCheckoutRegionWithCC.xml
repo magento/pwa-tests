@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="VeniaCartPageUKGuestCheckoutWithCC" extends="CartPageGuestCheckout">
+        <annotations>
+            <features value="PWA"/>
+            <stories value="Cart Page"/>
+            <title value="Venia guest user with UK address should be able to checkout via Cart Page using credit card"/>
+            <description value="Venia guest user with UK address should be able to checkout via Cart Page using credit card"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="PWA-1870"/>
+            <group value="PWA"/>
+        </annotations>
+        <!-- No gift cart applied to avoid 0 Total checkout -->
+        <remove keyForRemoval="addGiftCard"/>
+        <remove keyForRemoval="seeGiftCardExists"/>
+
+        <actionGroup ref="EnterShippingInfoForUKActionGroup" stepKey="enterShippingInformation"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <waitForPwaElementVisible selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" stepKey="waitForCardHolderName1" after="verifyShippingMethodDetails"/>
+        <fillField  selector="{{CheckoutPagePaymentCardInfo.cardHolderName}}" userInput="{{FakeVisaCard.cardHolderName}}" stepKey="enterCardHolderName" after="waitForCardHolderName1"/>
+        <actionGroup ref="EnterCardDetails" stepKey="addCreditCard" after="waitForCardHolderName1"/>
+        <actionGroup ref="AssertReviewOrderUKGuest" stepKey="assertReviewOrderIsSuccess"/>
+        <actionGroup ref="AssertShippingInfoDetails" stepKey="verifyShippingInformation2">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="AssertPaymentInfo" stepKey="verifyPaymentDetails" after="verifyShippingMethodDetails2"/>
+        <actionGroup ref="AssertOrderConfirmation" stepKey="verifyOrderDetails">
+            <argument name="customer" value="VeniaUKCustomer"/>
+        </actionGroup>
+        <actionGroup ref="OpenMyAccountMenu" stepKey="openMyAccountMenu">
+            <argument name="customerFirstName" value="{{VeniaUKCustomer.first}}"/>
+        </actionGroup>
+    </test>
+</tests>

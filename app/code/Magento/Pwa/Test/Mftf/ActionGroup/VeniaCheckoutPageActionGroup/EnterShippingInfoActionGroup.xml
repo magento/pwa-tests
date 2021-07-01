@@ -18,12 +18,18 @@
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.firstName}}" userInput="{{customer.first}}" stepKey="enterFirstName"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" stepKey="clearFieldInputIfAny2"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.lastName}}" userInput="{{customer.last}}" stepKey="enterLastName"/>
+        <waitForText selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.countryFull}}" stepKey="waitForCountryDropDownValuesToLoad"/>
+        <selectOption selector="{{MyAccountAddressBookOverlaySection.selectCountry}}" userInput="{{customer.countryFull}}" stepKey="selectCountry"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" stepKey="clearFieldInputIfAny3"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.street}}" userInput="{{customer.address}}" stepKey="enterStreet"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" stepKey="clearFieldInputIfAny4"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.street2}}" userInput="{{customer.address2}}" stepKey="enterStreet2"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.city}}" stepKey="clearFieldInputIfAny5"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.city}}" userInput="{{customer.city}}" stepKey="enterCity"/>
+        <waitForText selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="waitForStateDropDownValuesToLoad"/>
+        <selectOption selector="{{CheckoutPageEnterShippingDetailsSection.selectState}}" userInput="{{customer.stateName}}" stepKey="selectState"/>
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" stepKey="clearZipCodeFieldInputIfAny"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.zipCode}}" userInput="{{customer.zipCode}}" stepKey="enterZipCode"/>
         <clearField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" stepKey="clearFieldInputIfAny6"/>
         <fillField selector="{{CheckoutPageEnterShippingDetailsSection.phoneNumber}}" userInput="{{customer.phone}}" stepKey="enterPhone"/>
     </actionGroup>

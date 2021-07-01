@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="EnterShippingInfoForUKActionGroup" extends="EnterShippingInfo">
+        <arguments>
+            <argument name="customer" defaultValue="VeniaUKCustomer"/>
+        </arguments>
+        <!-- Enter customer address state/region -->
+        <clearField selector="{{CheckoutPageEnterShippingDetailsSection.enterState}}" stepKey="waitForStateDropDownValuesToLoad"/>
+        <fillField selector="{{CheckoutPageEnterShippingDetailsSection.enterState}}" userInput="{{customer.state}}" stepKey="selectState"/>
+    </actionGroup>
+</actionGroups>
