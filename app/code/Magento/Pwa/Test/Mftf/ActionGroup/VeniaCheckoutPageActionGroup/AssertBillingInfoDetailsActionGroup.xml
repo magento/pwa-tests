@@ -16,7 +16,7 @@
         <see userInput="{{customer.address}}" stepKey="seeAddressExists"/>
         <see userInput="{{customer.address2}}" stepKey="seeAddressSecondaryInfoExists"/>
         <see userInput="{{customer.city}}" stepKey="seeCityExists"/>
-        <see userInput="{{customer.state}}" stepKey="seeStateExists"/>
+        <see userInput="{{customer.stateName}}" stepKey="seeStateExists"/>
         <see userInput="{{customer.zipCode}}" stepKey="seeZipExists"/>
     </actionGroup>
 </actionGroups>
