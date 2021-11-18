@@ -1,4 +1,12 @@
-# pwa-test
+# pwa-test (Deprecated)
+
+## Deprecation Information
+
+This repository has been deprecated as all tests have been moved to [PWA-Studio repository](https://github.com/magento/pwa-studio/tree/develop/venia-integration-tests) integration tests and converted to [Cypress](https://www.cypress.io/) tests. 
+
+PWA-Studio integration test documentation: https://github.com/magento/pwa-studio/blob/develop/venia-integration-tests/README.md
+
+<del>
 
 ## EZ Setup
 
